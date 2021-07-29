@@ -19,5 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/signup', [SignUpController::class, 'index']);
+// GET route
+
+Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 Route::get('/login', [LogInController::class, 'index']);
+
+// POST route
+
+Route::post('/register', [SignUpController::class, 'storeRecord'])->name('store');

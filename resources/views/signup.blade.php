@@ -2,10 +2,11 @@
 
 
 @section('container')
-    <form>
+    <form action="{{ route('store') }}" method="POST">
+        {{ csrf_field() }}
         <div class="mb-3">
             <label for="inputNama" class="form-label">Nama</label>
-            <input type="email" class="form-control" id="inputNama" name = "inputNama" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="inputNama" name = "inputNama" aria-describedby="emailHelp">
           </div>
         <div class="mb-3">
           <label for="inputEmail" class="form-label">Alamat Email</label>
