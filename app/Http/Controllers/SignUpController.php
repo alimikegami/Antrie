@@ -26,9 +26,7 @@ class SignUpController extends Controller {
             return redirect('signup');
         }
         $request->session()->flash('alert-danger', 'Please make sure your password is the same!');
-
         return redirect('signup');
-        
     }
 
     public function verify(Request $request){

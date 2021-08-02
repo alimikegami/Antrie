@@ -35,9 +35,4 @@ class Pengguna extends Authenticatable
         'password',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
 }

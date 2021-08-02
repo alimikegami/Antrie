@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Kategori;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        DB::table('kategori')->insert([
+            'nama_kategori' => "Event",
+        ]);
+        DB::table('kategori')->insert([
+            'nama_kategori' => "Layanan Kesehatan",
+        ]);
+        DB::table('kategori')->insert([
+            'nama_kategori' => "Layanan Publik",
+        ]);
     }
 }
