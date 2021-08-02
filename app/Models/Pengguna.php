@@ -17,11 +17,13 @@ class Pengguna extends Authenticatable
      * @var array
      */
     protected $table = 'pengguna';
-    protected $primary_key = 'id_pengguna';
+    
     protected $fillable = [
         'name',
         'email',
         'password',
+        'verification_code',
+        'email_verified_at' => 'datetime',
     ];
 
     /**
@@ -31,7 +33,6 @@ class Pengguna extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
@@ -39,7 +40,4 @@ class Pengguna extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 }

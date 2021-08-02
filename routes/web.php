@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/', function () {
 Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 Route::get('/login', [LogInController::class, 'index'])->name('login');
 Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda');
+Route::get('/verify', [SignUpController::class, 'verify'])->name('verify');
 
 // POST route
 
