@@ -25,7 +25,7 @@ class CreateAntreanTable extends Migration
                 $table->string('nomor_telepon', 15);
                 $table->time('waktu_buka');
                 $table->time('waktu_tutup');
-                $table->string('file_path_img', 20);
+                $table->string('file_path_img', 50)->nullable();
                 $table->foreign('id_pembuat')->references('id')->on('pengguna');
                 $table->foreign('id_kategori')->references('id')->on('kategori');
             });

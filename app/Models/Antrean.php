@@ -27,4 +27,6 @@ class Antrean extends Model
         'waktu_tutup',
         'file_path_img',
     ];
+    
+    public $timestamps = false;
 }
