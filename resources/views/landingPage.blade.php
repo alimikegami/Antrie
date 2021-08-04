@@ -68,7 +68,7 @@
                             <h1>Pembuat Antrean</h1>
                             <p>Lorem a dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                             <button type="button" id="kelebihan-pembuat-antrean" class="mt-2">Kelebihan<i
-                                    class="fas fa-plus"></i></button>
+                                    class="fas fa-plus" id="tambah-pembuat-antrean"></i></button>
                             <ul class="mt-3">
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
@@ -87,7 +87,8 @@
                         <div class="word-pengantre">
                             <h1>Pengantre</h1>
                             <p>Lorem a dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                            <button type="button" id="kelebihan-pengantre">Kelebihan<i class="fas fa-plus"></i></button>
+                            <button type="button" id="kelebihan-pengantre">Kelebihan<i class="fas fa-plus"
+                                    id="tambah-pengantre"></i></button>
                             <ul class="mt-3">
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>

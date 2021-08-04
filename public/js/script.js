@@ -27,12 +27,12 @@ $(document).ready(function() {
     // homepage kelebihan pengantre dan pembuat antrean
     $('#kelebihan-pembuat-antrean').on('click', ()=>{
         $('.word-pembuat-antrean ul').slideToggle();
-        $('.fas').toggleClass('fa-plus fa-minus');
+        $('#tambah-pembuat-antrean').toggleClass('fa-plus fa-minus');
     });
 
     $('#kelebihan-pengantre').on('click', ()=>{
         $('.word-pengantre ul').slideToggle();
-        $('.fas').toggleClass('fa-plus fa-minus');
+        $('#tambah-pengantre').toggleClass('fa-plus fa-minus');
     });
 
     // card flip homepage
