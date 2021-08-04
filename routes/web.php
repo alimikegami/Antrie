@@ -29,6 +29,7 @@ Route::get('/login', [LogInController::class, 'index'])->name('login');
 Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda');
 Route::get('/verify', [SignUpController::class, 'verify'])->name('verify');
 Route::get('/buat-antrean', [AntreanController::class, 'formPembuatanAntrean'])->name('buat-antrean');
+Route::get('/antrean/{antrean:slug}', [AntreanController::class, 'show']);
 
 // POST route
 
