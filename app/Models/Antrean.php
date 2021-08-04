@@ -37,4 +37,8 @@ class Antrean extends Model
     public function loket(){
         return $this->hasMany(Loket::class, 'antrean_id');
     }
+
+    public function pengguna(){
+        return $this->belongsTo(Pengguna::class, 'id_pembuat');
+    }
 }
