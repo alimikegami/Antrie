@@ -10,7 +10,10 @@ use App\Models\AttachmentAntrean;
 class AntreanController extends Controller
 {
     public function formPembuatanAntrean(){
-        return view('buat_antrean', ['title' => "Buat Antrean"]);
+        if (session()->has('ID_pengguna')) {
+            return view('buat_antrean', ['title' => "Buat Antrean"]);
+        }
+        return redirect('login');
     }
 
     public function buatRecordAntrean(Request $request){
