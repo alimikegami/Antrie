@@ -8,6 +8,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    transition: background 1s ease;
+}
+
 /* navbar */
 .logo {
     width: 15vh;
@@ -15,13 +19,16 @@
 
 .navbar {
     position: fixed;
-    z-index: 12;
-    transition: all 0.5s;
     width: 100%;
+    transition: all 1s;
 }
 
 .navbar img {
     width: 15vh;
+}
+
+#fullpage {
+    padding-top: 20vh;
 }
 
 /* section 1 home page */
@@ -78,9 +85,9 @@
     width: 30vw;
 }
 
-.s2 {
+/* .s2 {
     background-color: #4DB0FF;
-}
+} */
 
 /* section 3 home page */
 .home-third {
@@ -178,6 +185,7 @@
 .home-forth {
     display: flex;
     height: 60vh;
+    margin-top: 20vh;
 }
 
 .word-kenapa-pilih h1 {
@@ -223,7 +231,8 @@
 }
 
 .s4 {
-    background-color: #FFE77A;
+    /* background-color: #FFE77A; */
+    margin-top: 100vh;
 }
 
 .back {
@@ -242,6 +251,7 @@
     border-radius: 20px;
     flex-direction: column;
 }
+
 
 /* section 5 home page */
 .home-fifth {

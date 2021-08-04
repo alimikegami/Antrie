@@ -23,7 +23,7 @@
 
 
     <div id="fullpage">
-        <div class="section s1">
+        <div class="section s1" data-background="#ffff">
             <div class="container">
                 <div class="home-first">
                     <div class="row">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="section s2">
+        <div class="section s2" data-background="#4DB0FF">
             <div class="container">
                 <div class="home-second">
                     <img src="img/komputerHompage.png" alt="">
@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-        <div class="section s3">
+        <div class="section s3" data-background="#ffff">
             <div class="container">
                 <div class="home-third">
                     <div class="slogan-third">
@@ -68,7 +68,7 @@
                             <h1>Pembuat Antrean</h1>
                             <p>Lorem a dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
                             <button type="button" id="kelebihan-pembuat-antrean" class="mt-2">Kelebihan<i
-                                    class="fas fa-plus"></i></button>
+                                    id="tambah-pembuat-antrean" class="fas fa-plus"></i></button>
                             <ul class="mt-3">
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
@@ -87,7 +87,8 @@
                         <div class="word-pengantre">
                             <h1>Pengantre</h1>
                             <p>Lorem a dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                            <button type="button" id="kelebihan-pengantre">Kelebihan<i class="fas fa-plus"></i></button>
+                            <button type="button" id="kelebihan-pengantre">Kelebihan<i id="tambah-pengantre"
+                                    class="fas fa-plus"></i></button>
                             <ul class="mt-3">
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
@@ -99,7 +100,7 @@
             </div>
         </div>
 
-        <div class="section s4">
+        <div class="section s4" data-background="#FFE77A">
             <div class="container">
                 <div class="home-forth">
                     <div class="word-kenapa-pilih">
@@ -169,7 +170,7 @@
             </div>
         </div>
 
-        <div class="section s5">
+        <div class="section s5" data-background="#ffff">
             <div class="container">
                 <div class="home-fifth">
                     <div class="share-love-img-left">
