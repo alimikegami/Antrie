@@ -19,7 +19,7 @@ use App\Http\Controllers\BerandaController;
 */
 
 Route::get('/', function () {
-    return view('landingpage', ['title' => "Beranda"]);
+    return view('landingPage');
 })->name('landingpage');
 
 // GET route
