@@ -15,7 +15,7 @@ class CreatePenggunaTable extends Migration
     {
         Schema::create('pengguna', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 75);
+            $table->string('nama', 75);
             $table->string('email', 75)->unique();
             $table->string('verification_code')->nullable();
             $table->timestamp('email_verified_at')->nullable();

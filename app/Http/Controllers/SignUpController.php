@@ -16,7 +16,7 @@ class SignUpController extends Controller {
             $authentication_code = sha1(time());
             $email = $request->inputEmail;
             Pengguna::create([
-                "name" => $request->inputNama,
+                "nama" => $request->inputNama,
                 "email" => $email,
                 "password" => Hash::make($request->inputPassword),
                 "verification_code" => $authentication_code

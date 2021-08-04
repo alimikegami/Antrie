@@ -20,4 +20,8 @@ class AttachmentAntrean extends Model
         'file_path_attachment',
         'id_antrean',
     ];
+
+    public function antrean(){
+        return $this->belongsTo(Antrean::class, 'id_antrean');
+    }
 }

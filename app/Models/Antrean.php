@@ -29,4 +29,12 @@ class Antrean extends Model
     ];
     
     public $timestamps = false;
+
+    public function kategori(){
+        return $this->belongsTo(Kategori::class, 'id_kategori');
+    }
+
+    public function loket(){
+        return $this->hasMany(Loket::class, 'antrean_id');
+    }
 }

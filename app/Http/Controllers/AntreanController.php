@@ -12,8 +12,9 @@ class AntreanController extends Controller
     public function formPembuatanAntrean(){
         if (session()->has('ID_pengguna')) {
             return view('buat_antrean', ['title' => "Buat Antrean"]);
+        } else {
+            return redirect('login');
         }
-        return redirect('login');
     }
 
     public function buatRecordAntrean(Request $request){
@@ -35,7 +36,7 @@ class AntreanController extends Controller
             "waktu_buka"=> $request->jamBuka,
             "waktu_tutup"=> $request->jamTutup,
             "file_path_img"=> $file_path_img,
-            "id_pembuat"=> 1,
+            "id_pembuat"=> $request->session()->get('ID_pengguna'),
             "id_kategori"=> $request->kategoriAntrean,
         ]);
 
@@ -67,7 +68,7 @@ class AntreanController extends Controller
                     'waktu_tutup' => $request->$jam_tutup,
                     'estimasi_waktu_tunggu'=>null,
                     'status' => 'closed',
-                    'id_antrean'=>$antrean->id,
+                    'antrean_id'=>$antrean->id,
                 ]);
             }
         }

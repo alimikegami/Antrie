@@ -2,5 +2,6 @@
 
 
 @section('container')
-    <p>Hello {{ session('ID_pengguna') }}</p>
+    <p>Hello {{ session()->get('nama') }}</p>
+    <a href="{{ route('buat-antrean') }}">Buat antrean</a>
 @endsection
