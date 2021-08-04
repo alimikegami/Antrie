@@ -16,7 +16,7 @@ use App\Http\Controllers\SignUpController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingPage');
 });
 
 Route::get('/signup', [SignUpController::class, 'index']);
