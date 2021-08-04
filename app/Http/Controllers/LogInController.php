@@ -11,9 +11,12 @@ class LogInController extends Controller {
         if (session()->has('ID_pengguna')) {
             return redirect('beranda');
         } else {
-            return redirect('login');
+            return view('login', [
+                'title' => "Login"
+            ]);
         }
     }
+    
 
     public function signIn(Request $request) {
         $email = $request->emailLogin;

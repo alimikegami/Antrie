@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Loket;
 use App\Models\Antrean;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Models\AttachmentAntrean;
 
@@ -11,7 +12,10 @@ class AntreanController extends Controller
 {
     public function formPembuatanAntrean(){
         if (session()->has('ID_pengguna')) {
-            return view('buat_antrean', ['title' => "Buat Antrean"]);
+            return view('buatAntrean', [
+                'title' => "Buat Antrean",
+                'kategori' => Kategori::all()
+            ]);
         } else {
             return redirect('login');
         }
