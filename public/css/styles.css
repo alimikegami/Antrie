@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* navbar */
+.logo {
+    width: 15vh;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 12;
+    transition: all 0.5s;
+    width: 100%;
+}
+
+.navbar img {
+    width: 15vh;
+}
+
+/* section 1 home page */
+
+.home-first img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/* .home-first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.home-first h1 {
+    font-size: 4.557291666666667vw;
+    /* margin-top: 5%; */
+    color: #2F2D65;
+    line-height: 4.921874999999999vw;
+}
+
+.home-first p {
+    font-size: 1.0416666666666667vw;
+    color: #5D5D83;
+    width: 25vw;
+    margin-top: 5vh;
+}
+
+/* section 2 home page */
+.home-second {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #FFFFFF;
+    overflow: visible;
+}
+
+.slogan-second {
+    text-align: center;
+    margin-left: 10%;
+}
+
+.slogan-second h1 {
+    font-size: 3.4vw;
+}
+
+.slogan-second p {
+    width: 40vw;
+    font-size: 1.2vw;
+}
+
+.home-second img {
+    width: 30vw;
+}
+
+.s2 {
+    background-color: #4DB0FF;
+}
+
+/* section 3 home page */
+.home-third {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+
+.slogan-third h1:nth-child(1) {
+    font-size: 4.166666666666667vw;
+    font-weight: bold;
+}
+
+.slogan-third h1:nth-child(2) {
+    font-size: 4.166666666666667vw;
+    font-weight: lighter;
+}
+
+.slogan-pembuat-antrean {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+}
+
+.word-pembuat-antrean {
+    margin-top: 10vh;
+    flex-basis: 50%;
+    margin-bottom: -10vh;
+}
+
+.word-pengantre {
+    margin-top: 10vh;
+    flex-basis: 50%;
+    margin-bottom: -10vh;
+}
+
+.word-pembuat-antrean h1,
+.word-pengantre h1 {
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.word-pembuat-antrean p,
+.word-pengantre p {
+    font-size: 1.5625vw;
+}
+
+.word-pembuat-antrean button,
+.word-pengantre button {
+    padding: 10px 20px;
+    text-align: start;
+    width: 25vw;
+    border-radius: 20px;
+    background-color: #BDE3F7;
+    border: none;
+}
+
+.word-pembuat-antrean button:active,
+.word-pengantre button:active {
+    transform: translateY(4px);
+}
+
+.img-pembuat-antrean img {
+    width: 25vw;
+}
+
+.word-pembuat-antrean ul,
+.word-pengantre ul {
+    width: 30vw;
+    font-size: 1.5625vw;
+    display: none;
+}
+
+.slogan-pengantre {
+    display: flex;
+    margin-top: 5vh;
+    justify-content: space-between;
+}
+
+.img-pengantre img {
+    width: 25vw;
+}
+
+#kelebihan-pembuat-antrean,
+#kelebihan-pengantre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+/* section 4 home page*/
+.home-forth {
+    display: flex;
+    height: 60vh;
+}
+
+.word-kenapa-pilih h1 {
+    font-size: 3.6vw;
+    font-weight: bold;
+}
+
+.word-kenapa-pilih p {
+    margin-top: 5vh;
+    font-size: 1.2vw;
+}
+
+.kemudahan-kenapa-pilih,
+.kecepatan-kenapa-pilih,
+.fleksibilitas-kenapa-pilih {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 242px;
+    height: 206px;
+    /* background-color: #2C5F2D;
+    border-radius: 20px; */
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.card-kenapa-pilih {
+    display: flex;
+    justify-content: center;
+    padding: 1vw;
+}
+
+.kecepatan-kenapa-pilih {
+    margin-top: 35%;
+}
+
+.kemudahan-kenapa-pilih {
+    margin-right: -10%;
+}
+
+.fleksibilitas-kenapa-pilih {
+    margin-left: -10%;
+}
+
+.s4 {
+    background-color: #FFE77A;
+}
+
+.back {
+    background-color: #2C5F2D;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.front {
+    background-color: #2C5F2D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    flex-direction: column;
+}
+
+/* section 5 home page */
+.home-fifth {
+    display: flex;
+    align-items: center;
+    margin-top: 10vh;
+    text-align: center;
+}
+
+.share-love-word h1 {
+    font-size: 4.557291666666667vw;
+    color: #2F2D65;
+}
+
+.share-love-word p {
+    font-size: 1.0416666666666667vw;
+    color: #5D5D83;
+}
+
+/* footer */
+.footer {
+    width: 100%;
+    height: 30vh;
+    background-color: #2F2D65;
+    color: #FFFFFF;
+    padding-top: 10vh;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-content ul {
+    list-style-type: none;
+}
+
+.footer-content p {
+    font-weight: bold;
+}
