@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Antrean;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Loket extends Model
 {
@@ -13,7 +14,7 @@ class Loket extends Model
     
     protected $fillable = [
         'nama_loket',
-        'id_antrean',
+        'antrean_id',
         'jumlah_pengantre_maks',
         'waktu_buka',
         'waktu_tutup',
@@ -22,4 +23,8 @@ class Loket extends Model
     ];
 
     public $timestamps = false;
+
+    public function antrean(){
+        return $this->belongsTo(Antrean::class, 'antrean_id');
+    }
 }

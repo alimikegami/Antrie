@@ -8,8 +8,15 @@ use Illuminate\Support\Facades\Hash;
 
 class LogInController extends Controller {
     public function index() {
-        return view('login', ['title' => "Log In"]);
+        if (session()->has('ID_pengguna')) {
+            return redirect('beranda');
+        } else {
+            return view('login', [
+                'title' => "Login"
+            ]);
+        }
     }
+    
 
     public function signIn(Request $request) {
         $email = $request->emailLogin;
@@ -21,8 +28,8 @@ class LogInController extends Controller {
             return redirect('login');
         }
 
-        if (Hash::check($pwd, $pengguna->password)) {
-            $request->session()->put('ID_pengguna', $pengguna->ID_pengguna);
+        if (Hash::check($pwd, $pengguna->password) || !is_null($pengguna->email_verified_at)) {
+            $request->session()->put('ID_pengguna', $pengguna->id);
             $request->session()->put('email_pengguna', $pengguna->email);
             $request->session()->put('nama', $pengguna->nama);
             return redirect('beranda');

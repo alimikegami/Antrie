@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Loket;
+use App\Models\Kategori;
+use App\Models\Pengguna;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Antrean extends Model
 {
@@ -26,7 +30,20 @@ class Antrean extends Model
         'waktu_buka',
         'waktu_tutup',
         'file_path_img',
+        'slug',
     ];
     
     public $timestamps = false;
+
+    public function kategori(){
+        return $this->belongsTo(Kategori::class, 'id_kategori');
+    }
+
+    public function loket(){
+        return $this->hasMany(Loket::class, 'antrean_id');
+    }
+
+    public function pengguna(){
+        return $this->belongsTo(Pengguna::class, 'id_pembuat');
+    }
 }

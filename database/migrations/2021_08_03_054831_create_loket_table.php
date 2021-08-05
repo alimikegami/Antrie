@@ -16,14 +16,14 @@ class CreateLoketTable extends Migration
         if (Schema::hasTable('antrean')) {
             Schema::create('loket', function (Blueprint $table) {
                 $table->id();
-                $table->unsignedBigInteger('id_antrean');
+                $table->unsignedBigInteger('antrean_id');
                 $table->string('nama_loket', 30);
                 $table->integer('jumlah_pengantre_maks')->nullable();
                 $table->time('waktu_buka');
                 $table->time('waktu_tutup');
                 $table->enum('status', ['open', 'closed']);
                 $table->integer('estimasi_waktu_tunggu')->nullable();
-                $table->foreign('id_antrean')->references('id')->on('antrean');
+                $table->foreign('antrean_id')->references('id')->on('antrean');
     
             });
         }

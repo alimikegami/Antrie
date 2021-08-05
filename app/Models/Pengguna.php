@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -19,7 +20,7 @@ class Pengguna extends Authenticatable
     protected $table = 'pengguna';
     
     protected $fillable = [
-        'name',
+        'nama',
         'email',
         'password',
         'verification_code',
@@ -35,4 +36,7 @@ class Pengguna extends Authenticatable
         'password',
     ];
 
+    public function antrean(){
+        return $this->hasMany(Antrean::class, 'id_pembuat');
+    }
 }

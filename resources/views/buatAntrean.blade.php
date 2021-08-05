@@ -9,7 +9,11 @@
         </div>
         <div class="mb-3">
             <label for="kategoriAntrean" class="form-label">Kategori Antrean</label>
-            <input type="text" id="kategoriAntrean" name="kategoriAntrean" required>
+            <select name="kategoriAntrean" id="kategoriAntrean">
+                @foreach ($kategori as $temp)
+                    <option value="{{ $temp->id }}">{{ $temp->nama_kategori }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
           <label for="deskripsiAntrean" class="form-label">Detail Antrean</label><br>
@@ -30,7 +34,7 @@
                 <option value="Yogyakarta">Yogyakarta</option>
                 <option value="Surabaya">Surabaya</option>
                 <option value="Bandung">Bandung</option>
-              </select>
+            </select>
         </div>
         <div class="mb-3">
             <label for="alamatAntrean" class="form-label">Alamat</label>

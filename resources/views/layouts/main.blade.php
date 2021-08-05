@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    @include('components/navbar');
+    @include('components/generalNavbar');
 
     <div class="container">
         @yield('container')
