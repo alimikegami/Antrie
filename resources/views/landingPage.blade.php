@@ -1,9 +1,29 @@
 @extends('layouts/landingPageLayout')
 
-@include('components/generalNavbar');
+
 @section('container')
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img id="navbar-logo" src="img/logoAntriedark.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
     <div id="fullpage">
-        <div class="section s1">
+        <div class="section s1" data-background="#ffff">
             <div class="container">
                 <div class="home-first">
                     <div class="row">
@@ -23,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="section s2">
+        <div class="section s2" data-background="#4DB0FF">
             <div class="container">
                 <div class="home-second">
                     <img src="img/komputerHompage.png" alt="">
@@ -36,7 +56,7 @@
                 </div>
             </div>
         </div>
-        <div class="section s3">
+        <div class="section s3" data-background="#ffff">
             <div class="container">
                 <div class="home-third">
                     <div class="slogan-third">
@@ -47,8 +67,8 @@
                         <div class="word-pembuat-antrean">
                             <h1>Pembuat Antrean</h1>
                             <p>Lorem a dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                            <button type="button" id="kelebihan-pembuat-antrean" class="mt-2">Kelebihan<i
-                                    class="fas fa-plus"></i></button>
+                            <button type="button" id="kelebihan-pembuat-antrean" class="mt-2">Kelebihan<i <<<<<<< HEAD
+                                    class="fas fa-plus" id="tambah-pembuat-antrean"></i></button>
                             <ul class="mt-3">
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
@@ -67,7 +87,8 @@
                         <div class="word-pengantre">
                             <h1>Pengantre</h1>
                             <p>Lorem a dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-                            <button type="button" id="kelebihan-pengantre">Kelebihan<i class="fas fa-plus"></i></button>
+                            <button type="button" id="kelebihan-pengantre">Kelebihan<i class="fas fa-plus"
+                                    id="tambah-pengantre"></i></button>
                             <ul class="mt-3">
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
                                 <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
@@ -79,7 +100,7 @@
             </div>
         </div>
 
-        <div class="section s4">
+        <div class="section s4" data-background="#FFE77A">
             <div class="container">
                 <div class="home-forth">
                     <div class="word-kenapa-pilih">
@@ -149,7 +170,7 @@
             </div>
         </div>
 
-        <div class="section s5">
+        <div class="section s5" data-background="#ffff">
             <div class="container">
                 <div class="home-fifth">
                     <div class="share-love-img-left">
