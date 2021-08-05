@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class LogInController extends Controller {
     public function index() {
         if (session()->has('ID_pengguna')) {
-            return redirect('beranda');
+            return redirect()->route('beranda');
         } else {
             return view('login', [
                 'title' => "Login"

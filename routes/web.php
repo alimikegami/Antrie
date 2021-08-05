@@ -21,9 +21,6 @@ use App\Http\Controllers\BerandaController;
 Route::get('/', function () {
     return view('landingPage');
 })->name('landingpage');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('landingpage');
 
 // GET route
 
