@@ -1,28 +1,4 @@
 $(document).ready(function() {
-	$('#fullpage').fullpage({
-		//options here
-		autoScrolling:true,
-        controlArrows: true,
-        navigation: true,
-        slidesNavigation: true,
-        scrollOverflow: true,
-        afterLoad: function(origin, destination, direction) {
-            if (destination.index === 0 || destination.index === 2 || destination.index === 4) {
-                $('.navbar').css('background-color', '#FFFFFF');
-                $('#navbar-logo').attr('src', 'img/logoAntriedark.png');
-                $('.nav-link').css('color', '#5D5D83');
-            }else if (destination.index === 3){
-                $('.navbar').css('background-color', '#FFE77A');
-                $('#navbar-logo').attr('src', 'img/logoAntriedark.png');
-                $('.nav-link').css('color', '#5D5D83');
-            }else {
-                $('.navbar').css('background-color', '#4DB0FF');
-                $('#navbar-logo').attr('src', 'img/logoAntrielight.png');
-                $('.nav-link').css('color', '#FFFFFF');
-            }
-           
-          },
-	});
 
     // homepage kelebihan pengantre dan pembuat antrean
     $('#kelebihan-pembuat-antrean').on('click', ()=>{
@@ -41,3 +17,35 @@ $(document).ready(function() {
     $('.fleksibilitas-kenapa-pilih').flip();
     
 });
+
+$( window ).ready(function() {
+
+    var wHeight = $(window).height();
+
+    $('.section')
+      .height(wHeight)
+      .scrollie({
+        scrollOffset : -50,
+        scrollingInView : function(elem, winPos) {
+                   
+          var bgColor = elem.data('background');
+          if (bgColor === '#ffff') {
+                $('.navbar').css('background-color', '#FFFFFF');
+                $('#navbar-logo').attr('src', 'img/logoAntriedark.png');
+                $('.nav-link').css('color', '#5D5D83');
+            }else if (bgColor === '#4DB0FF'){
+                $('.navbar').css('background-color', '#4DB0FF');
+                $('#navbar-logo').attr('src', 'img/logoAntrielight.png');
+                $('.nav-link').css('color', '#FFFFFF');
+            }else {
+                $('.navbar').css('background-color', '#FFE77A');
+                $('#navbar-logo').attr('src', 'img/logoAntriedark.png');
+                $('.nav-link').css('color', '#5D5D83');
+            }
+          $('body').css('background-color', bgColor);
+          
+        }
+      });
+
+  });
+
