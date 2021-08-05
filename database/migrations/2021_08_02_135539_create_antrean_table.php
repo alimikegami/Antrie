@@ -22,13 +22,14 @@ class CreateAntreanTable extends Migration
                 $table->text('deskripsi');
                 $table->string('provinsi', 25);
                 $table->string('alamat');
-                $table->string('slug');
+                $table->string('slug')->unique();
                 $table->string('nomor_telepon', 15);
                 $table->time('waktu_buka');
                 $table->time('waktu_tutup');
                 $table->string('file_path_img', 50)->nullable();
                 $table->foreign('id_pembuat')->references('id')->on('pengguna');
                 $table->foreign('id_kategori')->references('id')->on('kategori');
+                $table->timestamps();
             });
         }
         

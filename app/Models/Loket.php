@@ -20,11 +20,11 @@ class Loket extends Model
         'waktu_tutup',
         'status',
         'estimasi_waktu_tunggu',
+        'batch',
+        'slug',
     ];
 
-    public $timestamps = false;
-
     public function antrean(){
-        return $this->belongsTo(Antrean::class, 'antrean_id');
+        return $this->belongsTo(Antrean::class);
     }
 }

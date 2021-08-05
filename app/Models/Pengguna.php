@@ -39,4 +39,8 @@ class Pengguna extends Authenticatable
     public function antrean(){
         return $this->hasMany(Antrean::class, 'id_pembuat');
     }
+
+    public function riwayatAntrean(){
+        return $this->hasMany(RiwayatAntrean::class, 'pengguna_id');
+    }
 }

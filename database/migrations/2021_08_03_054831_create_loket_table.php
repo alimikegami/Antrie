@@ -18,13 +18,15 @@ class CreateLoketTable extends Migration
                 $table->id();
                 $table->unsignedBigInteger('antrean_id');
                 $table->string('nama_loket', 30);
+                $table->string('slug')->unique();
                 $table->integer('jumlah_pengantre_maks')->nullable();
                 $table->time('waktu_buka');
                 $table->time('waktu_tutup');
                 $table->enum('status', ['open', 'closed']);
+                $table->dateTime('batch')->nullable();
                 $table->integer('estimasi_waktu_tunggu')->nullable();
                 $table->foreign('antrean_id')->references('id')->on('antrean');
-    
+                $table->timestamps();
             });
         }
     }
