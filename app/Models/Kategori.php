@@ -12,6 +12,8 @@ class Kategori extends Model
     
     protected $fillable = [
         'nama_kategori',
+        'slug',
+        'img_file_path',
     ];
 
     public function antrean(){

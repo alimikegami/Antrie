@@ -16,6 +16,8 @@ class CreateKategoriTable extends Migration
         Schema::create('kategori', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kategori', 30);
+            $table->string('slug');
+            $table->string('img_file_path');
         });
     }
 

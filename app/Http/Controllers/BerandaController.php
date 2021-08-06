@@ -16,7 +16,16 @@ class BerandaController extends Controller
                 'title' => "Beranda",
                 'antrean' => Antrean::with(['kategori', 'pengguna'])->where('id_kategori', '=', $kategori_populer->id)->get(),
                 'kategori_populer' => $kategori_populer,
+                'kategori' => Kategori::all(),
             ]);
+        } else {
+            return redirect()->route('landingpage');
+        }
+    }
+
+    public function showAntreanBasedOnCategories(Kategori $kategori){
+        if (session()->has('ID_pengguna')) {
+            return view('antreanBasedOnCategory', ['antrean' => $kategori->antrean]);
         } else {
             return redirect()->route('landingpage');
         }

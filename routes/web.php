@@ -31,6 +31,8 @@ Route::get('/verify', [SignUpController::class, 'verify'])->name('verify');
 Route::get('/konfirmasi-antrean/{nama_antrean}/loket/{loket:slug}', [AntreanController::class, 'konfirmasiAntrean'])->name('konfirmasi-antrean');
 Route::get('/buat-antrean', [AntreanController::class, 'formPembuatanAntrean'])->name('buat-antrean');
 Route::get('/antrean/{antrean:slug}', [AntreanController::class, 'show']);
+Route::get('/beranda/{kategori:slug}', [BerandaController::class, 'showAntreanBasedOnCategories']);
+Route::get('/logout', [LogInController::class, 'logout'])->name('logout');
 
 
 // POST route

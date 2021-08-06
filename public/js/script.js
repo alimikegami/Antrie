@@ -60,23 +60,6 @@ $(document).ready(function() {
         $(this).addClass('selected');
     });
 
-    for (let i = 0; i < 10; i++) {
-      
-      $('.content-field-lokasi').append(`
-      <div class="lokasi-wrapper d-flex align-items-center">
-        <div class="logo-lokasi d-flex justify-content-center align-items-center">
-            <div class="gambar">
-                <img src="img/logoAntriedark.png" alt="" width="70px">
-            </div>
-        </div>
-        <div class="keterangan-lokasi">
-            <h1>Puskesmas II Denpasar Barat</h1>
-            <p>Gg. Puskesmas No.3, Pemecutan Klod, Kec. Denpasar Bar., Kota Denpasar, Bali 80119</p>
-        </div>
-    </div>
-  `);
-    }
-
     $('#tombol-filter').on('click', ()=>{
       $('#exampleModal').modal('toggle');
     })

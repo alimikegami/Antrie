@@ -16,13 +16,39 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('kategori')->insert([
-            'nama_kategori' => "Event",
+            'nama_kategori' => "Pelayanan Kesehatan",
+            'slug' => "pelayanan-kesehatan",
+            'img_file_path' => "img/Pelayananpublik.png",
         ]);
+
         DB::table('kategori')->insert([
-            'nama_kategori' => "Layanan Kesehatan",
+            'nama_kategori' => "Instansi Pemerintahan",
+            'slug' => "instansi-pemerintahan",
+            'img_file_path' => "img/Pelayananpublik.png",
         ]);
+
         DB::table('kategori')->insert([
-            'nama_kategori' => "Layanan Publik",
+            'nama_kategori' => "Acara",
+            'slug' => "acara",
+            'img_file_path' => "img/Pelayananpublik.png",
+        ]);
+
+        DB::table('kategori')->insert([
+            'nama_kategori' => "Keuangan",
+            'slug' => "keuangan",
+            'img_file_path' => "img/Pelayananpublik.png",
+        ]);
+
+        DB::table('kategori')->insert([
+            'nama_kategori' => "Layanan Perawatan Tubuh",
+            'slug' => "layanan-perawatan-tubuh",
+            'img_file_path' => "img/Pelayananpublik.png",
+        ]);
+
+        DB::table('kategori')->insert([
+            'nama_kategori' => "Layanan Otomotif",
+            'slug' => "layanan-otomotif",
+            'img_file_path' => "img/Pelayananpublik.png",
         ]);
     }
 }

@@ -41,7 +41,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                            <li><a class="dropdown-item" href="/logout">Sign out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,19 +65,12 @@
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- Slides -->
+                                    @foreach ($kategori as $temp)
                                     <div class="swiper-slide">
-                                        <img src="img/Pelayananpublik.png" alt="" class="slide-image">
+                                        <a href="beranda/{{ $temp->slug }}"><img src="{{ $temp->img_file_path }}" alt="" class="slide-image"></a>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <img src="img/Pelayananpublik.png" alt="" class="slide-image">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="img/Pelayananpublik.png" alt="" class="slide-image">
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="img/Pelayananpublik.png" alt="" class="slide-image">
-                                    </div>
-
+                                    @endforeach
+                                    
                                 </div>
                                 <!-- If we need pagination -->
                                 <!-- <div class="swiper-pagination"></div> -->
@@ -110,7 +103,7 @@
                                         </div>
                                         <div class="content-field-lokasi d-flex flex-column">
                                             @foreach ($antrean as $temp)
-                                            <div class="lokasi-wrapper d-flex align-items-center">
+                                            <a href="antrean/{{ $temp->slug }}"><div class="lokasi-wrapper d-flex align-items-center">
                                                 <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                                     <div class="gambar">
                                                         <img src="img/logoAntriedark.png" alt="" width="70px">
@@ -120,7 +113,7 @@
                                                     <h1>{{ $temp->nama_antrean }}</h1>
                                                     <p> {{ $temp->alamat }} </p>
                                                 </div>
-                                            </div>
+                                            </div></a>
                                             @endforeach
                                         </div>
                                     </div>
