@@ -10,17 +10,35 @@
 @endif
 
 @section('container')
-    <h1>Login</h1>
-    <form action="{{ route('signin') }}" method="POST">
-        {{ csrf_field() }}
-        <div class="mb-3">
-          <label for="emailLogin" class="form-label">Alamat Email</label>
-          <input type="email" class="form-control" id="emailLogin" name="emailLogin" aria-describedby="emailHelp">
+    <div class="login-page d-flex justify-content-center align-items-center">
+        <div class="login-content-container d-flex justify-content-center align-items-center">
+            <div class="login-content d-flex justify-content-around align-items-center">
+                <div class="login-first-column d-flex flex-column justify-content-center align-items-center">
+                    <h1>Selamat datang.</h1>
+                    <img src="img/gambarLogin.png" alt="login-gambar" class="img-fluid">
+                </div>
+                <div class="login-second-column d-flex flex-column justify-content-around align-items-center">
+                    <img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid">
+                    <h3>Sign in</h3>
+                    <form action="{{ route('signin') }}" method="POST" class="d-flex flex-column">
+                        {{ csrf_field() }}
+                        <div class="input-email">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailLogin" name="emailLogin">
+                        </div>
+                        <div class="input-password mt-3">
+                            <label for="exampleFormControlInput1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="" name="password">
+                        </div>
+                        <button type="submit" id="tombol-buat-dashboard">Sign in</button>
+                    </form>
+                    <div class="d-flex flex-column align-items-center">
+                        <small><a href="#">Forgot password?</a></small>
+
+                        <p class="mt-3">Belum punya akun?<a href="{{ route('signup') }}">Sign up</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-          <label for="pwdLogin" class="form-label">Password</label>
-          <input type="password" class="form-control" id="pwdLogin" name="pwdLogin">
-        </div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-    </form>
+    </div>
 @endsection
