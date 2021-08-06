@@ -13,4 +13,8 @@ class Kategori extends Model
     protected $fillable = [
         'nama_kategori',
     ];
+
+    public function antrean(){
+        return $this->hasMany(Antrean::class, 'id_kategori');
+    }
 }

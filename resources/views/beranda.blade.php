@@ -52,7 +52,7 @@
                         <div class="first-row d-flex justify-content-between">
                             <div class="first-row-word">
                                 <h1>Halo, {{ session('nama') }}!</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur. </p>
+                                <p>{Lorem ipsum dolor sit amet, consectetur. }</p>
                             </div>
                             <div class="first-row-search">
                                 <input type="text" id="search-tempat-antrean" placeholder="Cari antrian...">
@@ -105,10 +105,11 @@
                                 <div class="col-auto col-md-9">
                                     <div class="field-lokasi d-flex flex-column">
                                         <div class="word-field-lokasi d-flex flex-column">
-                                            <h1>Kesehatan</h1>
-                                            <p>100 lokasi ditemukan</p>
+                                            <h1>{{ $kategori_populer->nama_kategori }}</h1>
+                                            <p>{{ $kategori_populer->antrean_count }} lokasi ditemukan</p>
                                         </div>
                                         <div class="content-field-lokasi d-flex flex-column">
+                                            @foreach ($antrean as $temp)
                                             <div class="lokasi-wrapper d-flex align-items-center">
                                                 <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                                     <div class="gambar">
@@ -116,11 +117,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="keterangan-lokasi">
-                                                    <h1>Puskesmas II Denpasar Barat</h1>
-                                                    <p>Gg. Puskesmas No.3, Pemecutan Klod, Kec. Denpasar Bar., Kota
-                                                        Denpasar, Bali 80119</p>
+                                                    <h1>{{ $temp->nama_antrean }}</h1>
+                                                    <p> {{ $temp->alamat }} </p>
                                                 </div>
                                             </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
