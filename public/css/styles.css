@@ -520,8 +520,21 @@ body {
     background-color: #C4C4C4;
 }
 
+.content-field-lokasi a {
+    text-decoration: none;
+}
+
+.hover-wrapper:hover {
+    background-color: rgba(158, 237, 229, 0.1);
+    border-radius: 30px;
+}
+
+.hover-wrapper {
+    margin-bottom: 1%;
+}
+
 .lokasi-wrapper {
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
     cursor: pointer;
 }
 

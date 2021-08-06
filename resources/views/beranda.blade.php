@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
         <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white coba">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white d-flex justify-content-center coba">
                 <div class="d-flex flex-column align-items-center px-3 pt-5 min-vh-100 navbar-dashboard">
                     <a href="/" class="d-flex align-items-center pb-3 text-decoration-none">
                         <img class="img-fluid" src="img/logoAntriedark.png" alt="">
@@ -66,11 +66,12 @@
                                 <div class="swiper-wrapper">
                                     <!-- Slides -->
                                     @foreach ($kategori as $temp)
-                                    <div class="swiper-slide">
-                                        <a href="beranda/{{ $temp->slug }}"><img src="{{ $temp->img_file_path }}" alt="" class="slide-image"></a>
-                                    </div>
+                                        <div class="swiper-slide">
+                                            <a href="beranda/{{ $temp->slug }}"><img src="{{ $temp->img_file_path }}"
+                                                    alt="" class="slide-image"></a>
+                                        </div>
                                     @endforeach
-                                    
+
                                 </div>
                                 <!-- If we need pagination -->
                                 <!-- <div class="swiper-pagination"></div> -->
@@ -92,7 +93,8 @@
                                         <img src="img/personBuatantrian.png" alt="" width="80%">
                                         <h1>Ayo Buat Antrianmu Sendiri</h1>
                                         <p>Tekan tombol dibawah untuk memulai</p>
-                                        <a href="{{ route('buat-antrean') }}" type="button" id="tombol-buat-dashboard">Buat</a>
+                                        <a href="{{ route('buat-antrean') }}" type="button"
+                                            id="tombol-buat-dashboard">Buat</a>
                                     </div>
                                 </div>
                                 <div class="col-auto col-md-9">
@@ -103,17 +105,21 @@
                                         </div>
                                         <div class="content-field-lokasi d-flex flex-column">
                                             @foreach ($antrean as $temp)
-                                            <a href="antrean/{{ $temp->slug }}"><div class="lokasi-wrapper d-flex align-items-center">
-                                                <div class="logo-lokasi d-flex justify-content-center align-items-center">
-                                                    <div class="gambar">
-                                                        <img src="img/logoAntriedark.png" alt="" width="70px">
-                                                    </div>
+                                                <div class="p-2 hover-wrapper">
+                                                    <a href="antrean/{{ $temp->slug }}"
+                                                        class="lokasi-wrapper d-flex align-items-center">
+                                                        <div
+                                                            class="logo-lokasi d-flex justify-content-center align-items-center">
+                                                            <div class="gambar">
+                                                                <img src="img/logoAntriedark.png" alt="" width="70px">
+                                                            </div>
+                                                        </div>
+                                                        <div class="keterangan-lokasi">
+                                                            <h1>{{ $temp->nama_antrean }}</h1>
+                                                            <p> {{ $temp->alamat }} </p>
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                                <div class="keterangan-lokasi">
-                                                    <h1>{{ $temp->nama_antrean }}</h1>
-                                                    <p> {{ $temp->alamat }} </p>
-                                                </div>
-                                            </div></a>
                                             @endforeach
                                         </div>
                                     </div>
