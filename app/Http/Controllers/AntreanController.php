@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon; 
+use Carbon\Carbon;
 use App\Models\Loket;
 use App\Models\Antrean;
 use App\Models\Kategori;
@@ -15,21 +15,24 @@ use App\Http\Controllers\Controller;
 class AntreanController extends Controller
 {
 
-    public function show(Antrean $antrean){
+    public function show(Antrean $antrean)
+    {
         return view('antrean', [
-            'title'=>$antrean->nama_antrean,
-            'antrean'=>$antrean
+            'title' => $antrean->nama_antrean,
+            'antrean' => $antrean
         ]);
     }
 
-    public function konfirmasiAntrean($antrean, Loket $loket){
+    public function konfirmasiAntrean($antrean, Loket $loket)
+    {
         return view('ambilNomorAntrean', [
             'title' => "Konfirmasi Antrean",
-            'loket'=>$loket
+            'loket' => $loket
         ]);
     }
 
-    public function formPembuatanAntrean(){
+    public function formPembuatanAntrean()
+    {
         if (session()->has('ID_pengguna')) {
             return view('buatAntrean', [
                 'title' => "Buat Antrean",
@@ -40,7 +43,8 @@ class AntreanController extends Controller
         }
     }
     // Function that is used to generate unique slug for each loket
-    public function generateSlugLoket($nama){
+    public function generateSlugLoket($nama)
+    {
         $slug = Str::slug($nama, '-');
         $i = 2;
         // Can be optimized by finding the latest antrean and adding one to it if it has the same slug
@@ -52,7 +56,8 @@ class AntreanController extends Controller
     }
 
     // Function that is used to generate unique slug for each antrean
-    public function generateSlugAntrean($nama){
+    public function generateSlugAntrean($nama)
+    {
         $slug = Str::slug($nama, '-');
         $i = 2;
         // Can be optimized by finding the latest antrean and adding one to it if it has the same slug
@@ -63,10 +68,11 @@ class AntreanController extends Controller
         return $slug;
     }
 
-    public function buatRecordAntrean(Request $request){
+    public function buatRecordAntrean(Request $request)
+    {
         // Saving image file path
         $file_path_img = null;
-        if($request->hasFile('gambarAntrean')){
+        if ($request->hasFile('gambarAntrean')) {
             $path = $request->file('gambarAntrean')->store('pictures');
             $temp = explode('/', $path); // Getting the image name after the name is modified
             $file_path_img = $temp[1];
@@ -74,57 +80,57 @@ class AntreanController extends Controller
         $slug = self::generateSlugAntrean($request->namaAntrean);
         // Creating antrean record
         $antrean = Antrean::create([
-            "nama_antrean"=> $request->namaAntrean,
-            "deskripsi"=> $request->deskripsiAntrean,
-            "provinsi"=> $request->provinsiAntrean,
-            "alamat"=> $request->alamatAntrean,
-            "nomor_telepon"=> $request->teleponAntrean,
-            "waktu_buka"=> $request->jamBuka,
-            "waktu_tutup"=> $request->jamTutup,
-            "file_path_img"=> $file_path_img,
-            "id_pembuat"=> $request->session()->get('ID_pengguna'),
-            "id_kategori"=> $request->kategoriAntrean,
-            "slug"=> $slug,
+            "nama_antrean" => $request->namaAntrean,
+            "deskripsi" => $request->deskripsiAntrean,
+            "provinsi" => $request->provinsiAntrean,
+            "alamat" => $request->alamatAntrean,
+            "nomor_telepon" => $request->teleponAntrean,
+            "waktu_buka" => $request->jamBuka,
+            "waktu_tutup" => $request->jamTutup,
+            "file_path_img" => $file_path_img,
+            "id_pembuat" => $request->session()->get('ID_pengguna'),
+            "id_kategori" => $request->kategoriAntrean,
+            "slug" => $slug,
         ]);
 
         // Saving attachment file path and creating the record for each attachment
-        if($request->hasFile('attachmentAntrean'))
-        {
+        if ($request->hasFile('attachmentAntrean')) {
             $files = $request->file('attachmentAntrean');
             foreach ($files as $file) {
                 $path = $file->store('attachment');
                 $temp = explode('/', $path);    // Getting the attachment name
                 AttachmentAntrean::create([
-                    'id_antrean'=> $antrean->id,
-                    'file_path_attachment'=>$temp[1]
+                    'id_antrean' => $antrean->id,
+                    'file_path_attachment' => $temp[1]
                 ]);
             }
         }
-        
+
         // Create loket
-        
-        for ($i=1; $i < 6; $i++) { 
+
+        for ($i = 1; $i < 6; $i++) {
             $nama_loket = 'loket' . $i;
-            if($request->$nama_loket != null) {
+            if ($request->$nama_loket != null) {
                 $slug_loket = self::generateSlugLoket($request->$nama_loket);
                 $kapasitas = 'kapasitasLoket' . $i;
                 $jam_buka = 'jamBukaLoket' . $i;
                 $jam_tutup = 'jamTutupLoket' . $i;
                 Loket::create([
-                    'nama_loket'=>$request->$nama_loket,
-                    'jumlah_pengantre_maks'=>$request->$kapasitas,
+                    'nama_loket' => $request->$nama_loket,
+                    'jumlah_pengantre_maks' => $request->$kapasitas,
                     'waktu_buka' => $request->$jam_buka,
                     'waktu_tutup' => $request->$jam_tutup,
-                    'estimasi_waktu_tunggu'=>null,
+                    'estimasi_waktu_tunggu' => null,
                     'status' => 'closed',
-                    'antrean_id'=>$antrean->id,
-                    'slug'=>$slug_loket,
+                    'antrean_id' => $antrean->id,
+                    'slug' => $slug_loket,
                 ]);
             }
         }
     }
-    
-    public function bukaLoket($id){
+
+    public function bukaLoket($id)
+    {
         $loket = Loket::where('id', "=", $id)->first();;
         if ($loket) {
             $curr_time = Carbon::now();
@@ -136,7 +142,8 @@ class AntreanController extends Controller
         return redirect()->route('');
     }
 
-    public function tutupLoket($id){
+    public function tutupLoket($id)
+    {
         $loket = Loket::where('id', "=", $id)->first();
         if ($loket) {
             $loket->status = 'closed';
@@ -144,29 +151,30 @@ class AntreanController extends Controller
         }
     }
 
-    public function ambilAntrean($antrean, Loket $loket){
+    public function ambilAntrean($antrean, Loket $loket)
+    {
         // see if there are already a queue for the current batch
         $riwayat = RiwayatAntrean::with('loket')
-                                    ->where('antrean_id', '=', $loket->antrean->id)
-                                    ->where('loket_id', '=', $loket->id)
-                                    ->where('batch', '=', $loket->batch)
-                                    ->latest()->first();
-        
+            ->where('antrean_id', '=', $loket->antrean->id)
+            ->where('loket_id', '=', $loket->id)
+            ->where('batch', '=', $loket->batch)
+            ->latest()->first();
+
         // if there aren't, give 1 as the nomor antrean
         // else, add one to the latest nomor antrean
         // dd($riwayat);
-        if($riwayat){
+        if ($riwayat) {
             $nomor_antrean = $riwayat->nomor_antrean;
-            $nomor_antrean = $nomor_antrean+1;
+            $nomor_antrean = $nomor_antrean + 1;
             // if the number is the same as the limit, then close the 'loket'
-            if($nomor_antrean == $riwayat->loket->jumlah_pengantre_maks) {
+            if ($nomor_antrean == $riwayat->loket->jumlah_pengantre_maks) {
                 $riwayat->loket->status = 'closed';
                 $riwayat->save();
             }
         } else {
             $nomor_antrean = 1;
         }
-        
+
         RiwayatAntrean::create([
             'pengguna_id' => session()->get('ID_pengguna'),
             'antrean_id' => $loket->antrean->id,
@@ -177,20 +185,59 @@ class AntreanController extends Controller
         ]);
     }
 
-    public function showKonfigurasiLoket($slug, Loket $loket){
-        $antrean = RiwayatAntrean::where('loket_id', '=', $loket->id)->where('status', '=', 'waiting')->orderBy('id', 'ASC')->first();
+    public function showKonfigurasiLoket($slug, Loket $loket)
+    {
+        $antrean = RiwayatAntrean::where('loket_id', '=', $loket->id)
+            ->where('status', '=', 'waiting')
+            ->orderBy('id', 'ASC')
+            ->first();
+        if (is_null($antrean)) {
+            $antrean_di_belakang = RiwayatAntrean::where('loket_id', '=', $loket->id)
+                ->where('status', '=', 'waiting')
+                ->count();
+        } else {
+            $antrean_di_belakang = RiwayatAntrean::where('loket_id', '=', $loket->id)
+                ->where('status', '=', 'waiting')
+                ->where('id', '!=', $antrean->id)
+                ->count();
+        }
+
         return view('konfigurasiLoket', [
             'title' => "Konfigurasi Loket " . $loket->nama_loket,
             'loket' => $loket,
             'antrean' => $antrean,
+            'jumlah_antrean_di_belakang' => $antrean_di_belakang,
         ]);
     }
 
-    public function majukanAntrean(Request $request){
+    public function majukanAntrean(Request $request)
+    {
         $antrean = RiwayatAntrean::where('id', '=', $request->id)->first();
         $antrean->status = "served";
         $antrean->save();
+    }
 
+    public function ambilAntreanBerikutnya($id_loket)
+    {
+        $antrean = RiwayatAntrean::where('loket_id', '=', $id_loket)
+            ->where('status', '=', 'waiting')
+            ->orderBy('id', 'ASC')
+            ->first();
         return response()->json($antrean);
+    }
+
+    public function autoUpdateJumlahAntrean(Request $request)
+    {
+        if ($request->id != -1) {
+            $antrean_di_belakang = RiwayatAntrean::where('loket_id', '=', $request->id_loket)
+                ->where('status', '=', 'waiting')
+                ->where('id', '!=', $request->id)
+                ->count();
+            return response()->json($antrean_di_belakang);
+        }
+        $antrean_di_belakang = RiwayatAntrean::where('loket_id', '=', $request->id_loket)
+            ->where('status', '=', 'waiting')
+            ->count();
+        return response()->json($antrean_di_belakang);
     }
 }

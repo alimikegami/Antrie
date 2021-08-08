@@ -38,6 +38,8 @@ Route::get('/antreanku', [BerandaController::class, 'showAntreanku'])->name('ant
 Route::get('/buka-loket/{id}', [AntreanController::class, 'bukaLoket'])->name('bukaLoket');
 Route::get('/tutup-loket/{id}', [AntreanController::class, 'tutupLoket'])->name('tutupLoket');
 Route::get('/antreanku/antrean/{slug}/loket/{loket:slug}', [AntreanController::class, 'showKonfigurasiLoket'])->name('konfigurasiAntrean');
+Route::get('/ambil-antrean-baru/{id}', [AntreanController::class, 'ambilAntreanBerikutnya'])->name('ambil-antrean-baru');
+Route::get('/hitung-antrean-di-belakang', [AntreanController::class, 'autoUpdateJumlahAntrean']);
 
 // POST route
 

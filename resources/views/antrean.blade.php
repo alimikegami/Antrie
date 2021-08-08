@@ -2,7 +2,12 @@
 
 
 @section('container')
-    <h1>{{ $antrean->nama_antrean }}</h1>
+    @if ($antrean->nama_antrean)
+        <h1>{{ $antrean->nama_antrean }}</h1>
+    @else
+        <h1>Tidak ada antrean berikutnya</h1>
+    @endif
+    
     <hr>
     @foreach ($antrean->loket as $temp)
         <h2>{{ $temp->nama_loket }}</h2>
