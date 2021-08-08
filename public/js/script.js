@@ -1,5 +1,10 @@
 $(document).ready(function() {
-	// $('#fullpage').fullpage({
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });	
+  // $('#fullpage').fullpage({
 	// 	//options here
 	// 	autoScrolling:true,
     //     controlArrows: true,
@@ -62,8 +67,31 @@ $(document).ready(function() {
 
     $('#tombol-filter').on('click', ()=>{
       $('#exampleModal').modal('toggle');
-    })
+    });
 
+    window.updateAntrean = function(id){
+      $('#idRiwayatAntrean').val(id);
+      $('#modalKonfirmasiAntrean').modal('show');
+    };
+
+    $("#formKonfirmasiAntrean").submit(function(event){
+      event.preventDefault();
+      
+      let id = $('#idRiwayatAntrean').val();
+      console.log(id);
+      $.ajax({
+          url:"/perbaharui-antrean",
+          type:"PUT",
+          data:{
+            id:id          
+          },
+          success:function(){
+            
+          }
+      });
+
+      $('#modalKonfirmasiAntrean').modal('hide');
+  });
 });
 
 $( window ).ready(function() {
@@ -123,3 +151,5 @@ $( window ).ready(function() {
     slidesPerView: 'auto',
     spaceBetween: 40,
   });
+
+  

@@ -9,7 +9,7 @@
         <p>Waktu Buka: {{ $temp->waktu_buka }}</p>
         <p>Waktu Tutup: {{ $temp->waktu_tutup }}</p>
         @if ($temp->status == "open")
-            <a type="button" class="btn btn-primary" href="/konfirmasi-antrean/{{ $antrean->slug }}/loket/{{ $temp->slug }}">
+            <a type="button" class="btn btn-primary" href="/konfirmasi-antrean/{{ $antrean->slug }}/loket/{{ $temp->slug }}/ambil-nomor">
                 Ambil Antrean
             </a>
         @endif

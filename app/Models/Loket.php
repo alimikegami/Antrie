@@ -27,4 +27,8 @@ class Loket extends Model
     public function antrean(){
         return $this->belongsTo(Antrean::class);
     }
+
+    public function RiwayatAntrean(){
+        return $this->hasMany(RiwayatAntrean::class, 'loket_id');
+    }
 }

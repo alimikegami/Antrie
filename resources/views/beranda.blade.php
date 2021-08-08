@@ -16,7 +16,7 @@
                                 <i class="bi bi-house"></i><a href="#">Beranda</a>
                             </div>
                             <div class="menu-antrian menu ">
-                                <i class="bi bi-archive"></i><a href="#">Antrian ku</a>
+                                <i class="bi bi-archive"></i><a href="{{ route('antreanku') }}">Antrian ku</a>
                             </div>
                             <div class="menu-pesan menu">
                                 <i class="bi bi-chat-left-text"></i><a href="#">Pesan</a>

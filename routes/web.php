@@ -29,14 +29,21 @@ Route::get('/login', [LogInController::class, 'index'])->name('login');
 Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda');
 Route::get('/verify', [SignUpController::class, 'verify'])->name('verify');
 Route::get('/konfirmasi-antrean/{nama_antrean}/loket/{loket:slug}', [AntreanController::class, 'konfirmasiAntrean'])->name('konfirmasi-antrean');
+Route::get('/konfirmasi-antrean/{nama_antrean}/loket/{loket:slug}/ambil-nomor', [AntreanController::class, 'ambilAntrean'])->name('ambil-antrean');
 Route::get('/buat-antrean', [AntreanController::class, 'formPembuatanAntrean'])->name('buat-antrean');
 Route::get('/antrean/{antrean:slug}', [AntreanController::class, 'show']);
 Route::get('/beranda/{kategori:slug}', [BerandaController::class, 'showAntreanBasedOnCategories']);
 Route::get('/logout', [LogInController::class, 'logout'])->name('logout');
-
+Route::get('/antreanku', [BerandaController::class, 'showAntreanku'])->name('antreanku');
+Route::get('/buka-loket/{id}', [AntreanController::class, 'bukaLoket'])->name('bukaLoket');
+Route::get('/tutup-loket/{id}', [AntreanController::class, 'tutupLoket'])->name('tutupLoket');
+Route::get('/antreanku/antrean/{slug}/loket/{loket:slug}', [AntreanController::class, 'showKonfigurasiLoket'])->name('konfigurasiAntrean');
 
 // POST route
 
 Route::post('/register', [SignUpController::class, 'signUp'])->name('store');
 Route::post('/signin', [LoginController::class, 'signIn'])->name('signin');
 Route::post('/buat-record-antrean', [AntreanController::class, 'buatRecordAntrean'])->name('buat-record-antrean');
+
+// PUT route
+Route::put('/perbaharui-antrean', [AntreanController::class, 'majukanAntrean'])->name('perbaharui.antrean');

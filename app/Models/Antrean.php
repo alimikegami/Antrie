@@ -44,4 +44,8 @@ class Antrean extends Model
     public function pengguna(){
         return $this->belongsTo(Pengguna::class, 'id_pembuat');
     }
+
+    public function RiwayatAntrean(){
+        return $this->hasMany(RiwayatAntrean::class, 'antrean_id');
+    }
 }

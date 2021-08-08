@@ -124,48 +124,73 @@ class AntreanController extends Controller
         }
     }
     
-    public function bukaLoket(Request $request){
-        $loket = Loket::where('id', "=", $request->id_loket);
+    public function bukaLoket($id){
+        $loket = Loket::where('id', "=", $id)->first();;
         if ($loket) {
             $curr_time = Carbon::now();
             $loket->batch = $curr_time->toDateTimeString();
             $loket->status = 'open';
             $loket->save();
         }
+
+        return redirect()->route('');
     }
 
-    public function tutupLoket(Request $request){
-        $loket = Loket::where('id', "=", $request->id_loket);
+    public function tutupLoket($id){
+        $loket = Loket::where('id', "=", $id)->first();
         if ($loket) {
             $loket->status = 'closed';
             $loket->save();
         }
     }
 
-    public function ambilAntrean(Request $req){
+    public function ambilAntrean($antrean, Loket $loket){
         // see if there are already a queue for the current batch
-        $antrean = RiwayatAntrean::where('antrean_id', '=', $req->idAntrean)
-                                    ->where('loket_id', '=', $req->idLoket)
-                                    ->where('batch', '=', $req->batch)
-                                    ->latest();
+        $riwayat = RiwayatAntrean::with('loket')
+                                    ->where('antrean_id', '=', $loket->antrean->id)
+                                    ->where('loket_id', '=', $loket->id)
+                                    ->where('batch', '=', $loket->batch)
+                                    ->latest()->first();
         
         // if there aren't, give 1 as the nomor antrean
         // else, add one to the latest nomor antrean
-        if($antrean){ 
-            $nomor_antrean = $antrean->nomor_antrean;
+        // dd($riwayat);
+        if($riwayat){
+            $nomor_antrean = $riwayat->nomor_antrean;
             $nomor_antrean = $nomor_antrean+1;
+            // if the number is the same as the limit, then close the 'loket'
+            if($nomor_antrean == $riwayat->loket->jumlah_pengantre_maks) {
+                $riwayat->loket->status = 'closed';
+                $riwayat->save();
+            }
         } else {
             $nomor_antrean = 1;
         }
         
         RiwayatAntrean::create([
-            'pengguna_id' => $req->session()->get('ID_pengguna'),
-            'antrean_id' => $req->idAntrean,
-            'loket_id' => $req->loketId,
-            'batch' => $req->batch,
+            'pengguna_id' => session()->get('ID_pengguna'),
+            'antrean_id' => $loket->antrean->id,
+            'loket_id' => $loket->id,
+            'batch' => $loket->batch,
             'nomor_antrean' => $nomor_antrean,
             'status' => 'waiting',
         ]);
+    }
 
+    public function showKonfigurasiLoket($slug, Loket $loket){
+        $antrean = RiwayatAntrean::where('loket_id', '=', $loket->id)->where('status', '=', 'waiting')->orderBy('id', 'ASC')->first();
+        return view('konfigurasiLoket', [
+            'title' => "Konfigurasi Loket " . $loket->nama_loket,
+            'loket' => $loket,
+            'antrean' => $antrean,
+        ]);
+    }
+
+    public function majukanAntrean(Request $request){
+        $antrean = RiwayatAntrean::where('id', '=', $request->id)->first();
+        $antrean->status = "served";
+        $antrean->save();
+
+        return response()->json($antrean);
     }
 }

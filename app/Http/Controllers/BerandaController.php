@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Antrean;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BerandaController extends Controller
 {
@@ -29,5 +30,17 @@ class BerandaController extends Controller
         } else {
             return redirect()->route('landingpage');
         }
+    }
+
+    public function showAntreanku(){
+        if (session()->has('ID_pengguna')) {
+            return view('antreanku', [
+                'title' => "Antreanku",
+                'antrean' => Antrean::with('loket')->where('id_pembuat', '=', session('ID_pengguna'))->get(),
+            ]);
+        } else {
+            return redirect()->route('landingpage');
+        }
+        return view('antreanku');
     }
 }
