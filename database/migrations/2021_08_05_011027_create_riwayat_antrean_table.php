@@ -20,7 +20,7 @@ class CreateRiwayatAntreanTable extends Migration
             $table->unsignedBigInteger("loket_id");
             $table->dateTime("batch");
             $table->unsignedInteger("nomor_antrean");
-            $table->enum("status", ['served', 'serving', 'waiting']);
+            $table->enum("status", ['served', 'canceled', 'waiting']);
             $table->timestamps();
         });
     }
