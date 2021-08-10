@@ -46,6 +46,7 @@ Route::get('/hitung-antrean-di-belakang', [AntreanController::class, 'autoUpdate
 Route::post('/register', [SignUpController::class, 'signUp'])->name('store');
 Route::post('/signin', [LoginController::class, 'signIn'])->name('signin');
 Route::post('/buat-record-antrean', [AntreanController::class, 'buatRecordAntrean'])->name('buat-record-antrean');
+Route::post('/submit-antrean-offline', [AntreanController::class, 'submitAntreanOffline']);
 
 // PUT route
 Route::put('/perbaharui-antrean', [AntreanController::class, 'majukanAntrean'])->name('perbaharui.antrean');

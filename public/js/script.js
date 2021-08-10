@@ -106,6 +106,12 @@ $(document).ready(function () {
         $("#modalKonfirmasiAntrean").modal("show");
     });
 
+    $('#tambahAntreanOffline').on("click", ()=>{
+        let id_loket = $("#inputLoketId").val();
+        $('#idLoketOffline').val(id_loket);
+        $("#modalAntreanOffline").modal("show");
+    })
+
     // window.updateAntrean = function(id, id_loket){
     //   $('#idRiwayatAntrean111').val(id);
     //   $('#idLoket').val(id_loket);
@@ -147,7 +153,16 @@ $(document).ready(function () {
     }
 
     function ambilNomorAntreanOffline(id_loket){
-        
+        $.ajax({
+            url: "/submit-antrean-offline",
+            type: "POST",
+            data: {
+                id_loket: id_loket,
+            },
+            success: function() {
+                console.log('Sukses');
+            },
+        });
     }
 
     $("#formKonfirmasiAntrean").submit(function (event) {
@@ -163,6 +178,13 @@ $(document).ready(function () {
         }
 
         $("#modalKonfirmasiAntrean").modal("hide");
+    });
+
+    $("#formAntreanOffline").submit(function (event) {
+        event.preventDefault();
+        let id_loket = $("#idLoketOffline").val();
+        ambilNomorAntreanOffline(id_loket);
+        $("#modalAntreanOffline").modal("hide");
     });
 });
 

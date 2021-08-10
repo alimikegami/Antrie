@@ -151,8 +151,7 @@ class AntreanController extends Controller
         }
     }
 
-    public function ambilAntrean($antrean, Loket $loket)
-    {
+    public function tentukanNomorAntrean($loket){
         // see if there are already a queue for the current batch
         $riwayat = RiwayatAntrean::with('loket')
             ->where('antrean_id', '=', $loket->antrean->id)
@@ -174,6 +173,13 @@ class AntreanController extends Controller
         } else {
             $nomor_antrean = 1;
         }
+
+        return $nomor_antrean;
+    }
+
+    public function ambilAntrean($antrean, Loket $loket)
+    {
+        $nomor_antrean = $this->tentukanNomorAntrean($loket);
 
         RiwayatAntrean::create([
             'pengguna_id' => session()->get('ID_pengguna'),
@@ -239,5 +245,22 @@ class AntreanController extends Controller
             ->where('status', '=', 'waiting')
             ->count();
         return response()->json($antrean_di_belakang);
+    }
+
+    public function submitAntreanOffline(Request $request)
+    {
+        $loket = Loket::with('antrean')
+                        ->where('id', '=', $request->id_loket)
+                        ->get()->first();
+        $nomor_antrean = $this->tentukanNomorAntrean($loket);
+        $antrean = RiwayatAntrean::create([
+            'pengguna_id' => 1,
+            'antrean_id' => $loket->antrean->id,
+            'loket_id' => $loket->id,
+            'batch' => $loket->batch,
+            'nomor_antrean' => $nomor_antrean,
+            'status' => 'waiting',
+        ]);
+        return response()->json($antrean);
     }
 }
