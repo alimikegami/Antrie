@@ -27,7 +27,7 @@ Route::get('/', function () {
 Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
 Route::get('/login', [LogInController::class, 'index'])->name('login');
 Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda');
-Route::get('/verify', [SignUpController::class, 'verify'])->name('verify');
+Route::get('/verify/{code}', [SignUpController::class, 'verify'])->name('verify');
 Route::get('/konfirmasi-antrean/{nama_antrean}/loket/{loket:slug}', [AntreanController::class, 'konfirmasiAntrean'])->name('konfirmasi-antrean');
 Route::get('/konfirmasi-antrean/{nama_antrean}/loket/{loket:slug}/ambil-nomor', [AntreanController::class, 'ambilAntrean'])->name('ambil-antrean');
 Route::get('/buat-antrean', [AntreanController::class, 'formPembuatanAntrean'])->name('buat-antrean');

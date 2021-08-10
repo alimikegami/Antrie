@@ -29,9 +29,8 @@ class SignUpController extends Controller {
         return redirect('signup');
     }
 
-    public function verify(Request $request){
-        $auth_code = \Illuminate\Support\Facades\Request::get('code');
-        $user = Pengguna::where(['verification_code' => $auth_code])->first();
+    public function verify($code){
+        $user = Pengguna::where(['verification_code' => $code])->first();
         if($user != null) {
             $user->email_verified_at = \Carbon\Carbon::now()->toDateTimeString();
             $user->save();

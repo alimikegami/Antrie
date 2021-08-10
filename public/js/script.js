@@ -146,6 +146,10 @@ $(document).ready(function () {
         });
     }
 
+    function ambilNomorAntreanOffline(id_loket){
+        
+    }
+
     $("#formKonfirmasiAntrean").submit(function (event) {
         event.preventDefault();
         let id = $("#idRiwayatAntrean111").val();
