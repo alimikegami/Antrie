@@ -2,24 +2,7 @@
 
 
 @section('container')
-    @if ($antrean->nama_antrean)
-        <h1>{{ $antrean->nama_antrean }}</h1>
-    @else
-        <h1>Tidak ada antrean berikutnya</h1>
-    @endif
 
-    <hr>
-    @foreach ($antrean->loket as $temp)
-        <h2>{{ $temp->nama_loket }}</h2>
-        <p>Waktu Buka: {{ $temp->waktu_buka }}</p>
-        <p>Waktu Tutup: {{ $temp->waktu_tutup }}</p>
-        @if ($temp->status == 'open')
-            <a type="button" class="btn btn-primary"
-                href="/konfirmasi-antrean/{{ $antrean->slug }}/loket/{{ $temp->slug }}/ambil-nomor">
-                Ambil Antrean
-            </a>
-        @endif
-    @endforeach
 
     <div class="container-fluid">
         <div class="row flex-nowrap">
@@ -50,7 +33,7 @@
                             id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
                                 class="rounded-circle">
-                            <span class="d-none d-sm-inline mx-1">loser</span>
+                            <span class="d-none d-sm-inline mx-1">{{ session('nama') }}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                             <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -75,13 +58,12 @@
                                     </div>
                                 </div>
                                 <div class="keterangan-lokasi">
-                                    <h1>Puskesmas II Denpasar Barat</h1>
-                                    <p>Gg. Puskesmas No.3, Pemecutan Klod, Kec. Denpasar Bar., Kota Denpasar, Bali 80119</p>
+                                    <h1>{{ $antrean->nama_antrean }}</h1>
+                                    <p>G{{ $antrean->alamat }}</p>
                                 </div>
                             </div>
                             <div class="deskripsi-attactment mt-3">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae incidunt aliquid eius vero
-                                    velit nesciunt amet exercitationem pariatur, dignissimos veritatis.</p>
+                                <p>{{ $antrean->deskripsi }}</p>
                                 <a href="/images/myw3schoolsimage.jpg" download>
                                     attactment.pdf
                                 </a>
@@ -91,22 +73,31 @@
 
                     <div class="field-lokasi-all d-flex flex-column">
                         <div class="content-field-lokasi d-flex flex-column">
-                            <div class="p-2 hover-wrapper">
-                                <div class="lokasi-wrapper d-flex align-items-center">
-                                    <div class="logo-lokasi d-flex justify-content-center align-items-center">
-                                        <div class="gambar">
-                                            <img src="img/logoAntriedark.png" alt="" width="70px">
+                            @php
+                                $i = 0;
+                            @endphp
+                            @foreach ($antrean->loket as $temp)
+                                <div class="p-2 hover-wrapper">
+                                    <div class="lokasi-wrapper d-flex align-items-center">
+                                        <div class="logo-lokasi d-flex justify-content-center align-items-center">
+                                            <div class="gambar">
+                                                <img src="img/logoAntriedark.png" alt="" width="70px">
+                                            </div>
+                                        </div>
+                                        <div class="keterangan-loket">
+                                            <h1>{{ $temp->nama_loket }}</h1>
+                                            <p class="d-flex justify-content-between">{{ $temp->waktu_buka }} - {{ $temp->waktu_tutup }} <span
+                                                    class="badge {{ $temp->status }}">{{ $temp->status }}</span></p>
+                                            
+                                            <p>Terdapat <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda</p>
+                                            <button type="button" id="tombol-ambil-antrian" class="btn">Ambil Nomor</button>
+                                            @php
+                                                $i = $i + 1;
+                                            @endphp
                                         </div>
                                     </div>
-                                    <div class="keterangan-loket">
-                                        <h1>Loket 1</h1>
-                                        <p class="d-flex justify-content-between">07:00 - 12:00 Siang <span
-                                                class="badge open">Open</span></p>
-                                        <p>Terdapat <span>5</span> antrian di depan anda</p>
-                                        <button type="button" id="tombol-ambil-antrian" class="btn">Ambil Nomor</button>
-                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 

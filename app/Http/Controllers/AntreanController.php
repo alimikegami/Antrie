@@ -17,9 +17,21 @@ class AntreanController extends Controller
 
     public function show(Antrean $antrean)
     {
+        $antrean_di_depan = [];
+        $antrean = Antrean::with('loket')
+                            ->where('id', '=', $antrean->id)
+                            ->get()->first();
+        foreach($antrean->loket as $temp) {
+            $antrean_di_depan[] = RiwayatAntrean::where('loket_id', '=', $temp->id)
+                                                ->where('status', '=', 'waiting')
+                                                ->count();
+
+        }
+        
         return view('antrean', [
             'title' => $antrean->nama_antrean,
-            'antrean' => $antrean
+            'antrean' => $antrean,
+            'antrean_di_depan' => $antrean_di_depan
         ]);
     }
 
