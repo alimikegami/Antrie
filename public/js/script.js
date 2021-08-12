@@ -56,42 +56,64 @@ $(document).ready(function () {
     // });
 
     // homepage kelebihan pengantre dan pembuat antrean
-    $("#kelebihan-pembuat-antrean").on("click", () => {
-        $(".word-pembuat-antrean ul").slideToggle();
-        $("#tambah-pembuat-antrean").toggleClass("fa-plus fa-minus");
+    $('#kelebihan-pembuat-antrean').on('click', ()=>{
+        $('.word-pembuat-antrean ul').slideToggle();
+        $('#tambah-pembuat-antrean').toggleClass('fa-plus fa-minus');
     });
 
-    $("#kelebihan-pengantre").on("click", () => {
-        $(".word-pengantre ul").slideToggle();
-        $("#tambah-pengantre").toggleClass("fa-plus fa-minus");
+    $('#kelebihan-pengantre').on('click', ()=>{
+        $('.word-pengantre ul').slideToggle();
+        $('#tambah-pengantre').toggleClass('fa-plus fa-minus');
     });
 
     // card flip homepage
-    $(".kemudahan-kenapa-pilih").flip();
-    $(".kecepatan-kenapa-pilih").flip();
-    $(".fleksibilitas-kenapa-pilih").flip();
+    $('.kemudahan-kenapa-pilih').flip();
+    $('.kecepatan-kenapa-pilih').flip();
+    $('.fleksibilitas-kenapa-pilih').flip();
+
 
     // menu pengguna
-    $(".menu-dashboard").on("click", function () {
-        $(".menu").removeClass("selected");
-        $(this).addClass("selected");
+    $('.menu-dashboard').on('click', function(){
+        $('.menu').removeClass('selected');
+        $(this).addClass('selected');
     });
-    $(".menu-antrian").on("click", function () {
-        $(".menu").removeClass("selected");
-        $(this).addClass("selected");
+    $('.menu-antrian').on('click', function(){
+        $('.menu').removeClass('selected');
+        $(this).addClass('selected');
     });
-    $(".menu-pesan").on("click", function () {
-        $(".menu").removeClass("selected");
-        $(this).addClass("selected");
+    $('.menu-pesan').on('click', function(){
+        $('.menu').removeClass('selected');
+        $(this).addClass('selected');
     });
-    $(".menu-profil").on("click", function () {
-        $(".menu").removeClass("selected");
-        $(this).addClass("selected");
+    $('.menu-profil').on('click', function(){
+        $('.menu').removeClass('selected');
+        $(this).addClass('selected');
     });
 
-    $("#tombol-filter").on("click", () => {
-        $("#exampleModal").modal("toggle");
-    });
+    // tombol ambil antrian di klik
+    $('.content-field-lokasi #tombol-ambil-antrian').click(()=>{
+      $('#modal-ambil-nomor').modal('show');
+    })
+
+    // tombol menu halaman antrianku
+    $('.menu-pengantri').click(function(){
+      $(this).addClass('menu-antrianku-active');
+      $('.menu-buat-antrian').removeClass('menu-antrianku-active');
+      $('.content-field-pemilik-antrian').hide();
+      $('#content-tunggu-antrian').show();
+    })
+    $('.menu-buat-antrian').click(function(){
+      $(this).addClass('menu-antrianku-active');
+      $('.menu-pengantri').removeClass('menu-antrianku-active');
+      $('#content-tunggu-antrian').hide();
+      $('.content-field-pemilik-antrian').show();
+    })
+
+    if ($('.menu-pengantri').hasClass('menu-antrianku-active')) {
+      $('.content-field-pemilik-antrian').hide();
+    }else if ($('.menu-buat-antrian').hasClass('menu-antrianku-active')){
+      $('#content-tunggu-antrian').hide();
+    }
 
     $("#panggilAntrean").on("click", () => {
         let id = $("#inputRiwayatAntreanId").val();
