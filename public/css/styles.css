@@ -36,9 +36,9 @@ body {
 }
 
 /* .home-first {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
 } */
 
 .home-first h1 {
@@ -83,7 +83,7 @@ body {
 }
 
 /* .s2 {
-    background-color: #4DB0FF;
+background-color: #4DB0FF;
 } */
 
 /* section 3 home page */
@@ -204,7 +204,7 @@ body {
     width: 242px;
     height: 206px;
     /* background-color: #2C5F2D;
-    border-radius: 20px; */
+border-radius: 20px; */
     color: #FFFFFF;
     cursor: pointer;
 }
@@ -376,15 +376,33 @@ body {
     background-color: #FFFFFF;
     color: #000000;
     border-style: solid;
-    border-radius: 21px;
+    border-top-left-radius: 21px;
+    border-bottom-left-radius: 21px;
     outline: none;
     width: 100%;
+    /* vertical-align: middle; */
 }
 
 .first-row-search {
     width: 25%;
+    height: 10%;
     /* margin-right: 30%; */
 }
+
+#search-button {
+    height: 100%;
+    padding: 10px;
+    border-top-right-radius: 21px;
+    border-bottom-right-radius: 21px;
+    background-color: #ffffff;
+    border: none;
+}
+
+#search-button:active {
+    /* position: relative; */
+    font-size: small;
+}
+
 
 /* row 2 dahsbord */
 /* slider kategori */
@@ -492,6 +510,10 @@ body {
 }
 
 /* content lokasi antrian */
+.word-field-lokasi {
+    height: 15%;
+}
+
 .word-field-lokasi h1 {
     color: #2B2844;
     font-weight: bold;
@@ -533,6 +555,10 @@ body {
     margin-bottom: 1%;
 }
 
+.hover-wrapper a {
+    text-decoration: none;
+}
+
 .lokasi-wrapper {
     /* margin-bottom: 2%; */
     cursor: pointer;
@@ -561,6 +587,11 @@ body {
     font-size: 0.8vw;
 }
 
+.deskripsi-attactment p {
+    color: #73848C;
+    font-size: 0.8vw;
+}
+
 /* all lokasi */
 .field-lokasi-all {
     background-color: #FFFFFF;
@@ -569,6 +600,20 @@ body {
     padding: 5%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+    overflow: auto;
+}
+
+.field-lokasi-all::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+.field-lokasi-all::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+.field-lokasi-all::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #C4C4C4;
 }
 
 .filter-area {
@@ -655,4 +700,227 @@ body {
 .login-first-column h1 {
     font-weight: bold;
     color: #2F2D65;
+}
+
+/* modal untuk filter */
+#modal-filter .modal-body-antrian,
+.modal-header-antrian,
+.modal-footer-antrian {
+    background-color: #4dafff;
+}
+
+
+/* pilih loket */
+.loket-lokasi {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 40vh;
+    padding: 5%;
+    border-radius: 30px;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+
+.keterangan-loket {
+    padding-left: 5%;
+}
+
+.keterangan-loket h1 {
+    font-size: 1.5vw;
+    color: #2B2844;
+    font-weight: bold;
+}
+
+.keterangan-loket p {
+    color: #73848C;
+    font-size: 0.8vw;
+}
+
+.keterangan-loket p span {
+    color: #2B2844;
+    font-weight: bold;
+    font-size: 0.8vw;
+}
+
+.keterangan-loket .badge {
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.keterangan-loket .open {
+    background-color: #53D383;
+}
+
+.keterangan-loket .closed {
+    background-color: #FF4D4D;
+}
+
+
+
+#tombol-ambil-antrian {
+    background-color: #4dafff;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px 60px;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+}
+
+#tombol-ambil-antrian:hover {
+    background-color: #6eb8f0;
+}
+
+#tombol-ambil-antrian:active {
+    position: relative;
+    top: 2px;
+}
+
+/* modal ambil nomor antrian */
+.modal-body-loket {
+    background-color: #2B2844;
+    color: #FFFFFF;
+    min-height: 70vh;
+    max-height: 100vh;
+    padding-bottom: 5%;
+}
+
+.modal-body-loket h1 {
+    font-size: 4vw;
+    font-weight: bold;
+    color: #4DB0FF;
+}
+
+#tombol-detail-antrian {
+    background-color: #4dafff;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px 60px;
+    text-decoration: none;
+    border: none;
+    width: 40%;
+}
+
+#tombol-detail-antrian:hover {
+    background-color: #6eb8f0;
+}
+
+#tombol-detail-antrian:active {
+    position: relative;
+    top: 2px;
+}
+
+/* halaman antrianku */
+.antrianku-menu {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-height: 10vh;
+    /* padding: 1%; */
+    border-radius: 30px;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 5vh;
+}
+
+.antrianku-menu button {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-pengantri {
+    width: 100%;
+    height: 100%;
+    padding-top: 1%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.menu-pengantri:hover,
+.menu-buat-antrian:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.menu-antrianku-active {
+    background-color: #4DB0FF;
+}
+
+.menu-antrianku-active:hover {
+    background-color: #4DB0FF;
+    cursor: default;
+}
+
+.menu-buat-antrian {
+    width: 100%;
+    height: 100%;
+    padding-top: 1%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#tombol-ambil-batal-antrian {
+    background-color: #FF4D4D;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: none;
+    width: 30%;
+}
+
+#tombol-ambil-batal-antrian:hover {
+    background-color: #cf2e2e;
+}
+
+#tombol-ambil-batal-antrian:active {
+    position: relative;
+    top: 2px;
+}
+
+.nomor-antrian {
+    width: 100%;
+    text-align: center;
+}
+
+.nomor-antrian p {
+    font-size: 1.1vw;
+    color: #2B2844;
+    font-weight: bold;
+}
+
+.nomor-antrian h1 {
+    font-size: 3vw;
+    color: #4DB0FF;
+    font-weight: bold;
+}
+
+.keterangan-loket-antrianku {
+    padding-left: 5%;
+    width: 100%;
+}
+
+.keterangan-loket-antrianku h1 {
+    font-size: 1.5vw;
+    color: #2B2844;
+    font-weight: bold;
+}
+
+.keterangan-loket-antrianku p {
+    color: #73848C;
+    font-size: 0.8vw;
+}
+
+.keterangan-loket-antrianku p span {
+    color: #2B2844;
+    font-weight: bold;
+    font-size: 0.8vw;
 }
