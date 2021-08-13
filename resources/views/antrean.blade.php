@@ -90,7 +90,8 @@
                                                     class="badge {{ $temp->status }}">{{ $temp->status }}</span></p>
                                             
                                             <p>Terdapat <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda</p>
-                                            <button type="button" id="tombol-ambil-antrian" class="btn">Ambil Nomor</button>
+                                            <button type="button" id="tombol-ambil-antrian-{{ $i }}" class="btn btn-ambil-antrean">Ambil Nomor</button>
+                                            <input id="input-id-loket-{{ $i }}" type="text" value="{{ $temp->slug }}" hidden>
                                             @php
                                                 $i = $i + 1;
                                             @endphp
@@ -98,6 +99,7 @@
                                     </div>
                                 </div>
                             @endforeach
+                            <input type="text" id="slug-antrean" value="{{ $antrean->slug }}" hidden>
                         </div>
                     </div>
 
@@ -152,10 +154,12 @@
                                     </svg>
                                 </div>
                                 <div class="word-modal-no-loket text-center">
-                                    <p>Nomor antrian anda di</p>
-                                    <h2>Puskesmas II Denpasar Barat</h2>
+                                    <p>Nomor antrean anda di</p>
+                                    <h2 class="mb-3" id="nama-antrean-modal"></h2>
+                                    <p>Pada loket</p>
+                                    <h3 id="nama-loket-modal"></h3>
                                 </div>
-                                <h1>002</h1>
+                                <h1 id="nomor-antrean-modal"></h1>
                                 <button type="button" id="tombol-detail-antrian" class="btn">Lihat detail antrian</button>
                             </div>
                         </div>

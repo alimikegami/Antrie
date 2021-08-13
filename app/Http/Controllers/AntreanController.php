@@ -201,6 +201,12 @@ class AntreanController extends Controller
             'nomor_antrean' => $nomor_antrean,
             'status' => 'waiting',
         ]);
+
+        $detail_riwayat_antrean = array('nama_loket' => $loket->nama_loket, 
+                                        'nama_antrean' => $loket->antrean->nama_antrean,
+                                        'nomor_antrean' => $nomor_antrean);
+
+        return response()->json($detail_riwayat_antrean);
     }
 
     public function showKonfigurasiLoket($slug, Loket $loket)

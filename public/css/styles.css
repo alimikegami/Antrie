@@ -757,8 +757,7 @@ border-radius: 20px; */
 }
 
 
-
-#tombol-ambil-antrian {
+.btn-ambil-antrean {
     background-color: #4dafff;
     border-radius: 20px;
     display: inline-block;

@@ -5,30 +5,52 @@ $(document).ready(function () {
         },
     });
 
-    (function updateJumlahAntrean() {
-        let id = $('#inputRiwayatAntreanId').val();
-        let id_loket = $("#inputLoketId").val();
+    $("button").click(function() {
+        id_element = $(this).attr('id');
+        slug_antrean = $('#slug-antrean').val();
+        if(id_element.includes("tombol-ambil-antrian-")){
+            id_next_element = $(this).next().attr('id');
+            slug_loket = $("#" + id_next_element).val();
+            $.ajax({
+                url: "/konfirmasi-antrean/" + slug_antrean + "/loket/" + slug_loket + "/ambil-nomor",
+                type: "GET",
+                success: function (data) {
+                    $('#nomor-antrean-modal').html(data.nomor_antrean);
+                    $('#nama-antrean-modal').html(data.nama_antrean);
+                    $('#nama-loket-modal').html(data.nama_loket);
+                    $('#modal-ambil-nomor').modal('show');
+                },
+            });
+            
+        };
+    });
 
-        if ((id == undefined) && (id == null) && !(id == "")) {
-          id = -1;
-        }
+    // (function updateJumlahAntrean() {
+    //     let id = $('#inputRiwayatAntreanId').val();
+    //     let id_loket = $("#inputLoketId").val();
 
-        $.ajax({
-            url: "/hitung-antrean-di-belakang",
-            data: {
-              id: id,
-              id_loket: id_loket
-            },
-            success: function (data) {
-                $("#jumlahPenunggu").text(data);
-                console.log(id);
-            },
-            complete: function () {
-                // Schedule the next request when the current one's complete
-                setTimeout(updateJumlahAntrean, 1000);
-            },
-        });
-    })();
+    //     if ((id == undefined) && (id == null) && !(id == "")) {
+    //       id = -1;
+    //     }
+
+    //     $.ajax({
+    //         url: "/hitung-antrean-di-belakang",
+    //         data: {
+    //           id: id,
+    //           id_loket: id_loket
+    //         },
+    //         success: function (data) {
+    //             $("#jumlahPenunggu").text(data);
+    //             console.log(id);
+    //         },
+    //         complete: function () {
+    //             // Schedule the next request when the current one's complete
+    //             setTimeout(updateJumlahAntrean, 1000);
+    //         },
+    //     });
+    // })();
+
+
     // $('#fullpage').fullpage({
     // 	//options here
     // 	autoScrolling:true,
@@ -173,6 +195,12 @@ $(document).ready(function () {
             },
         });
     }
+
+    
+
+    // function ambilNomorAntrean(id_loket){
+    //     $('modal-ambil-nomor')
+    // }
 
     function ambilNomorAntreanOffline(id_loket){
         $.ajax({
