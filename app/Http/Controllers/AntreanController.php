@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\RiwayatAntrean;
 use App\Models\AttachmentAntrean;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Http;
 
 class AntreanController extends Controller
 {
@@ -19,19 +20,32 @@ class AntreanController extends Controller
     {
         $antrean_di_depan = [];
         $antrean = Antrean::with('loket')
-                            ->where('id', '=', $antrean->id)
-                            ->get()->first();
-        foreach($antrean->loket as $temp) {
+            ->where('id', '=', $antrean->id)
+            ->get()->first();
+        foreach ($antrean->loket as $temp) {
             $antrean_di_depan[] = RiwayatAntrean::where('loket_id', '=', $temp->id)
-                                                ->where('status', '=', 'waiting')
-                                                ->count();
+                ->where('status', '=', 'waiting')
+                ->count();
+        }
 
+        $loket = RiwayatAntrean::where('status', '=', 'waiting')
+            ->where('pengguna_ID', '=', session('ID_pengguna'))
+            ->get();
+
+        $id_loket_antrean = array();
+        foreach ($loket as $temp) {
+            $id_loket_antrean[] = $temp->loket_id;
         }
         
+        $id_loket_antrean = array_unique($id_loket_antrean);
+        
+        $api_response = Http::get('https://data.covid19.go.id/public/api/prov.json');
+        dd($api_response['list_data']);
         return view('antrean', [
             'title' => $antrean->nama_antrean,
             'antrean' => $antrean,
-            'antrean_di_depan' => $antrean_di_depan
+            'antrean_di_depan' => $antrean_di_depan,
+            'loket_tempat_mengantre' => $id_loket_antrean
         ]);
     }
 
@@ -163,7 +177,8 @@ class AntreanController extends Controller
         }
     }
 
-    public function tentukanNomorAntrean($loket){
+    public function tentukanNomorAntrean($loket)
+    {
         // see if there are already a queue for the current batch
         $riwayat = RiwayatAntrean::with('loket')
             ->where('antrean_id', '=', $loket->antrean->id)
@@ -202,9 +217,11 @@ class AntreanController extends Controller
             'status' => 'waiting',
         ]);
 
-        $detail_riwayat_antrean = array('nama_loket' => $loket->nama_loket, 
-                                        'nama_antrean' => $loket->antrean->nama_antrean,
-                                        'nomor_antrean' => $nomor_antrean);
+        $detail_riwayat_antrean = array(
+            'nama_loket' => $loket->nama_loket,
+            'nama_antrean' => $loket->antrean->nama_antrean,
+            'nomor_antrean' => $nomor_antrean
+        );
 
         return response()->json($detail_riwayat_antrean);
     }
@@ -268,8 +285,8 @@ class AntreanController extends Controller
     public function submitAntreanOffline(Request $request)
     {
         $loket = Loket::with('antrean')
-                        ->where('id', '=', $request->id_loket)
-                        ->get()->first();
+            ->where('id', '=', $request->id_loket)
+            ->get()->first();
         $nomor_antrean = $this->tentukanNomorAntrean($loket);
         $antrean = RiwayatAntrean::create([
             'pengguna_id' => 1,

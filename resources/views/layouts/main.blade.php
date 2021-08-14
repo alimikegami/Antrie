@@ -33,6 +33,7 @@
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script src="{{ asset('js/jquery.scrollie.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+
 </body>
 
 </html>

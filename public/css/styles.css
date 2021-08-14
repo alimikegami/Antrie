@@ -757,7 +757,7 @@ border-radius: 20px; */
 }
 
 
-.btn-ambil-antrean {
+.btn-riwayat-antrean, .btn-ambil-antrean {
     background-color: #4dafff;
     border-radius: 20px;
     display: inline-block;

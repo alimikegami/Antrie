@@ -6,8 +6,8 @@ $(document).ready(function () {
     });
 
     $("button").click(function() {
-        id_element = $(this).attr('id');
-        slug_antrean = $('#slug-antrean').val();
+        var id_element = $(this).attr('id');
+        var slug_antrean = $('#slug-antrean').val();
         if(id_element.includes("tombol-ambil-antrian-")){
             id_next_element = $(this).next().attr('id');
             slug_loket = $("#" + id_next_element).val();
@@ -19,36 +19,21 @@ $(document).ready(function () {
                     $('#nama-antrean-modal').html(data.nama_antrean);
                     $('#nama-loket-modal').html(data.nama_loket);
                     $('#modal-ambil-nomor').modal('show');
+                    id_tombol_lihat_antrean =  id_element.split("-");
+                    temp = id_tombol_lihat_antrean[3];
+                    console.log(temp);
+                    
+                    $('#belum-terdaftar-'+temp).hide();
+                    $('#'+id_element).hide();
+                    $('#tombol-riwayat-antrian-'+temp).removeAttr("hidden");
+                    $('#sudah-terdaftar-'+temp).removeAttr("hidden");
                 },
             });
             
         };
     });
 
-    // (function updateJumlahAntrean() {
-    //     let id = $('#inputRiwayatAntreanId').val();
-    //     let id_loket = $("#inputLoketId").val();
-
-    //     if ((id == undefined) && (id == null) && !(id == "")) {
-    //       id = -1;
-    //     }
-
-    //     $.ajax({
-    //         url: "/hitung-antrean-di-belakang",
-    //         data: {
-    //           id: id,
-    //           id_loket: id_loket
-    //         },
-    //         success: function (data) {
-    //             $("#jumlahPenunggu").text(data);
-    //             console.log(id);
-    //         },
-    //         complete: function () {
-    //             // Schedule the next request when the current one's complete
-    //             setTimeout(updateJumlahAntrean, 1000);
-    //         },
-    //     });
-    // })();
+    
 
 
     // $('#fullpage').fullpage({

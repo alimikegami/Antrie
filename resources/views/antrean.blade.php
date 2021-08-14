@@ -89,8 +89,17 @@
                                             <p class="d-flex justify-content-between">{{ $temp->waktu_buka }} - {{ $temp->waktu_tutup }} <span
                                                     class="badge {{ $temp->status }}">{{ $temp->status }}</span></p>
                                             
-                                            <p>Terdapat <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda</p>
-                                            <button type="button" id="tombol-ambil-antrian-{{ $i }}" class="btn btn-ambil-antrean">Ambil Nomor</button>
+                                            @if (in_array($temp->id, $loket_tempat_mengantre))
+                                                <p id="sudah-terdaftar-{{ $i }}" }}>Anda terdaftar dalam loket ini</p>
+                                                <button type="button" id="tombol-riwayat-antrian-{{ $i }}" class="btn btn-riwayat-antrean">Lihat Antrean</button>    
+                                                <p id="belum-terdaftar-{{ $i }}" hidden>Terdapat <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda</p>
+                                                <button type="button" id="tombol-ambil-antrian-{{ $i }}" class="btn btn-ambil-antrean" hidden>Ambil Nomor</button>
+                                            @else
+                                                <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda terdaftar dalam loket ini</p>
+                                                <button type="button" id="tombol-riwayat-antrian-{{ $i }}" class="btn btn-riwayat-antrean" hidden>Lihat Antrean</button>    
+                                                <p id="belum-terdaftar-{{ $i }}">Terdapat <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda</p>
+                                                <button type="button" id="tombol-ambil-antrian-{{ $i }}" class="btn btn-ambil-antrean">Ambil Nomor</button>
+                                            @endif
                                             <input id="input-id-loket-{{ $i }}" type="text" value="{{ $temp->slug }}" hidden>
                                             @php
                                                 $i = $i + 1;
