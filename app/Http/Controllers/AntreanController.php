@@ -18,6 +18,7 @@ class AntreanController extends Controller
 
     public function show(Antrean $antrean)
     {
+        // Menghitung jumlah pengantre yang menunggu pada suatu loket
         $antrean_di_depan = [];
         $antrean = Antrean::with('loket')
             ->where('id', '=', $antrean->id)
@@ -28,6 +29,7 @@ class AntreanController extends Controller
                 ->count();
         }
 
+        // Menentukan loket tempat pengguna sudah mengambil nomor antrean
         $loket = RiwayatAntrean::where('status', '=', 'waiting')
             ->where('pengguna_ID', '=', session('ID_pengguna'))
             ->get();
@@ -39,13 +41,21 @@ class AntreanController extends Controller
         
         $id_loket_antrean = array_unique($id_loket_antrean);
         
+
+        // Fetch data kasus harian covid dari API eksternal
         $api_response = Http::get('https://data.covid19.go.id/public/api/prov.json');
-        dd($api_response['list_data']);
+        foreach($api_response['list_data'] as $lokasi) {
+            if($lokasi['key'] === $antrean->provinsi) {
+                $kasus_covid = $lokasi['penambahan']['positif'];
+            };
+        }
+
         return view('antrean', [
             'title' => $antrean->nama_antrean,
             'antrean' => $antrean,
             'antrean_di_depan' => $antrean_di_depan,
-            'loket_tempat_mengantre' => $id_loket_antrean
+            'loket_tempat_mengantre' => $id_loket_antrean,
+            'kasus_covid' => $kasus_covid
         ]);
     }
 

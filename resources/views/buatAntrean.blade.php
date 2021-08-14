@@ -30,10 +30,40 @@
         <div class="mb-3">
             <label for="provinsiAntrean" class="form-label">Provinsi</label>
             <select name="provinsiAntrean" id="provinsiAntrean">
-                <option value="Bali">Bali</option>
-                <option value="Yogyakarta">Yogyakarta</option>
-                <option value="Surabaya">Surabaya</option>
-                <option value="Bandung">Bandung</option>
+                <option value="DKI JAKARTA">DKI Jakarta</option>
+                <option value="JAWA BARAT">Jawa Barat</option>
+                <option value="JAWA TENGAH">Jawa Tengah</option>
+                <option value="JAWA TIMUR">Jawa Timur</option>
+                <option value="KALIMANTAN TIMUR">Kalimantan Timur</option>
+                <option value="DAERAH ISTIMEWA YOGYAKARTA">Daerah Istimewa Yogyakarta</option>
+                <option value="BANTEN">Banten</option>
+                <option value="RIAU">Riau</option>
+                <option value="SULAWESI SELATAN">Sulawesi Selatan</option>
+                <option value="BALI">Bali</option>
+                <option value="SUMATERA BARAT">Sumatera Barat</option>
+                <option value="SUMATERA UTARA">Sumatera Utara</option>
+                <option value="KALIMANTAN SELATAN">Kalimantan Selatan</option>
+                <option value="SUMATERA SELATAN">Sumatera Selatan</option>
+                <option value="NUSA TENGGARA TIMUR">Nusa Tenggara Timur</option>
+                <option value="KEPULAUAN RIAU">Kepulauan Riau</option>
+                <option value="LAMPUNG">Lampung</option>
+                <option value="KEPULAUAN BANGKA BELITUNG">Kepulauan Bangka Belitung</option>
+                <option value="KALIMANTAN TENGAH">Kalimantan Tengah</option>
+                <option value="SULAWESI TENGAH">Sulawesi Tengah</option>
+                <option value="KALIMANTAN BARAT">Kalimantan Barat</option>
+                <option value="PAPUA">Papua</option>
+                <option value="SULAWESI UTARA">Sulawesi Utara</option>
+                <option value="KALIMANTAN UTARA">Kalimantan Utara</option>
+                <option value="PAPUA">Papua</option>
+                <option value="JAMBI">Jambi</option>
+                <option value="NUSA TENGGARA BARAT">Nusa Tenggara Barat</option>
+                <option value="PAPUA BARAT">Papua Barat</option>
+                <option value="BENGKULU">Bengkulu</option>
+                <option value="SULAWESI TENGGARA">Sulawesi Tenggara</option>
+                <option value="MALUKU">Maluku</option>
+                <option value="MALUKU UTARA">Maluku Utara</option>
+                <option value="SULAWESI BARAT">Sulawesi Barat</option>
+                <option value="GORONTALO">Gorontalo</option>
             </select>
         </div>
         <div class="mb-3">
