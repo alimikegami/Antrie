@@ -40,9 +40,9 @@ Route::get('/tutup-loket/{id}', [AntreanController::class, 'tutupLoket'])->name(
 Route::get('/antreanku/antrean/{slug}/loket/{loket:slug}', [AntreanController::class, 'showKonfigurasiLoket'])->name('konfigurasiAntrean');
 Route::get('/ambil-antrean-baru/{id}', [AntreanController::class, 'ambilAntreanBerikutnya'])->name('ambil-antrean-baru');
 Route::get('/hitung-antrean-di-belakang', [AntreanController::class, 'autoUpdateJumlahAntrean']);
-Route::get('/forgot-password/{token}', [ForgotPasswordController::class, 'resetPassword'])->name('resetPassword');
+Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'resetPassword'])->name('resetPassword');
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showForgotPasswordPage'])->name('forgotPassword');
-
+Route::get('/set-new-password', [ForgotPasswordController::class, 'showChangePasswordForm'])->name('setNewPassword');
 
 // POST route
 
@@ -50,6 +50,8 @@ Route::post('/register', [SignUpController::class, 'signUp'])->name('store');
 Route::post('/signin', [LoginController::class, 'signIn'])->name('signin');
 Route::post('/buat-record-antrean', [AntreanController::class, 'buatRecordAntrean'])->name('buat-record-antrean');
 Route::post('/submit-antrean-offline', [AntreanController::class, 'submitAntreanOffline']);
+Route::post('/get-password-reset-link', [ForgotPasswordController::class, 'sendResetToken'])->name('sendPasswordResetLink');
 
 // PUT route
 Route::put('/perbaharui-antrean', [AntreanController::class, 'majukanAntrean'])->name('perbaharui.antrean');
+Route::put('update-password', [ForgotPasswordController::class, 'changePassword'])->name('updatePassword');
