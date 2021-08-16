@@ -15,10 +15,11 @@ class SignUpController extends Controller {
         if($request->inputPassword == $request->inputKonfirmasiPassword) {
             $authentication_code = sha1(time());
             $email = $request->inputEmail;
+            $hashed_pwd = Hash::make($request->inputPassword);
             Pengguna::create([
                 "nama" => $request->inputNama,
                 "email" => $email,
-                "password" => Hash::make($request->inputPassword),
+                "password" => $hashed_pwd,
                 "verification_code" => $authentication_code
             ]);
             MailController::sendSignUpEmail($request->inputNama, $email, $authentication_code);

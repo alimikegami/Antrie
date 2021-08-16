@@ -28,7 +28,7 @@
                         </div>
                         <div class="input-password mt-3">
                             <label for="exampleFormControlInput1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="" name="password">
+                            <input type="password" class="form-control" id="pwdLogin" placeholder="" name="pwdLogin">
                         </div>
                         <button type="submit" id="tombol-buat-dashboard">Sign in</button>
                     </form>
