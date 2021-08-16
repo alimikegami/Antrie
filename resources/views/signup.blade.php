@@ -21,7 +21,7 @@
                     <img src="img/gambarLogin.png" alt="login-gambar" class="img-fluid">
                 </div>
                 <div class="login-second-column d-flex flex-column justify-content-around align-items-center">
-                    <img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid">
+                    <a href="/"><img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid"></a>
                     <h3>Sign up</h3>
                     <form action="{{ route('store') }}" method="POST" class="d-flex flex-column">
                         {{ csrf_field() }}
