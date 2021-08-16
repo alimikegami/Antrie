@@ -19,37 +19,37 @@ class DatabaseSeeder extends Seeder
         DB::table('kategori')->insert([
             'nama_kategori' => "Pelayanan Kesehatan",
             'slug' => "pelayanan-kesehatan",
-            'img_file_path' => "img/Pelayananpublik.png",
+            'img_file_path' => "img/kesehatan.png",
         ]);
 
         DB::table('kategori')->insert([
             'nama_kategori' => "Instansi Pemerintahan",
             'slug' => "instansi-pemerintahan",
-            'img_file_path' => "img/Pelayananpublik.png",
+            'img_file_path' => "img/instansiPemerintah.png",
         ]);
 
         DB::table('kategori')->insert([
             'nama_kategori' => "Acara",
             'slug' => "acara",
-            'img_file_path' => "img/Pelayananpublik.png",
+            'img_file_path' => "img/acara.png",
         ]);
 
         DB::table('kategori')->insert([
             'nama_kategori' => "Keuangan",
             'slug' => "keuangan",
-            'img_file_path' => "img/Pelayananpublik.png",
+            'img_file_path' => "img/keuangan.png",
         ]);
 
         DB::table('kategori')->insert([
             'nama_kategori' => "Layanan Perawatan Tubuh",
             'slug' => "layanan-perawatan-tubuh",
-            'img_file_path' => "img/Pelayananpublik.png",
+            'img_file_path' => "img/perawatanTubuh.png",
         ]);
 
         DB::table('kategori')->insert([
             'nama_kategori' => "Layanan Otomotif",
             'slug' => "layanan-otomotif",
-            'img_file_path' => "img/Pelayananpublik.png",
+            'img_file_path' => "img/otomotif.png",
         ]);
 
         DB::table('pengguna')->insert([

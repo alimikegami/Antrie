@@ -40,7 +40,10 @@ Route::get('/tutup-loket/{id}', [AntreanController::class, 'tutupLoket'])->name(
 Route::get('/antreanku/antrean/{slug}/loket/{loket:slug}', [AntreanController::class, 'showKonfigurasiLoket'])->name('konfigurasiAntrean');
 Route::get('/ambil-antrean-baru/{id}', [AntreanController::class, 'ambilAntreanBerikutnya'])->name('ambil-antrean-baru');
 Route::get('/hitung-antrean-di-belakang', [AntreanController::class, 'autoUpdateJumlahAntrean']);
+Route::get('/forgot-password/{token}', [ForgotPasswordController::class, 'resetPassword'])->name('resetPassword');
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showForgotPasswordPage'])->name('forgotPassword');
+
+
 // POST route
 
 Route::post('/register', [SignUpController::class, 'signUp'])->name('store');

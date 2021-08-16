@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PasswordResets;
+use App\Models\Pengguna;
 use Illuminate\Http\Request;
+use App\Models\PasswordResets;
+use Illuminate\Support\Carbon;
 
 class ForgotPasswordController extends Controller
 {
@@ -11,13 +13,28 @@ class ForgotPasswordController extends Controller
         return view('forgotPassword', ["title" => "Forgot Password"]);
     }
 
-    public function createResetToken(Request $request){
+    public function sendResetToken(Request $request){
         $token = sha1(time());
         $email = $request->emailResetPassword;
         PasswordResets::create([
             'email' => $email,
             'token' => $token,
         ]);
-        // MailController::sendPasswordResetEmail($request->inputNama, $email, $authentication_code);
+        $pengguna = Pengguna::where('email', '=', $email)
+                    ->first();
+        MailController::sendPasswordResetEmail($pengguna->nama, $email, $token);
+    }
+
+    public function resetPassword($token){
+        $record = PasswordResets::where('token', '=', $token)
+                        ->first();
+        $token_creation_time = Carbon::parse($record->created_at);
+        $reset_time = Carbon::now();
+        $diff = $reset_time->diffInSeconds($token_creation_time);
+
+        // Waktu akan reset password lebih dari satu jam
+        if ($diff > 3600){
+
+        }
     }
 }
