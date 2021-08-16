@@ -28,7 +28,7 @@ class LogInController extends Controller {
             return redirect('login');
         }
 
-        if (Hash::check($pwd, $pengguna->password) || !is_null($pengguna->email_verified_at)) {
+        if (Hash::check($pwd, $pengguna->password) && !is_null($pengguna->email_verified_at)) {
             $request->session()->put('ID_pengguna', $pengguna->id);
             $request->session()->put('email_pengguna', $pengguna->email);
             $request->session()->put('nama', $pengguna->nama);
