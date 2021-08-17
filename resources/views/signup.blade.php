@@ -26,21 +26,40 @@
                     <form action="{{ route('store') }}" method="POST" class="d-flex flex-column">
                         {{ csrf_field() }}
                         <div class="input-nama">
-                            <label for="exampleFormControlInput1" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="inputNama" name="inputNama">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                id="nama" name="nama" value="{{ old('nama') }}">
+                            @error('nama')
+                                <div class="invalid-feedback">
+                                    Tolong masukkan nama yang valid!
+                                </div>
+                            @enderror
                         </div>
+
                         <div class="input-email mt-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail" name="inputEmail">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                id="email" name="email" value="{{ old('email') }}">
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="input-password mt-3">
-                            <label for="exampleFormControlInput1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="inputPassword" name="inputPassword">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                id="password" name="password">
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="input-password mt-3">
-                            <label for="exampleFormControlInput1" class="form-label">Konfirmasi Password</label>
-                            <input type="password" class="form-control" id="inputKonfirmasiPassword"
-                                name="inputKonfirmasiPassword">
+                            <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                            <input type="password" class="form-control" id="password_confirmation"
+                                name="password_confirmation">
                         </div>
                         <button type="submit" id="tombol-buat-dashboard">Sign up</button>
                     </form>
