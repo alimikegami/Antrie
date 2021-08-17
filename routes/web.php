@@ -47,7 +47,7 @@ Route::get('/set-new-password', [ForgotPasswordController::class, 'showChangePas
 // POST route
 
 Route::post('/register', [SignUpController::class, 'signUp'])->name('store');
-Route::post('/signin', [LoginController::class, 'signIn'])->name('signin');
+Route::post('/signin', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/buat-record-antrean', [AntreanController::class, 'buatRecordAntrean'])->name('buat-record-antrean');
 Route::post('/submit-antrean-offline', [AntreanController::class, 'submitAntreanOffline']);
 Route::post('/get-password-reset-link', [ForgotPasswordController::class, 'sendResetToken'])->name('sendPasswordResetLink');

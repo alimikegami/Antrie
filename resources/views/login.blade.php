@@ -20,15 +20,15 @@
                 <div class="login-second-column d-flex flex-column justify-content-around align-items-center">
                     <a href="/"><img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid"></a>
                     <h3>Sign in</h3>
-                    <form action="{{ route('signin') }}" method="POST" class="d-flex flex-column">
+                    <form action="{{ route('authenticate') }}" method="POST" class="d-flex flex-column">
                         {{ csrf_field() }}
                         <div class="input-email">
-                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="emailLogin" name="emailLogin">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="input-password mt-3">
-                            <label for="exampleFormControlInput1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="pwdLogin" placeholder="" name="pwdLogin">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="" name="password">
                         </div>
                         <button type="submit" id="tombol-buat-dashboard">Sign in</button>
                     </form>

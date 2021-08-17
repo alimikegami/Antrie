@@ -5,6 +5,7 @@ use App\Models\Pengguna;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class LogInController extends Controller {
     public function index() {
@@ -16,28 +17,19 @@ class LogInController extends Controller {
             ]);
         }
     }
-    
 
-    public function signIn(Request $request) {
-        $email = $request->emailLogin;
-        $pwd = $request->pwdLogin;
-        
-        $pengguna = Pengguna::where('email', '=', $email)->first();
-        if (!$pengguna) {
-            $request->session()->flash('status', 'account not found');
-            return redirect('login');
+    public function authenticate(Request $request) {
+        $credentials = $request->validate([
+            'email' => 'required|email:dns',
+            'password' => 'required'
+        ]);
+
+        if (Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect()->intended('beranda');
         }
 
-        if (Hash::check($pwd, $pengguna->password) && !is_null($pengguna->email_verified_at)) {
-            $request->session()->put('ID_pengguna', $pengguna->id);
-            $request->session()->put('email_pengguna', $pengguna->email);
-            $request->session()->put('nama', $pengguna->nama);
-            return redirect('beranda');
-        } else {
-            $request->session()->flash('status', 'wrong email/password');
-            return redirect('login');
-        }
-
+        return back()->with(['failed_login' => 'Email/password is incorrect!',]);
     }
 
     public function logout(){
