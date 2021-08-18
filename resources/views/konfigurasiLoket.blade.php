@@ -1,4 +1,4 @@
-@extends('layouts/main')
+@extends('layouts/auto-update-layout')
 
 @section('container')
     <p>Nomor Antrean Saat Ini:</p>
@@ -6,6 +6,9 @@
     <h1 id="nomorAntrean">{{ $antrean->nomor_antrean ?? 'Tidak ada antrean berikutnya' }}</h1>
     <input id="inputRiwayatAntreanId" type="text" value="{{ $antrean->id ?? null }}" hidden>
     <input id="inputLoketId" type="text" value="{{ $loket->id }}" hidden>
+    <div class="spinner-border" role="status" id="spinner" style="display:none;">
+        <span class="visually-hidden">Loading...</span>
+    </div>
     <h2><span id="jumlahPenunggu">{{ $jumlah_antrean_di_belakang ?? 0 }}</span> Orang Sedang Menunggu</h2>
     <button type="button" class="btn btn-primary" id="panggilAntrean">Panggil Antrean Berikutnya</button>
     <button type="button" class="btn btn-primary" id="tambahAntreanOffline">Masukkan Antrean</button>

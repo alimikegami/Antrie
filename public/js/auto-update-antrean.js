@@ -14,6 +14,7 @@ $(document).ready(function () {
               id_loket: id_loket
             },
             success: function (data) {
+
                 $("#jumlahPenunggu").text(data);
                 console.log(id);
             },
