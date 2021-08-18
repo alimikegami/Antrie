@@ -30,7 +30,7 @@ class ForgotPasswordController extends Controller
         $pengguna = Pengguna::where('email', '=', $email)
                     ->first();
         MailController::sendPasswordResetEmail($pengguna->nama, $email, $token);
-        $request->session()->flash('alert-success', 'Your account has been created. Please check your email to reset your password!');
+        $request->session()->flash('alert-success', 'Please check your email to reset your password!');
         return redirect()->route('forgotPassword');
     }
 

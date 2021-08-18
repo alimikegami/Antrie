@@ -11,8 +11,8 @@
                 <div class="login-second-column d-flex flex-column justify-content-around align-items-center">
                     <img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid">
                     <h3>Sign in</h3>
-                    <form action="{{ route('sendPasswordResetLink') }}" method="POST" class="d-flex flex-column">
-                        {{ csrf_field() }}
+                    <form action="/send-password-reset-link" method="POST" class="d-flex flex-column">
+                        @csrf
                         <div class="input-email-forgot-password">
                             <label for="emailResetPassword" class="form-label">Email</label>
                             <input type="email" class="form-control" id="emailResetPassword" name="emailResetPassword">
