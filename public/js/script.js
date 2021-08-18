@@ -5,37 +5,6 @@ $(document).ready(function () {
         },
     });
 
-    $("button").click(function() {
-        var id_element = $(this).attr('id');
-        var slug_antrean = $('#slug-antrean').val();
-        if(id_element.includes("tombol-ambil-antrian-")){
-            id_next_element = $(this).next().attr('id');
-            slug_loket = $("#" + id_next_element).val();
-            $.ajax({
-                url: "/konfirmasi-antrean/" + slug_antrean + "/loket/" + slug_loket + "/ambil-nomor",
-                type: "GET",
-                success: function (data) {
-                    $('#nomor-antrean-modal').html(data.nomor_antrean);
-                    $('#nama-antrean-modal').html(data.nama_antrean);
-                    $('#nama-loket-modal').html(data.nama_loket);
-                    $('#modal-ambil-nomor').modal('show');
-                    id_tombol_lihat_antrean =  id_element.split("-");
-                    temp = id_tombol_lihat_antrean[3];
-                    console.log(temp);
-                    
-                    $('#belum-terdaftar-'+temp).hide();
-                    $('#'+id_element).hide();
-                    $('#tombol-riwayat-antrian-'+temp).removeAttr("hidden");
-                    $('#sudah-terdaftar-'+temp).removeAttr("hidden");
-                },
-            });
-            
-        };
-    });
-
-    
-
-
     // $('#fullpage').fullpage({
     // 	//options here
     // 	autoScrolling:true,
@@ -150,9 +119,19 @@ $(document).ready(function () {
 
     function ambilAntreanBerikutnya(id_loket) {
         console.log("success 1");
+        
         $.ajax({
             url: "/ambil-antrean-baru/" + id_loket,
             type: "GET",
+            beforeSend: function() {
+                $('#nomorAntrean').hide();
+                $('#spinner').show();
+            },
+            complete: function(){
+                console.log('complete');
+                $('#spinner').hide();
+                $('#nomorAntrean').show();
+            },
             success: function (data) {
                 console.log(data.id);
                 if (data.id) {
