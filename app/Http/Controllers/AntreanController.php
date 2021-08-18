@@ -11,7 +11,9 @@ use Illuminate\Http\Request;
 use App\Models\RiwayatAntrean;
 use App\Models\AttachmentAntrean;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\MailController;
 
 class AntreanController extends Controller
 {
@@ -69,7 +71,7 @@ class AntreanController extends Controller
 
     public function formPembuatanAntrean()
     {
-        if (session()->has('ID_pengguna')) {
+        if (Auth::check()) {
             return view('buatAntrean', [
                 'title' => "Buat Antrean",
                 'kategori' => Kategori::all()
@@ -124,7 +126,7 @@ class AntreanController extends Controller
             "waktu_buka" => $request->jamBuka,
             "waktu_tutup" => $request->jamTutup,
             "file_path_img" => $file_path_img,
-            "id_pembuat" => $request->session()->get('ID_pengguna'),
+            "id_pembuat" => Auth::id(),
             "id_kategori" => $request->kategoriAntrean,
             "slug" => $slug,
         ]);
@@ -274,6 +276,21 @@ class AntreanController extends Controller
             ->where('status', '=', 'waiting')
             ->orderBy('id', 'ASC')
             ->first();
+        $jumlah_antrean = RiwayatAntrean::where('loket_id', '=', $id_loket)
+                            ->where('status', '=', 'waiting')
+                            ->count();
+
+        // Jika jumlah antrean di belakang lebih dari atau sama dengan 3, maka kirim email ke antrean ke-3
+        if($jumlah_antrean >= 3) {
+            $antrean_ke_tiga = RiwayatAntrean::with('pengguna')
+                                ->where('loket_id', '=', $id_loket)
+                                ->where('status', '=', 'waiting')
+                                ->limit(3)
+                                ->orderBy('id', 'desc')
+                                ->first();
+            MailController::sendQueueAlertEmail($antrean_ke_tiga->pengguna->nama, $antrean_ke_tiga->pengguna->email);
+
+        }
         return response()->json($antrean);
     }
 

@@ -1,4 +1,4 @@
-@extends('layouts/main')
+@extends('layouts/ambil-antrean-layout')
 
 
 @section('container')
