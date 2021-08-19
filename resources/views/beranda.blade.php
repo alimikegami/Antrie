@@ -122,6 +122,9 @@
                                                 </div>
                                             @endforeach
                                         </div>
+                                        <div class="link-lihat-semua mt-4 d-flex justify-content-center align-items-center">
+                                            <a href="/all-antrean">Show all</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
