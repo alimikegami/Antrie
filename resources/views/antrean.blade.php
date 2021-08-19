@@ -59,7 +59,14 @@
                                 </div>
                                 <div class="keterangan-lokasi">
                                     <h1>{{ $antrean->nama_antrean }}</h1>
-                                    <p>G{{ $antrean->alamat }}</p>
+                                    <p><i class="bi bi-geo-alt-fill"></i> {{ $antrean->alamat }}</p>
+                                    <p><i class="bi bi-telephone-fill"></i> {{ $antrean->nomor_telepon }}</p>
+                                    <div class="covid-case bg-warning">
+                                        <p class="d-flex justify-content-between align-items-center">Kasus Covid-19 di
+                                            {{ $antrean->provinsi }}
+                                            <span class="badge">{{ $kasus_covid }} per hari</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="deskripsi-attactment mt-3">
@@ -81,26 +88,38 @@
                                     <div class="lokasi-wrapper d-flex align-items-center">
                                         <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                             <div class="gambar">
-                                                <img src="img/logoAntriedark.png" alt="" width="70px">
+                                                <img src="{{ asset('img/logoAntriedark.png') }}" alt="" width="70px">
                                             </div>
                                         </div>
                                         <div class="keterangan-loket">
                                             <h1>{{ $temp->nama_loket }}</h1>
-                                            <p class="d-flex justify-content-between">{{ $temp->waktu_buka }} - {{ $temp->waktu_tutup }} <span
+                                            <p class="d-flex justify-content-between">{{ $temp->waktu_buka }} -
+                                                {{ $temp->waktu_tutup }} <span
                                                     class="badge {{ $temp->status }}">{{ $temp->status }}</span></p>
-                                            
+
                                             @if (in_array($temp->id, $loket_tempat_mengantre))
-                                                <p id="sudah-terdaftar-{{ $i }}" }}>Anda terdaftar dalam loket ini</p>
-                                                <button type="button" id="tombol-riwayat-antrian-{{ $i }}" class="btn btn-riwayat-antrean">Lihat Antrean</button>    
-                                                <p id="belum-terdaftar-{{ $i }}" hidden>Terdapat <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda</p>
-                                                <button type="button" id="tombol-ambil-antrian-{{ $i }}" class="btn btn-ambil-antrean" hidden>Ambil Nomor</button>
+                                                <p id="sudah-terdaftar-{{ $i }}" }}>Anda terdaftar dalam loket
+                                                    ini</p>
+                                                <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
+                                                    class="btn btn-riwayat-antrean">Lihat Antrean</button>
+                                                <p id="belum-terdaftar-{{ $i }}" hidden>Terdapat
+                                                    <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
+                                                </p>
+                                                <button type="button" id="tombol-ambil-antrian-{{ $i }}"
+                                                    class="btn tombol-ambil-antrian" hidden>Ambil Nomor</button>
                                             @else
-                                                <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda terdaftar dalam loket ini</p>
-                                                <button type="button" id="tombol-riwayat-antrian-{{ $i }}" class="btn btn-riwayat-antrean" hidden>Lihat Antrean</button>    
-                                                <p id="belum-terdaftar-{{ $i }}">Terdapat <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda</p>
-                                                <button type="button" id="tombol-ambil-antrian-{{ $i }}" class="btn btn-ambil-antrean">Ambil Nomor</button>
+                                                <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda terdaftar dalam
+                                                    loket ini</p>
+                                                <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
+                                                    class="btn btn-riwayat-antrean" hidden>Lihat Antrean</button>
+                                                <p id="belum-terdaftar-{{ $i }}">Terdapat
+                                                    <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
+                                                </p>
+                                                <button type="button" id="tombol-ambil-antrian-{{ $i }}"
+                                                    class="btn tombol-ambil-antrian">Ambil Nomor</button>
                                             @endif
-                                            <input id="input-id-loket-{{ $i }}" type="text" value="{{ $temp->slug }}" hidden>
+                                            <input id="input-id-loket-{{ $i }}" type="text"
+                                                value="{{ $temp->slug }}" hidden>
                                             @php
                                                 $i = $i + 1;
                                             @endphp
