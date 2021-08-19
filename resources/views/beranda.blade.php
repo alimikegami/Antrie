@@ -103,7 +103,7 @@
                                             <h1>{{ $kategori_populer->nama_kategori }}</h1>
                                             <p>{{ $kategori_populer->antrean_count }} lokasi ditemukan</p>
                                         </div>
-                                        <div class="content-field-lokasi d-flex flex-column">
+                                        <div class="content-field-lokasi d-flex flex-column mt-3">
                                             @foreach ($antrean as $temp)
                                                 <div class="p-2 hover-wrapper">
                                                     <a href="antrean/{{ $temp->slug }}"
