@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\RiwayatAntrean;
 use App\Models\AttachmentAntrean;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -22,14 +23,20 @@ class AntreanController extends Controller
     {
         // Menghitung jumlah pengantre yang menunggu pada suatu loket
         $antrean_di_depan = [];
+        $estimasi_waktu_tunggu = [];
         $antrean = Antrean::with('loket')
             ->where('id', '=', $antrean->id)
             ->get()->first();
         foreach ($antrean->loket as $temp) {
             $antrean_di_depan[] = RiwayatAntrean::where('loket_id', '=', $temp->id)
                 ->where('status', '=', 'waiting')
+                ->where('batch', '=', $temp->batch )
                 ->count();
+            $estimasi_waktu_tunggu[] = DB::select(DB::raw("SELECT AVG(TIME_TO_SEC(TIMEDIFF(ra_1.updated_at, ra_2.updated_at))) AS estimasi_waktu_tunggu 
+                                        FROM riwayat_antrean AS ra_1 INNER JOIN riwayat_antrean AS ra_2 ON ra_1.id = ra_2.id + 1 
+                                        WHERE ra_1.loket_id = :id_loket AND ra_1.batch = :batch_1 AND ra_2.batch = :batch_2"), ['id_loket' => $temp->id, 'batch_1' => $temp->batch, 'batch_2' => $temp->batch]);
         }
+        dd($estimasi_waktu_tunggu);
 
         // Menentukan loket tempat pengguna sudah mengambil nomor antrean
         $loket = RiwayatAntrean::where('status', '=', 'waiting')
