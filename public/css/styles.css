@@ -509,6 +509,13 @@ border-radius: 20px; */
     top: 2px;
 }
 
+.link-lihat-semua a {
+    text-decoration: none;
+    color: #2F2D65;
+    font-weight: bold;
+}
+
+
 /* content lokasi antrian */
 .word-field-lokasi {
     height: 15%;
@@ -553,20 +560,16 @@ border-radius: 20px; */
 
 .hover-wrapper {
     margin-bottom: 1%;
+    cursor: pointer;
 }
 
 .hover-wrapper a {
     text-decoration: none;
 }
 
-.lokasi-wrapper {
-    /* margin-bottom: 2%; */
-    cursor: pointer;
-}
-
 .logo-lokasi {
-    width: 6vw;
-    height: 10vh;
+    width: 8vw;
+    height: 100%;
     background-color: #9EEDE5;
     padding: 5%;
     border-radius: 15px;
@@ -574,6 +577,7 @@ border-radius: 20px; */
 
 .keterangan-lokasi {
     padding-left: 5%;
+    max-width: 100%;
 }
 
 .keterangan-lokasi h1 {
@@ -714,7 +718,7 @@ border-radius: 20px; */
 .loket-lokasi {
     background-color: #FFFFFF;
     width: 100%;
-    height: 40vh;
+    height: 45vh;
     padding: 5%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
@@ -748,16 +752,17 @@ border-radius: 20px; */
     color: #FFFFFF;
 }
 
-.keterangan-loket .open {
+.open {
     background-color: #53D383;
 }
 
-.keterangan-loket .closed {
+.closed {
     background-color: #FF4D4D;
 }
 
 
-.btn-riwayat-antrean, .btn-ambil-antrean {
+
+.tombol-ambil-antrian {
     background-color: #4dafff;
     border-radius: 20px;
     display: inline-block;
@@ -770,13 +775,35 @@ border-radius: 20px; */
     width: 100%;
 }
 
-#tombol-ambil-antrian:hover {
+.tombol-ambil-antrian:hover {
     background-color: #6eb8f0;
 }
 
-#tombol-ambil-antrian:active {
+.tombol-ambil-antrian:active {
     position: relative;
     top: 2px;
+}
+
+
+.covid-case {
+    background-color: #2F2D65;
+    border-radius: 15px;
+    padding: 0 1%;
+    /* padding: 2%; */
+    max-width: 80%;
+}
+
+.covid-case p {
+    color: #000000;
+    padding: 1%;
+    /* font-weight: bold; */
+}
+
+.covid-case span {
+    height: 50%;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    color: #000000;
 }
 
 /* modal ambil nomor antrian */
@@ -817,52 +844,61 @@ border-radius: 20px; */
 }
 
 /* halaman antrianku */
-.antrianku-menu {
-    background-color: #FFFFFF;
+.buat-antrianmu-jumbotron {
+    background-color: #2B2844;
     width: 100%;
-    max-height: 10vh;
-    /* padding: 1%; */
+    height: 30vh;
+    /* padding: 5%; */
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
-    margin-bottom: 5vh;
 }
 
-.antrianku-menu button {
+.content-buat-antrianmu-jumbotron {
     width: 100%;
     height: 100%;
+    /* overflow: hidden; */
 }
 
-.menu-pengantri {
+.content-buat-antrianmu-jumbotron img {
     width: 100%;
-    height: 100%;
-    padding-top: 1%;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    max-width: 500px;
+    height: auto;
 }
 
-.menu-pengantri:hover,
-.menu-buat-antrian:hover {
-    background-color: #f8f9fa;
+.word-buat-antrianmu-jumbotron h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.word-buat-antrianmu-jumbotron p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #D5D4DB;
+}
+
+#tombol-buat-antrianku {
+    background-color: #4dafff;
+    border-radius: 20px;
+    display: inline-block;
     cursor: pointer;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 60px;
+    text-decoration: none;
+    border: none;
 }
 
-.menu-antrianku-active {
-    background-color: #4DB0FF;
+#tombol-buat-antrianku:hover {
+    background-color: #6eb8f0;
 }
 
-.menu-antrianku-active:hover {
-    background-color: #4DB0FF;
-    cursor: default;
+#tombol-buat-antrianku:active {
+    position: relative;
+    top: 2px;
 }
 
-.menu-buat-antrian {
-    width: 100%;
-    height: 100%;
-    padding-top: 1%;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
+/* halaman riwayat */
 #tombol-ambil-batal-antrian {
     background-color: #FF4D4D;
     border-radius: 20px;
@@ -922,4 +958,162 @@ border-radius: 20px; */
     color: #2B2844;
     font-weight: bold;
     font-size: 0.8vw;
+}
+
+#right-arrow {
+    font-size: 3rem;
+    transition: all 0.1s;
+    color: #4DB0FF;
+}
+
+/* Halaman atur loket */
+
+.tombol-buka-loket {
+    background-color: #4dafff;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px 60px;
+    text-decoration: none;
+    border: none;
+    width: 25%;
+}
+
+.tombol-buka-loket:hover {
+    background-color: #6eb8f0;
+}
+
+.tombol-buka-loket:active {
+    position: relative;
+    top: 2px;
+}
+
+.tombol-tutup-loket {
+    background-color: #FF4D4D;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px 60px;
+    text-decoration: none;
+    border: none;
+    width: 25%;
+}
+
+.tombol-tutup-loket:hover {
+    background-color: #cf2e2e;
+}
+
+.tombol-tutup-loket:active {
+    position: relative;
+    top: 2px;
+}
+
+.keterangan-loket-pemilik {
+    padding-left: 5%;
+    width: 100%;
+}
+
+.keterangan-loket-pemilik h1 {
+    font-size: 1.5vw;
+    color: #2B2844;
+    font-weight: bold;
+}
+
+.keterangan-loket-pemilik p {
+    color: #73848C;
+    font-size: 0.8vw;
+}
+
+.keterangan-loket-pemilik p span {
+    color: #2B2844;
+    font-weight: bold;
+    font-size: 0.8vw;
+}
+
+.keterangan-loket-pemilik .badge {
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.atur-loket-lokasi {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 50vh;
+    padding: 5%;
+    border-radius: 30px;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+
+#back-arrow {
+    font-size: 2rem;
+    width: 2vw;
+    text-decoration: none;
+}
+
+#back-arrow:hover {
+    transform: translateX(-5px);
+}
+
+
+/* Halaman panggil antrian */
+.field-panggil-antrian {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100vh;
+    padding: 5%;
+    border-radius: 30px;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+    overflow: auto;
+}
+
+.field-panggil-antrian::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+.field-panggil-antrian::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+.field-panggil-antrian::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #C4C4C4;
+}
+
+.field-panggil-antrian h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #2B2844;
+}
+
+.field-panggil-antrian p {
+    font-size: 1.5rem;
+}
+
+.field-panggil-antrian span {
+    font-size: 2rem;
+    color: #4DB0FF;
+}
+
+.field-panggil-antrian p~span {
+    font-size: 10rem;
+    color: #4DB0FF;
+}
+
+.tombol-panggil-antrian {
+    width: 40%;
+    height: 10%;
+}
+
+.tombol-input-antrian-off {
+    height: 50%;
+}
+
+.tombol-input-antrian-ol {
+    height: 80%;
 }
