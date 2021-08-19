@@ -509,6 +509,13 @@ border-radius: 20px; */
     top: 2px;
 }
 
+.link-lihat-semua a {
+    text-decoration: none;
+    color: #2F2D65;
+    font-weight: bold;
+}
+
+
 /* content lokasi antrian */
 .word-field-lokasi {
     height: 15%;
