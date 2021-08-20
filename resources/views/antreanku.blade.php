@@ -22,47 +22,7 @@
 
     <div class="container-fluid">
         <div class="row flex-nowrap">
-            <div class="col-1 col-md-3 col-xl-2 px-sm-2 px-0 bg-white d-flex justify-content-center coba">
-                <div class="d-flex flex-column align-items-center px-3 pt-5 min-vh-100 navbar-dashboard">
-                    <a href="/" class="d-flex align-items-center pb-3 text-decoration-none nav-menu-logo">
-                        <img class="img-fluid" src="img/logoAntriedark.png" alt="">
-                    </a>
-                    <div class="flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
-                        <div class="menu-pengguna d-flex flex-column">
-                            <div class="menu-dashboard menu selected">
-                                <i class="bi bi-house"></i><a href="#">Dashboard</a>
-                            </div>
-                            <div class="menu-antrian menu ">
-                                <i class="bi bi-archive"></i><a href="#">Antrian ku</a>
-                            </div>
-                            <div class="menu-pesan menu">
-                                <i class="bi bi-chat-left-text"></i><a href="#">Pesan</a>
-                            </div>
-                            <div class="menu-profil menu">
-                                <i class="bi bi-person"></i><a href="#">Profil</a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="dropdown pb-4">
-                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
-                            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
-                                class="rounded-circle">
-                            <span class="d-none d-sm-inline mx-1">loser</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            @include('components/sidebar')
             <div class="col py-3">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="first-row-all d-flex justify-content-between flex-column p-3">
@@ -108,36 +68,7 @@
                     </div>
 
                 </div>
-                <div class="footer">
-                    <div class="footer-content">
-                        <div class="footer-logo">
-                            <img src="img/logoAntrielight.png" alt="">
-                        </div>
-                        <div class="footer-word1">
-                            <ul>
-                                <p>Kunjungi kami</p>
-                                <li>Instagram</li>
-                                <li>Twitter</li>
-                                <li>Github</li>
-                            </ul>
-                        </div>
-                        <div class="footer-word2">
-                            <ul>
-                                <p>Company</p>
-                                <li>Contact us</li>
-                                <li>Our Customer</li>
-                            </ul>
-                        </div>
-                        <div class="footer-word3">
-                            <ul>
-                                <p>Support</p>
-                                <li>Quick Start Guide</li>
-                                <li>Customer Support</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+                @include('components/footer')
             </div>
         </div>
     </div>
