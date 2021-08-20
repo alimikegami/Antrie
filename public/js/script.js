@@ -50,10 +50,12 @@ $(document).ready(function () {
 
     // menu pengguna
     $('.menu-dashboard').on('click', function () {
+        window.location.href = '/beranda';
         $('.menu').removeClass('selected');
         $(this).addClass('selected');
     });
     $('.menu-antrian').on('click', function () {
+        window.location.href = '/antreanku';
         $('.menu').removeClass('selected');
         $(this).addClass('selected');
     });
