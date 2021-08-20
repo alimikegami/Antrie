@@ -118,8 +118,7 @@ $(document).ready(function () {
     // };
 
     function ambilAntreanBerikutnya(id_loket) {
-        console.log("success 1");
-        
+        var nomor = $('#nomorAntrean').text();
         $.ajax({
             url: "/ambil-antrean-baru/" + id_loket,
             type: "GET",
@@ -137,7 +136,7 @@ $(document).ready(function () {
                 if (data.id) {
                     $("#nomorAntrean").html(data.nomor_antrean);
                 } else {
-                    $("#nomorAntrean").html("Tidak ada antrean berikutnya");
+                    $("#nomorAntrean").html(nomor);
                 }
                 $("#idRiwayatAntrean111").val(data.id);
                 $("#idRiwayatAntrean111").val(data.id);
