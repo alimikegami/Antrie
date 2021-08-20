@@ -33,7 +33,7 @@
                             id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
                                 class="rounded-circle">
-                            <span class="d-none d-sm-inline mx-1">{{ session('nama') }}</span>
+                            <span class="d-none d-sm-inline mx-1">{{ Auth::user()->nama }}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                             <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -62,10 +62,10 @@
                                     <p><i class="bi bi-geo-alt-fill"></i> {{ $antrean->alamat }}</p>
                                     <p><i class="bi bi-telephone-fill"></i> {{ $antrean->nomor_telepon }}</p>
                                     <div class="covid-case bg-warning">
-                                        <p class="d-flex justify-content-between align-items-center">Kasus Covid-19 di
+                                        {{-- <p class="d-flex justify-content-between align-items-center">Kasus Covid-19 di
                                             {{ $antrean->provinsi }}
                                             <span class="badge">{{ $kasus_covid }} per hari</span>
-                                        </p>
+                                        </p> --}}
                                     </div>
                                 </div>
                             </div>
