@@ -27,11 +27,7 @@ class BerandaController extends Controller
     }
 
     public function showAntreanBasedOnCategories(Kategori $kategori){
-        if (session()->has('ID_pengguna')) {
-            return view('antreanBasedOnCategory', ['antrean' => $kategori->antrean]);
-        } else {
-            return redirect()->route('landingpage');
-        }
+        return view('all-antrean', ['antrean' => $kategori->antrean, 'title' => $kategori->nama_kategori]);
     }
 
     public function showAntreanku(){
