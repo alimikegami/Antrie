@@ -30,41 +30,40 @@ class AntreanController extends Controller
         foreach ($antrean->loket as $temp) {
             $antrean_di_depan[] = RiwayatAntrean::where('loket_id', '=', $temp->id)
                 ->where('status', '=', 'waiting')
-                ->where('batch', '=', $temp->batch )
+                ->where('batch', '=', $temp->batch)
                 ->count();
             $estimasi_waktu_tunggu[] = DB::select(DB::raw("SELECT AVG(TIME_TO_SEC(TIMEDIFF(ra_1.updated_at, ra_2.updated_at))) AS estimasi_waktu_tunggu 
                                         FROM riwayat_antrean AS ra_1 INNER JOIN riwayat_antrean AS ra_2 ON ra_1.id = ra_2.id + 1 
                                         WHERE ra_1.loket_id = :id_loket AND ra_1.batch = :batch_1 AND ra_2.batch = :batch_2"), ['id_loket' => $temp->id, 'batch_1' => $temp->batch, 'batch_2' => $temp->batch]);
         }
-        dd($estimasi_waktu_tunggu);
-
+        // dd('asdfasf');
         // Menentukan loket tempat pengguna sudah mengambil nomor antrean
         $loket = RiwayatAntrean::where('status', '=', 'waiting')
-            ->where('pengguna_ID', '=', session('ID_pengguna'))
+            ->where('pengguna_ID', '=', Auth::id())
             ->get();
 
         $id_loket_antrean = array();
         foreach ($loket as $temp) {
             $id_loket_antrean[] = $temp->loket_id;
         }
-        
+
         $id_loket_antrean = array_unique($id_loket_antrean);
-        
+
 
         // Fetch data kasus harian covid dari API eksternal
-        $api_response = Http::get('https://data.covid19.go.id/public/api/prov.json');
-        foreach($api_response['list_data'] as $lokasi) {
-            if($lokasi['key'] === $antrean->provinsi) {
-                $kasus_covid = $lokasi['penambahan']['positif'];
-            };
-        }
+        // $api_response = Http::get('https://data.covid19.go.id/public/api/prov.json');
+        // foreach ($api_response['list_data'] as $lokasi) {
+        //     if ($lokasi['key'] === $antrean->provinsi) {
+        //         $kasus_covid = $lokasi['penambahan']['positif'];
+        //     };
+        // }
 
         return view('antrean', [
             'title' => $antrean->nama_antrean,
             'antrean' => $antrean,
             'antrean_di_depan' => $antrean_di_depan,
-            'loket_tempat_mengantre' => $id_loket_antrean,
-            'kasus_covid' => $kasus_covid
+            'loket_tempat_mengantre' => $id_loket_antrean
+            // 'kasus_covid' => $kasus_covid
         ]);
     }
 
@@ -228,7 +227,7 @@ class AntreanController extends Controller
         $nomor_antrean = $this->tentukanNomorAntrean($loket);
 
         RiwayatAntrean::create([
-            'pengguna_id' => session()->get('ID_pengguna'),
+            'pengguna_id' => Auth::id(),
             'antrean_id' => $loket->antrean->id,
             'loket_id' => $loket->id,
             'batch' => $loket->batch,
@@ -247,19 +246,41 @@ class AntreanController extends Controller
 
     public function showKonfigurasiLoket($slug, Loket $loket)
     {
+        // Cari nomor antrean pertama yang sedang dilayani
         $antrean = RiwayatAntrean::where('loket_id', '=', $loket->id)
-            ->where('status', '=', 'waiting')
+            ->where('status', '=', 'serving')
+            ->where('batch', '=', $loket->batch)
             ->orderBy('id', 'ASC')
             ->first();
-        if (is_null($antrean)) {
-            $antrean_di_belakang = RiwayatAntrean::where('loket_id', '=', $loket->id)
-                ->where('status', '=', 'waiting')
-                ->count();
-        } else {
-            $antrean_di_belakang = RiwayatAntrean::where('loket_id', '=', $loket->id)
-                ->where('status', '=', 'waiting')
-                ->where('id', '!=', $antrean->id)
-                ->count();
+
+        // Gimana cara bedain baru buka antrean dan tidak ada orang yang sedang menunggu untuk menampilkan tidak ada antrean?
+        // mungkin waktu ambil antrean berikutnya jadi served??
+
+        // Cari jumlah pengantre yang sedang menunggu
+        $antrean_di_belakang = RiwayatAntrean::where('loket_id', '=', $loket->id)
+            ->where('status', '=', 'waiting')
+            ->where('batch', '=', $loket->batch)
+            ->count();
+
+        // Jika tidak ada yang di-serve dan antrean di belakang kosong, 
+        // periksa apakah antrean berikutnya adalah antrean pertama
+        if (is_null($antrean) && $antrean_di_belakang == 0) {
+            $next_person = RiwayatAntrean::where('loket_id', '=', $loket->id)
+                            ->where('status', '=', 'waiting')
+                            ->where('batch', '=', $loket->batch)
+                            ->first();
+            if(!(is_null($next_person)) && $next_person->nomor_antrean == 1) {
+                // Jika belum ada nomor yang dipanggil, maka tampilkan nol
+                $antrean = null;
+            } else {
+                // Jika sudah ada namun tidak ada nomor berikutnya yang akan dipanggil,
+                // maka tetap tampilkan nomor terakhir yang telah dipanggil
+                $antrean = RiwayatAntrean::where('loket_id', '=', $loket->id)
+                        ->where('status', '=', 'served')
+                        ->where('batch', '=', $loket->batch)
+                        ->orderBy('id', 'DESC')
+                        ->first();
+            }
         }
 
         return view('konfigurasiLoket', [
@@ -279,39 +300,50 @@ class AntreanController extends Controller
 
     public function ambilAntreanBerikutnya($id_loket)
     {
+        $loket = Loket::where('id', '=', $id_loket)->first();
         $antrean = RiwayatAntrean::where('loket_id', '=', $id_loket)
             ->where('status', '=', 'waiting')
+            ->where('batch', '=', $loket->batch)
             ->orderBy('id', 'ASC')
             ->first();
+        // dulu cuma waiting saja disini, 2 baris di bawah tidak ada
+        if (!is_null($antrean)) {
+            $antrean->status = 'serving';
+            $antrean->save();
+        }
         $jumlah_antrean = RiwayatAntrean::where('loket_id', '=', $id_loket)
-                            ->where('status', '=', 'waiting')
-                            ->count();
+            ->where('status', '=', 'waiting')
+            ->where('batch', '=', $loket->batch)
+            ->count();
 
         // Jika jumlah antrean di belakang lebih dari atau sama dengan 3, maka kirim email ke antrean ke-3
-        if($jumlah_antrean >= 3) {
+        if ($jumlah_antrean >= 3) {
             $antrean_ke_tiga = RiwayatAntrean::with('pengguna')
-                                ->where('loket_id', '=', $id_loket)
-                                ->where('status', '=', 'waiting')
-                                ->limit(3)
-                                ->orderBy('id', 'desc')
-                                ->first();
+                ->where('loket_id', '=', $id_loket)
+                ->where('batch', '=', $loket->batch)
+                ->where('status', '=', 'waiting')
+                ->limit(3)
+                ->orderBy('id', 'desc')
+                ->first();
             MailController::sendQueueAlertEmail($antrean_ke_tiga->pengguna->nama, $antrean_ke_tiga->pengguna->email);
-
         }
         return response()->json($antrean);
     }
 
     public function autoUpdateJumlahAntrean(Request $request)
     {
+        $loket = Loket::where('id', '=', $request->id_loket)->first();
         if ($request->id != -1) {
             $antrean_di_belakang = RiwayatAntrean::where('loket_id', '=', $request->id_loket)
                 ->where('status', '=', 'waiting')
+                ->where('batch', '=', $loket->batch)
                 ->where('id', '!=', $request->id)
                 ->count();
             return response()->json($antrean_di_belakang);
         }
         $antrean_di_belakang = RiwayatAntrean::where('loket_id', '=', $request->id_loket)
             ->where('status', '=', 'waiting')
+            ->where('batch', '=', $loket->batch)
             ->count();
         return response()->json($antrean_di_belakang);
     }

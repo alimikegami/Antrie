@@ -22,10 +22,10 @@
                                     <p><i class="bi bi-geo-alt-fill"></i> {{ $antrean->alamat }}</p>
                                     <p><i class="bi bi-telephone-fill"></i> {{ $antrean->nomor_telepon }}</p>
                                     <div class="covid-case bg-warning">
-                                        <p class="d-flex justify-content-between align-items-center">Kasus Covid-19 di
+                                        {{-- <p class="d-flex justify-content-between align-items-center">Kasus Covid-19 di
                                             {{ $antrean->provinsi }}
                                             <span class="badge">{{ $kasus_covid }} per hari</span>
-                                        </p>
+                                        </p> --}}
                                     </div>
                                 </div>
                             </div>

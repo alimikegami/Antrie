@@ -3,7 +3,8 @@
 @section('container')
     <p>Nomor Antrean Saat Ini:</p>
     <!-- handle nul values when there is no queue  -->
-    <h1 id="nomorAntrean">{{ $antrean->nomor_antrean ?? 'Tidak ada antrean berikutnya' }}</h1>
+    <h1 id="nomorAntrean">{{ $antrean->nomor_antrean ?? '0' }}</h1>
+
     <input id="inputRiwayatAntreanId" type="text" value="{{ $antrean->id ?? null }}" hidden>
     <input id="inputLoketId" type="text" value="{{ $loket->id }}" hidden>
     <div class="spinner-border" role="status" id="spinner" style="display:none;">

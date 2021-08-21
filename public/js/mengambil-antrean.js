@@ -20,9 +20,7 @@ $(document).ready(function () {
                     $('#nama-loket-modal').html(data.nama_loket);
                     $('#modal-ambil-nomor').modal('show');
                     id_tombol_lihat_antrean =  id_element.split("-");
-                    temp = id_tombol_lihat_antrean[3];
-                    console.log(temp);
-                    
+                    temp = id_tombol_lihat_antrean[3];                    
                     $('#belum-terdaftar-'+temp).hide();
                     $('#'+id_element).hide();
                     $('#tombol-riwayat-antrian-'+temp).removeAttr("hidden");
