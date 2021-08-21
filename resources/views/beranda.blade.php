@@ -14,9 +14,10 @@
                                 <h1>Halo, {{ session('nama') }}!</h1>
                                 <p>{Lorem ipsum dolor sit amet, consectetur. }</p>
                             </div>
-                            <div class="first-row-search">
+                            <form action="" class="first-row-search d-flex justify-content-center align-items-center">
                                 <input type="text" id="search-tempat-antrean" placeholder="Cari antrian...">
-                            </div>
+                                <button type="submit" id="search-button"><i class="bi bi-search"></i></button>
+                            </form>
                         </div>
                     </div>
                     <div class="second-row">

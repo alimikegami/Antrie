@@ -856,13 +856,12 @@ border-radius: 20px; */
 .content-buat-antrianmu-jumbotron {
     width: 100%;
     height: 100%;
-    /* overflow: hidden; */
 }
 
 .content-buat-antrianmu-jumbotron img {
     width: 100%;
     max-width: 500px;
-    height: auto;
+    max-height: 100%;
 }
 
 .word-buat-antrianmu-jumbotron h1 {

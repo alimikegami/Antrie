@@ -32,12 +32,12 @@ $(document).ready(function () {
     // });
 
     // homepage kelebihan pengantre dan pembuat antrean
-    $('#kelebihan-pembuat-antrean').on('click', ()=>{
+    $('#kelebihan-pembuat-antrean').on('click', () => {
         $('.word-pembuat-antrean ul').slideToggle();
         $('#tambah-pembuat-antrean').toggleClass('fa-plus fa-minus');
     });
 
-    $('#kelebihan-pengantre').on('click', ()=>{
+    $('#kelebihan-pengantre').on('click', () => {
         $('.word-pengantre ul').slideToggle();
         $('#tambah-pengantre').toggleClass('fa-plus fa-minus');
     });
@@ -49,46 +49,48 @@ $(document).ready(function () {
 
 
     // menu pengguna
-    $('.menu-dashboard').on('click', function(){
+    $('.menu-dashboard').on('click', function () {
+        window.location.href = '/beranda';
         $('.menu').removeClass('selected');
         $(this).addClass('selected');
     });
-    $('.menu-antrian').on('click', function(){
+    $('.menu-antrian').on('click', function () {
+        window.location.href = '/antreanku';
         $('.menu').removeClass('selected');
         $(this).addClass('selected');
     });
-    $('.menu-pesan').on('click', function(){
+    $('.menu-pesan').on('click', function () {
         $('.menu').removeClass('selected');
         $(this).addClass('selected');
     });
-    $('.menu-profil').on('click', function(){
+    $('.menu-profil').on('click', function () {
         $('.menu').removeClass('selected');
         $(this).addClass('selected');
     });
 
     // tombol ambil antrian di klik
-    $('.content-field-lokasi #tombol-ambil-antrian').click(()=>{
-      $('#modal-ambil-nomor').modal('show');
+    $('.content-field-lokasi #tombol-ambil-antrian').click(() => {
+        $('#modal-ambil-nomor').modal('show');
     })
 
     // tombol menu halaman antrianku
-    $('.menu-pengantri').click(function(){
-      $(this).addClass('menu-antrianku-active');
-      $('.menu-buat-antrian').removeClass('menu-antrianku-active');
-      $('.content-field-pemilik-antrian').hide();
-      $('#content-tunggu-antrian').show();
+    $('.menu-pengantri').click(function () {
+        $(this).addClass('menu-antrianku-active');
+        $('.menu-buat-antrian').removeClass('menu-antrianku-active');
+        $('.content-field-pemilik-antrian').hide();
+        $('#content-tunggu-antrian').show();
     })
-    $('.menu-buat-antrian').click(function(){
-      $(this).addClass('menu-antrianku-active');
-      $('.menu-pengantri').removeClass('menu-antrianku-active');
-      $('#content-tunggu-antrian').hide();
-      $('.content-field-pemilik-antrian').show();
+    $('.menu-buat-antrian').click(function () {
+        $(this).addClass('menu-antrianku-active');
+        $('.menu-pengantri').removeClass('menu-antrianku-active');
+        $('#content-tunggu-antrian').hide();
+        $('.content-field-pemilik-antrian').show();
     })
 
     if ($('.menu-pengantri').hasClass('menu-antrianku-active')) {
-      $('.content-field-pemilik-antrian').hide();
-    }else if ($('.menu-buat-antrian').hasClass('menu-antrianku-active')){
-      $('#content-tunggu-antrian').hide();
+        $('.content-field-pemilik-antrian').hide();
+    } else if ($('.menu-buat-antrian').hasClass('menu-antrianku-active')) {
+        $('#content-tunggu-antrian').hide();
     }
 
     $("#panggilAntrean").on("click", () => {
@@ -104,11 +106,20 @@ $(document).ready(function () {
         $("#modalKonfirmasiAntrean").modal("show");
     });
 
-    $('#tambahAntreanOffline').on("click", ()=>{
+    $('#tambahAntreanOffline').on("click", () => {
         let id_loket = $("#inputLoketId").val();
         $('#idLoketOffline').val(id_loket);
         $("#modalAntreanOffline").modal("show");
-    })
+    });
+
+    // animasi icon di halaman antrianku.pemilik antrian
+    $('.content-field-lokasi').on('mouseenter', '#content-pemilik-antrian', function () {
+        $(this).children('.lokasi-wrapper').children('#right-arrow').css('font-size', '3.5rem');
+    }).on('mouseleave', '#content-pemilik-antrian', function () {
+        $(this).children('.lokasi-wrapper').children('#right-arrow').css('font-size', '3rem');
+    }).on('click', '#content-pemilik-antrian', function () {
+        $(this).children('.lokasi-wrapper').children('#right-arrow').css('font-size', '3.5rem');
+    });
 
     // window.updateAntrean = function(id, id_loket){
     //   $('#idRiwayatAntrean111').val(id);
@@ -122,11 +133,11 @@ $(document).ready(function () {
         $.ajax({
             url: "/ambil-antrean-baru/" + id_loket,
             type: "GET",
-            beforeSend: function() {
+            beforeSend: function () {
                 $('#nomorAntrean').hide();
                 $('#spinner').show();
             },
-            complete: function(){
+            complete: function () {
                 console.log('complete');
                 $('#spinner').hide();
                 $('#nomorAntrean').show();
@@ -159,20 +170,20 @@ $(document).ready(function () {
         });
     }
 
-    
+
 
     // function ambilNomorAntrean(id_loket){
     //     $('modal-ambil-nomor')
     // }
 
-    function ambilNomorAntreanOffline(id_loket){
+    function ambilNomorAntreanOffline(id_loket) {
         $.ajax({
             url: "/submit-antrean-offline",
             type: "POST",
             data: {
                 id_loket: id_loket,
             },
-            success: function() {
+            success: function () {
                 console.log('Sukses');
             },
         });
