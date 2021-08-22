@@ -316,7 +316,7 @@ border-radius: 20px; */
 
 .dashboard-content {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     background-color: #9EEDE5;
     border-radius: 44px;
     padding: 3vw;
@@ -515,7 +515,6 @@ border-radius: 20px; */
     font-weight: bold;
 }
 
-
 /* content lokasi antrian */
 .word-field-lokasi {
     height: 15%;
@@ -577,7 +576,6 @@ border-radius: 20px; */
 
 .keterangan-lokasi {
     padding-left: 5%;
-    max-width: 100%;
 }
 
 .keterangan-lokasi h1 {
@@ -788,9 +786,9 @@ border-radius: 20px; */
 .covid-case {
     background-color: #2F2D65;
     border-radius: 15px;
-    padding: 0 1%;
+    padding: 0 2%;
     /* padding: 2%; */
-    max-width: 80%;
+    width: 55%;
 }
 
 .covid-case p {
@@ -847,8 +845,8 @@ border-radius: 20px; */
 .buat-antrianmu-jumbotron {
     background-color: #2B2844;
     width: 100%;
-    height: 30vh;
-    /* padding: 5%; */
+    height: 25vh;
+    /* padding: 1%; */
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
 }
@@ -856,12 +854,6 @@ border-radius: 20px; */
 .content-buat-antrianmu-jumbotron {
     width: 100%;
     height: 100%;
-}
-
-.content-buat-antrianmu-jumbotron img {
-    width: 100%;
-    max-width: 500px;
-    max-height: 100%;
 }
 
 .word-buat-antrianmu-jumbotron h1 {
@@ -895,6 +887,16 @@ border-radius: 20px; */
 #tombol-buat-antrianku:active {
     position: relative;
     top: 2px;
+}
+
+.field-lokasi-all-antrianku {
+    background-color: #FFFFFF;
+    width: 100%;
+    /* height: 80vh; */
+    padding: 1%;
+    border-radius: 30px;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+    overflow: auto;
 }
 
 /* halaman riwayat */
@@ -1115,4 +1117,26 @@ border-radius: 20px; */
 
 .tombol-input-antrian-ol {
     height: 80%;
+}
+
+.orang-menunggu {
+    background-color: #2F2D65;
+    border-radius: 15px;
+    padding: 0 2%;
+    /* padding: 2%; */
+    width: 35%;
+    /* height: 5%; */
+}
+
+.orang-menunggu p {
+    color: #000000;
+    padding: 1%;
+    /* font-weight: bold; */
+}
+
+.orang-menunggu span {
+    height: 50%;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    color: #000000;
 }
