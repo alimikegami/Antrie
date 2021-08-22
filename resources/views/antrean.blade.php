@@ -58,7 +58,7 @@
                                                     class="badge {{ $temp->status }}">{{ $temp->status }}</span></p>
 
                                             @if (in_array($temp->id, $loket_tempat_mengantre))
-                                                <p id="sudah-terdaftar-{{ $i }}" }}>Anda terdaftar dalam loket
+                                                <p id="sudah-terdaftar-{{ $i }}" }}>Anda telah terdaftar pada loket
                                                     ini</p>
                                                 <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
                                                     class="btn btn-riwayat-antrean">Lihat Antrean</button>
@@ -68,7 +68,7 @@
                                                 <button type="button" id="tombol-ambil-antrian-{{ $i }}"
                                                     class="btn tombol-ambil-antrian" hidden>Ambil Nomor</button>
                                             @else
-                                                <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda terdaftar dalam
+                                                <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda telah terdaftar pada
                                                     loket ini</p>
                                                 <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
                                                     class="btn btn-riwayat-antrean" hidden>Lihat Antrean</button>
