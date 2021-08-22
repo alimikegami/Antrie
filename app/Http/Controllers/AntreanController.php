@@ -24,19 +24,25 @@ class AntreanController extends Controller
         // Menghitung jumlah pengantre yang menunggu pada suatu loket
         $antrean_di_depan = [];
         $estimasi_waktu_tunggu = [];
+        $waktu_fix = [];
         $antrean = Antrean::with('loket')
             ->where('id', '=', $antrean->id)
             ->get()->first();
         foreach ($antrean->loket as $temp) {
-            $antrean_di_depan[] = RiwayatAntrean::where('loket_id', '=', $temp->id)
+            $antrean_di_depan_temp = RiwayatAntrean::where('loket_id', '=', $temp->id)
                 ->where('status', '=', 'waiting')
                 ->where('batch', '=', $temp->batch)
                 ->count();
-            $estimasi_waktu_tunggu[] = DB::select(DB::raw("SELECT AVG(TIME_TO_SEC(TIMEDIFF(ra_1.updated_at, ra_2.updated_at))) AS estimasi_waktu_tunggu 
-                                        FROM riwayat_antrean AS ra_1 INNER JOIN riwayat_antrean AS ra_2 ON ra_1.id = ra_2.id + 1 
-                                        WHERE ra_1.loket_id = :id_loket AND ra_1.batch = :batch_1 AND ra_2.batch = :batch_2"), ['id_loket' => $temp->id, 'batch_1' => $temp->batch, 'batch_2' => $temp->batch]);
+            $antrean_di_depan[] = $antrean_di_depan_temp;
+            $estimasi_waktu_tunggu_temp = DB::select(DB::raw("SELECT AVG(TIME_TO_SEC(TIMEDIFF(ra_1.dipanggil, ra_2.dipanggil))) AS estimasi_waktu_tunggu 
+                                            FROM riwayat_antrean AS ra_1 INNER JOIN riwayat_antrean AS ra_2 ON ra_1.id = ra_2.id + 1 
+                                            WHERE ra_1.loket_id = :id_loket AND ra_1.batch = :batch_1 AND ra_2.batch = :batch_2"), ['id_loket' => $temp->id, 'batch_1' => $temp->batch, 'batch_2' => $temp->batch]);
+            $estimasi_waktu_tunggu = $estimasi_waktu_tunggu_temp;
+            $waktu_fix[] = round(($estimasi_waktu_tunggu[0]->estimasi_waktu_tunggu * $antrean_di_depan_temp)/60);
         }
-        // dd('asdfasf');
+
+        // dd($estimasi_waktu_tunggu[0][0]->estimasi_waktu_tunggu);
+
         // Menentukan loket tempat pengguna sudah mengambil nomor antrean
         $loket = RiwayatAntrean::where('status', '=', 'waiting')
             ->where('pengguna_ID', '=', Auth::id())
@@ -51,19 +57,20 @@ class AntreanController extends Controller
 
 
         // Fetch data kasus harian covid dari API eksternal
-        // $api_response = Http::get('https://data.covid19.go.id/public/api/prov.json');
-        // foreach ($api_response['list_data'] as $lokasi) {
-        //     if ($lokasi['key'] === $antrean->provinsi) {
-        //         $kasus_covid = $lokasi['penambahan']['positif'];
-        //     };
-        // }
+        $api_response = Http::get('https://data.covid19.go.id/public/api/prov.json');
+        foreach ($api_response['list_data'] as $lokasi) {
+            if ($lokasi['key'] === $antrean->provinsi) {
+                $kasus_covid = $lokasi['penambahan']['positif'];
+            };
+        }
 
         return view('antrean', [
             'title' => $antrean->nama_antrean,
             'antrean' => $antrean,
             'antrean_di_depan' => $antrean_di_depan,
-            'loket_tempat_mengantre' => $id_loket_antrean
-            // 'kasus_covid' => $kasus_covid
+            'loket_tempat_mengantre' => $id_loket_antrean,
+            'kasus_covid' => $kasus_covid,
+            'estimasi_waktu' => $waktu_fix
         ]);
     }
 
@@ -309,6 +316,7 @@ class AntreanController extends Controller
         // dulu cuma waiting saja disini, 2 baris di bawah tidak ada
         if (!is_null($antrean)) {
             $antrean->status = 'serving';
+            $antrean->dipanggil = Carbon::now();
             $antrean->save();
         }
         $jumlah_antrean = RiwayatAntrean::where('loket_id', '=', $id_loket)

@@ -22,10 +22,10 @@
                                     <p><i class="bi bi-geo-alt-fill"></i> {{ $antrean->alamat }}</p>
                                     <p><i class="bi bi-telephone-fill"></i> {{ $antrean->nomor_telepon }}</p>
                                     <div class="covid-case bg-warning">
-                                        {{-- <p class="d-flex justify-content-between align-items-center">Kasus Covid-19 di
+                                        <p class="d-flex justify-content-between align-items-center">Kasus Covid-19 di
                                             {{ $antrean->provinsi }}
                                             <span class="badge">{{ $kasus_covid }} per hari</span>
-                                        </p> --}}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                                     class="badge {{ $temp->status }}">{{ $temp->status }}</span></p>
 
                                             @if (in_array($temp->id, $loket_tempat_mengantre))
-                                                <p id="sudah-terdaftar-{{ $i }}" }}>Anda terdaftar dalam loket
+                                                <p id="sudah-terdaftar-{{ $i }}" }}>Anda telah terdaftar pada loket
                                                     ini</p>
                                                 <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
                                                     class="btn btn-riwayat-antrean">Lihat Antrean</button>
@@ -68,12 +68,15 @@
                                                 <button type="button" id="tombol-ambil-antrian-{{ $i }}"
                                                     class="btn tombol-ambil-antrian" hidden>Ambil Nomor</button>
                                             @else
-                                                <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda terdaftar dalam
+                                                <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda telah terdaftar pada
                                                     loket ini</p>
                                                 <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
                                                     class="btn btn-riwayat-antrean" hidden>Lihat Antrean</button>
                                                 <p id="belum-terdaftar-{{ $i }}">Terdapat
                                                     <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
+                                                </p>
+                                                <p id="estimasi-waktu-{{ $i }}">Estimasi waktu
+                                                    <span>{{ $estimasi_waktu[$i] }}</span> menit
                                                 </p>
                                                 <button type="button" id="tombol-ambil-antrian-{{ $i }}"
                                                     class="btn tombol-ambil-antrian">Ambil Nomor</button>

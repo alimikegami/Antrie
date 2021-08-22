@@ -22,6 +22,7 @@ $(document).ready(function () {
                     id_tombol_lihat_antrean =  id_element.split("-");
                     temp = id_tombol_lihat_antrean[3];                    
                     $('#belum-terdaftar-'+temp).hide();
+                    $('#estimasi-waktu-'+temp).hide();
                     $('#'+id_element).hide();
                     $('#tombol-riwayat-antrian-'+temp).removeAttr("hidden");
                     $('#sudah-terdaftar-'+temp).removeAttr("hidden");

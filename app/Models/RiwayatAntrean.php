@@ -18,6 +18,7 @@ class RiwayatAntrean extends Model
         'batch',
         'nomor_antrean',
         'status',
+        'dipanggil'
     ];
 
     public function antrean(){
