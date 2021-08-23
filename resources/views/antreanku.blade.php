@@ -33,7 +33,7 @@
                     <div class="buat-antrianmu-jumbotron d-flex flex-column justify-content-center align-items-center">
                         <div class="content-buat-antrianmu-jumbotron d-flex align-items-center justify-content-evenly">
 
-                            <img src="{{ asset('img/antrianku-person.png') }}" alt="antrianku-person">
+                            <img src="img/antrianku-person.png" class="img-fluid" alt="antrianku-person">
 
                             <div
                                 class="word-buat-antrianmu-jumbotron d-flex justify-content-end align-items-center flex-column text-center">
@@ -45,9 +45,9 @@
 
                     </div>
 
-                    <div class="field-lokasi-all d-flex flex-column mt-5">
+                    <div class="field-lokasi-all-antrianku d-flex flex-column mt-5">
                         <div class="content-field-lokasi d-flex flex-column">
-                            <div class="p-2 hover-wrapper" id="content-pemilik-antrian">
+                            <div class="p-2 hover-wrapper mb-0" id="content-pemilik-antrian">
                                 <div class="lokasi-wrapper d-flex align-items-center">
                                     <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                         <div class="gambar">
@@ -69,6 +69,7 @@
 
                 </div>
                 @include('components/footer')
+
             </div>
         </div>
     </div>
