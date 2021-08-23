@@ -55,10 +55,12 @@
                                         </div>
                                     </div>
                                     <div class="keterangan-loket-antrianku">
-                                        <h1>Pukesmas II Denpasar Barat - Loket 1</h1>
-                                        <p>Kesehatan</p>
-                                        <p class="mt-4"><i class="bi bi-geo-alt-fill"></i> Gg. Puskesmas No.3, Pemecutan
-                                            Klod, Kec. Denpasar Bar., Kota Denpasar, Bali 80119</p>
+                                        @foreach ($antrean as $item)
+                                            <h1>{{ $item->nama_antrean }}</h1>
+                                            <p>{{ $item->kategori->nama_kategori }}</p>
+                                            <p class="mt-4"><i class="bi bi-geo-alt-fill"></i>{{ $item->alamat }}</p>
+                                        @endforeach
+                                        
                                     </div>
                                     <i class="bi bi-arrow-right-circle-fill" id="right-arrow"></i>
                                 </div>
