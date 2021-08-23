@@ -27,7 +27,7 @@
                 <div class="dashboard-content d-flex flex-column">
                     <div class="first-row-all d-flex justify-content-between flex-column p-3">
                         <div class="first-row-word flex-fill">
-                            <h1>Antrian ku</h1>
+                            <h1>Antreanku</h1>
                         </div>
                     </div>
                     <div class="buat-antrianmu-jumbotron d-flex flex-column justify-content-center align-items-center">
