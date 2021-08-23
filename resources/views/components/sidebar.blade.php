@@ -5,11 +5,11 @@
         </a>
         <div class="flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
             <div class="menu-pengguna d-flex flex-column">
-                <div class="menu-dashboard menu selected">
+                <div class="menu-dashboard menu">
                     <i class="bi bi-house"></i><a href="{{ route('beranda') }}">Beranda</a>
                 </div>
                 <div class="menu-antrian menu">
-                    <i class="bi bi-archive"></i><a href="{{ route('antreanku') }}">Antrian ku</a>
+                    <i class="bi bi-archive"></i><a href="{{ route('antreanku') }}">Antreanku</a>
                 </div>
                 <div class="menu-pesan menu">
                     <i class="bi bi-chat-left-text"></i><a href="#">Pesan</a>
