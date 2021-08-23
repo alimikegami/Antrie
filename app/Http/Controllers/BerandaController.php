@@ -34,7 +34,7 @@ class BerandaController extends Controller
         if (Auth::check()) {
             return view('antreanku', [
                 'title' => "Antreanku",
-                'antrean' => Antrean::with('loket')->where('id_pembuat', '=', Auth::id())->get(),
+                'antrean' => Antrean::with('kategori')->where('id_pembuat', '=', Auth::id())->get(),
             ]);
         } else {
             return redirect()->route('landingpage');
