@@ -5,9 +5,9 @@ $(document).ready(function () {
         },
     });
 
-    $(function(){
-        $('a').each(function(){
-            if ($(this).prop('href') == window.location.href) { 
+    $(function () {
+        $('a').each(function () {
+            if ($(this).prop('href') == window.location.href) {
                 $(this).parents('.menu').addClass('selected');
                 console.log($(this).parents(".menu"));
             }
@@ -250,7 +250,7 @@ $(window).ready(function () {
         });
 });
 
-const swiper = new Swiper(".swiper-container", {
+const swiper = new Swiper(".swiper", {
     // Optional parameters
     direction: "horizontal",
     loop: true,
