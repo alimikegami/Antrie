@@ -970,7 +970,7 @@ border-radius: 20px; */
 /* Halaman atur loket */
 
 .tombol-buka-loket {
-    background-color: #4dafff;
+    background-color: #53D383;
     border-radius: 20px;
     display: inline-block;
     cursor: pointer;
@@ -983,7 +983,7 @@ border-radius: 20px; */
 }
 
 .tombol-buka-loket:hover {
-    background-color: #6eb8f0;
+    background-color: #47b471;
 }
 
 .tombol-buka-loket:active {
@@ -1059,6 +1059,22 @@ border-radius: 20px; */
 
 #back-arrow:hover {
     transform: translateX(-5px);
+}
+
+#btn-ubah-antrian {
+    width: 15%;
+    background-color: #4DB0FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+}
+
+#btn-ubah-antrian:active {
+    transform: translateY(4px);
+}
+
+#btn-ubah-antrian:hover {
+    background-color: #6eb8f0;
 }
 
 

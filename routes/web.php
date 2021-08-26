@@ -22,8 +22,8 @@ use App\Http\Controllers\ForgotPasswordController;
 Route::get('/', function () {
     return view('landingPage');
 })->name('landingpage');
-Route::get('/all-antrean', function () {
-    return view('all-antrean', [
+Route::get('/aturLoket', function () {
+    return view('aturLoket', [
         'title' => 'test'
     ]);
 })->name('landingpage');
