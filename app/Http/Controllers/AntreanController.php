@@ -180,9 +180,9 @@ class AntreanController extends Controller
         }
     }
 
-    public function bukaLoket($id)
+    public function bukaLoket(Request $request)
     {
-        $loket = Loket::where('id', "=", $id)->first();;
+        $loket = Loket::where('id', "=", $request->id_loket_buka)->first();;
         if ($loket) {
             $curr_time = Carbon::now();
             $loket->batch = $curr_time->toDateTimeString();
@@ -190,16 +190,18 @@ class AntreanController extends Controller
             $loket->save();
         }
 
-        return redirect()->route('');
+        return back()->withInput();
     }
 
-    public function tutupLoket($id)
+    public function tutupLoket(Request $request)
     {
-        $loket = Loket::where('id', "=", $id)->first();
+        $loket = Loket::where('id', "=", $request->id_loket_tutup)->first();
         if ($loket) {
             $loket->status = 'closed';
             $loket->save();
         }
+
+        return back()->withInput();
     }
 
     public function tentukanNomorAntrean($loket)
