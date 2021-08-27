@@ -7,7 +7,7 @@
             <div class="col py-3">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="atur-loket-lokasi d-flex flex-column">
-                        <a href="antrianku.html" id="back-arrow"
+                        <a href="/antreanku" id="back-arrow"
                             class="d-flex justify-content-center align-items-center mb-2"><i
                                 class="bi bi-arrow-left"></i></a>
                         <div class="d-flex flex-column">
