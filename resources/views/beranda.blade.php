@@ -22,7 +22,7 @@
                     </div>
                     <div class="second-row">
                         <div class="container">
-                            <div class="swiper-container">
+                            <div class="swiper">
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- Slides -->

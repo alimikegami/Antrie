@@ -29,15 +29,4 @@ class BerandaController extends Controller
     public function showAntreanBasedOnCategories(Kategori $kategori){
         return view('all-antrean', ['antrean' => $kategori->antrean, 'title' => $kategori->nama_kategori]);
     }
-
-    public function showAntreanku(){
-        if (Auth::check()) {
-            return view('antreanku', [
-                'title' => "Antreanku",
-                'antrean' => Antrean::with('kategori')->where('id_pembuat', '=', Auth::id())->get(),
-            ]);
-        } else {
-            return redirect()->route('landingpage');
-        }
-    }
 }

@@ -1390,7 +1390,7 @@ body {
 /* Halaman atur loket */
 
 .tombol-buka-loket {
-    background-color: #4dafff;
+    background-color: #53D383;
     border-radius: 20px;
     display: inline-block;
     cursor: pointer;
@@ -1403,7 +1403,7 @@ body {
 }
 
 .tombol-buka-loket:hover {
-    background-color: #6eb8f0;
+    background-color: #47b471;
 }
 
 .tombol-buka-loket:active {
@@ -1481,6 +1481,53 @@ body {
     transform: translateX(-5px);
 }
 
+#btn-ubah-antrian {
+    width: 15%;
+    background-color: #4DB0FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+}
+
+#btn-ubah-antrian:active {
+    transform: translateY(4px);
+}
+
+#btn-ubah-antrian:hover {
+    background-color: #6eb8f0;
+}
+
+.btn-enter-atur-loket {
+    background-color: #4dafff;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff !important;
+    font-size: 18px;
+    padding: 10px 60px;
+    text-decoration: none;
+    border: none;
+    width: 80%;
+}
+
+.btn-enter-atur-loket:hover {
+    background-color: #6eb8f0;
+}
+
+.btn-enter-atur-loket:active {
+    position: relative;
+    top: 2px;
+}
+
+.btn-cancel-atur-loket {
+    border-radius: 20px;
+    width: 50%;
+}
+
+.aturLoket-modal-btn-row {
+    width: 50%;
+    height: 60%;
+}
 
 /* Halaman panggil antrian */
 .field-panggil-antrian {

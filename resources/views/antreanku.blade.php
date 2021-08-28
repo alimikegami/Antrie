@@ -47,24 +47,26 @@
 
                     <div class="field-lokasi-all-antrianku d-flex flex-column mt-5">
                         <div class="content-field-lokasi d-flex flex-column">
-                            <div class="p-2 hover-wrapper mb-0" id="content-pemilik-antrian">
-                                <div class="lokasi-wrapper d-flex align-items-center">
-                                    <div class="logo-lokasi d-flex justify-content-center align-items-center">
-                                        <div class="gambar">
-                                            <img src="img/logoAntriedark.png" alt="" width="70px">
+                            @foreach ($antrean as $item)
+                                <a href="/antreanku/{{ $item->slug }}">
+                                    <div class="p-2 hover-wrapper mb-0" id="content-pemilik-antrian">
+                                        <div class="lokasi-wrapper d-flex align-items-center">
+                                            <div class="logo-lokasi d-flex justify-content-center align-items-center">
+                                                <div class="gambar">
+                                                    <img src="img/logoAntriedark.png" alt="" width="70px">
+                                                </div>
+                                            </div>
+                                            <div class="keterangan-loket-antrianku">
+                                                <h1>{{ $item->nama_antrean }}</h1>
+                                                <p>{{ $item->kategori->nama_kategori }}</p>
+                                                <p class="mt-4"><i class="bi bi-geo-alt-fill"></i>{{ $item->alamat }}</p>
+    
+                                            </div>
+                                            <i class="bi bi-arrow-right-circle-fill" id="right-arrow"></i>
                                         </div>
                                     </div>
-                                    <div class="keterangan-loket-antrianku">
-                                        @foreach ($antrean as $item)
-                                            <h1>{{ $item->nama_antrean }}</h1>
-                                            <p>{{ $item->kategori->nama_kategori }}</p>
-                                            <p class="mt-4"><i class="bi bi-geo-alt-fill"></i>{{ $item->alamat }}</p>
-                                        @endforeach
-                                        
-                                    </div>
-                                    <i class="bi bi-arrow-right-circle-fill" id="right-arrow"></i>
-                                </div>
-                            </div>
+                                </a>
+                            @endforeach
 
                         </div>
                     </div>

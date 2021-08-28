@@ -1,7 +1,7 @@
 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-white d-flex justify-content-center coba">
     <div class="d-flex flex-column align-items-center px-3 pt-5 min-vh-100 navbar-dashboard">
         <a href="/" class="d-flex align-items-center pb-3 text-decoration-none">
-            <img class="img-fluid" src="img/logoAntriedark.png" alt="">
+            <img class="img-fluid" src="{{ asset('img/logoAntriedark.png') }}" alt="">
         </a>
         <div class="flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
             <div class="menu-pengguna d-flex flex-column">
