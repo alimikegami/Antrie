@@ -1077,6 +1077,37 @@ border-radius: 20px; */
     background-color: #6eb8f0;
 }
 
+.btn-enter-atur-loket {
+    background-color: #4dafff;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff !important;
+    font-size: 18px;
+    padding: 10px 60px;
+    text-decoration: none;
+    border: none;
+    width: 80%;
+}
+
+.btn-enter-atur-loket:hover {
+    background-color: #6eb8f0;
+}
+
+.btn-enter-atur-loket:active {
+    position: relative;
+    top: 2px;
+}
+
+.btn-cancel-atur-loket {
+    border-radius: 20px;
+    width: 50%;
+}
+
+.aturLoket-modal-btn-row {
+    width: 50%;
+    height: 60%;
+}
 
 /* Halaman panggil antrian */
 .field-panggil-antrian {
