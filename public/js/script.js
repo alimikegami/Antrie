@@ -5,13 +5,14 @@ $(document).ready(function () {
         },
     });
 
-    $("button").click(function (){
+    $(".keterangan-loket-pemilik button").click(function (e) {
+        e.preventDefault();
         let id_element = $(this).attr('id');
-        if(id_element.includes("tombol-tutup-loket-")){
+        if (id_element.includes("tombol-tutup-loket-")) {
             let id_loket = $(this).attr('data-id-loket')
             $('#id_loket_tutup').val(id_loket);
             $('#modal-konfirmasi-tutup-loket').modal('show');
-        }else if (id_element.includes("tombol-buka-loket-")){
+        } else if (id_element.includes("tombol-buka-loket-")) {
             let id_loket = $(this).attr('data-id-loket')
             $('#id_loket_buka').val(id_loket);
             $('#modal-konfirmasi-buka-loket').modal('show');
