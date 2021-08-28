@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light">
   <div class="container">
       <a class="navbar-brand" href="{{ route('landingpage') }}"><img id="navbar-logo" src="img/logoAntriedark.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
