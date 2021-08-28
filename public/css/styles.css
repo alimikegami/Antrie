@@ -9,6 +9,11 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+::selection {
+    background: #f0f1ff;
+    color: #753852;
+}
+
 /* navbar */
 .logo {
     width: 15vh;
@@ -1154,36 +1159,67 @@ border-radius: 20px; */
 }
 
 .tombol-panggil-antrian {
-    width: 40%;
+    width: 90%;
     height: 10%;
 }
 
 .tombol-input-antrian-off {
-    height: 50%;
+    height: 100%;
+    border-color: #4DB0FF;
+    border-radius: 15px;
+}
+
+.tombol-input-antrian-off:hover {
+    background-color: #4DB0FF;
+    border-color: #4DB0FF;
 }
 
 .tombol-input-antrian-ol {
+    width: 100%;
     height: 80%;
+    background-color: #4DB0FF;
+    border: none;
+    font-size: 2rem;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+.tombol-input-antrian-ol:hover {
+    background-color: #6eb8f0;
+    color: #ffffff;
 }
 
 .orang-menunggu {
     background-color: #2F2D65;
     border-radius: 15px;
-    padding: 0 2%;
+    padding: 0.5% 2%;
     /* padding: 2%; */
     width: 35%;
-    /* height: 5%; */
 }
 
 .orang-menunggu p {
     color: #000000;
-    padding: 1%;
+    /* padding: 1%; */
     /* font-weight: bold; */
 }
 
 .orang-menunggu span {
-    height: 50%;
+    /* height: 50%; */
     border-radius: 15px;
     background-color: #FFFFFF;
     color: #000000;
+}
+
+#spinner {
+    width: 6rem;
+    height: 6rem;
+    display: none;
+    color: #2F2D65;
+}
+
+#modalKonfirmasiAntrean .modal-header,
+.modal-body,
+.modal-footer {
+    background-color: #2B2844;
+    color: #ffffff;
 }
