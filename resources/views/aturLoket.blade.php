@@ -36,43 +36,46 @@
                                 $i = 0;
                             @endphp
                             @foreach ($antrean->loket as $item)
-                                <div class="p-2 hover-wrapper" id="content-pemilik-antrian">
-                                    <div class="lokasi-wrapper d-flex align-items-center">
-                                        <div class="logo-lokasi d-flex justify-content-center align-items-center">
-                                            <div class="gambar">
-                                                <img src="{{ asset('img/logoAntriedark.png') }}" alt="" width="70px">
+                                <a href="/antreanku/antrean/{{ $antrean->slug }}/loket/{{ $item->slug }}">
+                                    <div class="p-2 hover-wrapper" id="content-pemilik-antrian">
+                                        <div class="lokasi-wrapper d-flex align-items-center">
+                                            <div class="logo-lokasi d-flex justify-content-center align-items-center">
+                                                <div class="gambar">
+                                                    <img src="{{ asset('img/logoAntriedark.png') }}" alt="" width="70px">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="keterangan-loket-pemilik">
-                                            <h1>{{ $item->nama_loket }}</h1>
-                                            <p>{{ $item->waktu_buka }} - {{ $item->waktu_tutup }}
+                                            <div class="keterangan-loket-pemilik">
+                                                <h1>{{ $item->nama_loket }}</h1>
+                                                <p>{{ $item->waktu_buka }} - {{ $item->waktu_tutup }}
+                                                    @if ($item->status == 'open')
+                                                        <span class="badge open">open</span>
+                                                    @else
+                                                        <span class="badge closed">closed</span>
+                                                    @endif
+
+                                                </p>
+                                                <p>Terdapat <span>{{ $antrean_di_belakang[$i] }}</span> orang mengantre
+                                                </p>
+                                                @php
+                                                    $i = $i + 1;
+                                                @endphp
                                                 @if ($item->status == 'open')
-                                                    <span class="badge open">open</span>
+                                                    <button type="button" class="tombol-tutup-loket"
+                                                        id="tombol-tutup-loket-{{ $i }}" class="btn"
+                                                        data-id-loket="{{ $item->id }}" onclick="">Close
+                                                        Loket</button>
                                                 @else
-                                                    <span class="badge closed">closed</span>
+                                                    <button type="button" class="tombol-buka-loket"
+                                                        id="tombol-buka-loket-{{ $i }}" class="btn"
+                                                        data-id-loket="{{ $item->id }}">Open
+                                                        Loket</button>
                                                 @endif
 
-                                            </p>
-                                            <p>Terdapat <span>{{ $antrean_di_belakang[$i] }}</span> orang mengantre</p>
-                                            @php
-                                                $i = $i + 1;
-                                            @endphp
-                                            @if ($item->status == 'open')
-                                                <button type="button" class="tombol-tutup-loket"
-                                                    id="tombol-tutup-loket-{{ $i }}" class="btn"
-                                                    data-id-loket="{{ $item->id }}" onclick="">Close
-                                                    Loket</button>
-                                            @else
-                                                <button type="button" class="tombol-buka-loket"
-                                                    id="tombol-buka-loket-{{ $i }}" class="btn"
-                                                    data-id-loket="{{ $item->id }}">Open
-                                                    Loket</button>
-                                            @endif
-
+                                            </div>
+                                            <i class="bi bi-arrow-right-circle-fill" id="right-arrow"></i>
                                         </div>
-                                        <i class="bi bi-arrow-right-circle-fill" id="right-arrow"></i>
                                     </div>
-                                </div>
+                                </a>
                             @endforeach
                         </div>
                     </div>
