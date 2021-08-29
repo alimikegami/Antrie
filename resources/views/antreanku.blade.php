@@ -45,9 +45,9 @@
 
                     </div>
 
-                    <div class="field-lokasi-all-antrianku d-flex flex-column mt-5">
-                        <div class="content-field-lokasi d-flex flex-column">
-                            @foreach ($antrean as $item)
+                    @foreach ($antrean as $item)
+                        <div class="field-lokasi-all-antrianku d-flex flex-column mt-5">
+                            <div class="content-field-lokasi d-flex flex-column">
                                 <a href="/antreanku/{{ $item->slug }}">
                                     <div class="p-2 hover-wrapper mb-0" id="content-pemilik-antrian">
                                         <div class="lokasi-wrapper d-flex align-items-center">
@@ -60,16 +60,15 @@
                                                 <h1>{{ $item->nama_antrean }}</h1>
                                                 <p>{{ $item->kategori->nama_kategori }}</p>
                                                 <p class="mt-4"><i class="bi bi-geo-alt-fill"></i>{{ $item->alamat }}</p>
-    
+
                                             </div>
                                             <i class="bi bi-arrow-right-circle-fill" id="right-arrow"></i>
                                         </div>
                                     </div>
                                 </a>
-                            @endforeach
-
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
 
                 </div>
                 @include('components/footer')
