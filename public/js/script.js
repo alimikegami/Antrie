@@ -293,6 +293,7 @@ $(document).ready(function () {
     });
 });
 
+// landing page scroll animation
 $(window).ready(function () {
     var wHeight = $(window).height();
 
@@ -303,7 +304,6 @@ $(window).ready(function () {
             direction: "both",
             scrollingInView: function (elem, winPos) {
                 var bgColor = elem.data("background");
-                console.log(bgColor);
                 if (bgColor === "#ffff") {
                     $(".navbar").css("background-color", "#FFFFFF");
                     $("#navbar-logo").attr("src", "img/logoAntriedark.png");
