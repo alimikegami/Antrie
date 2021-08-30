@@ -30,6 +30,7 @@ body {
 .container-md {
     margin-top: 1rem;
 }
+
 /* section 1 home page */
 
 .display {
@@ -77,7 +78,7 @@ body {
         display: flex;
         flex-direction: column;
     }
-    
+
     .image {
         width: 50%;
         display: flex;
@@ -570,7 +571,7 @@ body {
     .word-kenapa-pilih p {
         font-size: 1rem;
     }
-    
+
     .kemudahan-kenapa-pilih,
     .kecepatan-kenapa-pilih,
     .fleksibilitas-kenapa-pilih {
@@ -613,6 +614,7 @@ body {
         font-size: 20px;
     }
 }
+
 /* section 5 home page */
 .home-fifth {
     display: flex;
@@ -1642,4 +1644,68 @@ body {
 .modal-footer {
     background-color: #2B2844;
     color: #ffffff;
+}
+
+/* halaman form buat antrian */
+
+.field-form-tambah-antrian {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 5%;
+    border-radius: 30px;
+    box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+}
+
+.form-tambah-antrian h1 {
+    font-weight: bold;
+}
+
+.form-tambah-antrian p {
+    color: #73848C;
+}
+
+.form-tambah-antrian span {
+    color: #FF0000;
+}
+
+.opt-word {
+    font-size: 0.8rem;
+    color: #000000 !important;
+}
+
+hr.rounded {
+    border-top: 8px solid #bbbb;
+    border-radius: 5px;
+}
+
+.tambah-loket {
+    border-color: #4DB0FF;
+    color: #4DB0FF;
+    transition: all 1s;
+}
+
+.tambah-loket:hover {
+    background-color: #2F2D65;
+    border-color: #4DB0FF;
+}
+
+.tombol-submit-form-buat-loket {
+    background-color: #4dafff;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 60px;
+    text-decoration: none;
+    border: none;
+}
+
+.tombol-submit-form-buat-loket:hover {
+    background-color: #6eb8f0;
+}
+
+.tombol-submit-form-buat-loket:active {
+    position: relative;
+    top: 2px;
 }
