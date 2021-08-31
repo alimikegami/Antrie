@@ -39,7 +39,7 @@
                                 class="word-buat-antrianmu-jumbotron d-flex justify-content-end align-items-center flex-column text-center">
                                 <h1>Ayo Buat Antrianmu Sendiri</h1>
                                 <p>Tekan tombol dibawah untuk memulai</p>
-                                <button type="button" id="tombol-buat-antrianku">Buat</button>
+                                <a href="{{ route('buat-antrean') }}" type="button" id="tombol-buat-antrianku">Buat</a>
                             </div>
                         </div>
 
@@ -59,7 +59,8 @@
                                             <div class="keterangan-loket-antrianku">
                                                 <h1>{{ $item->nama_antrean }}</h1>
                                                 <p>{{ $item->kategori->nama_kategori }}</p>
-                                                <p class="mt-4"><i class="bi bi-geo-alt-fill"></i>{{ $item->alamat }}</p>
+                                                <p class="mt-4"><i
+                                                        class="bi bi-geo-alt-fill"></i>{{ $item->alamat }}</p>
 
                                             </div>
                                             <i class="bi bi-arrow-right-circle-fill" id="right-arrow"></i>

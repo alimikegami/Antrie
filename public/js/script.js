@@ -28,32 +28,6 @@ $(document).ready(function () {
         });
     });
 
-    // $('#fullpage').fullpage({
-    // 	//options here
-    // 	autoScrolling:true,
-    //     controlArrows: true,
-    //     navigation: true,
-    //     slidesNavigation: true,
-    //     scrollOverflow: true,
-    //     dragAndMove: true,
-    //     afterLoad: function(origin, destination, direction) {
-    //         if (destination.index === 0 || destination.index === 2 || destination.index === 4) {
-    //             $('.navbar').css('background-color', '#FFFFFF');
-    //             $('#navbar-logo').attr('src', 'img/logoAntriedark.png');
-    //             $('.nav-link').css('color', '#5D5D83');
-    //         }else if (destination.index === 3){
-    //             $('.navbar').css('background-color', '#FFE77A');
-    //             $('#navbar-logo').attr('src', 'img/logoAntriedark.png');
-    //             $('.nav-link').css('color', '#5D5D83');
-    //         }else {
-    //             $('.navbar').css('background-color', '#4DB0FF');
-    //             $('#navbar-logo').attr('src', 'img/logoAntrielight.png');
-    //             $('.nav-link').css('color', '#FFFFFF');
-    //         }
-
-    //       },
-    // });
-
     // homepage kelebihan pengantre dan pembuat antrean
     $('#kelebihan-pembuat-antrean').on('click', () => {
         $('.word-pembuat-antrean ul').slideToggle();
@@ -142,6 +116,90 @@ $(document).ready(function () {
         $(this).children('.lokasi-wrapper').children('#right-arrow').css('font-size', '3rem');
     }).on('click', '#content-pemilik-antrian', function () {
         $(this).children('.lokasi-wrapper').children('#right-arrow').css('font-size', '3.5rem');
+    });
+
+    // to enable popovers Bootstrap
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    });
+
+    // tambah loket ditekan
+    $('.tambah-loket').click(() => {
+        if ($('.loket-dua').hasClass('d-none')) {
+            $('.loket-dua').removeClass('d-none');
+            location.href = '#loket-dua';
+        } else if ($('.loket-tiga').hasClass('d-none')) {
+            $('.loket-tiga').removeClass('d-none');
+            location.href = '#loket-tiga';
+        } else if ($('.loket-empat').hasClass('d-none')) {
+            $('.loket-empat').removeClass('d-none');
+            location.href = '#loket-empat';
+        } else if ($('.loket-lima').hasClass('d-none')) {
+            $('.loket-lima').removeClass('d-none');
+            location.href = '#loket-lima';
+            $('.tambah-loket').addClass('d-none');
+        }
+    });
+
+    // tombol silang di informasi loket ditekan
+    $('.btn-close').on('click', function () {
+        var id_btn_close = $(this).attr('id');
+
+        if ($('.tambah-loket').hasClass('d-none')) {
+            $('.tambah-loket').removeClass('d-none');
+        }
+
+        switch (id_btn_close) {
+            case 'btn-close-2':
+                $('.loket-dua').animate({
+                    height: 0,
+                }, 300, function () {
+
+                    // $(this).remove();
+                    $(this).find(':input').val('');
+                    $(this).addClass('d-none');
+                    $(this).css('height', '100%');
+                });
+                break;
+            case 'btn-close-3':
+                $('.loket-tiga').animate({
+                    height: 0,
+                }, 300, function () {
+                    $(this).find(':input').val('');
+                    $(this).addClass('d-none');
+                    $(this).css('height', '100%');
+                });
+                break;
+            case 'btn-close-4':
+                $('.loket-empat').animate({
+                    height: 0,
+                }, 300, function () {
+                    $(this).find(':input').val('');
+                    $(this).addClass('d-none');
+                    $(this).css('height', '100%');
+                });
+                break;
+            case 'btn-close-5':
+                $('.loket-lima').animate({
+                    height: 0,
+                }, 300, function () {
+                    $(this).find(':input').val('');
+                    $(this).addClass('d-none');
+                    $(this).css('height', '100%');
+                });
+                break;
+
+            default:
+                break;
+        }
+    });
+
+    // animasi tombol tambah halaman form buat antrean
+    $('.tambah-loket').on('mouseenter', function () {
+        $(this).css('WebkitTransform', 'rotate(180deg)');
+    }).on('mouseleave', function () {
+        $(this).css('WebkitTransform', 'rotate(360deg)');
     });
 
     // window.updateAntrean = function(id, id_loket){
@@ -235,6 +293,7 @@ $(document).ready(function () {
     });
 });
 
+// landing page scroll animation
 $(window).ready(function () {
     var wHeight = $(window).height();
 
@@ -245,7 +304,6 @@ $(window).ready(function () {
             direction: "both",
             scrollingInView: function (elem, winPos) {
                 var bgColor = elem.data("background");
-                console.log(bgColor);
                 if (bgColor === "#ffff") {
                     $(".navbar").css("background-color", "#FFFFFF");
                     $("#navbar-logo").attr("src", "img/logoAntriedark.png");
