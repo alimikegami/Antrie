@@ -1773,6 +1773,37 @@ hr.rounded {
         margin-top: 5vh;
     }
 
+    .menu-not-login span {
+        margin-left: 1vw;
+        color: #FFFFFF;
+    }
+
+    .menu-not-login {
+        background-color: #4DB0FF;
+        width: 100%;
+        padding: 6% 2%;
+        text-align: center;
+        border-radius: 15px;
+        color: #FFFFFF;
+        box-shadow: -1px 4px 17px 0px rgba(0, 0, 0, 0.24);
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+
+    .menu-not-login:hover {
+        color: #ffffff;
+    }
+
+    .menu-not-login:hover {
+        background-color: #6eb8f0;
+    }
+
+    .menu-not-login:active {
+        position: relative;
+        top: 2px;
+    }
+
     .selected {
         background-color: #4DB0FF;
         width: 100%;

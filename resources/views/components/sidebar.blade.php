@@ -1,10 +1,10 @@
-<div
-    class="col-auto col-md-2 col-xl-2 px-sm-2 px-0 bg-white d-flex justify-content-center coba d-md-none d-lg-flex d-none">
-    <div class="d-flex flex-column align-items-center px-3 pt-5 min-vh-100 navbar-dashboard">
-        <a href="/" class="d-flex align-items-center pb-3 text-decoration-none">
-            <img class="img-fluid" src="{{ asset('img/logoAntriedark.png') }}" alt="">
-        </a>
-        @auth
+@auth
+    <div
+        class="col-auto col-md-2 col-xl-2 px-sm-2 px-0 bg-white d-flex justify-content-center coba d-md-none d-lg-flex d-none">
+        <div class="d-flex flex-column align-items-center px-3 pt-5 min-vh-100 navbar-dashboard">
+            <a href="/" class="d-flex align-items-center pb-3 text-decoration-none">
+                <img class="img-fluid" src="{{ asset('img/logoAntriedark.png') }}" alt="logo-antrie">
+            </a>
             <div class="flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
                 <div class="menu-pengguna d-flex flex-column">
                     <div class="menu-dashboard menu">
@@ -38,8 +38,22 @@
                     <li><a class="dropdown-item" href="/">Sign out</a></li>
                 </ul>
             </div>
-        @else
-            
-        @endauth
+        </div>
     </div>
-</div>
+@else
+    <div
+        class="col-auto col-md-2 col-xl-2 px-sm-2 px-0 bg-white d-flex justify-content-center coba d-md-none d-lg-flex d-none">
+        <div class="d-flex flex-column align-items-center px-3 pt-5 min-vh-100 navbar-dashboard justify-content-start">
+            <a href="/" class="d-flex align-items-center pb-3 text-decoration-none">
+                <img class="img-fluid" src="{{ asset('img/logoAntriedark.png') }}" alt="logo-antrie">
+            </a>
+            <hr>
+            <div class="d-flex justify-content-center align-items-center sideNav-login-btn">
+                <a href="#" class="menu-not-login d-flex justify-content-center align-items-center">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Login</span>
+                </a>
+            </div>
+        </div>
+    </div>
+@endauth
