@@ -36,7 +36,8 @@
                                             <div class="lokasi-wrapper d-flex align-items-center">
                                                 <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                                     <div class="gambar">
-                                                        <img src="img/logoAntriedark.png" alt="" width="70px">
+                                                        <img src="{{ asset('img/logoAntriedark.png') }}" alt=""
+                                                            width="70px">
                                                     </div>
                                                 </div>
                                                 <div class="keterangan-lokasi">
