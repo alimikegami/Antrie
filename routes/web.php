@@ -32,10 +32,10 @@ Route::get('/aturLoket', function () {
 // GET route
 
 Route::get('/signup', [SignUpController::class, 'index'])->name('signup');
-Route::get('/login', [LogInController::class, 'index'])->name('login');
+Route::get('/login', [LogInController::class, 'index'])->name('login')->middleware('guest');
 Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda');
 Route::get('/verify/{code}', [SignUpController::class, 'verify'])->name('verify');
-Route::get('/konfirmasi-antrean/{nama_antrean}/loket/{loket:slug}/ambil-nomor', [AntreanController::class, 'ambilAntrean'])->name('ambil-antrean');
+Route::get('/konfirmasi-antrean/{nama_antrean}/loket/{loket:slug}/ambil-nomor', [AntreanController::class, 'ambilAntrean'])->name('ambil-antrean')->middleware('auth');
 Route::get('/buat-antrean', [AntreanController::class, 'formPembuatanAntrean'])->name('buat-antrean');
 Route::get('/antrean/{antrean:slug}', [AntreanController::class, 'show']);
 Route::get('/beranda/{kategori:slug}', [BerandaController::class, 'showAntreanBasedOnCategories']);
@@ -48,6 +48,7 @@ Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'resetPa
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showForgotPasswordPage'])->name('forgotPassword');
 Route::get('/set-new-password', [ForgotPasswordController::class, 'showChangePasswordForm'])->name('setNewPassword');
 Route::get('/antreanku/{antrean:slug}', [AntreankuController::class, 'aturLoket']);
+
 // POST route
 
 Route::post('/register', [SignUpController::class, 'signUp'])->name('store');
