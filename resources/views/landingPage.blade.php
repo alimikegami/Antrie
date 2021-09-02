@@ -12,7 +12,7 @@
                         <h1>Antrie Aplikasi Antrian Online</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua.</p>
-                        <button type="button" class="btn btn-success">Try it Now!</button>
+                        <a type="button" class="btn btn-success" href="{{ route('beranda') }}">Try it Now!</a>
                     </div>
                     <div class="image">
                         <div class="imageSlogan d-flex justify-content-end">

@@ -11,22 +11,19 @@ use Illuminate\Support\Facades\Auth;
 class BerandaController extends Controller
 {
     // Return view untuk beranda
-    public function index() {
-        if (Auth::check()) {
-            $kategori_populer = Kategori::withCount('antrean')->orderBy('antrean_count', 'desc')->first();
-            return view('beranda', [
-                'title' => "Beranda",
-                'antrean' => Antrean::with(['kategori', 'pengguna'])->where('id_kategori', '=', $kategori_populer->id)->get(),
-                'kategori_populer' => $kategori_populer,
-                'kategori' => Kategori::all(),
-                'nama_user' => Auth::user()->nama
-            ]);
-        } else {
-            return redirect()->route('landingpage');
-        }
+    public function index()
+    {
+        $kategori_populer = Kategori::withCount('antrean')->orderBy('antrean_count', 'desc')->first();
+        return view('beranda', [
+            'title' => "Beranda",
+            'antrean' => Antrean::with(['kategori', 'pengguna'])->where('id_kategori', '=', $kategori_populer->id)->get(),
+            'kategori_populer' => $kategori_populer,
+            'kategori' => Kategori::all(),
+        ]);
     }
 
-    public function showAntreanBasedOnCategories(Kategori $kategori){
+    public function showAntreanBasedOnCategories(Kategori $kategori)
+    {
         return view('all-antrean', ['antrean' => $kategori->antrean, 'title' => $kategori->nama_kategori]);
     }
 }
