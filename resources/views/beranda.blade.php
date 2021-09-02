@@ -11,7 +11,7 @@
                     <div class="container">
                         <div class="first-row d-flex justify-content-between">
                             <div class="first-row-word">
-                                <h1>Halo, {{ session('nama') }}!</h1>
+                                <h1>Halo, {{ Auth::user()->nama }}!</h1>
                                 <p>{Lorem ipsum dolor sit amet, consectetur. }</p>
                             </div>
                             <form action="" class="first-row-search d-flex justify-content-center align-items-center">

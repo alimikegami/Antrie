@@ -36,7 +36,7 @@ class LogInController extends Controller {
         Auth::logout();
         session()->invalidate();
         session()->regenerateToken();
-        return redirect()->route('landingpage');
+        return redirect('/');
     }
 }
 
