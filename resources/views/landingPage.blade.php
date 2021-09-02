@@ -2,7 +2,7 @@
 
 
 @section('container')
-    @include('components/generalNavbar');
+    @include('components/generalNavbar')
 
     <div class="container-md">
         <div class="section s1" data-background="#ffff">
@@ -10,7 +10,8 @@
                 <div class="display">
                     <div class="slogan">
                         <h1>Antrie Aplikasi Antrian Online</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua.</p>
                         <button type="button" class="btn btn-success">Try it Now!</button>
                     </div>
                     <div class="image">
@@ -108,8 +109,7 @@
                             <div class="up-icon">
                                 <svg width="43" height="50" viewBox="0 0 43 50" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M30.1538 5H11.8462L4 28.2941H14.4615L9.23077 49L38 20.5294H23.8769L30.1538 5Z"
+                                    <path d="M30.1538 5H11.8462L4 28.2941H14.4615L9.23077 49L38 20.5294H23.8769L30.1538 5Z"
                                         stroke="#FFE77A" stroke-width="1.5" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>

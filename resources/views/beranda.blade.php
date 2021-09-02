@@ -6,13 +6,13 @@
     <div class="container-fluid">
         <div class="row flex-nowrap">
             @include('components/sidebar')
-            <div class="col py-3">
+            <div class="col-auto col-md-12 py-3 col-lg-10">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="container">
                         <div class="first-row d-flex justify-content-between">
                             <div class="first-row-word">
                                 <h1>Halo, {{ session('nama') }}!</h1>
-                                <p>{Lorem ipsum dolor sit amet, consectetur. }</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur. </p>
                             </div>
                             <form action="" class="first-row-search d-flex justify-content-center align-items-center">
                                 <input type="text" id="search-tempat-antrean" placeholder="Cari antrian...">
@@ -49,22 +49,27 @@
                     <div class="third-row">
                         <div class="container">
                             <div class="row">
-                                <div class="col-auto col-md-3">
-                                    <div class="buat-antrian-field">
-                                        <img src="img/personBuatantrian.png" alt="" width="80%">
-                                        <h1>Ayo Buat Antrianmu Sendiri</h1>
-                                        <p>Tekan tombol dibawah untuk memulai</p>
-                                        <a href="{{ route('buat-antrean') }}" type="button"
-                                            id="tombol-buat-dashboard">Buat</a>
+                                <div class="col-12 col-md-12 col-lg-3">
+                                    <div
+                                        class="buat-antrian-field d-flex d-md-flex d-lg-block justify-content-evenly align-items-center">
+                                        <div class="satu">
+                                            <img src="img/personBuatantrian.png" alt="" width="80%">
+                                        </div>
+                                        <div class="dua">
+                                            <h1>Ayo Buat Antrianmu Sendiri</h1>
+                                            <p>Tekan tombol dibawah untuk memulai</p>
+                                            <a href="{{ route('buat-antrean') }}" type="button"
+                                                id="tombol-buat-dashboard">Buat</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-auto col-md-9">
+                                <div class="col-12 col-md-12 col-lg-9 mt-5 mt-lg-0 mt-md-3">
                                     <div class="field-lokasi d-flex flex-column">
                                         <div class="word-field-lokasi d-flex flex-column">
                                             <h1>{{ $kategori_populer->nama_kategori }}</h1>
                                             <p>{{ $kategori_populer->antrean_count }} lokasi ditemukan</p>
                                         </div>
-                                        <div class="content-field-lokasi d-flex flex-column mt-3">
+                                        <div class="content-field-lokasi d-flex flex-column mt-lg-3">
                                             @foreach ($antrean as $temp)
                                                 <div class="p-2 hover-wrapper">
                                                     <a href="antrean/{{ $temp->slug }}"
@@ -77,7 +82,7 @@
                                                         </div>
                                                         <div class="keterangan-lokasi">
                                                             <h1>{{ $temp->nama_antrean }}</h1>
-                                                            <p> {{ $temp->alamat }} </p>
+                                                            <p><i class="bi bi-geo-alt-fill"></i> {{ $temp->alamat }} </p>
                                                         </div>
                                                     </a>
                                                 </div>
