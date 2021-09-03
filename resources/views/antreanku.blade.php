@@ -59,7 +59,7 @@
                                             <div class="keterangan-loket-antrianku">
                                                 <h1>{{ $item->nama_antrean }}</h1>
                                                 <p>{{ $item->kategori->nama_kategori }}</p>
-                                                <p class="mt-4"><i
+                                                <p class="mt-md-4"><i
                                                         class="bi bi-geo-alt-fill"></i>{{ $item->alamat }}</p>
 
                                             </div>

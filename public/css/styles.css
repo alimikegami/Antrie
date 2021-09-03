@@ -1327,8 +1327,8 @@ body {
 .buat-antrianmu-jumbotron {
     background-color: #2B2844;
     width: 100%;
-    height: 25vh;
-    /* padding: 1%; */
+    height: 15vh;
+    padding: 2%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
 }
@@ -1339,15 +1339,19 @@ body {
 }
 
 .word-buat-antrianmu-jumbotron h1 {
-    font-size: 2rem;
+    font-size: .9rem;
     font-weight: bold;
     color: #FFFFFF;
 }
 
 .word-buat-antrianmu-jumbotron p {
-    font-size: 1rem;
+    font-size: .6rem;
     font-weight: 300;
     color: #D5D4DB;
+}
+
+.content-buat-antrianmu-jumbotron img {
+    width: 150px;
 }
 
 #tombol-buat-antrianku {
@@ -1356,8 +1360,8 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: 18px;
-    padding: 10px 60px;
+    font-size: .7rem;
+    padding: 5px 40px;
     text-decoration: none;
     border: none;
 }
@@ -1379,6 +1383,34 @@ body {
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
     overflow: auto;
+}
+
+.keterangan-loket-antrianku {
+    padding-left: 5%;
+    width: 100%;
+}
+
+.keterangan-loket-antrianku h1 {
+    font-size: .7rem;
+    color: #2B2844;
+    font-weight: bold;
+}
+
+.keterangan-loket-antrianku p {
+    color: #73848C;
+    font-size: .5rem;
+}
+
+.keterangan-loket-antrianku p span {
+    color: #2B2844;
+    font-weight: bold;
+    font-size: 0.8vw;
+}
+
+#right-arrow {
+    font-size: 1.5rem;
+    transition: all 0.1s;
+    color: #4DB0FF;
 }
 
 /* halaman riwayat */
@@ -1419,34 +1451,6 @@ body {
     font-size: 3vw;
     color: #4DB0FF;
     font-weight: bold;
-}
-
-.keterangan-loket-antrianku {
-    padding-left: 5%;
-    width: 100%;
-}
-
-.keterangan-loket-antrianku h1 {
-    font-size: 1.5vw;
-    color: #2B2844;
-    font-weight: bold;
-}
-
-.keterangan-loket-antrianku p {
-    color: #73848C;
-    font-size: 0.8vw;
-}
-
-.keterangan-loket-antrianku p span {
-    color: #2B2844;
-    font-weight: bold;
-    font-size: 0.8vw;
-}
-
-#right-arrow {
-    font-size: 3rem;
-    transition: all 0.1s;
-    color: #4DB0FF;
 }
 
 /* Halaman atur loket */
@@ -1933,6 +1937,48 @@ hr.rounded {
     .footer-content img {
         width: 200px;
     }
+
+    /* halaman antrianku */
+    .buat-antrianmu-jumbotron {
+        width: 100%;
+        height: 25vh;
+    }
+
+    .content-buat-antrianmu-jumbotron {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-buat-antrianmu-jumbotron img {
+        width: 250px;
+    }
+
+    .word-buat-antrianmu-jumbotron h1 {
+        font-size: 1.3rem;
+    }
+
+    .word-buat-antrianmu-jumbotron p {
+        font-size: .8rem;
+    }
+
+    #tombol-buat-antrianku {
+        font-size: 1rem;
+        padding: 5px 50px;
+    }
+
+    .keterangan-loket-antrianku h1 {
+        font-size: 1rem;
+        color: #2B2844;
+        font-weight: bold;
+    }
+
+    .keterangan-loket-antrianku p {
+        font-size: .7rem;
+    }
+
+    #right-arrow {
+        font-size: 3rem;
+    }
 }
 
 @media screen and (min-device-width: 992px) {
@@ -2010,7 +2056,7 @@ hr.rounded {
     }
 
     .logo-lokasi {
-        width: 6vw;
+        width: 10vw;
     }
 
     .content-field-lokasi::-webkit-scrollbar {
@@ -2029,5 +2075,64 @@ hr.rounded {
         background-color: #2F2D65;
         color: #FFFFFF;
         padding-top: 10vh;
+    }
+
+    /* halaman antrianku */
+    .word-buat-antrianmu-jumbotron h1 {
+        font-size: 1.7rem;
+    }
+
+    .word-buat-antrianmu-jumbotron p {
+        font-size: .9rem;
+    }
+
+    .content-buat-antrianmu-jumbotron img {
+        width: 300px;
+    }
+
+    #tombol-buat-antrianku {
+        font-size: 1rem;
+        padding: 8px 55px;
+    }
+
+    .keterangan-loket-antrianku h1 {
+        font-size: 1.2rem;
+    }
+
+    .keterangan-loket-antrianku p {
+        font-size: .7rem;
+    }
+}
+
+@media screen and (min-device-width: 1200px) {
+
+    /* halaman antrianku */
+    .word-buat-antrianmu-jumbotron h1 {
+        font-size: 2rem;
+    }
+
+    .word-buat-antrianmu-jumbotron p {
+        font-size: 1rem;
+    }
+
+    .content-buat-antrianmu-jumbotron img {
+        width: 350px;
+    }
+
+    #tombol-buat-antrianku {
+        font-size: 1.2rem;
+        padding: 10px 60px;
+    }
+
+    .logo-lokasi {
+        width: 6vw;
+    }
+
+    .keterangan-loket-antrianku h1 {
+        font-size: 1.5rem;
+    }
+
+    .keterangan-loket-antrianku p {
+        font-size: .9rem;
     }
 }
