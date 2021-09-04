@@ -1073,7 +1073,7 @@ body {
 
 .deskripsi-attactment p {
     color: #73848C;
-    font-size: 0.8vw;
+    font-size: .6rem;
 }
 
 /* all lokasi */
@@ -1211,20 +1211,20 @@ body {
 }
 
 .keterangan-loket h1 {
-    font-size: 1.5vw;
+    font-size: 1rem;
     color: #2B2844;
     font-weight: bold;
 }
 
 .keterangan-loket p {
     color: #73848C;
-    font-size: 0.8vw;
+    font-size: 0.8rem;
 }
 
 .keterangan-loket p span {
     color: #2B2844;
     font-weight: bold;
-    font-size: 0.8vw;
+    font-size: 0.8rem;
 }
 
 .keterangan-loket .badge {
@@ -1248,7 +1248,7 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: 18px;
+    font-size: .9rem;
     padding: 5px 60px;
     text-decoration: none;
     border: none;
@@ -1270,7 +1270,7 @@ body {
     border-radius: 15px;
     padding: 0 2%;
     /* padding: 2%; */
-    width: 55%;
+    width: 80%;
 }
 
 .covid-case p {
@@ -1296,7 +1296,7 @@ body {
 }
 
 .modal-body-loket h1 {
-    font-size: 4vw;
+    font-size: 4rem;
     font-weight: bold;
     color: #4DB0FF;
 }
@@ -1311,7 +1311,7 @@ body {
     padding: 5px 60px;
     text-decoration: none;
     border: none;
-    width: 40%;
+    width: 80%;
 }
 
 #tombol-detail-antrian:hover {
@@ -1769,6 +1769,19 @@ hr.rounded {
     top: 2px;
 }
 
+@media screen and (max-device-width: 375px) {
+
+    /* halaman pilih loket */
+    .tombol-ambil-antrian {
+        padding: 5px 20px;
+        font-size: .8rem;
+    }
+
+    #tombol-detail-antrian {
+        width: 100%;
+    }
+}
+
 @media screen and (min-device-width: 768px) {
 
     /* side nav */
@@ -1979,6 +1992,53 @@ hr.rounded {
     #right-arrow {
         font-size: 3rem;
     }
+
+    /* halaman pilih loket */
+    .covid-case {
+        padding: 0 2%;
+        width: 65%;
+    }
+
+    .covid-case p {
+        padding: 1%;
+    }
+
+    .covid-case span {
+        height: 50%;
+    }
+
+    .deskripsi-attactment p {
+        font-size: .8rem;
+    }
+
+
+    .keterangan-loket h1 {
+        font-size: 1rem;
+    }
+
+    .keterangan-loket p {
+        font-size: 0.8rem;
+    }
+
+    .keterangan-loket p span {
+        font-size: 0.8rem;
+    }
+
+    .tombol-ambil-antrian {
+        font-size: .8rem;
+        padding: 5px 60px;
+        width: 100%;
+    }
+
+    .modal-body-loket h1 {
+        font-size: 4rem;
+    }
+
+    #tombol-detail-antrian {
+        font-size: 1rem;
+        padding: 5px 50px;
+        width: 50%;
+    }
 }
 
 @media screen and (min-device-width: 992px) {
@@ -2102,6 +2162,33 @@ hr.rounded {
     .keterangan-loket-antrianku p {
         font-size: .7rem;
     }
+
+    /* halaman pilih loket */
+    .tombol-ambil-antrian {
+        font-size: 1rem;
+    }
+
+    .modal-body-loket {
+        min-height: 70vh;
+        max-height: 100vh;
+        padding-bottom: 5%;
+    }
+
+    .modal-body-loket h1 {
+        font-size: 4rem;
+    }
+
+    #tombol-detail-antrian {
+        font-size: 1rem;
+        padding: 5px 50px;
+        width: 40%;
+    }
+
+    .covid-case {
+        padding: 0 2%;
+        width: 55%;
+    }
+
 }
 
 @media screen and (min-device-width: 1200px) {
@@ -2134,5 +2221,26 @@ hr.rounded {
 
     .keterangan-loket-antrianku p {
         font-size: .9rem;
+    }
+
+    /* halaman pilih loket */
+    .deskripsi-attactment p {
+        font-size: 1rem;
+    }
+
+    .keterangan-loket h1 {
+        font-size: 1.5rem;
+    }
+
+    .keterangan-loket p {
+        font-size: 1rem;
+    }
+
+    .keterangan-loket p span {
+        font-size: 1rem;
+    }
+
+    .tombol-ambil-antrian {
+        font-size: 1.2rem;
     }
 }
