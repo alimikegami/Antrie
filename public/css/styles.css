@@ -970,10 +970,11 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: 18px;
-    padding: 2px 40px;
+    font-size: 14px;
+    padding: 5px 40px;
     text-decoration: none;
     border: none;
+    width: 65%;
 }
 
 #tombol-buat-dashboard:hover {
@@ -1140,8 +1141,8 @@ body {
 
 .login-content-container {
     background-color: #ffffff;
-    height: 70vh;
-    width: 50vw;
+    height: 450px;
+    width: 90vw;
     border-radius: 30px;
     box-shadow: -1px 10px 15px 0px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: -1px 10px 15px 0px rgba(0, 0, 0, 0.25);
@@ -1151,17 +1152,28 @@ body {
 .login-content {
     width: 100%;
     height: 100%;
+    flex-direction: column;
 }
 
 .login-second-column {
-    height: 90%;
-    width: 30%;
+    height: 100%;
+    width: 85%;
     color: #2F2D65;
+}
+
+.login-logo {
+    margin-bottom: 25px;
+}
+
+.login-second-column a {
+    max-width: 60%;
 }
 
 .login-second-column p {
     color: #73848C;
-    font-size: 0.8vw;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 0;
 }
 
 .login-second-column form {
@@ -1177,13 +1189,81 @@ body {
     width: 100%;
 }
 
+.input-email label,
+.input-password label {
+    font-size: 12px;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
 .login-first-column {
-    height: 90%;
+    height: 0;
+    visibility: hidden;
 }
 
 .login-first-column h1 {
     font-weight: bold;
     color: #2F2D65;
+}
+
+@media (min-width: 768px) {
+    .login-content-container {
+        height: 480px;
+        width: 720px;
+    }
+
+    .login-content {
+        flex-direction: row;
+    }
+
+    .login-first-column {
+        height: 100%;
+        visibility: unset;
+    }
+
+    .login-first-column,
+    .login-second-column {
+        width: 50%;
+    }
+
+    .login-first-column h1 {
+        font-size: 34px;
+    }
+
+    .login-first-column div {
+        width: 80%;
+    }
+
+    .input-email label,
+    .input-password label {
+        font-size: 14px;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    #tombol-buat-dashboard {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .login-content-container {
+        height: 510px;
+        width: 800px;
+    }
+
+    .input-email label,
+    .input-password label {
+        font-size: 16px;
+    }
+
+    .form-control {
+        font-size: 16px;
+    }
 }
 
 /* modal untuk filter */
