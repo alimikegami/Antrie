@@ -88,11 +88,11 @@
                                 <div class="mb-3 row align-items-center">
                                     <label for="inputPassword" class="col-sm-4 col-form-label">No telepon
                                         <span>*</span></label>
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-7 col-10">
                                         <input type="number" class="form-control" id="teleponAntrean"
                                             name="teleponAntrean" required>
                                     </div>
-                                    <div class="col-sm-1">
+                                    <div class="col-sm-1 col-1">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                             data-bs-trigger="hover focus"
                                             data-bs-content="No telepon yang dapat dihubungi oleh pengantri.">
@@ -103,13 +103,13 @@
                                 <div class="mb-3 row align-items-center">
                                     <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional
                                         <span>*</span></label>
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-7 col-10">
                                         <label for="">Buka</label>
                                         <input type="time" id="jamBuka" name="jamBuka" required>
                                         <label for="">Tutup</label>
                                         <input type="time" id="jamTutup" name="jamTutup" required>
                                     </div>
-                                    <div class="col-sm-1">
+                                    <div class="col-sm-1 col-1">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                             data-bs-trigger="hover focus"
                                             data-bs-content="Jam operasional dari antrian yang akan anda buat.">
@@ -120,11 +120,11 @@
                                 <div class="mb-3 row align-items-center">
                                     <label for="inputPassword" class="col-sm-4 col-form-label">Deskripsi
                                         <span>*</span></label>
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-7 col-10">
                                         <textarea class="form-control" id="deskripsiAntrean" name="deskripsiAntrean"
                                             rows="3" required></textarea>
                                     </div>
-                                    <div class="col-sm-1">
+                                    <div class="col-sm-1 col-1">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                             data-bs-trigger="hover focus"
                                             data-bs-content="Deskripsikan mengenai antrian apa yang akan anda buat.">
@@ -138,11 +138,11 @@
                                 <div class="mb-3 row mt-4 align-items-center">
                                     <label for="inputPassword" class="col-sm-4 col-form-label">Attactment antrean <span
                                             class="opt-word">(optional)</span></label>
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-7 col-10">
                                         <input class="form-control" type="file" id="attachmentAntrean"
                                             name="attachmentAntrean[]" multiple>
                                     </div>
-                                    <div class="col-sm-1">
+                                    <div class="col-sm-1 col-1">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                             data-bs-trigger="hover focus"
                                             data-bs-content="Attactment dapat berupa file formulir pendaftaran ataupun file-file yang dibutuhkan oleh pengantri dalam antrian yang akan anda buat.">
@@ -153,10 +153,10 @@
                                 <div class="mb-3 row align-items-center">
                                     <label for="inputPassword" class="col-sm-4 col-form-label">Gambar antrean <span
                                             class="opt-word">(optional)</span></label>
-                                    <div class="col-sm-7">
+                                    <div class="col-sm-7 col-10">
                                         <input class="form-control" type="file" id="gambarAntrean" name="gambarAntrean">
                                     </div>
-                                    <div class="col-sm-1">
+                                    <div class="col-sm-1 col-1">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                             data-bs-trigger="hover focus"
                                             data-bs-content="Gambar antrean akan digunakan sebagai logo/thumbnail yang melambangkan antrean yang akan anda buat pada saat pengantri memilih antrian.">
@@ -181,11 +181,11 @@
                                     <div class="mb-3 row mt-4 align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Kapasitas maksimum
                                             <span>*</span></label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <input type="number" class="form-control" id="kapasitasLoket1"
                                                 name="kapasitasLoket1" required>
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jumlah maksimal pengantri yang akan dilayani pada loket.">
@@ -196,13 +196,13 @@
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional
                                             <span>*</span></label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket1" name="jamBukaLoket1" required>
                                             <label for="">Tutup</label>
                                             <input type="time" id="jamTutupLoket1" name="jamTutupLoket1" required>
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
@@ -230,11 +230,11 @@
                                     <div class="mb-3 row mt-4 align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Kapasitas
                                             maksimum</label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <input type="number" class="form-control" id="kapasitasLoket2"
                                                 name="kapasitasLoket2">
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jumlah maksimal pengantri yang akan dilayani pada loket.">
@@ -244,13 +244,13 @@
                                     </div>
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional</label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket2" name="jamBukaLoket2">
                                             <label for="">Tutup</label>
                                             <input type="time" id="jamTutupLoket2" name="jamTutupLoket2">
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
@@ -278,11 +278,11 @@
                                     <div class="mb-3 row mt-4 align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Kapasitas
                                             maksimum</label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <input type="number" class="form-control" id="kapasitasLoket3"
                                                 name="kapasitasLoket3">
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jumlah maksimal pengantri yang akan dilayani pada loket.">
@@ -292,13 +292,13 @@
                                     </div>
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional</label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket3" name="jamBukaLoket3">
                                             <label for="">Tutup</label>
                                             <input type="time" id="jamTutupLoket3" name="jamTutupLoket3">
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
@@ -326,11 +326,11 @@
                                     <div class="mb-3 row mt-4 align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Kapasitas
                                             maksimum</label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <input type="number" class="form-control" id="kapasitasLoket4"
                                                 name="kapasitasLoket4">
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jumlah maksimal pengantri yang akan dilayani pada loket.">
@@ -340,13 +340,13 @@
                                     </div>
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional</label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket4" name="jamBukaLoket4">
                                             <label for="">Tutup</label>
                                             <input type="time" id="jamTutupLoket4" name="jamTutupLoket4">
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
@@ -374,11 +374,11 @@
                                     <div class="mb-3 row mt-4 align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Kapasitas
                                             maksimum</label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <input type="number" class="form-control" id="kapasitasLoket5"
                                                 name="kapasitasLoket5">
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jumlah maksimal pengantri yang akan dilayani pada loket.">
@@ -388,13 +388,13 @@
                                     </div>
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional</label>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-7 col-10">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket5" name="jamBukaLoket5">
                                             <label for="">Tutup</label>
                                             <input type="time" id="jamTutupLoket5" name="jamTutupLoket5">
                                         </div>
-                                        <div class="col-sm-1">
+                                        <div class="col-sm-1 col-1">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
@@ -407,7 +407,7 @@
                                     class="btn btn-outline-primary align-self-center mt-4 rounded-circle tambah-loket"><i
                                         class="bi bi-plus-lg"></i></button>
                             </div>
-                            <button type="submit" class="align-self-end mt-5 tombol-submit-form-buat-loket">Buat
+                            <button type="submit" class="align-self-md-end mt-5 tombol-submit-form-buat-loket">Buat
                                 antrian</button>
                         </form>
                     </div>

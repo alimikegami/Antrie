@@ -15,12 +15,14 @@
             <div class="login-content d-flex justify-content-around align-items-center">
                 <div class="login-first-column d-flex flex-column justify-content-center align-items-center">
                     <h1>Selamat datang.</h1>
-                    <img src="img/gambarLogin.png" alt="login-gambar" class="img-fluid">
+                    <div>
+                        <img src="img/gambarLogin.png" alt="login-gambar" class="img-fluid">
+                    </div>
                 </div>
-                <div class="login-second-column d-flex flex-column justify-content-around align-items-center">
-                    <a href="/"><img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid"></a>
+                <div class="login-second-column d-flex flex-column justify-content-center align-items-center">
+                    <a href="/" class="login-logo"><img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid"></a>
                     <h3>Sign in</h3>
-                    <form action="{{ route('authenticate') }}" method="POST" class="d-flex flex-column">
+                    <form action="{{ route('authenticate') }}" method="POST" class="d-flex flex-column align-items-center">
                         {{ csrf_field() }}
                         <div class="input-email">
                             <label for="email" class="form-label">Email</label>
@@ -30,12 +32,11 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="" name="password">
                         </div>
-                        <button type="submit" id="tombol-buat-dashboard">Sign in</button>
+                        <button type="submit" id="tombol-buat-dashboard" class="mt-4">Sign in</button>
                     </form>
-                    <div class="d-flex flex-column align-items-center">
-                        <small><a href="{{ route('forgotPassword') }}">Forgot password?</a></small>
-
-                        <p class="mt-3">Belum punya akun?<a href="{{ route('signup') }}">Sign up</a></p>
+                    <div class="d-flex flex-column align-items-center mt-3">
+                        <p><a href="{{ route('forgotPassword') }}">Forgot password?</a></p>
+                        <p>Belum punya akun? <a href="{{ route('signup') }}">Sign up</a></p>
                     </div>
                 </div>
             </div>
