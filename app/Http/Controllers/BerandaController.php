@@ -26,4 +26,12 @@ class BerandaController extends Controller
     {
         return view('all-antrean', ['antrean' => $kategori->antrean, 'title' => $kategori->nama_kategori]);
     }
+
+    public function showSearchResult()
+    {
+        $keyword = request('query');
+        $search_result = Antrean::where('nama_antrean', 'LIKE', '%'.$keyword.'%')
+                                    ->get();
+        return view('all-antrean', ['antrean' => $search_result, 'title' => "Search Results"]);
+    }
 }
