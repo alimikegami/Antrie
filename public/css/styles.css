@@ -970,10 +970,11 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: 18px;
-    padding: 2px 40px;
+    font-size: 14px;
+    padding: 5px 40px;
     text-decoration: none;
     border: none;
+    width: 65%;
 }
 
 #tombol-buat-dashboard:hover {
@@ -1073,7 +1074,7 @@ body {
 
 .deskripsi-attactment p {
     color: #73848C;
-    font-size: 0.8vw;
+    font-size: .6rem;
 }
 
 /* all lokasi */
@@ -1140,8 +1141,8 @@ body {
 
 .login-content-container {
     background-color: #ffffff;
-    height: 70vh;
-    width: 50vw;
+    height: 450px;
+    width: 90vw;
     border-radius: 30px;
     box-shadow: -1px 10px 15px 0px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: -1px 10px 15px 0px rgba(0, 0, 0, 0.25);
@@ -1151,17 +1152,28 @@ body {
 .login-content {
     width: 100%;
     height: 100%;
+    flex-direction: column;
 }
 
 .login-second-column {
-    height: 90%;
-    width: 30%;
+    height: 100%;
+    width: 85%;
     color: #2F2D65;
+}
+
+.login-logo {
+    margin-bottom: 25px;
+}
+
+.login-second-column a {
+    max-width: 60%;
 }
 
 .login-second-column p {
     color: #73848C;
-    font-size: 0.8vw;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 0;
 }
 
 .login-second-column form {
@@ -1177,13 +1189,81 @@ body {
     width: 100%;
 }
 
+.input-email label,
+.input-password label {
+    font-size: 12px;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
 .login-first-column {
-    height: 90%;
+    height: 0;
+    visibility: hidden;
 }
 
 .login-first-column h1 {
     font-weight: bold;
     color: #2F2D65;
+}
+
+@media (min-width: 768px) {
+    .login-content-container {
+        height: 480px;
+        width: 720px;
+    }
+
+    .login-content {
+        flex-direction: row;
+    }
+
+    .login-first-column {
+        height: 100%;
+        visibility: unset;
+    }
+
+    .login-first-column,
+    .login-second-column {
+        width: 50%;
+    }
+
+    .login-first-column h1 {
+        font-size: 34px;
+    }
+
+    .login-first-column div {
+        width: 80%;
+    }
+
+    .input-email label,
+    .input-password label {
+        font-size: 14px;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    #tombol-buat-dashboard {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .login-content-container {
+        height: 510px;
+        width: 800px;
+    }
+
+    .input-email label,
+    .input-password label {
+        font-size: 16px;
+    }
+
+    .form-control {
+        font-size: 16px;
+    }
 }
 
 /* modal untuk filter */
@@ -1211,20 +1291,20 @@ body {
 }
 
 .keterangan-loket h1 {
-    font-size: 1.5vw;
+    font-size: 1rem;
     color: #2B2844;
     font-weight: bold;
 }
 
 .keterangan-loket p {
     color: #73848C;
-    font-size: 0.8vw;
+    font-size: 0.8rem;
 }
 
 .keterangan-loket p span {
     color: #2B2844;
     font-weight: bold;
-    font-size: 0.8vw;
+    font-size: 0.8rem;
 }
 
 .keterangan-loket .badge {
@@ -1248,7 +1328,7 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: 18px;
+    font-size: .9rem;
     padding: 5px 60px;
     text-decoration: none;
     border: none;
@@ -1270,7 +1350,7 @@ body {
     border-radius: 15px;
     padding: 0 2%;
     /* padding: 2%; */
-    width: 55%;
+    width: 80%;
 }
 
 .covid-case p {
@@ -1296,7 +1376,7 @@ body {
 }
 
 .modal-body-loket h1 {
-    font-size: 4vw;
+    font-size: 4rem;
     font-weight: bold;
     color: #4DB0FF;
 }
@@ -1311,7 +1391,7 @@ body {
     padding: 5px 60px;
     text-decoration: none;
     border: none;
-    width: 40%;
+    width: 80%;
 }
 
 #tombol-detail-antrian:hover {
@@ -1327,8 +1407,8 @@ body {
 .buat-antrianmu-jumbotron {
     background-color: #2B2844;
     width: 100%;
-    height: 25vh;
-    /* padding: 1%; */
+    height: 15vh;
+    padding: 2%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
 }
@@ -1339,15 +1419,19 @@ body {
 }
 
 .word-buat-antrianmu-jumbotron h1 {
-    font-size: 2rem;
+    font-size: .9rem;
     font-weight: bold;
     color: #FFFFFF;
 }
 
 .word-buat-antrianmu-jumbotron p {
-    font-size: 1rem;
+    font-size: .6rem;
     font-weight: 300;
     color: #D5D4DB;
+}
+
+.content-buat-antrianmu-jumbotron img {
+    width: 150px;
 }
 
 #tombol-buat-antrianku {
@@ -1356,8 +1440,8 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: 18px;
-    padding: 10px 60px;
+    font-size: .7rem;
+    padding: 5px 40px;
     text-decoration: none;
     border: none;
 }
@@ -1379,6 +1463,34 @@ body {
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
     overflow: auto;
+}
+
+.keterangan-loket-antrianku {
+    padding-left: 5%;
+    width: 100%;
+}
+
+.keterangan-loket-antrianku h1 {
+    font-size: .7rem;
+    color: #2B2844;
+    font-weight: bold;
+}
+
+.keterangan-loket-antrianku p {
+    color: #73848C;
+    font-size: .5rem;
+}
+
+.keterangan-loket-antrianku p span {
+    color: #2B2844;
+    font-weight: bold;
+    font-size: 0.8vw;
+}
+
+#right-arrow {
+    font-size: 1.5rem;
+    transition: all 0.1s;
+    color: #4DB0FF;
 }
 
 /* halaman riwayat */
@@ -1419,34 +1531,6 @@ body {
     font-size: 3vw;
     color: #4DB0FF;
     font-weight: bold;
-}
-
-.keterangan-loket-antrianku {
-    padding-left: 5%;
-    width: 100%;
-}
-
-.keterangan-loket-antrianku h1 {
-    font-size: 1.5vw;
-    color: #2B2844;
-    font-weight: bold;
-}
-
-.keterangan-loket-antrianku p {
-    color: #73848C;
-    font-size: 0.8vw;
-}
-
-.keterangan-loket-antrianku p span {
-    color: #2B2844;
-    font-weight: bold;
-    font-size: 0.8vw;
-}
-
-#right-arrow {
-    font-size: 3rem;
-    transition: all 0.1s;
-    color: #4DB0FF;
 }
 
 /* Halaman atur loket */
@@ -1765,6 +1849,19 @@ hr.rounded {
     top: 2px;
 }
 
+@media screen and (max-device-width: 375px) {
+
+    /* halaman pilih loket */
+    .tombol-ambil-antrian {
+        padding: 5px 20px;
+        font-size: .8rem;
+    }
+
+    #tombol-detail-antrian {
+        width: 100%;
+    }
+}
+
 @media screen and (min-device-width: 768px) {
 
     /* side nav */
@@ -1933,6 +2030,95 @@ hr.rounded {
     .footer-content img {
         width: 200px;
     }
+
+    /* halaman antrianku */
+    .buat-antrianmu-jumbotron {
+        width: 100%;
+        height: 25vh;
+    }
+
+    .content-buat-antrianmu-jumbotron {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-buat-antrianmu-jumbotron img {
+        width: 250px;
+    }
+
+    .word-buat-antrianmu-jumbotron h1 {
+        font-size: 1.3rem;
+    }
+
+    .word-buat-antrianmu-jumbotron p {
+        font-size: .8rem;
+    }
+
+    #tombol-buat-antrianku {
+        font-size: 1rem;
+        padding: 5px 50px;
+    }
+
+    .keterangan-loket-antrianku h1 {
+        font-size: 1rem;
+        color: #2B2844;
+        font-weight: bold;
+    }
+
+    .keterangan-loket-antrianku p {
+        font-size: .7rem;
+    }
+
+    #right-arrow {
+        font-size: 3rem;
+    }
+
+    /* halaman pilih loket */
+    .covid-case {
+        padding: 0 2%;
+        width: 65%;
+    }
+
+    .covid-case p {
+        padding: 1%;
+    }
+
+    .covid-case span {
+        height: 50%;
+    }
+
+    .deskripsi-attactment p {
+        font-size: .8rem;
+    }
+
+
+    .keterangan-loket h1 {
+        font-size: 1rem;
+    }
+
+    .keterangan-loket p {
+        font-size: 0.8rem;
+    }
+
+    .keterangan-loket p span {
+        font-size: 0.8rem;
+    }
+
+    .tombol-ambil-antrian {
+        font-size: .8rem;
+        padding: 5px 60px;
+        width: 100%;
+    }
+
+    .modal-body-loket h1 {
+        font-size: 4rem;
+    }
+
+    #tombol-detail-antrian {
+        font-size: 1rem;
+        padding: 5px 50px;
+        width: 50%;
+    }
 }
 
 @media screen and (min-device-width: 992px) {
@@ -2010,7 +2196,7 @@ hr.rounded {
     }
 
     .logo-lokasi {
-        width: 6vw;
+        width: 10vw;
     }
 
     .content-field-lokasi::-webkit-scrollbar {
@@ -2029,5 +2215,112 @@ hr.rounded {
         background-color: #2F2D65;
         color: #FFFFFF;
         padding-top: 10vh;
+    }
+
+    /* halaman antrianku */
+    .word-buat-antrianmu-jumbotron h1 {
+        font-size: 1.7rem;
+    }
+
+    .word-buat-antrianmu-jumbotron p {
+        font-size: .9rem;
+    }
+
+    .content-buat-antrianmu-jumbotron img {
+        width: 300px;
+    }
+
+    #tombol-buat-antrianku {
+        font-size: 1rem;
+        padding: 8px 55px;
+    }
+
+    .keterangan-loket-antrianku h1 {
+        font-size: 1.2rem;
+    }
+
+    .keterangan-loket-antrianku p {
+        font-size: .7rem;
+    }
+
+    /* halaman pilih loket */
+    .tombol-ambil-antrian {
+        font-size: 1rem;
+    }
+
+    .modal-body-loket {
+        min-height: 70vh;
+        max-height: 100vh;
+        padding-bottom: 5%;
+    }
+
+    .modal-body-loket h1 {
+        font-size: 4rem;
+    }
+
+    #tombol-detail-antrian {
+        font-size: 1rem;
+        padding: 5px 50px;
+        width: 40%;
+    }
+
+    .covid-case {
+        padding: 0 2%;
+        width: 55%;
+    }
+
+}
+
+@media screen and (min-device-width: 1200px) {
+
+    /* halaman antrianku */
+    .word-buat-antrianmu-jumbotron h1 {
+        font-size: 2rem;
+    }
+
+    .word-buat-antrianmu-jumbotron p {
+        font-size: 1rem;
+    }
+
+    .content-buat-antrianmu-jumbotron img {
+        width: 350px;
+    }
+
+    #tombol-buat-antrianku {
+        font-size: 1.2rem;
+        padding: 10px 60px;
+    }
+
+    .logo-lokasi {
+        width: 6vw;
+    }
+
+    .keterangan-loket-antrianku h1 {
+        font-size: 1.5rem;
+    }
+
+    .keterangan-loket-antrianku p {
+        font-size: .9rem;
+    }
+
+    /* halaman pilih loket */
+    .deskripsi-attactment p {
+        font-size: 1rem;
+    }
+
+    .keterangan-loket h1 {
+        font-size: 1.5rem;
+    }
+
+    .keterangan-loket p {
+        font-size: 1rem;
+    }
+
+    .keterangan-loket p span {
+        font-size: 1rem;
+    }
+
+    .tombol-ambil-antrian {
+        font-size: 1.2rem;
     }
 }

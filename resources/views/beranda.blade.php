@@ -11,8 +11,13 @@
                     <div class="container">
                         <div class="first-row d-flex justify-content-between">
                             <div class="first-row-word">
-                                <h1>Halo, {{ Auth::user()->nama }}!</h1>
-                                <p>{Lorem ipsum dolor sit amet, consectetur. }</p>
+                                @auth
+                                    <h1>Halo, {{ Auth::user()->nama }}!</h1>
+                                @else
+                                    <h1>Halo, selamat datang!</h1>
+                                @endauth
+                                
+                                <p>Lorem ipsum dolor sit amet, consectetur. </p>
                             </div>
                             <form action="" class="first-row-search d-flex justify-content-center align-items-center">
                                 <input type="text" id="search-tempat-antrean" placeholder="Cari antrian...">
