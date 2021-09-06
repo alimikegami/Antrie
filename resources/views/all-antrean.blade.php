@@ -11,8 +11,7 @@
                     <div class="container-fluid">
                         <div class="first-row-all d-flex justify-content-between">
                             <div class="first-row-word flex-fill">
-                                <h1>Halo, Antrie!</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur. </p>
+                                <p>{{ $count }} antrean ditemukan</p>
                             </div>
                             <form action="" class="first-row-search d-flex justify-content-center align-items-center">
                                 <input type="text" id="search-tempat-antrean" placeholder="Cari antrian...">
