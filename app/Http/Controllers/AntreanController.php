@@ -290,7 +290,7 @@ class AntreanController extends Controller
                 ->limit(3)
                 ->orderBy('id', 'desc')
                 ->first();
-            MailController::sendQueueAlertEmail($antrean_ke_tiga->pengguna->nama, $antrean_ke_tiga->pengguna->email);
+            MailController::sendEmail($antrean_ke_tiga->pengguna->nama, $antrean_ke_tiga->pengguna->email, null, null);
         }
         return response()->json($antrean);
     }
