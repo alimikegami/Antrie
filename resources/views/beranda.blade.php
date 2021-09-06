@@ -20,7 +20,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur. </p>
                             </div>
                             <form action="{{ route('search') }}" class="first-row-search d-flex justify-content-center align-items-center" method="GET">
-                                <input type="text" id="search-tempat-antrean" placeholder=" Cari antrian..." name="query">
+                                <input type="text" id="search-tempat-antrean" placeholder=" Cari antrean..." name="query">
                                 <button type="submit" id="search-button"><i class="bi bi-search"></i></button>
                             </form>
                         </div>

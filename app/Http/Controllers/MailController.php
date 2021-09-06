@@ -16,6 +16,21 @@ use Illuminate\Contracts\Mail\Mailable;
 
 class MailController extends Controller
 {
+    public static function sendEmail($name, $email, $verification_code, $token) {
+        if (is_null($verification_code) && is_null($token)) {
+            $data = ["name" => $name, "email" => $email];
+            $job = (new SendQueueAlert($data))->delay(Carbon::now()->addSeconds(5));
+        } else if (is_null($verification_code)) {
+            $data = ["name" => $name, "email" => $email, "token" => $token];
+            $job = (new SendForgotPasswordEmail($data))->delay(Carbon::now()->addSeconds(5));
+        } else if (is_null($token)) {
+            $data = ["name" => $name, "email" => $email, "verification_code"=>$verification_code];
+            $job = (new SendSignUpEmail($data))->delay(Carbon::now()->addSeconds(5));
+        }
+        
+        dispatch($job)->onQueue('send_email');
+    }
+
     public static function sendSignUpEmail($name, $email, $verification_code) {
         // To switch back into the slower sending method, use only $data and mail to line
         $data = ["name" => $name, "email" => $email, "verification_code"=>$verification_code];

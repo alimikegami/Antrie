@@ -14,7 +14,7 @@
                                 <p>{{ $count }} antrean ditemukan</p>
                             </div>
                             <form action="" class="first-row-search d-flex justify-content-center align-items-center">
-                                <input type="text" id="search-tempat-antrean" placeholder="Cari antrian...">
+                                <input type="text" id="search-tempat-antrean" placeholder="Cari antrean...">
                                 <button type="submit" id="search-button"><i class="bi bi-search"></i></button>
                             </form>
                         </div>
@@ -49,7 +49,6 @@
                                     </div>
                                 </div>
                             @endforeach
-
                         </div>
                     </div>
                 </div>
@@ -59,7 +58,7 @@
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
                     data-bs-scroll="true">
                     <div class="offcanvas-header">
-                        <h5 id="offcanvasRightLabel">Filter antrian</h5>
+                        <h5 id="offcanvasRightLabel">Filter antrean</h5>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
