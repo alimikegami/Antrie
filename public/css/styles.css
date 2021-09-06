@@ -1009,6 +1009,7 @@ body {
 
 .content-field-lokasi {
     overflow: auto;
+    height: 100%;
 }
 
 .content-field-lokasi::-webkit-scrollbar {
@@ -1917,6 +1918,26 @@ hr.rounded {
     .aturLoket-modal-btn-row {
         width: 50%;
         height: 60%;
+    }
+
+    /* footer */
+    .footer {
+        height: 20vh;
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-top: 15%;
+    }
+
+    .footer-content p {
+        font-size: .6rem;
+    }
+
+    .footer-content li {
+        font-size: .5rem;
+    }
+
+    .footer-content img {
+        width: 70px;
     }
 }
 
