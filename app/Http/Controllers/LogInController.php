@@ -23,9 +23,12 @@ class LogInController extends Controller {
             'email' => 'required|email:dns',
             'password' => 'required'
         ]);
+        $remember_me = $request->has('remember_me')? true:false;
 
-        if (Auth::attempt($credentials)){
+        if (Auth::attempt($credentials, $remember_me)){
             $request->session()->regenerate();
+            $user = Pengguna::where(["email" => $credentials['email']])->first();
+            Auth::login($user, $remember_me);
             return redirect()->intended('beranda');
         }
 

@@ -28,9 +28,14 @@
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email">
                         </div>
+                        
                         <div class="input-password mt-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="" name="password">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="remember_me" value="remember_me" name="remember_me">
+                            <label for="">Remember me</label>
                         </div>
                         <button type="submit" id="tombol-buat-dashboard" class="mt-4">Sign in</button>
                     </form>
