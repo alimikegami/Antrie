@@ -24,7 +24,9 @@ class BerandaController extends Controller
 
     public function showAntreanBasedOnCategories(Kategori $kategori)
     {
-        return view('all-antrean', ['antrean' => $kategori->antrean, 'title' => $kategori->nama_kategori]);
+        $kategori_count = Antrean::where('id_kategori', '=', $kategori->id)
+        ->count();
+        return view('all-antrean', ['antrean' => $kategori->antrean, 'title' => $kategori->nama_kategori, 'count' => $kategori_count]);
     }
 
     public function showSearchResult()
@@ -32,6 +34,8 @@ class BerandaController extends Controller
         $keyword = request('query');
         $search_result = Antrean::where('nama_antrean', 'LIKE', '%'.$keyword.'%')
                                     ->get();
-        return view('all-antrean', ['antrean' => $search_result, 'title' => "Search Results"]);
+        $search_count = Antrean::where('nama_antrean', 'LIKE', '%'.$keyword.'%')
+        ->count();
+        return view('all-antrean', ['antrean' => $search_result, 'title' => "Search Results", 'count' => $search_count]);
     }
 }
