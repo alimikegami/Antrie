@@ -26,7 +26,7 @@ class SignUpController extends Controller
         $credentials['password'] = Hash::make($credentials['password']);
         $credentials['verification_code'] = sha1(time());
         Pengguna::create($credentials);
-        MailController::sendSignUpEmail($credentials['nama'], $credentials['email'], $credentials['verification_code']);
+        MailController::sendEmail($credentials['nama'], $credentials['email'], $credentials['verification_code'], null);
         $request->session()->flash('alert-success', 'Your account has been created. Please check your email to verify your account!');
         return redirect('signup');
     }

@@ -33,7 +33,7 @@ class Pengguna extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
+        'password', 'remember_token'
     ];
 
     public function antrean(){
