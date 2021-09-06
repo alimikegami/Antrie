@@ -9,20 +9,40 @@
             <div class="col-auto col-md-12 py-3 col-lg-10">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="container">
-                        <div class="first-row d-flex justify-content-between">
+                        <div class="first-row d-flex justify-content-between flex-column flex-lg-row">
                             <div class="first-row-word">
                                 @auth
                                     <h1>Halo, {{ Auth::user()->nama }}!</h1>
                                 @else
                                     <h1>Halo, selamat datang!</h1>
                                 @endauth
-                                
+
                                 <p>Lorem ipsum dolor sit amet, consectetur. </p>
                             </div>
-                            <form action="{{ route('search') }}" class="first-row-search d-flex justify-content-center align-items-center" method="GET">
-                                <input type="text" id="search-tempat-antrean" placeholder=" Cari antrian..." name="query">
-                                <button type="submit" id="search-button"><i class="bi bi-search"></i></button>
-                            </form>
+                            <div class="searchBar-wrapper d-flex justify-content-center align-items-center mb-3 ms-lg-3">
+                                <form action="{{ route('search') }}" method="GET"
+                                    class="first-row-search d-flex justify-content-center align-items-center flex-md-fill mb-md-3">
+                                    <input type="text" id="search-tempat-antrean" placeholder="Cari antrian..."
+                                        name="query">
+                                    <select class="form-select border-end border-start" id="filter-provinsi"
+                                        aria-label="Default select example">
+                                        <option selected>Provinsi</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <select class="form-select border-end border-start" id="filter-provinsi"
+                                        aria-label="Default select example">
+                                        <option selected>Kategori</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <button type="submit" id="search-button"
+                                        class="d-flex align-items-center justify-content-center"><i
+                                            class="bi bi-search"></i></button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div class="second-row">

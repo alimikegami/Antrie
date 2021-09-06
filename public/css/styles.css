@@ -849,22 +849,52 @@ body {
 }
 
 #search-tempat-antrean {
-    padding: 10px;
-    font-size: 16px;
+    padding-left: 10px;
+    font-size: .6rem;
     border-width: 0px;
     background-color: #FFFFFF;
     color: #000000;
     border-style: solid;
-    border-top-left-radius: 21px;
-    border-bottom-left-radius: 21px;
     outline: none;
     width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 21px;
+    border-top-left-radius: 21px;
     /* vertical-align: middle; */
 }
 
+#filter-provinsi {
+    font-size: .6rem;
+    border-width: 0px;
+    background-color: #FFFFFF;
+    color: #757575;
+    border-style: solid;
+    outline: none;
+    width: 55%;
+    cursor: pointer;
+}
+
+#filter-provinsi:hover,
+#search-tempat-antrean:hover {
+    background-color: #ebebeb;
+    border-radius: 21px;
+}
+
+#search-button:hover {
+    background-color: #ebebeb;
+}
+
+#filter-provinsi:focus,
+#search-tempat-antrean:focus {
+    background-color: #ffffff;
+}
+
+
 .first-row-search {
-    width: 50%;
-    height: 10%;
+    width: 100%;
+    height: 45%;
+    background-color: #ffffff;
+    border-radius: 21px;
     /* margin-right: 30%; */
 }
 
@@ -2256,6 +2286,28 @@ hr.rounded {
         width: 50%;
         height: 60%;
     }
+
+    /* search bar */
+    #search-tempat-antrean {
+        padding-left: 10px;
+        font-size: .8rem;
+        width: 100%;
+    }
+
+    #filter-provinsi {
+        font-size: .8rem;
+        width: 100%;
+    }
+
+    .first-row-search {
+        width: 100%;
+        height: 45%;
+    }
+
+    #search-button {
+        height: 100%;
+        padding: 10px;
+    }
 }
 
 @media screen and (min-device-width: 992px) {
@@ -2464,6 +2516,28 @@ hr.rounded {
         height: 60%;
     }
 
+    /* search bar */
+    #search-tempat-antrean {
+        padding-left: 10px;
+        font-size: .8rem;
+        width: 100%;
+    }
+
+    #filter-provinsi {
+        font-size: .8rem;
+        width: 60%;
+    }
+
+    .first-row-search {
+        width: 100%;
+        height: 60%;
+    }
+
+    #search-button {
+        height: 100%;
+        padding: 10px;
+    }
+
 }
 
 @media screen and (min-device-width: 1200px) {
@@ -2558,5 +2632,31 @@ hr.rounded {
 
     #btn-ubah-antrian {
         width: 15%;
+    }
+
+    /* search bar */
+    .searchBar-wrapper {
+        width: 45%;
+    }
+
+    #search-tempat-antrean {
+        padding-left: 10px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    #filter-provinsi {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .first-row-search {
+        width: 100%;
+        height: 65%;
+    }
+
+    #search-button {
+        height: 100%;
+        padding: 10px;
     }
 }
