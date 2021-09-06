@@ -28,16 +28,15 @@
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email">
                         </div>
-                        
                         <div class="input-password mt-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="" name="password">
                         </div>
-                        <div>
+                        <div class="remember_me d-flex align-items-center mt-3">
                             <input type="checkbox" id="remember_me" value="remember_me" name="remember_me">
-                            <label for="">Remember me</label>
+                            <label for="" class="ms-2">Remember me</label>
                         </div>
-                        <button type="submit" id="tombol-buat-dashboard" class="mt-4">Sign in</button>
+                        <button type="submit" id="tombol-login" class="mt-3">Sign in</button>
                     </form>
                     <div class="d-flex flex-column align-items-center mt-3">
                         <p><a href="{{ route('forgotPassword') }}">Forgot password?</a></p>

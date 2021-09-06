@@ -32,12 +32,14 @@
             <div class="login-content d-flex justify-content-around align-items-center">
                 <div class="login-first-column d-flex flex-column justify-content-center align-items-center">
                     <h1>Selamat datang.</h1>
-                    <img src="img/gambarLogin.png" alt="login-gambar" class="img-fluid">
+                    <div>
+                        <img src="img/gambarLogin.png" alt="login-gambar" class="img-fluid">
+                    </div>
                 </div>
-                <div class="login-second-column d-flex flex-column justify-content-around align-items-center">
-                    <a href="/"><img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid"></a>
+                <div class="login-second-column d-flex flex-column justify-content-center align-items-center">
+                    <a href="/" class="signup-logo"><img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid"></a>
                     <h3>Sign up</h3>
-                    <form action="{{ route('store') }}" method="POST" class="d-flex flex-column">
+                    <form action="{{ route('store') }}" method="POST" class="d-flex flex-column align-items-center">
                         {{ csrf_field() }}
                         <div class="input-nama">
                             <label for="nama" class="form-label">Nama</label>
@@ -50,7 +52,7 @@
                             @enderror
                         </div>
 
-                        <div class="input-email mt-3">
+                        <div class="input-email mt-2">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
                                 name="email" value="{{ old('email') }}">
@@ -60,7 +62,7 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="input-password mt-3">
+                        <div class="input-password mt-2">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control @error('password') is-invalid @enderror"
                                 id="password" name="password">
@@ -70,12 +72,12 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="input-password mt-3">
+                        <div class="input-password mt-2">
                             <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
                             <input type="password" class="form-control" id="password_confirmation"
-                                name="password_confirmation">
+                            name="password_confirmation">
                         </div>
-                        <button type="submit" id="tombol-buat-dashboard">Sign up</button>
+                        <button type="submit" id="tombol-login" class="mt-3">Sign up</button>
                     </form>
                 </div>
             </div>
