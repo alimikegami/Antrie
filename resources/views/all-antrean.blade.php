@@ -9,27 +9,39 @@
             <div class="col py-3">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="container-fluid">
-                        <div class="first-row-all d-flex justify-content-between">
+                        <div class="first-row-all d-flex justify-content-between flex-column flex-lg-row">
                             <div class="first-row-word flex-fill">
-                                <p>{{ $count }} antrean ditemukan</p>
+                                <h1>{{ $count }} antrean ditemukan</h1>
                             </div>
-                            <form action="" class="first-row-search d-flex justify-content-center align-items-center">
-                                <input type="text" id="search-tempat-antrean" placeholder="Cari antrean...">
-                                <button type="submit" id="search-button"><i class="bi bi-search"></i></button>
-                            </form>
+                            <div class="searchBar-wrapper d-flex justify-content-center align-items-center mb-3">
+                                <form action=""
+                                    class="first-row-search d-flex justify-content-center align-items-center flex-md-fill mb-md-3">
+                                    <input type="text" id="search-tempat-antrean" placeholder="Cari antrian...">
+                                    <select class="form-select border-end border-start" id="filter-provinsi"
+                                        aria-label="Default select example">
+                                        <option selected>Provinsi</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <select class="form-select border-end border-start" id="filter-provinsi"
+                                        aria-label="Default select example">
+                                        <option selected>Kategori</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <button type="submit" id="search-button"
+                                        class="d-flex align-items-center justify-content-center"><i
+                                            class="bi bi-search"></i></button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                     <div class="third-row-all">
                         <div class="field-lokasi-all d-flex flex-column">
-                            <div class="word-field-lokasi d-flex justify-content-end">
-                                <div class="filter-area">
-                                    <button type="button" id="tombol-filter" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
-                                            class="bi bi-sort-alpha-down"></i>filter</button>
-                                </div>
-                            </div>
-                            @foreach ($antrean as $item)
-                                <div class="content-field-lokasi d-flex flex-column">
+                            <div class="content-field-lokasi d-flex flex-column">
+                                @foreach ($antrean as $item)
                                     <div class="p-2 hover-wrapper">
                                         <a href="#">
                                             <div class="lokasi-wrapper d-flex align-items-center">
@@ -47,8 +59,9 @@
                                             </div>
                                         </a>
                                     </div>
+                              @endforeach
                                 </div>
-                            @endforeach
+                                
                         </div>
                     </div>
                 </div>
