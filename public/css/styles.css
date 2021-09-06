@@ -766,7 +766,8 @@ body {
     width: 100%;
     /* height: 100%; */
     background-color: #9EEDE5;
-    border-radius: 44px;
+    border-top-left-radius: 44px;
+    border-top-right-radius: 44px;
     padding: 3vw;
 }
 
@@ -954,10 +955,6 @@ body {
 
 .coba {
     height: 100%;
-}
-
-.footer {
-    margin-top: 1%;
 }
 
 .navbar-dashboard {
@@ -1541,11 +1538,11 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: 18px;
-    padding: 5px 60px;
+    font-size: .8rem;
+    padding: 5px 20px;
     text-decoration: none;
     border: none;
-    width: 25%;
+    width: 60%;
 }
 
 .tombol-buka-loket:hover {
@@ -1563,11 +1560,11 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: 18px;
-    padding: 5px 60px;
+    font-size: .8rem;
+    padding: 5px 20px;
     text-decoration: none;
     border: none;
-    width: 25%;
+    width: 60%;
 }
 
 .tombol-tutup-loket:hover {
@@ -1585,20 +1582,20 @@ body {
 }
 
 .keterangan-loket-pemilik h1 {
-    font-size: 1.5vw;
+    font-size: 1rem;
     color: #2B2844;
     font-weight: bold;
 }
 
 .keterangan-loket-pemilik p {
     color: #73848C;
-    font-size: 0.8vw;
+    font-size: 0.8rem;
 }
 
 .keterangan-loket-pemilik p span {
     color: #2B2844;
     font-weight: bold;
-    font-size: 0.8vw;
+    font-size: 0.8rem;
 }
 
 .keterangan-loket-pemilik .badge {
@@ -1618,7 +1615,7 @@ body {
 }
 
 #back-arrow {
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 2vw;
     text-decoration: none;
 }
@@ -1628,11 +1625,12 @@ body {
 }
 
 #btn-ubah-antrian {
-    width: 15%;
+    width: 45%;
     background-color: #4DB0FF;
     color: #ffffff;
     border: none;
     border-radius: 15px;
+    font-size: .8rem;
 }
 
 #btn-ubah-antrian:active {
@@ -1649,11 +1647,11 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff !important;
-    font-size: 18px;
-    padding: 10px 60px;
+    font-size: .8rem;
+    padding: 10px 10px;
     text-decoration: none;
     border: none;
-    width: 80%;
+    width: 90%;
 }
 
 .btn-enter-atur-loket:hover {
@@ -1668,6 +1666,7 @@ body {
 .btn-cancel-atur-loket {
     border-radius: 20px;
     width: 50%;
+    font-size: .8rem;
 }
 
 .aturLoket-modal-btn-row {
@@ -1859,6 +1858,65 @@ hr.rounded {
 
     #tombol-detail-antrian {
         width: 100%;
+    }
+
+    /* Halaman atur loket */
+
+    .tombol-buka-loket {
+        font-size: .8rem;
+        padding: 5px 10px;
+        width: 70%;
+    }
+
+    .tombol-tutup-loket {
+        font-size: .8rem;
+        padding: 5px 10px;
+        width: 70%;
+    }
+
+    .keterangan-loket-pemilik h1 {
+        font-size: 1rem;
+    }
+
+    .keterangan-loket-pemilik p {
+        font-size: 0.7rem;
+    }
+
+    .keterangan-loket-pemilik p span {
+        font-size: 0.7rem;
+    }
+
+    .atur-loket-lokasi {
+        height: 40vh;
+        padding: 5%;
+        overflow: hidden;
+        margin-bottom: 3vh;
+    }
+
+    #back-arrow {
+        font-size: 1.3rem;
+    }
+
+    #btn-ubah-antrian {
+        width: 50%;
+        font-size: .7rem;
+    }
+
+    .btn-enter-atur-loket {
+        font-size: .9rem;
+        padding: 10px 15px;
+        width: 90%;
+    }
+
+    .btn-cancel-atur-loket {
+        border-radius: 20px;
+        font-size: .9rem;
+        width: 60%;
+    }
+
+    .aturLoket-modal-btn-row {
+        width: 50%;
+        height: 60%;
     }
 }
 
@@ -2119,6 +2177,64 @@ hr.rounded {
         padding: 5px 50px;
         width: 50%;
     }
+
+    /* Halaman atur loket */
+
+    .tombol-buka-loket {
+        font-size: 1rem;
+        padding: 5px 20px;
+        width: 30%;
+    }
+
+    .tombol-tutup-loket {
+        font-size: 1rem;
+        padding: 5px 15px;
+        width: 30%;
+    }
+
+    .keterangan-loket-pemilik h1 {
+        font-size: 1.2rem;
+    }
+
+    .keterangan-loket-pemilik p {
+        font-size: 0.8rem;
+    }
+
+    .keterangan-loket-pemilik p span {
+        font-size: 0.8rem;
+    }
+
+    .atur-loket-lokasi {
+        height: 40vh;
+        padding: 3%;
+        overflow: hidden;
+        margin-bottom: 5vh;
+    }
+
+    #back-arrow {
+        font-size: 1.5rem;
+    }
+
+    #btn-ubah-antrian {
+        width: 30%;
+    }
+
+    .btn-enter-atur-loket {
+        font-size: .9rem;
+        padding: 10px 15px;
+        width: 90%;
+    }
+
+    .btn-cancel-atur-loket {
+        border-radius: 20px;
+        font-size: .9rem;
+        width: 60%;
+    }
+
+    .aturLoket-modal-btn-row {
+        width: 50%;
+        height: 60%;
+    }
 }
 
 @media screen and (min-device-width: 992px) {
@@ -2269,6 +2385,64 @@ hr.rounded {
         width: 55%;
     }
 
+    /* Halaman atur loket */
+
+    .tombol-buka-loket {
+        font-size: 1rem;
+        padding: 5px 20px;
+        width: 30%;
+    }
+
+    .tombol-tutup-loket {
+        font-size: 1rem;
+        padding: 5px 20px;
+        width: 30%;
+    }
+
+    .keterangan-loket-pemilik h1 {
+        font-size: 1.2rem;
+    }
+
+    .keterangan-loket-pemilik p {
+        font-size: 0.8rem;
+    }
+
+    .keterangan-loket-pemilik p span {
+        font-size: 0.8rem;
+    }
+
+    .atur-loket-lokasi {
+        height: 40vh;
+        padding: 3%;
+        overflow: hidden;
+        margin-bottom: 5vh;
+    }
+
+    #back-arrow {
+        font-size: 1.5rem;
+    }
+
+    #btn-ubah-antrian {
+        width: 30%;
+    }
+
+    .btn-enter-atur-loket {
+        font-size: .9rem;
+        padding: 10px 15px;
+        width: 70%;
+    }
+
+    .btn-cancel-atur-loket {
+        border-radius: 20px;
+        font-size: .9rem;
+        width: 50%;
+    }
+
+    .aturLoket-modal-btn-row {
+        width: 50%;
+        height: 60%;
+    }
+
 }
 
 @media screen and (min-device-width: 1200px) {
@@ -2322,5 +2496,46 @@ hr.rounded {
 
     .tombol-ambil-antrian {
         font-size: 1.2rem;
+    }
+
+    /* Halaman atur loket */
+
+    .tombol-buka-loket {
+        font-size: 1rem;
+        padding: 5px 20px;
+        width: 20%;
+    }
+
+    .tombol-tutup-loket {
+        font-size: 1rem;
+        padding: 5px 20px;
+        width: 20%;
+    }
+
+    .keterangan-loket-pemilik h1 {
+        font-size: 1.2rem;
+    }
+
+    .keterangan-loket-pemilik p {
+        font-size: 0.8rem;
+    }
+
+    .keterangan-loket-pemilik p span {
+        font-size: 0.8rem;
+    }
+
+    .atur-loket-lokasi {
+        height: 40vh;
+        padding: 3%;
+        overflow: hidden;
+        margin-bottom: 5vh;
+    }
+
+    #back-arrow {
+        font-size: 1.5rem;
+    }
+
+    #btn-ubah-antrian {
+        width: 15%;
     }
 }
