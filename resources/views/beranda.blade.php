@@ -72,7 +72,7 @@
                                     <div class="field-lokasi d-flex flex-column">
                                         <div class="word-field-lokasi d-flex flex-column">
                                             <h1>{{ $kategori_populer->nama_kategori }}</h1>
-                                            <p>{{ $kategori_populer->antrean_count }} lokasi ditemukan</p>
+                                            <p>{{ $kategori_populer->antrean_count }} antrean ditemukan</p>
                                         </div>
                                         <div class="content-field-lokasi d-flex flex-column mt-lg-3">
                                             @foreach ($antrean as $temp)
@@ -94,7 +94,7 @@
                                             @endforeach
                                         </div>
                                         <div class="link-lihat-semua mt-4 d-flex justify-content-center align-items-center">
-                                            <a href="/all-antrean">Show all</a>
+                                            <a href="/beranda/{{ $kategori_populer->slug }}">Tampilkan Semua</a>
                                         </div>
                                     </div>
                                 </div>
