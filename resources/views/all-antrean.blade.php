@@ -8,7 +8,7 @@
             @include('components/sidebar')
             <div class="col py-3">
                 <div class="dashboard-content d-flex flex-column">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="first-row-all d-flex justify-content-between">
                             <div class="first-row-word flex-fill">
                                 <p>{{ $count }} antrean ditemukan</p>
