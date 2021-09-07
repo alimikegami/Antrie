@@ -62,7 +62,7 @@
                                         <option value="SULAWESI BARAT">Sulawesi Barat</option>
                                         <option value="GORONTALO">Gorontalo</option>
                                     </select>
-                                    <select class="form-select border-end border-start" id="filter-kategori"
+                                    <select class="form-select border-end border-start" id="filter-provinsi"
                                         aria-label="Default select example" name="kategori">
                                         <option selected value="">Kategori</option>
                                         @foreach ($kategori as $item)
@@ -138,7 +138,8 @@
                                                         </div>
                                                         <div class="keterangan-lokasi">
                                                             <h1>{{ $temp->nama_antrean }}</h1>
-                                                            <p><i class="bi bi-geo-alt-fill"></i> {{ $temp->alamat }} </p>
+                                                            <p><i class="bi bi-geo-alt-fill"></i> {{ $temp->alamat }}
+                                                            </p>
                                                         </div>
                                                     </a>
                                                 </div>
