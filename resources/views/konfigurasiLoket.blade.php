@@ -6,18 +6,28 @@
             @include('components/sidebar')
             <div class="col py-3">
                 <div class="dashboard-content d-flex flex-column">
-                    <div class="field-panggil-antrian d-flex flex-column mt-5 justify-content-evenly align-items-center">
-                        <a href="#" id="back-arrow"
-                            class="d-flex justify-content-center align-items-center mb-2 align-self-start"><i
-                                class="bi bi-arrow-left"></i></a>
-                        <h1>{{ $loket->nama_loket }}</h1>
+                    <div class="field-panggil-antrian d-flex flex-column justify-content-between align-items-center">
+                        <div class="row justify-content-center" style="width: 100%">
+                            <div class="col-2">
+                                <a href="#" id="back-arrow"
+                                    class="d-flex justify-content-center align-items-center align-self-start"><i
+                                        class="bi bi-arrow-left"></i></a>
+                            </div>
+                            <div class="col-8 text-center">
+                                <h1>{{ $loket->nama_loket }}</h1>
+                            </div>
+                            <div class="col-2">
+
+                            </div>
+                        </div>
                         <p>Nomor antrean saat ini</p>
                         <span id="nomorAntrean">{{ $antrean->nomor_antrean ?? '0' }}</span>
                         <div class="spinner-border" role="status" id="spinner">
                             <span class="visually-hidden">Loading...</span>
                         </div>
                         <div class="orang-menunggu bg-warning">
-                            <p class="mt-0 mb-0 d-flex justify-content-evenly align-items-center"><span class="badge"
+                            <p class="mt-0 mb-0 d-flex justify-content-evenly align-items-center"><span
+                                    class="badge"
                                     id="jumlahPenunggu">{{ $jumlah_antrean_di_belakang ?? 0 }}</span> orang sedang
                                 menunggu</p>
                         </div>
@@ -55,7 +65,8 @@
                     <div class="modal-body modal-body-loket d-flex flex-column align-items-center justify-content-evenly">
                         <div hidden>
                             <label for="recipient-name" class="col-form-label" hidden>ID Riwayat Antrean</label>
-                            <input type="text" class="form-control" id="idRiwayatAntrean111" name="idRiwayatAntrean" hidden>
+                            <input type="text" class="form-control" id="idRiwayatAntrean111" name="idRiwayatAntrean"
+                                hidden>
                         </div>
                         <div hidden>
                             <label for="recipient-name" class="col-form-label" hidden>ID Loket</label>
@@ -85,7 +96,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modalAntreanOffline" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalAntreanOffline" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" id="modalBodyKonfirmasiAntrean">
             <div class="modal-content d-flex p-2" style="background-color: #2B2844;">
                 <div class="exit-modal align-self-end">

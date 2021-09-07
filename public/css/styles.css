@@ -1344,7 +1344,7 @@ body {
 /* modal untuk filter */
 #modal-filter .modal-body-antrian,
 .modal-header-antrian,
-    .modal-footer-antrian {
+.modal-footer-antrian {
     background-color: #4dafff;
 }
 
@@ -1757,7 +1757,7 @@ body {
     background-color: #FFFFFF;
     width: 100%;
     height: 100vh;
-    padding: 5%;
+    padding: 10%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
     overflow: auto;
@@ -1777,28 +1777,28 @@ body {
 }
 
 .field-panggil-antrian h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #2B2844;
 }
 
 .field-panggil-antrian p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .field-panggil-antrian span {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #4DB0FF;
 }
 
 .field-panggil-antrian p~span {
-    font-size: 10rem;
+    font-size: 6rem;
     color: #4DB0FF;
 }
 
 .tombol-panggil-antrian {
-    width: 90%;
-    height: 10%;
+    width: 100%;
+    height: 7%;
 }
 
 .tombol-input-antrian-off {
@@ -1817,7 +1817,7 @@ body {
     height: 80%;
     background-color: #4DB0FF;
     border: none;
-    font-size: 2rem;
+    font-size: 1rem;
     border-radius: 15px;
     color: #ffffff;
 }
@@ -1830,15 +1830,14 @@ body {
 .orang-menunggu {
     background-color: #2F2D65;
     border-radius: 15px;
-    padding: 0.5% 2%;
+    padding: 2% 2%;
     /* padding: 2%; */
-    width: 35%;
+    width: 80%;
 }
 
 .orang-menunggu p {
     color: #000000;
-    /* padding: 1%; */
-    /* font-weight: bold; */
+    font-size: .9rem;
 }
 
 .orang-menunggu span {
@@ -2015,6 +2014,53 @@ hr.rounded {
 
     .footer-content img {
         width: 70px;
+    }
+
+    /* Halaman panggil antrian */
+    .field-panggil-antrian {
+        padding: 10%;
+    }
+
+    .field-panggil-antrian h1 {
+        font-size: 2.4rem;
+    }
+
+    .field-panggil-antrian p {
+        font-size: 1rem;
+    }
+
+    .field-panggil-antrian span {
+        font-size: 1.3rem;
+    }
+
+    .field-panggil-antrian p~span {
+        font-size: 6rem;
+    }
+
+    .tombol-panggil-antrian {
+        width: 100%;
+        height: 10%;
+    }
+
+    .tombol-input-antrian-off {
+        height: 100%;
+    }
+
+    .tombol-input-antrian-ol {
+        width: 100%;
+        height: 65%;
+        font-size: 1rem;
+    }
+
+    .orang-menunggu {
+        padding: 2% 2%;
+        width: 80%;
+    }
+
+    .orang-menunggu p {
+        color: #000000;
+        text-align: center;
+        font-size: .8rem;
     }
 }
 
@@ -2355,6 +2401,53 @@ hr.rounded {
         height: 100%;
         padding: 10px;
     }
+
+    /* Halaman panggil antrian */
+    .field-panggil-antrian {
+        padding: 3%;
+    }
+
+    .field-panggil-antrian h1 {
+        font-size: 2.8rem;
+    }
+
+    .field-panggil-antrian p {
+        font-size: 1.2rem;
+    }
+
+    .field-panggil-antrian span {
+        font-size: 1.5rem;
+    }
+
+    .field-panggil-antrian p~span {
+        font-size: 8rem;
+    }
+
+    .tombol-panggil-antrian {
+        width: 70%;
+        height: 10%;
+    }
+
+    .tombol-input-antrian-off {
+        height: 100%;
+    }
+
+    .tombol-input-antrian-ol {
+        width: 100%;
+        height: 65%;
+        font-size: 1.4rem;
+    }
+
+    .orang-menunggu {
+        padding: 0.5% 2%;
+        width: 45%;
+    }
+
+    .orang-menunggu p {
+        color: #000000;
+        text-align: center;
+        font-size: 1rem;
+    }
 }
 
 @media screen and (min-device-width: 992px) {
@@ -2585,6 +2678,59 @@ hr.rounded {
         padding: 10px;
     }
 
+    /* Halaman panggil antrian */
+    .field-panggil-antrian {
+        padding: 3%;
+    }
+
+    .field-panggil-antrian h1 {
+        font-size: 2.8rem;
+    }
+
+    .field-panggil-antrian p {
+        font-size: 1.2rem;
+    }
+
+    .field-panggil-antrian span {
+        font-size: 1.5rem;
+    }
+
+    .field-panggil-antrian p~span {
+        font-size: 8rem;
+    }
+
+    .tombol-panggil-antrian {
+        width: 70%;
+        height: 10%;
+    }
+
+    .tombol-input-antrian-off {
+        height: 100%;
+    }
+
+    .tombol-input-antrian-ol {
+        width: 100%;
+        height: 65%;
+        font-size: 1.4rem;
+    }
+
+    .orang-menunggu {
+        padding: 0.5% 2%;
+        width: 40%;
+    }
+
+    .orang-menunggu p {
+        color: #000000;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .orang-menunggu span {
+        /* height: 50%; */
+        border-radius: 15px;
+        background-color: #FFFFFF;
+        color: #000000;
+    }
 }
 
 @media screen and (min-device-width: 1200px) {
@@ -2705,5 +2851,58 @@ hr.rounded {
     #search-button {
         height: 100%;
         padding: 10px;
+    }
+
+    /* Halaman panggil antrian */
+    .field-panggil-antrian {
+        padding: 3%;
+    }
+
+    .field-panggil-antrian h1 {
+        font-size: 3.5rem;
+    }
+
+    .field-panggil-antrian p {
+        font-size: 1.5rem;
+    }
+
+    .field-panggil-antrian span {
+        font-size: 2rem;
+    }
+
+    .field-panggil-antrian p~span {
+        font-size: 10rem;
+    }
+
+    .tombol-panggil-antrian {
+        width: 70%;
+        height: 10%;
+    }
+
+    .tombol-input-antrian-off {
+        height: 100%;
+    }
+
+    .tombol-input-antrian-ol {
+        width: 100%;
+        height: 80%;
+        font-size: 1.7rem;
+    }
+
+    .orang-menunggu {
+        padding: 0.5% 2%;
+        width: 35%;
+    }
+
+    .orang-menunggu p {
+        color: #000000;
+
+    }
+
+    .orang-menunggu span {
+        /* height: 50%; */
+        border-radius: 15px;
+        background-color: #FFFFFF;
+        color: #000000;
     }
 }
