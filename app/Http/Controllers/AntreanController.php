@@ -57,9 +57,7 @@ class AntreanController extends Controller
 
 
         // Fetch data kasus harian covid dari API eksternal
-        $api_response = Http::withOptions([
-            'timeout' => 2,
-        ])->get('https://data.covid19.go.id/public/api/prov.json');
+        $api_response = Http::get('https://data.covid19.go.id/public/api/prov.json');
         foreach ($api_response['list_data'] as $lokasi) {
             if ($lokasi['key'] === $antrean->provinsi) {
                 $kasus_covid = $lokasi['penambahan']['positif'];
@@ -182,6 +180,9 @@ class AntreanController extends Controller
                 ]);
             }
         }
+
+        $request->session()->flash('alert-success', 'Antrean telah berhasil dibuat!');
+        return redirect('buat-antrean');
     }
 
     public function bukaLoket(Request $request)

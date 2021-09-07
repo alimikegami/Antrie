@@ -9,6 +9,7 @@ use App\Http\Controllers\AntreanController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\AntreankuController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\RiwayatAntreanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::get('/', function () {
         'kategori' => Kategori::all()
     ]);
 })->name('landingpage');
+
+Route::get('/riwayat-antrean', [RiwayatAntreanController::class, 'show']);
 
 // GET route
 
