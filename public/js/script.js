@@ -71,7 +71,7 @@ $(document).ready(function () {
         $('#modal-ambil-nomor').modal('show');
     })
 
-    // tombol menu halaman antrianku
+    // tombol menu halaman antreanku
     $('.menu-pengantri').click(function () {
         $(this).addClass('menu-antrianku-active');
         $('.menu-buat-antrian').removeClass('menu-antrianku-active');
@@ -265,8 +265,9 @@ $(document).ready(function () {
             data: {
                 id_loket: id_loket,
             },
-            success: function () {
-                console.log('Sukses');
+            success: function (data) {
+                $("#nomor-antrean").html(data.nomor_antrean);
+                $("#modalNomorAntrean").modal("show");
             },
         });
     }
@@ -289,8 +290,8 @@ $(document).ready(function () {
     $("#formAntreanOffline").submit(function (event) {
         event.preventDefault();
         let id_loket = $("#idLoketOffline").val();
-        ambilNomorAntreanOffline(id_loket);
         $("#modalAntreanOffline").modal("hide");
+        ambilNomorAntreanOffline(id_loket);
     });
 });
 
