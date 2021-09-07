@@ -25,6 +25,7 @@ class SignUpController extends Controller
         ]);
         $credentials['password'] = Hash::make($credentials['password']);
         $credentials['verification_code'] = sha1(time());
+        $credentials['email_verified'] = false;
         Pengguna::create($credentials);
         MailController::sendEmail($credentials['nama'], $credentials['email'], $credentials['verification_code'], null);
         $request->session()->flash('alert-success', 'Your account has been created. Please check your email to verify your account!');
@@ -35,7 +36,7 @@ class SignUpController extends Controller
     {
         $user = Pengguna::where(['verification_code' => $code])->first();
         if ($user != null) {
-            $user->email_verified_at = \Carbon\Carbon::now()->toDateTimeString();
+            $user->email_verified = true;
             $user->save();
             return redirect('login');
         }

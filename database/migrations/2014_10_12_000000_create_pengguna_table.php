@@ -18,7 +18,7 @@ class CreatePenggunaTable extends Migration
             $table->string('nama', 75);
             $table->string('email', 75)->unique();
             $table->string('verification_code')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->boolean('email_verified');
             $table->string('password');
             $table->timestamps();
             $table->rememberToken();
