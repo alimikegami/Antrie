@@ -30,6 +30,6 @@ class PasswordResetEmail extends Mailable
      */
     public function build()
     {
-        return $this->from(env('MAIL_USERNAME'),  'Antrie')->subject('Password Reset')->view('email.password-reset-email', ['data'=>$this->data]);
+        return $this->from(env('MAIL_USERNAME'),  'Antrie')->subject('Reset Password')->view('email.password-reset-email', ['data'=>$this->data]);
     }
 }

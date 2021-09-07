@@ -30,6 +30,6 @@ class QueueAlertEmail extends Mailable
      */
     public function build()
     {
-        return $this->from(env('MAIL_USERNAME'),  'Antrie')->subject('Password Reset')->view('email.queue-alert-email', ['data'=>$this->data]);
+        return $this->from(env('MAIL_USERNAME'),  'Antrie')->subject('Notifikasi Antrean')->view('email.queue-alert-email', ['data'=>$this->data]);
     }
 }
