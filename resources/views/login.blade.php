@@ -34,7 +34,7 @@
                         </div>
                         <div class="remember_me d-flex align-items-center mt-3">
                             <input type="checkbox" id="remember_me" value="remember_me" name="remember_me">
-                            <label for="" class="ms-2">Remember me</label>
+                            <label for="remember_me" class="ms-2">Remember me</label>
                         </div>
                         <button type="submit" id="tombol-login" class="mt-3">Sign in</button>
                     </form>
