@@ -24,19 +24,50 @@
                                     class="first-row-search d-flex justify-content-center align-items-center flex-md-fill mb-md-3">
                                     <input type="text" id="search-tempat-antrean" placeholder="Cari antrian..."
                                         name="query">
-                                    <select class="form-select border-end border-start" id="filter-provinsi"
+                                    <select class="form-select border-end border-start" id="filter-provinsi" name="provinsi"
                                         aria-label="Default select example">
-                                        <option selected>Provinsi</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option selected value="">Provinsi</option>
+                                        <option value="DKI JAKARTA">DKI Jakarta</option>
+                                        <option value="JAWA BARAT">Jawa Barat</option>
+                                        <option value="JAWA TENGAH">Jawa Tengah</option>
+                                        <option value="JAWA TIMUR">Jawa Timur</option>
+                                        <option value="KALIMANTAN TIMUR">Kalimantan Timur</option>
+                                        <option value="DAERAH ISTIMEWA YOGYAKARTA">Daerah Istimewa Yogyakarta</option>
+                                        <option value="BANTEN">Banten</option>
+                                        <option value="RIAU">Riau</option>
+                                        <option value="SULAWESI SELATAN">Sulawesi Selatan</option>
+                                        <option value="BALI">Bali</option>
+                                        <option value="SUMATERA BARAT">Sumatera Barat</option>
+                                        <option value="SUMATERA UTARA">Sumatera Utara</option>
+                                        <option value="KALIMANTAN SELATAN">Kalimantan Selatan</option>
+                                        <option value="SUMATERA SELATAN">Sumatera Selatan</option>
+                                        <option value="NUSA TENGGARA TIMUR">Nusa Tenggara Timur</option>
+                                        <option value="KEPULAUAN RIAU">Kepulauan Riau</option>
+                                        <option value="LAMPUNG">Lampung</option>
+                                        <option value="KEPULAUAN BANGKA BELITUNG">Kepulauan Bangka Belitung</option>
+                                        <option value="KALIMANTAN TENGAH">Kalimantan Tengah</option>
+                                        <option value="SULAWESI TENGAH">Sulawesi Tengah</option>
+                                        <option value="KALIMANTAN BARAT">Kalimantan Barat</option>
+                                        <option value="PAPUA">Papua</option>
+                                        <option value="SULAWESI UTARA">Sulawesi Utara</option>
+                                        <option value="KALIMANTAN UTARA">Kalimantan Utara</option>
+                                        <option value="PAPUA">Papua</option>
+                                        <option value="JAMBI">Jambi</option>
+                                        <option value="NUSA TENGGARA BARAT">Nusa Tenggara Barat</option>
+                                        <option value="PAPUA BARAT">Papua Barat</option>
+                                        <option value="BENGKULU">Bengkulu</option>
+                                        <option value="SULAWESI TENGGARA">Sulawesi Tenggara</option>
+                                        <option value="MALUKU">Maluku</option>
+                                        <option value="MALUKU UTARA">Maluku Utara</option>
+                                        <option value="SULAWESI BARAT">Sulawesi Barat</option>
+                                        <option value="GORONTALO">Gorontalo</option>
                                     </select>
-                                    <select class="form-select border-end border-start" id="filter-provinsi"
-                                        aria-label="Default select example">
-                                        <option selected>Kategori</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <select class="form-select border-end border-start" id="filter-kategori"
+                                        aria-label="Default select example" name="kategori">
+                                        <option selected value="">Kategori</option>
+                                        @foreach ($kategori as $item)
+                                            <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                                        @endforeach
                                     </select>
                                     <button type="submit" id="search-button"
                                         class="d-flex align-items-center justify-content-center"><i
