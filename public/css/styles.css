@@ -1752,6 +1752,10 @@ body {
     height: 60%;
 }
 
+.word-modal-no-loket h2 {
+    font-size: 1.5rem;
+}
+
 /* Halaman panggil antrian */
 .field-panggil-antrian {
     background-color: #FFFFFF;
@@ -2656,6 +2660,11 @@ hr.rounded {
         height: 60%;
     }
 
+    #modal-konfirmasi-buka-loket .modal-content,
+    #modal-konfirmasi-tutup-loket .modal-content {
+        width: 80%;
+    }
+
     /* search bar */
     #search-tempat-antrean {
         padding-left: 10px;
@@ -2825,6 +2834,11 @@ hr.rounded {
 
     #btn-ubah-antrian {
         width: 15%;
+    }
+
+    #modal-konfirmasi-buka-loket .modal-content,
+    #modal-konfirmasi-tutup-loket .modal-content {
+        width: 100%;
     }
 
     /* search bar */

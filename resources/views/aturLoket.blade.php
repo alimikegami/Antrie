@@ -7,8 +7,7 @@
             <div class="col py-3">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="atur-loket-lokasi d-flex flex-column">
-                        <a href="/antreanku" id="back-arrow"
-                            class="d-flex justify-content-center align-items-center mb-2"><i
+                        <a href="/antreanku" id="back-arrow" class="d-flex justify-content-center align-items-center mb-2"><i
                                 class="bi bi-arrow-left"></i></a>
                         <div class="d-flex flex-column">
                             <div class="lokasi-wrapper d-flex align-items-center">
@@ -89,7 +88,7 @@
     <!-- Modal -->
     <div class="modal fade" id="modal-konfirmasi-buka-loket" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center align-items-center">
             <div class="modal-content d-flex p-2" style="background-color: #2B2844;">
                 <div class="exit-modal align-self-end">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
@@ -130,7 +129,7 @@
 
     <div class="modal fade" id="modal-konfirmasi-tutup-loket" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center align-items-center">
             <div class="modal-content d-flex p-2" style="background-color: #2B2844;">
                 <div class="exit-modal align-self-end">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
