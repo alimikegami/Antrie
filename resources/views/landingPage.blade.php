@@ -8,7 +8,7 @@
         <div class="searchBar-wrapper-landingPage d-flex justify-content-center align-items-center mt-4 p-0 mb-5">
             <form action="{{ route('search') }}" method="GET"
                 class="first-row-search shadow-lg d-flex justify-content-center align-items-center flex-md-fill mb-md-3 align-self-center">
-                <input type="text" id="search-tempat-antrean" placeholder="Cari antrian..." name="query">
+                <input type="text" id="search-tempat-antrean" placeholder="Cari antrean..." name="query">
                 <select class="form-select border-end border-start" id="filter-provinsi" name="provinsi"
                     aria-label="Default select example">
                     <option selected value="">Provinsi</option>
@@ -50,9 +50,9 @@
                 <select class="form-select border-start" id="filter-provinsi" aria-label="Default select example"
                     name="kategori">
                     <option selected value="">Kategori</option>
-                    {{-- @foreach ($kategori as $item)
+                    @foreach ($kategori as $item)
                         <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
-                    @endforeach --}}
+                    @endforeach
                 </select>
                 <button type="submit" id="search-button" class="d-flex align-items-center justify-content-center"><i
                         class="bi bi-search"></i></button>
@@ -62,7 +62,7 @@
             <div class="home-first">
                 <div class="display">
                     <div class="slogan">
-                        <h1><span>Antrie</span><br>Aplikasi Antrian Online</h1>
+                        <h1><span>Antrie</span><br>Aplikasi Antrean Online</h1>
                         <p>“Antrie” menyediakan solusi yang berupa platform antrean online berbasis web yang
                             memungkinkan setiap penggunanya untuk mengantre dan membuat antrean
                             dengan mudah</p>
@@ -93,7 +93,7 @@
         <div class="section s3" data-background="#ffff">
             <div class="home-third">
                 <div class="slogan-third">
-                    <h1>Temukan peran mu</h1>
+                    <h1>Temukan peranmu</h1>
                     <h1>dalam website kami</h1>
                 </div>
                 <div class="slogan-pembuat-antrean">
@@ -140,8 +140,8 @@
             <div class="home-forth">
                 <div class="word-kenapa-pilih">
                     <h1>Kenapa harus pilih kami ?</h1>
-                    <p>Kami berusaha untuk memberikan solusi yang berupa platform antrian online berbasis web yang
-                        memungkinkan setiap penggunanya untuk mengantri dan membuat antrian dengan mudah. </p>
+                    <p>Kami berusaha untuk memberikan solusi yang berupa platform antrean online berbasis web yang
+                        memungkinkan setiap penggunanya untuk mengantri dan membuat antrean dengan mudah. </p>
                 </div>
                 <div class="card-kenapa-pilih">
                     <div class="kemudahan-kenapa-pilih">
@@ -217,7 +217,7 @@
                 <div class="share-love-word">
                     <h1>Share The Love</h1>
                     <p>Fakta dasar tentang eksistensi manusia bukanlah sebuah tragedi, tapi membosankan. Tidak ada hal yang
-                        lebih membosankan dari berdiri di antrian yang panjang.</p>
+                        lebih membosankan dari berdiri di antrean yang panjang.</p>
                 </div>
                 <div class="share-love-img-right">
                     <img src="img/shareThelove2.png" alt="">

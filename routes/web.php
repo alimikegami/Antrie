@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Kategori;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\LogInController;
@@ -21,11 +22,8 @@ use App\Http\Controllers\ForgotPasswordController;
 */
 
 Route::get('/', function () {
-    return view('landingPage');
-})->name('landingpage');
-Route::get('/aturLoket', function () {
-    return view('aturLoket', [
-        'title' => 'test'
+    return view('landingPage', [
+        'kategori' => Kategori::all()
     ]);
 })->name('landingpage');
 
