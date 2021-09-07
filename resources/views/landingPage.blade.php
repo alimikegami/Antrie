@@ -10,8 +10,9 @@
                 <div class="display">
                     <div class="slogan">
                         <h1>Antrie Aplikasi Antrian Online</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
+                        <p>“Antrie” menyediakan solusi yang berupa platform antrean online berbasis web yang
+                            memungkinkan setiap penggunanya untuk mengantre dan membuat antrean
+                            dengan mudah</p>
                         <a type="button" class="btn btn-success" href="{{ route('beranda') }}">Try it Now!</a>
                     </div>
                     <div class="image">
@@ -44,13 +45,14 @@
                 <div class="slogan-pembuat-antrean">
                     <div class="word-pembuat-antrean">
                         <h1>Pembuat Antrean</h1>
-                        <p>Lorem a dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <p>Sebagai pembuat anteran anda dapat membuat antrean dari manapun dan kapanpun</p>
                         <button type="button" id="kelebihan-pembuat-antrean" class="mt-2">Kelebihan<i <<<<<<< HEAD
                                 class="fas fa-plus" id="tambah-pembuat-antrean"></i></button>
                         <ul class="mt-3">
-                            <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
-                            <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
-                            <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
+                            <li>Membuat antrean</li>
+                            <li>Membuat loket pada suatu antrean</li>
+                            <li>Menambahkan individu yang tidak mengantre secara online
+                                pada antrean</li>
                         </ul>
                     </div>
                     <div class="img-pembuat-antrean">
@@ -64,20 +66,23 @@
                     </div>
                     <div class="word-pengantre">
                         <h1>Pengantre</h1>
-                        <p>Lorem a dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <p>Sebagai pengantre anda dapat mengambil nomor antrean tanpa perlu pergi ke lokasinya
+                            secara langsung
+                        </p>
                         <button type="button" id="kelebihan-pengantre">Kelebihan<i class="fas fa-plus"
                                 id="tambah-pengantre"></i></button>
                         <ul class="mt-3">
-                            <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
-                            <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
-                            <li>Lorem a dolor sit ametconsectetur adipiscing elit, sed do eiusmod</li>
+                            <li>Mengambil nomor antrean</li>
+                            <li>Melihat jalannya antrean secara real-time</li>
+                            <li>Membatalkan antrean</li>
+                            <li>Melihat kasus harian COVID-19 pada lokasi antrean</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="section s4" data-background="#FFE77A">
+        <div class="section s4" data-background="#2F2D65">
             <div class="home-forth">
                 <div class="word-kenapa-pilih">
                     <h1>Kenapa harus pilih kami ?</h1>
@@ -100,8 +105,10 @@
                                 <p>Kemudahan</p>
                             </div>
                         </div>
-                        <div class="back">
-                            test
+                        <div class="back text-center p-2">
+                            Dibandingkan dengan perangkat lunak lain yang serupa, pengguna
+                            perangkat lunak “Antrie” tidak membutuhkan proses pengajuan
+                            pembuatan antrean.
                         </div>
                     </div>
                     <div class="kecepatan-kenapa-pilih">
@@ -118,8 +125,10 @@
                                 <p>Kecepatan</p>
                             </div>
                         </div>
-                        <div class="back">
-                            test
+                        <div class="back text-center p-2">
+                            Perangkat lunak “Antrie” menawarkan kecepatan dalam
+                            proses pembuatan antrean karena proses pembuatan antrean tidak
+                            melalui proses verifikasi.
                         </div>
                     </div>
                     <div class="fleksibilitas-kenapa-pilih">
@@ -136,8 +145,10 @@
                                 <p>Fleksibilitas</p>
                             </div>
                         </div>
-                        <div class="back">
-                            test
+                        <div class="back text-center p-2">
+                            Berbagai konfigurasi dapat ditentukan oleh
+                            pembuat antrean untuk memenuhi kebutuhan spesifik suatu instansi
+                            ataupun acara.
                         </div>
                     </div>
                 </div>
@@ -151,42 +162,14 @@
                 </div>
                 <div class="share-love-word">
                     <h1>Share The Love</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore.</p>
+                    <p>Fakta dasar tentang eksistensi manusia bukanlah sebuah tragedi, tapi membosankan. Tidak ada hal yang
+                        lebih membosankan dari berdiri di antrian yang panjang.</p>
                 </div>
                 <div class="share-love-img-right">
                     <img src="img/shareThelove2.png" alt="">
                 </div>
             </div>
-            <div class="footer">
-                <div class="footer-content">
-                    <div class="footer-logo">
-                        <img src="img/logoAntrielight.png" alt="">
-                    </div>
-                    <div class="footer-word1">
-                        <ul>
-                            <p>Kunjungi kami</p>
-                            <li>Instagram</li>
-                            <li>Twitter</li>
-                            <li>Github</li>
-                        </ul>
-                    </div>
-                    <div class="footer-word2">
-                        <ul>
-                            <p>Company</p>
-                            <li>Contact us</li>
-                            <li>Our Customer</li>
-                        </ul>
-                    </div>
-                    <div class="footer-word3">
-                        <ul>
-                            <p>Support</p>
-                            <li>Quick Start Guide</li>
-                            <li>Customer Support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+    @include('components/footer')
 @endsection
