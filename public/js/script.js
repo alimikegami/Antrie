@@ -315,9 +315,9 @@ $(window).ready(function () {
                     $("#navbar-logo").attr("src", "img/logoAntrielight.png");
                     $(".nav-link").css("color", "#FFFFFF");
                 } else {
-                    $(".navbar").css("background-color", "#FFE77A");
-                    $("#navbar-logo").attr("src", "img/logoAntriedark.png");
-                    $(".nav-link").css("color", "#5D5D83");
+                    $(".navbar").css("background-color", "#2F2D65");
+                    $("#navbar-logo").attr("src", "img/logoAntrielight.png");
+                    $(".nav-link").css("color", "#FFFFFF");
                 }
                 $("body").css("background-color", bgColor);
             },

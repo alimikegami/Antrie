@@ -453,6 +453,7 @@ body {
     flex-direction: column;
     height: 60vh;
     margin-top: 20vh;
+    color: #ffffff;
 }
 
 .word-kenapa-pilih h1 {
@@ -505,15 +506,16 @@ body {
 }
 
 .back {
-    background-color: #2C5F2D;
+    background-color: #4DB0FF;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: .7rem;
 }
 
 .front {
-    background-color: #2C5F2D;
+    background-color: #4DB0FF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -561,6 +563,10 @@ body {
     .kemudahan-word p {
         font-size: 14px;
     }
+
+    .back {
+        font-size: .6rem;
+    }
 }
 
 @media (min-width: 992px) {
@@ -593,6 +599,10 @@ body {
     .kemudahan-word p {
         font-size: 16px;
     }
+
+    .back {
+        font-size: .7rem;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -612,6 +622,10 @@ body {
 
     .kemudahan-word p {
         font-size: 20px;
+    }
+
+    .back {
+        font-size: .9rem;
     }
 }
 
