@@ -57,12 +57,15 @@ class AntreanController extends Controller
 
 
         // Fetch data kasus harian covid dari API eksternal
-        $api_response = Http::get('https://data.covid19.go.id/public/api/prov.json');
+        $api_response = Http::withOptions([
+            'timeout' => 2,
+        ])->get('https://data.covid19.go.id/public/api/prov.json');
         foreach ($api_response['list_data'] as $lokasi) {
             if ($lokasi['key'] === $antrean->provinsi) {
                 $kasus_covid = $lokasi['penambahan']['positif'];
             };
         }
+        $provinsi = ucwords(strtolower($antrean->provinsi));
 
         return view('antrean', [
             'title' => $antrean->nama_antrean,
@@ -70,7 +73,8 @@ class AntreanController extends Controller
             'antrean_di_depan' => $antrean_di_depan,
             'loket_tempat_mengantre' => $id_loket_antrean,
             'kasus_covid' => $kasus_covid,
-            'estimasi_waktu' => $waktu_fix
+            'estimasi_waktu' => $waktu_fix,
+            'provinsi' => $provinsi
         ]);
     }
 
@@ -290,7 +294,9 @@ class AntreanController extends Controller
                 ->limit(3)
                 ->orderBy('id', 'desc')
                 ->first();
-            MailController::sendEmail($antrean_ke_tiga->pengguna->nama, $antrean_ke_tiga->pengguna->email, null, null);
+            if($antrean_ke_tiga->email != "antrieantrionline@gmail.com") {
+                MailController::sendEmail($antrean_ke_tiga->pengguna->nama, $antrean_ke_tiga->pengguna->email, null, null);
+            }
         }
         return response()->json($antrean);
     }
