@@ -57,30 +57,35 @@
                                                 {{ $temp->waktu_tutup }} <span
                                                     class="badge {{ $temp->status }}">{{ $temp->status }}</span></p>
 
-                                            @if (in_array($temp->id, $loket_tempat_mengantre))
-                                                <p id="sudah-terdaftar-{{ $i }}" }}>Anda telah terdaftar pada loket
-                                                    ini</p>
-                                                <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
-                                                    class="btn btn-riwayat-antrean">Lihat Antrean</button>
-                                                <p id="belum-terdaftar-{{ $i }}" hidden>Terdapat
-                                                    <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
-                                                </p>
-                                                <button type="button" id="tombol-ambil-antrian-{{ $i }}"
-                                                    class="btn tombol-ambil-antrian" hidden>Ambil Nomor</button>
-                                            @else
-                                                <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda telah terdaftar pada
-                                                    loket ini</p>
-                                                <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
-                                                    class="btn btn-riwayat-antrean" hidden>Lihat Antrean</button>
-                                                <p id="belum-terdaftar-{{ $i }}">Terdapat
-                                                    <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
-                                                </p>
-                                                <p id="estimasi-waktu-{{ $i }}">Estimasi waktu
-                                                    <span>{{ $estimasi_waktu[$i] }}</span> menit
-                                                </p>
-                                                <button type="button" id="tombol-ambil-antrian-{{ $i }}"
-                                                    class="btn tombol-ambil-antrian">Ambil Nomor</button>
-                                            @endif
+                                            @if (!($antrean->id_pembuat == Auth::id()))
+                                                @if (in_array($temp->id, $loket_tempat_mengantre))
+                                                    <p id="sudah-terdaftar-{{ $i }}" }}>Anda telah terdaftar pada loket
+                                                        ini</p>
+                                                    <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
+                                                        class="btn btn-riwayat-antrean">Lihat Antrean</button>
+                                                    <p id="belum-terdaftar-{{ $i }}" hidden>Terdapat
+                                                        <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
+                                                    </p>
+                                                    <button type="button" id="tombol-ambil-antrian-{{ $i }}"
+                                                        class="btn tombol-ambil-antrian" hidden>Ambil Nomor</button>
+                                                @else
+                                                    <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda telah terdaftar pada
+                                                        loket ini</p>
+                                                    <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
+                                                        class="btn btn-riwayat-antrean" hidden>Lihat Antrean</button>
+                                                    <p id="belum-terdaftar-{{ $i }}">Terdapat
+                                                        <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
+                                                    </p>
+                                                    <p id="estimasi-waktu-{{ $i }}">Estimasi waktu
+                                                        <span>{{ $estimasi_waktu[$i] }}</span> menit
+                                                    </p>
+                                                    @if ($temp->status == "open")
+                                                        <button type="button" id="tombol-ambil-antrian-{{ $i }}"
+                                                            class="btn tombol-ambil-antrian">Ambil Nomor</button>
+                                                    @endif
+                                                    
+                                                @endif
+                                                @endif
                                             <input id="input-id-loket-{{ $i }}" type="text"
                                                 value="{{ $temp->slug }}" hidden>
                                             @php
