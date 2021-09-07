@@ -24,7 +24,7 @@
         <div class="row flex-nowrap">
             @include('components/sidebar')
             <div class="col py-3">
-                <div class="dashboard-content d-flex flex-column">
+                <div class="dashboard-content d-flex flex-column" {!! count($antrean) == 0 ? "style='height: 75vh'" : '' !!}>
                     <div class="first-row-all d-flex justify-content-between flex-column p-3">
                         <div class="first-row-word flex-fill">
                             <h1>Antreanku</h1>
@@ -37,13 +37,16 @@
 
                             <div
                                 class="word-buat-antrianmu-jumbotron d-flex justify-content-end align-items-center flex-column text-center">
-                                <h1>Ayo Buat Antrianmu Sendiri</h1>
+                                <h1>Ayo Buat Antreanmu Sendiri</h1>
                                 <p>Tekan tombol dibawah untuk memulai</p>
                                 <a href="{{ route('buat-antrean') }}" type="button" id="tombol-buat-antrianku">Buat</a>
                             </div>
                         </div>
 
                     </div>
+                    @if (count($antrean) == 0)
+                        <h3 class="text-center mt-5 text-muted align-self-center">Belum ada antrean</h3>
+                    @endif
 
                     @foreach ($antrean as $item)
                         <div class="field-lokasi-all-antrianku d-flex flex-column mt-5">
