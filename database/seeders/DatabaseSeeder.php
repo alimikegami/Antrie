@@ -56,6 +56,7 @@ class DatabaseSeeder extends Seeder
             'nama' => "Dummy",
             'email' => "antrieantrionline@gmail.com",
             'password' => Hash::make("1234"),
+            'email_verified' => false,
         ]);
     }
 }
