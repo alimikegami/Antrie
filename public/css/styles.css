@@ -2740,6 +2740,10 @@ hr.rounded {
         background-color: #FFFFFF;
         color: #000000;
     }
+
+    #modalBodyKonfirmasiAntrean {
+        width: 70%;
+    }
 }
 
 @media screen and (min-device-width: 1200px) {
