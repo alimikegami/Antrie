@@ -46,7 +46,7 @@ body {
 
 .home-first h1 {
     font-size: 34px;
-    max-width: 253px;
+    max-width: 100%;
     font-weight: bold;
     color: #2F2D65;
 }
@@ -62,6 +62,49 @@ body {
     padding: 6px 12px;
     font-size: 12px;
     border-radius: 6px;
+}
+
+.home-first span {
+    font-size: 60px;
+}
+
+.searchBar-wrapper-landingPage {
+    height: 12vh;
+}
+
+.searchBar-wrapper-landingPage .first-row-search {
+    background-color: #ffffff;
+}
+
+.searchBar-wrapper-landingPage #search-button {
+    height: 80%;
+    padding: 10px;
+    width: 15%;
+    font-size: 1.3rem;
+    margin: 1%;
+    border-radius: 21px;
+    background-color: #2F2D65;
+    color: #ffffff;
+}
+
+.searchBar-wrapper-landingPage #filter-provinsi {
+    height: 100%;
+}
+
+#btn-tryitnow {
+    background-color: #4DB0FF;
+    color: #ffffff;
+    border-radius: 30px;
+    width: 30%;
+}
+
+#btn-tryitnow:hover {
+    background-color: #6eb8f0;
+}
+
+#btn-tryitnow:active {
+    position: relative;
+    top: 2px;
 }
 
 @media (min-width: 768px) {
@@ -92,6 +135,10 @@ body {
         margin-bottom: 0;
     }
 
+    .home-first span {
+        font-size: 80px;
+    }
+
     .home-first p {
         width: 90%;
         font-size: 14px;
@@ -120,6 +167,10 @@ body {
         font-size: 3rem;
     }
 
+    .home-first span {
+        font-size: 90px;
+    }
+
     .home-first p {
         font-size: 1rem;
     }
@@ -134,6 +185,7 @@ body {
 }
 
 @media (min-width: 1200px) {
+
     /* .home-first h1 {
         font-size: 60px;
     }
@@ -145,6 +197,9 @@ body {
     .home-first .btn {
         font-size: 22px;
     } */
+    .home-first span {
+        font-size: 100px;
+    }
 
     .home-first img {
         max-width: 90%;
@@ -2080,6 +2135,12 @@ hr.rounded {
         text-align: center;
         font-size: .8rem;
     }
+
+    /* landing page */
+    #btn-tryitnow {
+        width: 50%;
+        margin-bottom: 20px;
+    }
 }
 
 @media screen and (min-device-width: 768px) {
@@ -2466,6 +2527,27 @@ hr.rounded {
         text-align: center;
         font-size: 1rem;
     }
+
+    /* landing page */
+    #modalBodyKonfirmasiAntrean {
+        width: 70%;
+    }
+
+    .searchBar-wrapper-landingPage {
+        height: 12vh;
+    }
+
+    .searchBar-wrapper-landingPage #search-button {
+        height: 80%;
+        padding: 10px;
+        width: 15%;
+        font-size: 1.3rem;
+        margin: 1%;
+    }
+
+    #btn-tryitnow {
+        width: 40%;
+    }
 }
 
 @media screen and (min-device-width: 992px) {
@@ -2755,8 +2837,25 @@ hr.rounded {
         color: #000000;
     }
 
+    /* landing page */
     #modalBodyKonfirmasiAntrean {
         width: 70%;
+    }
+
+    .searchBar-wrapper-landingPage {
+        height: 8vh;
+    }
+
+    .searchBar-wrapper-landingPage #search-button {
+        height: 80%;
+        padding: 10px;
+        width: 15%;
+        font-size: 1.3rem;
+        margin: 1%;
+    }
+
+    #btn-tryitnow {
+        width: 40%;
     }
 }
 
@@ -2885,6 +2984,31 @@ hr.rounded {
         padding: 10px;
     }
 
+    /* landing page */
+    .searchBar-wrapper-landingPage {
+        height: 8vh;
+    }
+
+    .searchBar-wrapper-landingPage .first-row-search {
+        background-color: #ffffff;
+    }
+
+    .searchBar-wrapper-landingPage #search-button {
+        height: 80%;
+        padding: 10px;
+        width: 15%;
+        font-size: 1.3rem;
+        margin: 1%;
+        border-radius: 21px;
+        background-color: #2F2D65;
+        color: #ffffff;
+    }
+
+    .searchBar-wrapper-landingPage #filter-provinsi {
+        height: 100%;
+    }
+
+
     /* Halaman panggil antrian */
     .field-panggil-antrian {
         padding: 3%;
@@ -2936,5 +3060,9 @@ hr.rounded {
         border-radius: 15px;
         background-color: #FFFFFF;
         color: #000000;
+    }
+
+    #btn-tryitnow {
+        width: 30%;
     }
 }
