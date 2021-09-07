@@ -24,7 +24,7 @@ class Pengguna extends Authenticatable
         'email',
         'password',
         'verification_code',
-        'email_verified_at' => 'datetime',
+        'email_verified',
     ];
 
     /**

@@ -25,7 +25,7 @@ class LogInController extends Controller {
         ]);
         $remember_me = $request->has('remember_me')? true:false;
 
-        if (Auth::attempt($credentials, $remember_me)){
+        if (Auth::attempt($credentials + ["email_verified" => true], $remember_me)){
             $request->session()->regenerate();
             $user = Pengguna::where(["email" => $credentials['email']])->first();
             Auth::login($user, $remember_me);
