@@ -196,13 +196,6 @@ $(document).ready(function () {
         }
     });
 
-    // animasi tombol tambah halaman form buat antrean
-    $('.tambah-loket').on('mouseenter', function () {
-        $(this).css('WebkitTransform', 'rotate(180deg)');
-    }).on('mouseleave', function () {
-        $(this).css('WebkitTransform', 'rotate(360deg)');
-    });
-
     // window.updateAntrean = function(id, id_loket){
     //   $('#idRiwayatAntrean111').val(id);
     //   $('#idLoket').val(id_loket);
@@ -293,6 +286,20 @@ $(document).ready(function () {
         $("#modalAntreanOffline").modal("hide");
         ambilNomorAntreanOffline(id_loket);
     });
+
+    // scroll to top button
+    $('.scroll-top').click(function () {
+        $(window).scrollTop(0);
+        return false;
+    });
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 300) {
+            $('.scroll-top').addClass('show');
+        } else {
+            $('.scroll-top').removeClass('show');
+        }
+    });
 });
 
 // landing page scroll animation
@@ -310,14 +317,17 @@ $(window).ready(function () {
                     $(".navbar").css("background-color", "#FFFFFF");
                     $("#navbar-logo").attr("src", "img/logoAntriedark.png");
                     $(".nav-link").css("color", "#5D5D83");
+                    $('.scroll-top').addClass("dark");
                 } else if (bgColor === "#4DB0FF") {
                     $(".navbar").css("background-color", "#4DB0FF");
                     $("#navbar-logo").attr("src", "img/logoAntrielight.png");
                     $(".nav-link").css("color", "#FFFFFF");
+                    $('.scroll-top').removeClass("dark");
                 } else {
                     $(".navbar").css("background-color", "#2F2D65");
                     $("#navbar-logo").attr("src", "img/logoAntrielight.png");
                     $(".nav-link").css("color", "#FFFFFF");
+                    $('.scroll-top').removeClass("dark");
                 }
                 $("body").css("background-color", bgColor);
             },

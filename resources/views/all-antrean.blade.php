@@ -16,7 +16,8 @@
                             <div class="searchBar-wrapper d-flex justify-content-center align-items-center mb-3">
                                 <form action="{{ route('search') }}"
                                     class="first-row-search d-flex justify-content-center align-items-center flex-md-fill mb-md-3">
-                                    <input type="text" id="search-tempat-antrean" placeholder="Cari antrian..." name="query">
+                                    <input type="text" id="search-tempat-antrean" placeholder="Cari antrian..."
+                                        name="query">
                                     <select class="form-select border-end border-start" id="filter-provinsi"
                                         aria-label="Default select example" name="provinsi">
                                         <option selected value="">Provinsi</option>
@@ -55,7 +56,7 @@
                                         <option value="SULAWESI BARAT">Sulawesi Barat</option>
                                         <option value="GORONTALO">Gorontalo</option>
                                     </select>
-                                    <select class="form-select border-end border-start" id="filter-kategori"
+                                    <select class="form-select border-end" id="filter-provinsi"
                                         aria-label="Default select example" name="kategori">
                                         <option selected value="">Kategori</option>
                                         @foreach ($kategori as $item)
