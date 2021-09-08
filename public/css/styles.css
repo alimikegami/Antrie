@@ -1191,6 +1191,7 @@ body {
 
 .keterangan-lokasi {
     padding-left: 5%;
+    width: 100%;
 }
 
 .keterangan-lokasi h1 {
@@ -1529,7 +1530,7 @@ body {
     border-radius: 15px;
     padding: 0 2%;
     /* padding: 2%; */
-    width: 80%;
+    width: 90%;
 }
 
 .covid-case p {
@@ -2445,7 +2446,7 @@ hr.rounded {
     /* halaman pilih loket */
     .covid-case {
         padding: 0 2%;
-        width: 65%;
+        width: 80%;
     }
 
     .covid-case p {
@@ -2814,7 +2815,7 @@ hr.rounded {
 
     .covid-case {
         padding: 0 2%;
-        width: 55%;
+        width: 75%;
     }
 
     /* Halaman atur loket */
@@ -3060,6 +3061,11 @@ hr.rounded {
 
     .tombol-ambil-antrian {
         font-size: 1.2rem;
+    }
+
+    .covid-case {
+        padding: 0 2%;
+        width: 40%;
     }
 
     /* Halaman atur loket */
