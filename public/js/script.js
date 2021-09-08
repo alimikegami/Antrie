@@ -196,13 +196,6 @@ $(document).ready(function () {
         }
     });
 
-    // animasi tombol tambah halaman form buat antrean
-    $('.tambah-loket').on('mouseenter', function () {
-        $(this).css('WebkitTransform', 'rotate(180deg)');
-    }).on('mouseleave', function () {
-        $(this).css('WebkitTransform', 'rotate(360deg)');
-    });
-
     // window.updateAntrean = function(id, id_loket){
     //   $('#idRiwayatAntrean111').val(id);
     //   $('#idLoket').val(id_loket);

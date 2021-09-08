@@ -7,8 +7,8 @@
             <div class="col py-3">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="field-form-tambah-antrian d-flex justify-content-center">
-                        <form class="form-tambah-antrian d-flex flex-column" action="{{ route('buat-record-antrean') }}"
-                            method="POST" enctype="multipart/form-data">
+                        <form class="form-tambah-antrian d-flex flex-column flex-fill px-xl-5"
+                            action="{{ route('buat-record-antrean') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="field-informasi-lokasi-antrian">
                                 <h1>Informasi lokasi antrean</h1>
@@ -404,10 +404,10 @@
                                     </div>
                                 </div>
                                 <button type="button"
-                                    class="btn btn-outline-primary align-self-center mt-4 rounded-circle tambah-loket"><i
-                                        class="bi bi-plus-lg"></i></button>
+                                    class="btn btn-outline-primary align-self-center mt-4 rounded tambah-loket"><i
+                                        class="bi bi-plus-lg"></i> tambah loket</button>
                             </div>
-                            <button type="submit" class="align-self-md-end mt-5 tombol-submit-form-buat-loket">Buat
+                            <button type="submit" class="align-self-center mt-5 tombol-submit-form-buat-loket">Buat
                                 antrian</button>
                         </form>
                     </div>
