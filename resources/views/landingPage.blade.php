@@ -3,7 +3,8 @@
 
 @section('container')
     @include('components/generalNavbar')
-
+    <button class="position-fixed bottom-0 end-0 scroll-top d-flex justify-content-center align-items-center"><i
+            class="fas fa-chevron-up"></i></i></button>
     <div class="container-md">
         <div class="searchBar-wrapper-landingPage d-flex justify-content-center align-items-center mt-4 p-0 mb-5">
             <form action="{{ route('search') }}" method="GET"
@@ -100,7 +101,7 @@
                     <div class="word-pembuat-antrean">
                         <h1>Pembuat Antrean</h1>
                         <p>Sebagai pembuat anteran anda dapat membuat antrean dari manapun dan kapanpun</p>
-                        <button type="button" id="kelebihan-pembuat-antrean" class="mt-2">Kelebihan<i <<<<<<< HEAD
+                        <button type="button" id="kelebihan-pembuat-antrean" class="mt-2">Kelebihan<i
                                 class="fas fa-plus" id="tambah-pembuat-antrean"></i></button>
                         <ul class="mt-3">
                             <li>Membuat antrean</li>
@@ -110,7 +111,7 @@
                         </ul>
                     </div>
                     <div class="img-pembuat-antrean">
-                        <img src="img/pembuatAntrean.png" alt="">
+                        <img src="img/pembuatAntrean.png" alt="pembuatanteran">
                     </div>
                 </div>
 
