@@ -28,6 +28,12 @@ Route::get('/', function () {
     ]);
 })->name('landingpage');
 
+Route::get('/riwayat', function () {
+    return view('riwayatAntrean', [
+        'title' => 'test'
+    ]);
+});
+
 Route::get('/riwayat-antrean', [RiwayatAntreanController::class, 'show']);
 
 // GET route
@@ -64,5 +70,3 @@ Route::put('/perbaharui-antrean', [AntreanController::class, 'majukanAntrean'])-
 Route::put('update-password', [ForgotPasswordController::class, 'changePassword'])->name('updatePassword');
 Route::put('/buka-loket', [AntreanController::class, 'bukaLoket'])->name('bukaLoket');
 Route::put('/tutup-loket', [AntreanController::class, 'tutupLoket'])->name('tutupLoket');
-
-

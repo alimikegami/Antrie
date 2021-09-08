@@ -1191,6 +1191,7 @@ body {
 
 .keterangan-lokasi {
     padding-left: 5%;
+    width: 100%;
 }
 
 .keterangan-lokasi h1 {
@@ -1529,7 +1530,7 @@ body {
     border-radius: 15px;
     padding: 0 2%;
     /* padding: 2%; */
-    width: 80%;
+    width: 90%;
 }
 
 .covid-case p {
@@ -1679,11 +1680,11 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: 15px;
+    font-size: .6rem;
     padding: 5px 10px;
     text-decoration: none;
     border: none;
-    width: 30%;
+    width: 60%;
 }
 
 #tombol-ambil-batal-antrian:hover {
@@ -1696,20 +1697,42 @@ body {
 }
 
 .nomor-antrian {
-    width: 100%;
+    width: 35%;
     text-align: center;
 }
 
 .nomor-antrian p {
-    font-size: 1.1vw;
+    font-size: .6rem;
     color: #2B2844;
     font-weight: bold;
 }
 
 .nomor-antrian h1 {
-    font-size: 3vw;
+    font-size: 1.2rem;
     color: #4DB0FF;
     font-weight: bold;
+}
+
+.keterangan-loket-riwayat {
+    padding-left: 5%;
+    width: 100%;
+}
+
+.keterangan-loket-riwayat h1 {
+    font-size: .7rem;
+    color: #2B2844;
+    font-weight: bold;
+}
+
+.keterangan-loket-riwayat p {
+    color: #73848C;
+    font-size: .5rem;
+}
+
+.keterangan-loket-riwayat p span {
+    color: #2B2844;
+    font-weight: bold;
+    font-size: .6rem;
 }
 
 /* Halaman atur loket */
@@ -2176,6 +2199,37 @@ hr.rounded {
         width: 50%;
         margin-bottom: 20px;
     }
+
+    /* halaman riwayat */
+    #tombol-ambil-batal-antrian {
+        font-size: .5rem;
+        padding: 5px 5px;
+        width: 60%;
+    }
+
+    .nomor-antrian {
+        width: 40%;
+    }
+
+    .nomor-antrian p {
+        font-size: .5rem;
+    }
+
+    .nomor-antrian h1 {
+        font-size: 1.1rem;
+    }
+
+    .keterangan-loket-riwayat h1 {
+        font-size: .6rem;
+    }
+
+    .keterangan-loket-riwayat p {
+        font-size: .5rem;
+    }
+
+    .keterangan-loket-riwayat p span {
+        font-size: .6rem;
+    }
 }
 
 @media screen and (min-device-width: 768px) {
@@ -2392,7 +2446,7 @@ hr.rounded {
     /* halaman pilih loket */
     .covid-case {
         padding: 0 2%;
-        width: 65%;
+        width: 80%;
     }
 
     .covid-case p {
@@ -2583,6 +2637,37 @@ hr.rounded {
     #btn-tryitnow {
         width: 40%;
     }
+
+    /* halaman riwayat */
+    #tombol-ambil-batal-antrian {
+        font-size: .8rem;
+        padding: 5px 10px;
+        width: 45%;
+    }
+
+    .nomor-antrian {
+        width: 50%;
+    }
+
+    .nomor-antrian p {
+        font-size: .8rem;
+    }
+
+    .nomor-antrian h1 {
+        font-size: 1.8rem;
+    }
+
+    .keterangan-loket-riwayat h1 {
+        font-size: .9rem;
+    }
+
+    .keterangan-loket-riwayat p {
+        font-size: .7rem;
+    }
+
+    .keterangan-loket-riwayat p span {
+        font-size: .8rem;
+    }
 }
 
 @media screen and (min-device-width: 992px) {
@@ -2730,7 +2815,7 @@ hr.rounded {
 
     .covid-case {
         padding: 0 2%;
-        width: 55%;
+        width: 75%;
     }
 
     /* Halaman atur loket */
@@ -2892,6 +2977,37 @@ hr.rounded {
     #btn-tryitnow {
         width: 40%;
     }
+
+    /* halaman riwayat */
+    #tombol-ambil-batal-antrian {
+        font-size: .7rem;
+        padding: 5px 10px;
+        width: 40%;
+    }
+
+    .nomor-antrian {
+        width: 25%;
+    }
+
+    .nomor-antrian p {
+        font-size: .7rem;
+    }
+
+    .nomor-antrian h1 {
+        font-size: 2rem;
+    }
+
+    .keterangan-loket-riwayat h1 {
+        font-size: 1.5rem;
+    }
+
+    .keterangan-loket-riwayat p {
+        font-size: 1rem;
+    }
+
+    .keterangan-loket-riwayat p span {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (min-device-width: 1200px) {
@@ -2945,6 +3061,11 @@ hr.rounded {
 
     .tombol-ambil-antrian {
         font-size: 1.2rem;
+    }
+
+    .covid-case {
+        padding: 0 2%;
+        width: 40%;
     }
 
     /* Halaman atur loket */
@@ -3108,5 +3229,36 @@ hr.rounded {
         margin-bottom: 30px;
         margin-right: 30px;
         font-size: 2rem;
+    }
+
+    /* halaman riwayat */
+    #tombol-ambil-batal-antrian {
+        font-size: 1rem;
+        padding: 5px 10px;
+        width: 30%;
+    }
+
+    .nomor-antrian {
+        width: 50%;
+    }
+
+    .nomor-antrian p {
+        font-size: 1.2rem;
+    }
+
+    .nomor-antrian h1 {
+        font-size: 3rem;
+    }
+
+    .keterangan-loket-riwayat h1 {
+        font-size: 1.5rem;
+    }
+
+    .keterangan-loket-riwayat p {
+        font-size: 1rem;
+    }
+
+    .keterangan-loket-riwayat p span {
+        font-size: 1rem;
     }
 }
