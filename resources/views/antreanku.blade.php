@@ -56,7 +56,13 @@
                                         <div class="lokasi-wrapper d-flex align-items-center">
                                             <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                                 <div class="gambar">
-                                                    <img src="img/logoAntriedark.png" alt="" width="70px">
+                                                    @if ($item->file_path_img)
+                                                        
+                                                        <img src="{{ asset('storage/pictures/'.$item->file_path_img) }}" alt="" width="70px">
+                                                    @else
+                                                        <img src="img/logoAntriedark.png" alt="" width="70px">
+                                                    @endif
+                                                    
                                                 </div>
                                             </div>
                                             <div class="keterangan-loket-antrianku">
