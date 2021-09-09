@@ -39,6 +39,13 @@ $(document).ready(function () {
         });
     });
 
+    let sidebar_btn = document.querySelector("#sidebar_btn");
+    let sidebar = document.querySelector("#navbar-responsive");
+
+    sidebar_btn.onclick = function() {
+        sidebar.classList.toggle("active");
+    }
+
     // homepage kelebihan pengantre dan pembuat antrean
     $('#kelebihan-pembuat-antrean').on('click', () => {
         $('.word-pembuat-antrean ul').slideToggle();

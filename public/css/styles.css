@@ -840,32 +840,6 @@ body {
     color: #2F2D65;
 }
 
-.menu-pengguna {
-    width: 10vw;
-}
-
-.menu-pengguna-responsive {
-    width: 20vw;
-}
-
-.menu-pengguna-responsive .menu,
-.menu-pengguna-responsive .menu a {
-    font-size: 1.2rem;
-}
-
-.menu {
-    margin-top: 2vh;
-    margin-left: 1vw;
-    cursor: pointer;
-}
-
-.menu a {
-    color: #2F2D65;
-    text-decoration: none;
-    font-size: 1vw;
-    margin-left: 1vw;
-}
-
 .dashboard-content {
     width: 100%;
     /* height: 100%; */
@@ -875,10 +849,148 @@ body {
     padding: 3vw;
 }
 
+.navbar-dashboard ul {
+    list-style-type: none;
+}
+
+#navbar-hamburger {
+    position: fixed;
+    top: 50px;
+}
+
+#navbar-responsive {
+    width: 55px;
+    transition: all 0.5s ease;
+    padding: .3rem;
+}
+
+#navbar-responsive.active {
+    width: 223px;
+}
+
+/* SideNavBar */
+.sidebar-header {
+    margin: .5rem 0;
+}
+
+.sidebar-logo {
+    width: 0;
+    visibility: hidden;
+}
+
+#navbar-responsive.active .sidebar-logo {
+    width: 100%;
+    visibility: visible;
+    transition: all 0.5s ease;
+}
+
+.sidebar-logo a img {
+    width: 100px;
+}
+
+.sidebar-hamburger {
+    width: 100%;
+    font-size: 1.5rem;
+    margin: auto 0;
+    color: #2F2D65;
+}
+
+#navbar-responsive.active .sidebar-hamburger {
+    width: 30%;
+}
+
+#navbar-responsive ul {
+    margin-top: 20px;
+    padding: 0;
+}
+
+#navbar-responsive ul li {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    margin: .5rem 0;
+    list-style: none;
+    line-height: 45px;
+}
+
+#navbar-responsive.active ul li {
+    height: 50px;
+    line-height: 50px;
+    margin: .5rem 0;
+}
+
+#navbar-responsive ul.nav-list li a {
+    display: flex;
+    color: #2F2D65;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+}
+
+#navbar-responsive ul.nav-list li a:hover {
+    color: #fff;
+    background: #4dafff;
+    border-radius: 12px;
+}
+
+#navbar-responsive ul li .links-tooltip {
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50% , -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    color: #000;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+#navbar-responsive.active ul li .links-tooltip {
+    display: none;
+}
+
+#navbar-responsive ul li:hover .links-tooltip {
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+#navbar-responsive ul li a i {
+    height: 45px;
+    min-width: 44px;
+    border-radius: 12px;
+    line-height: 44px;
+    text-align: center;
+}
+
+#navbar-responsive.active ul li a i {
+    height: 50px;
+    min-width: 50px;
+    line-height: 50px;
+}
+
+#navbar-responsive ul li a span {
+    font-size: 14px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+#navbar-responsive.active ul li a span {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .selected {
     background-color: #4DB0FF;
     width: 100%;
-    padding: 6% 2%;
     text-align: center;
     border-radius: 15px;
     color: #FFFFFF;
@@ -898,26 +1010,40 @@ body {
 }
 
 .selected a {
-    color: #FFFFFF;
+    color: #fff !important;
     text-decoration: none;
-
 }
 
 .selected span {
     color: #FFFFFF;
 }
 
-.navbar-dashboard ul {
-    list-style-type: none;
+.menu {
+    cursor: pointer;
 }
 
-#navbar-hamburger {
-    position: fixed;
-    top: 50px;
+.sidebar-profile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: .5rem;
+    background-color: #4dafff;
 }
 
-#navbar-responsive {
-    width: 30%;
+.sidebar-profile a {
+    color: #fff;
+    font-size: 14px;
+}
+
+#navbar-responsive .sidebar-profile ul li a {
+    color: #fff;
+}
+
+.divider {
+    height: 0 !important;
 }
 
 /* dashboard content*/
@@ -2266,10 +2392,6 @@ hr.rounded {
 @media screen and (min-device-width: 768px) {
 
     /* side nav */
-    .menu {
-        padding-left: 2vw;
-        margin-top: 5vh;
-    }
 
     .menu-not-login span {
         margin-left: 1vw;
@@ -2300,16 +2422,6 @@ hr.rounded {
     .menu-not-login:active {
         position: relative;
         top: 2px;
-    }
-
-    .selected {
-        background-color: #4DB0FF;
-        width: 100%;
-        padding: 6% 2%;
-        text-align: center;
-        border-radius: 15px;
-        color: #FFFFFF;
-        box-shadow: -1px 4px 17px 0px rgba(0, 0, 0, 0.24);
     }
 
     /* halaman beranda */
