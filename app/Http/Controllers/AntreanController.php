@@ -25,7 +25,7 @@ class AntreanController extends Controller
         $antrean_di_depan = [];
         $estimasi_waktu_tunggu = [];
         $waktu_fix = [];
-        $antrean = Antrean::with('loket')
+        $antrean = Antrean::with(['loket', 'attachmentAntrean'])
             ->where('id', '=', $antrean->id)
             ->get()->first();
         foreach ($antrean->loket as $temp) {
@@ -150,11 +150,11 @@ class AntreanController extends Controller
         if ($request->hasFile('attachmentAntrean')) {
             $files = $request->file('attachmentAntrean');
             foreach ($files as $file) {
-                $path = $file->store('attachment');
+                $path = $file->store('public/attachment');
                 $temp = explode('/', $path);    // Getting the attachment name
                 AttachmentAntrean::create([
                     'id_antrean' => $antrean->id,
-                    'file_path_attachment' => $temp[1]
+                    'file_path_attachment' => $temp[2]
                 ]);
             }
         }

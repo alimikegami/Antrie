@@ -6,6 +6,7 @@ use App\Models\Loket;
 use App\Models\Kategori;
 use App\Models\Pengguna;
 use Illuminate\Support\Str;
+use App\Models\AttachmentAntrean;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -47,5 +48,9 @@ class Antrean extends Model
 
     public function RiwayatAntrean(){
         return $this->hasMany(RiwayatAntrean::class, 'antrean_id');
+    }
+
+    public function attachmentAntrean(){
+        return $this->hasMany(AttachmentAntrean::class, 'id_antrean');
     }
 }

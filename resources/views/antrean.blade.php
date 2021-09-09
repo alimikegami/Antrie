@@ -36,9 +36,12 @@
                             </div>
                             <div class="deskripsi-attactment mt-3">
                                 <p>{{ $antrean->deskripsi }}</p>
-                                <a href="/images/myw3schoolsimage.jpg" download>
+                                @foreach ($antrean->attachmentAntrean as $item)
+                                <a href="{{ Storage::url('attachment/'.$item->file_path_attachment) }}" download>
                                     attactment.pdf
                                 </a>
+                                @endforeach
+                                
                             </div>
                         </div>
                     </div>
