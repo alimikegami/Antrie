@@ -28,6 +28,6 @@ class SignUpEmail extends Mailable
      */
     public function build()
     {
-        return $this->from(env('MAIL_USERNAME'),  'Antrie')->subject('Verifikasi Email')->view('email.signup-email', ['data'=>$this->data]);
+        return $this->from(env('MAIL_USERNAME'))->subject('Verifikasi Email')->view('email.signup-email', ['data'=>$this->data]);
     }
 }
