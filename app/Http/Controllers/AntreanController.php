@@ -126,9 +126,9 @@ class AntreanController extends Controller
         // Saving image file path
         $file_path_img = null;
         if ($request->hasFile('gambarAntrean')) {
-            $path = $request->file('gambarAntrean')->store('pictures');
+            $path = $request->file('gambarAntrean')->store('public/pictures');
             $temp = explode('/', $path); // Getting the image name after the name is modified
-            $file_path_img = $temp[1];
+            $file_path_img = $temp[2];
         }
         $slug = self::generateSlugAntrean($request->namaAntrean);
         // Creating antrean record

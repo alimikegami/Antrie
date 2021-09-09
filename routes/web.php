@@ -10,6 +10,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\AntreankuController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\RiwayatAntreanController;
+use App\Models\RiwayatAntrean;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,8 @@ Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'resetPa
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showForgotPasswordPage'])->name('forgotPassword')->middleware('guest');
 Route::get('/set-new-password', [ForgotPasswordController::class, 'showChangePasswordForm'])->name('setNewPassword')->middleware('guest');
 Route::get('/antreanku/{antrean:slug}', [AntreankuController::class, 'aturLoket']);
+Route::get('/riwayat-antrean', [RiwayatAntreanController::class, 'show'])->name('riwayat-antrean');
+Route::get('/ubah-data-antrean/{antrean:slug}', [AntreankuController::class, 'editAntrean']);
 
 // POST route
 
@@ -70,3 +73,4 @@ Route::put('/perbaharui-antrean', [AntreanController::class, 'majukanAntrean'])-
 Route::put('update-password', [ForgotPasswordController::class, 'changePassword'])->name('updatePassword');
 Route::put('/buka-loket', [AntreanController::class, 'bukaLoket'])->name('bukaLoket');
 Route::put('/tutup-loket', [AntreanController::class, 'tutupLoket'])->name('tutupLoket');
+Route::put('/batalkan-antrean', [RiwayatAntreanController::class, 'batalkanAntrean']);

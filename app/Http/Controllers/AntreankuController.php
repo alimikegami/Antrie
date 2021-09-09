@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Loket;
 use App\Models\Antrean;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Models\RiwayatAntrean;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +20,17 @@ class AntreankuController extends Controller
         } else {
             return redirect()->route('landingpage');
         }
+    }
+
+    public function editAntrean(Antrean $antrean) {
+        $antrean = Antrean::with('loket')
+                            ->where('id', '=', $antrean->id)
+                            ->get();
+        return view('perbaharuiAntrean', [
+                    'antrean' => $antrean, 
+                    'title' => 'Perbaharui Antrean',
+                    'kategori' => Kategori::all()
+                ]);
     }
     
     public function aturLoket(Antrean $antrean){
