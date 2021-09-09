@@ -14,7 +14,7 @@
                         <i class="bi bi-archive"></i><a href="{{ route('antreanku') }}">Antreanku</a>
                     </div>
                     <div class="menu-pesan menu">
-                        <i class="bi bi-chat-left-text"></i><a href="#">Riwayat</a>
+                        <i class="bi bi-chat-left-text"></i><a href="{{ route('riwayat-antrean') }}">Riwayat</a>
                     </div>
                 </div>
             </div>

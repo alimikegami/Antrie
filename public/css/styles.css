@@ -1674,7 +1674,7 @@ body {
 }
 
 /* halaman riwayat */
-#tombol-ambil-batal-antrian {
+.tombol-ambil-batal-antrian {
     background-color: #FF4D4D;
     border-radius: 20px;
     display: inline-block;
@@ -1687,11 +1687,11 @@ body {
     width: 60%;
 }
 
-#tombol-ambil-batal-antrian:hover {
+.tombol-ambil-batal-antrian:hover {
     background-color: #cf2e2e;
 }
 
-#tombol-ambil-batal-antrian:active {
+.tombol-ambil-batal-antrian:active {
     position: relative;
     top: 2px;
 }
@@ -2201,7 +2201,7 @@ hr.rounded {
     }
 
     /* halaman riwayat */
-    #tombol-ambil-batal-antrian {
+    .tombol-ambil-batal-antrian {
         font-size: .5rem;
         padding: 5px 5px;
         width: 60%;
@@ -2639,7 +2639,7 @@ hr.rounded {
     }
 
     /* halaman riwayat */
-    #tombol-ambil-batal-antrian {
+    .tombol-ambil-batal-antrian {
         font-size: .8rem;
         padding: 5px 10px;
         width: 45%;
@@ -2979,7 +2979,7 @@ hr.rounded {
     }
 
     /* halaman riwayat */
-    #tombol-ambil-batal-antrian {
+    .tombol-ambil-batal-antrian {
         font-size: .7rem;
         padding: 5px 10px;
         width: 40%;
@@ -3232,7 +3232,7 @@ hr.rounded {
     }
 
     /* halaman riwayat */
-    #tombol-ambil-batal-antrian {
+    .tombol-ambil-batal-antrian {
         font-size: 1rem;
         padding: 5px 10px;
         width: 30%;

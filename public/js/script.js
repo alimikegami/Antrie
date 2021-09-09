@@ -19,6 +19,16 @@ $(document).ready(function () {
         }
     });
 
+    $(".keterangan-loket-riwayat button").click(function (e) {
+        e.preventDefault();
+        let id_element = $(this).attr('id');
+        if (id_element.includes("tombol-ambil-batal-antrian-")) {
+            let id_riwayat = $(this).attr('data-riwayat');
+            $('#id-riwayat').val(id_riwayat);
+            $('#modal-konfirmasi-batalkan-antrean').modal('show');
+        }
+    });
+
     // Navbar page selector [REFACTOR!!!!]
     $(function () {
         $('a').each(function () {
