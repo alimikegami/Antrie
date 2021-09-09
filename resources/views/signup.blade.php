@@ -3,7 +3,7 @@
 @section('container')
     <div class="login-page d-flex justify-content-center align-items-center flex-column">
         @if (session('alert-success'))
-            <div class="alert alert-success align-self-center alert-dismissible" role="alert" style="width: 50%">
+            <div class="alert alert-success align-self-center alert-dismissible" role="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
                     aria-label="Warning:">
@@ -16,7 +16,7 @@
         @endif
 
         @if (session('alert-danger'))
-            <div class="alert alert-danger align-self-center alert-dismissible" role="alert" style="width: 50%">
+            <div class="alert alert-danger align-self-center alert-dismissible" role="alert">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
                     aria-label="Warning:">
