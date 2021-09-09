@@ -57,6 +57,7 @@ Route::get('/forgot-password', [ForgotPasswordController::class, 'showForgotPass
 Route::get('/set-new-password', [ForgotPasswordController::class, 'showChangePasswordForm'])->name('setNewPassword')->middleware('guest');
 Route::get('/antreanku/{antrean:slug}', [AntreankuController::class, 'aturLoket']);
 Route::get('/riwayat-antrean', [RiwayatAntreanController::class, 'show'])->name('riwayat-antrean');
+Route::get('/ubah-data-antrean/{antrean:slug}', [AntreankuController::class, 'editAntrean']);
 
 // POST route
 

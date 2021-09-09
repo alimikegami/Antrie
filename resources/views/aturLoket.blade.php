@@ -25,7 +25,7 @@
                             <div class="deskripsi-attactment mt-3">
                                 <p>{{ $antrean->deskripsi }}</p>
                             </div>
-                            <a href="#" class="btn align-self-start" id="btn-ubah-antrian">Ubah data antrian</a>
+                            <a href="/ubah-data-antrean/{{ $antrean->slug }}" class="btn align-self-start" id="btn-ubah-antrian">Ubah data antrian</a>
                         </div>
                     </div>
 
