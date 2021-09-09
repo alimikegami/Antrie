@@ -1374,6 +1374,28 @@ body {
     font-size: 10px;
 }
 
+#tombol-reset-password {
+    background-color: #4dafff;
+    border-radius: 20px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: none;
+    width: 70%;
+}
+
+#tombol-reset-password:hover {
+    background-color: #6eb8f0;
+}
+
+#tombol-reset-password:active {
+    position: relative;
+    top: 2px;
+}
+
 @media (min-width: 768px) {
     .login-content-container {
         width: 720px;
