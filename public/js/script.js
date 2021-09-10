@@ -43,11 +43,11 @@ $(document).ready(function () {
     let sidebar_btn = document.querySelector("#sidebar_btn");
     let sidebar = document.querySelector("#navbar-responsive");
 
-    sidenav_btn.onclick = function() {
+    sidenav_btn.onclick = function () {
         sidebar.classList.toggle("active");
         sidebar.style.visibility = "visible";
     }
-    sidebar_btn.onclick = function() {
+    sidebar_btn.onclick = function () {
         sidebar.classList.toggle("active");
         sidebar.style.visibility = "hidden";
     }
@@ -165,6 +165,26 @@ $(document).ready(function () {
             $('.tambah-loket').addClass('d-none');
         }
     });
+
+    // function jika ubah loket
+    if (window.location.pathname.split('/')[1] === "ubah-data-antrean") {
+
+        if ($('#loket2').val()) {
+            $('.loket-dua').removeClass('d-none');
+        }
+
+        if ($('#loket3').val()) {
+            $('.loket-tiga').removeClass('d-none');
+        }
+
+        if ($('#loket4').val()) {
+            $('.loket-empat').removeClass('d-none');
+        }
+
+        if ($('#loket5').val()) {
+            $('.loket-lima').removeClass('d-none');
+        }
+    }
 
     // tombol silang di informasi loket ditekan
     $('.btn-close').on('click', function () {
