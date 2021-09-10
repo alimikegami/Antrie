@@ -25,7 +25,7 @@ class CreateLoketTable extends Migration
                 $table->enum('status', ['open', 'closed']);
                 $table->dateTime('batch')->nullable();
                 $table->integer('estimasi_waktu_tunggu')->nullable();
-                $table->foreign('antrean_id')->references('id')->on('antrean');
+                $table->foreign('antrean_id')->references('id')->on('antrean')->onDelete('cascade');
                 $table->timestamps();
             });
         }

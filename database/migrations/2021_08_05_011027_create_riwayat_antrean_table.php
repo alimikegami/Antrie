@@ -23,6 +23,8 @@ class CreateRiwayatAntreanTable extends Migration
             $table->enum("status", ['served', 'canceled', 'waiting', 'serving']);
             $table->dateTime("dipanggil")->nullable();
             $table->timestamps();
+            $table->foreign('antrean_id')->references('id')->on('antrean')->onDelete('cascade');
+            $table->foreign('loket_id')->references('id')->on('loket')->onDelete('cascade');
         });
     }
 
