@@ -69,8 +69,8 @@
                                                 @if (in_array($temp->id, $loket_tempat_mengantre))
                                                     <p id="sudah-terdaftar-{{ $i }}" }}>Anda telah terdaftar pada loket
                                                         ini</p>
-                                                    <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
-                                                        class="btn btn-riwayat-antrean">Lihat Antrean</button>
+                                                        <a href="{{ route('riwayat-antrean') }}" class="btn btn-primary" role="button" id="tombol-riwayat-antrian-{{ $i }}"
+                                                        class="btn btn-riwayat-antrean">Lihat Antrean</a>
                                                     <p id="belum-terdaftar-{{ $i }}" hidden>Terdapat
                                                         <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
                                                     </p>
@@ -79,8 +79,8 @@
                                                 @else
                                                     <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda telah terdaftar pada
                                                         loket ini</p>
-                                                    <button type="button" id="tombol-riwayat-antrian-{{ $i }}"
-                                                        class="btn btn-riwayat-antrean" hidden>Lihat Antrean</button>
+                                                    <a href="{{ route('riwayat-antrean') }}" class="btn btn-primary" role="button" id="tombol-riwayat-antrian-{{ $i }}"
+                                                        class="btn btn-riwayat-antrean" hidden>Lihat Antrean</a>
                                                     <p id="belum-terdaftar-{{ $i }}">Terdapat
                                                         <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
                                                     </p>
@@ -136,7 +136,8 @@
                                     <h3 id="nama-loket-modal"></h3>
                                 </div>
                                 <h1 id="nomor-antrean-modal"></h1>
-                                <button type="button" id="tombol-detail-antrian" class="btn">Lihat detail antrian</button>
+                                <a href="{{ route('riwayat-antrean') }}"><button type="button" id="tombol-detail-antrian" class="btn">Lihat detail antrian</button></a>
+                                
                             </div>
                         </div>
                     </div>
