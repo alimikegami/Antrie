@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="footer-content">
         <div class="footer-logo">
-            <img src="img/logoAntrielight.png" alt="">
+            <img src={{ asset('img/logoAntrielight.png') }} alt="logo-antrie">
         </div>
         <div class="footer-word1">
             <ul>

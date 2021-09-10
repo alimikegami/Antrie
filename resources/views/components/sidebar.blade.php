@@ -1,10 +1,10 @@
 @auth
     {{-- side Nav mobile --}}
-    <div class="sidebar sidebar-start d-flex d-lg-none" id="navbar-responsive" >
+    <div class="sidebar sidebar-start d-flex d-lg-none" id="navbar-responsive">
         <div class="sidebar-header d-flex flex-row">
             <div class="sidebar-logo">
                 <a href="/" class="d-flex align-items-center text-decoration-none justify-content-center">
-                    <img src="img/logoAntriedark.png" alt="">
+                    <img src={{ asset('img/logoAntriedark.png') }} alt="logo-antrie">
                 </a>
             </div>
             <i class="bi bi-list text-center sidebar-hamburger" id="sidebar_btn"></i>
@@ -33,7 +33,8 @@
             </li>
         </ul>
         <div class="sidebar-profile">
-            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-3">
                 <span class="d-sm-inline mx-1">{{ Auth::user()->nama }}</span>
                 <i class="bi bi-gear"></i>
@@ -54,7 +55,7 @@
         <div class="sidebar-header d-flex flex-row justify-content-center">
             <div class="static-sidebar-logo">
                 <a href="/" class="d-flex align-items-center text-decoration-none justify-content-center">
-                    <img src="img/logoAntriedark.png" alt="">
+                    <img src={{ asset('img/logoAntriedark.png') }} alt="logo-antrie">
                 </a>
             </div>
         </div>
@@ -82,7 +83,8 @@
             </li>
         </ul>
         <div class="sidebar-profile">
-            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-3">
                 <span class="d-sm-inline mx-1">{{ Auth::user()->nama }}</span>
                 <i class="bi bi-gear"></i>
