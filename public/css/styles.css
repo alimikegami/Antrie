@@ -1809,7 +1809,7 @@ body {
 .buat-antrianmu-jumbotron {
     background-color: #2B2844;
     width: 100%;
-    height: 15vh;
+    height: 20vh;
     padding: 2%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
@@ -2450,6 +2450,29 @@ hr.rounded {
     }
 
     .keterangan-loket-riwayat p span {
+        font-size: .6rem;
+    }
+
+    /* halaman antrianku */
+    .buat-antrianmu-jumbotron {
+        width: 100%;
+        height: 25vh;
+    }
+
+    .content-buat-antrianmu-jumbotron {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-buat-antrianmu-jumbotron img {
+        width: 150px;
+    }
+
+    .word-buat-antrianmu-jumbotron h1 {
+        font-size: 1rem;
+    }
+
+    .word-buat-antrianmu-jumbotron p {
         font-size: .6rem;
     }
 }
