@@ -49,7 +49,7 @@
                     @endif
 
                     @foreach ($antrean as $item)
-                        <div class="field-lokasi-all-antrianku d-flex flex-column mt-5">
+                        <div class="field-lokasi-all-antrianku d-flex flex-column mt-3 mt-md-4 mt-xl-5">
                             <div class="content-field-lokasi d-flex flex-column">
                                 <a href="/antreanku/{{ $item->slug }}">
                                     <div class="p-2 hover-wrapper mb-0" id="content-pemilik-antrian">
