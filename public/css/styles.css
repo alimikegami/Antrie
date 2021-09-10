@@ -787,15 +787,15 @@ body {
 
 .footer-content p {
     font-weight: bold;
-    font-size: .7rem;
+    font-size: .65rem;
 }
 
 .footer-content li {
-    font-size: .6rem;
+    font-size: .55rem;
 }
 
 .footer-content img {
-    width: 100px;
+    width: 80px;
 }
 
 /* scroll to top btn */
@@ -837,7 +837,7 @@ body {
 
 /* navbar */
 #side-nav {
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
 .navbar-dashboard span {
@@ -895,7 +895,7 @@ body {
     top: 0;
     left: 0;
     width: 400px;
-    border-right: 1px solid rgba(0,0,0,.2);
+    border-right: 1px solid rgba(0, 0, 0, .2);
 }
 
 .sidebar-header {
@@ -965,7 +965,7 @@ body {
     position: absolute;
     left: 122px;
     top: 0;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     border-radius: 6px;
     height: 35px;
     width: 122px;
@@ -1270,7 +1270,7 @@ body {
     cursor: pointer;
     color: #ffffff;
     font-size: 14px;
-    padding: 5px 40px;
+    padding: 5px 20px;
     text-decoration: none;
     border: none;
     width: 65%;
@@ -1383,7 +1383,7 @@ body {
     background-color: #FFFFFF;
     width: 100%;
     height: 80vh;
-    padding: 5%;
+    padding: 3%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
     overflow: auto;
@@ -1808,7 +1808,7 @@ body {
 .buat-antrianmu-jumbotron {
     background-color: #2B2844;
     width: 100%;
-    height: 15vh;
+    height: 20vh;
     padding: 2%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
@@ -2108,7 +2108,7 @@ body {
 .field-panggil-antrian {
     background-color: #FFFFFF;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     padding: 10%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
@@ -2189,7 +2189,7 @@ body {
 
 .orang-menunggu p {
     color: #000000;
-    font-size: .9rem;
+    font-size: .75rem;
 }
 
 .orang-menunggu span {
@@ -2350,22 +2350,22 @@ hr.rounded {
 
     /* footer */
     .footer {
-        height: 20vh;
+        height: 15vh;
         padding-left: 7%;
         padding-right: 7%;
-        padding-top: 15%;
+        padding-top: 5%;
     }
 
     .footer-content p {
-        font-size: .6rem;
+        font-size: .55rem;
     }
 
     .footer-content li {
-        font-size: .5rem;
+        font-size: .45rem;
     }
 
     .footer-content img {
-        width: 70px;
+        width: 65px;
     }
 
     /* Halaman panggil antrian */
@@ -2396,12 +2396,13 @@ hr.rounded {
 
     .tombol-input-antrian-off {
         height: 100%;
+        font-size: .8rem;
     }
 
     .tombol-input-antrian-ol {
         width: 100%;
         height: 65%;
-        font-size: 1rem;
+        font-size: .8rem;
     }
 
     .orang-menunggu {
@@ -2449,6 +2450,29 @@ hr.rounded {
     }
 
     .keterangan-loket-riwayat p span {
+        font-size: .6rem;
+    }
+
+    /* halaman antrianku */
+    .buat-antrianmu-jumbotron {
+        width: 100%;
+        height: 25vh;
+    }
+
+    .content-buat-antrianmu-jumbotron {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-buat-antrianmu-jumbotron img {
+        width: 150px;
+    }
+
+    .word-buat-antrianmu-jumbotron h1 {
+        font-size: 1rem;
+    }
+
+    .word-buat-antrianmu-jumbotron p {
         font-size: .6rem;
     }
 }
@@ -2600,20 +2624,20 @@ hr.rounded {
 
     /* footer */
     .footer {
-        height: 30vh;
-        padding-top: 10vh;
+        height: 25vh;
+        padding-top: 5%;
     }
 
     .footer-content p {
-        font-size: 1.5rem;
-    }
-
-    .footer-content li {
         font-size: 1rem;
     }
 
+    .footer-content li {
+        font-size: .8rem;
+    }
+
     .footer-content img {
-        width: 200px;
+        width: 150px;
     }
 
     /* halaman antrianku */
@@ -2994,9 +3018,7 @@ hr.rounded {
     .footer {
         width: 100%;
         height: 30vh;
-        background-color: #2F2D65;
-        color: #FFFFFF;
-        padding-top: 10vh;
+        padding-top: 7%;
     }
 
     /* halaman antrianku */
@@ -3026,6 +3048,10 @@ hr.rounded {
     }
 
     /* halaman pilih loket */
+    .loket-lokasi {
+        padding: 3%;
+    }
+
     .tombol-ambil-antrian {
         font-size: 1rem;
     }

@@ -4,19 +4,19 @@
     <div class="container-fluid">
         <div class="row flex-nowrap">
             @include('components/sidebar')
-            <div class="col py-3">
+            <div class="dashboard-container col-auto col-md-12 py-3 col-lg-10 mt-5 mt-md-0">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="field-form-tambah-antrian d-flex justify-content-center">
-                        <form class="form-tambah-antrian d-flex flex-column flex-fill px-xl-5"
-                            action="/perbaharui-antrean" method="POST" enctype="multipart/form-data">
+                        <form class="form-tambah-antrian d-flex flex-column flex-fill px-xl-5" action="/perbaharui-antrean"
+                            method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="field-informasi-lokasi-antrian">
                                 <h1>Informasi lokasi antrean</h1>
                                 <p>Tolong isi form berikut dengan memberikan informasi mengenai antrean yang ingin anda
                                     buat.</p>
-                                <input type="text" class="form-control" id="id_antrean" name="id_antrean"
-                                                required value="{{ $antrean[0]->id }}" hidden readonly>
+                                <input type="text" class="form-control" id="id_antrean" name="id_antrean" required
+                                    value="{{ $antrean[0]->id }}" hidden readonly>
                                 <div class="mb-3 row mt-4">
                                     <label for="namaAntrean" class="col-sm-4 col-form-label">Nama institusi/event
                                         <span>*</span></label>
@@ -35,7 +35,7 @@
                                             @foreach ($kategori as $temp)
                                                 <option value="{{ $temp->id }}" @if ($antrean[0]->id_kategori == $temp->id)
                                                     selected
-                                                @endif>{{ $temp->nama_kategori }}</option>
+                                            @endif>{{ $temp->nama_kategori }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -46,108 +46,108 @@
                                     <div class="col-sm-5">
                                         <select name="provinsiAntrean" id="provinsiAntrean" class="form-select" required>
                                             <option selected disabled value="">Pilih provinsi...</option>
-                                            <option value="DKI JAKARTA" @if ($antrean[0]->provinsi == "DKI JAKARTA")
+                                            <option value="DKI JAKARTA" @if ($antrean[0]->provinsi == 'DKI JAKARTA')
                                                 selected
-                                            @endif>DKI Jakarta</option>
-                                            <option value="JAWA BARAT" @if ($antrean[0]->provinsi == "JAWA BARAT")
+                                                @endif>DKI Jakarta</option>
+                                            <option value="JAWA BARAT" @if ($antrean[0]->provinsi == 'JAWA BARAT')
                                                 selected
-                                            @endif>Jawa Barat</option>
-                                            <option value="JAWA TENGAH" @if ($antrean[0]->provinsi == "JAWA TENGAH")
+                                                @endif>Jawa Barat</option>
+                                            <option value="JAWA TENGAH" @if ($antrean[0]->provinsi == 'JAWA TENGAH')
                                                 selected
-                                            @endif>Jawa Tengah</option>
-                                            <option value="JAWA TIMUR" @if ($antrean[0]->provinsi == "JAWA TIMUR")
+                                                @endif>Jawa Tengah</option>
+                                            <option value="JAWA TIMUR" @if ($antrean[0]->provinsi == 'JAWA TIMUR')
                                                 selected
-                                            @endif>Jawa Timur</option>
-                                            <option value="KALIMANTAN TIMUR" @if ($antrean[0]->provinsi == "KALIMANTAN TIMUR")
+                                                @endif>Jawa Timur</option>
+                                            <option value="KALIMANTAN TIMUR" @if ($antrean[0]->provinsi == 'KALIMANTAN TIMUR')
                                                 selected
-                                            @endif>Kalimantan Timur</option>
-                                            <option value="DAERAH ISTIMEWA YOGYAKARTA" @if ($antrean[0]->provinsi == "DAERAH ISTIMEWA YOGYAKARTA")
+                                                @endif>Kalimantan Timur</option>
+                                            <option value="DAERAH ISTIMEWA YOGYAKARTA" @if ($antrean[0]->provinsi == 'DAERAH ISTIMEWA YOGYAKARTA')
                                                 selected
-                                            @endif>Daerah Istimewa Yogyakarta</option>
-                                            <option value="BANTEN" @if ($antrean[0]->provinsi == "BANTEN")
+                                                @endif>Daerah Istimewa Yogyakarta</option>
+                                            <option value="BANTEN" @if ($antrean[0]->provinsi == 'BANTEN')
                                                 selected
-                                            @endif>Banten</option>
-                                            <option value="RIAU" @if ($antrean[0]->provinsi == "RIAU")
+                                                @endif>Banten</option>
+                                            <option value="RIAU" @if ($antrean[0]->provinsi == 'RIAU')
                                                 selected
-                                            @endif>Riau</option>
-                                            <option value="SULAWESI SELATAN" @if ($antrean[0]->provinsi == "SULAWESI SELATAN")
+                                                @endif>Riau</option>
+                                            <option value="SULAWESI SELATAN" @if ($antrean[0]->provinsi == 'SULAWESI SELATAN')
                                                 selected
-                                            @endif>Sulawesi Selatan</option>
-                                            <option value="BALI" @if ($antrean[0]->provinsi == "BALI")
+                                                @endif>Sulawesi Selatan</option>
+                                            <option value="BALI" @if ($antrean[0]->provinsi == 'BALI')
                                                 selected
-                                            @endif>Bali</option>
-                                            <option value="SUMATERA BARAT" @if ($antrean[0]->provinsi == "SUMATERA BARAT")
+                                                @endif>Bali</option>
+                                            <option value="SUMATERA BARAT" @if ($antrean[0]->provinsi == 'SUMATERA BARAT')
                                                 selected
-                                            @endif>Sumatera Barat</option>
-                                            <option value="SUMATERA UTARA" @if ($antrean[0]->provinsi == "SUMATERA UTARA")
+                                                @endif>Sumatera Barat</option>
+                                            <option value="SUMATERA UTARA" @if ($antrean[0]->provinsi == 'SUMATERA UTARA')
                                                 selected
-                                            @endif>Sumatera Utara</option>
-                                            <option value="KALIMANTAN SELATAN" @if ($antrean[0]->provinsi == "KALIMANTAN SELATAN")
+                                                @endif>Sumatera Utara</option>
+                                            <option value="KALIMANTAN SELATAN" @if ($antrean[0]->provinsi == 'KALIMANTAN SELATAN')
                                                 selected
-                                            @endif>Kalimantan Selatan</option>
-                                            <option value="SUMATERA SELATAN" @if ($antrean[0]->provinsi == "SUMATERA SELATAN")
+                                                @endif>Kalimantan Selatan</option>
+                                            <option value="SUMATERA SELATAN" @if ($antrean[0]->provinsi == 'SUMATERA SELATAN')
                                                 selected
-                                            @endif>Sumatera Selatan</option>
-                                            <option value="NUSA TENGGARA TIMUR" @if ($antrean[0]->provinsi == "NUSA TENGGARA TIMUR")
+                                                @endif>Sumatera Selatan</option>
+                                            <option value="NUSA TENGGARA TIMUR" @if ($antrean[0]->provinsi == 'NUSA TENGGARA TIMUR')
                                                 selected
-                                            @endif>Nusa Tenggara Timur</option>
-                                            <option value="KEPULAUAN RIAU" @if ($antrean[0]->provinsi == "KEPULAUAN RIAU")
+                                                @endif>Nusa Tenggara Timur</option>
+                                            <option value="KEPULAUAN RIAU" @if ($antrean[0]->provinsi == 'KEPULAUAN RIAU')
                                                 selected
-                                            @endif>Kepulauan Riau</option>
-                                            <option value="LAMPUNG" @if ($antrean[0]->provinsi == "LAMPUNG")
+                                                @endif>Kepulauan Riau</option>
+                                            <option value="LAMPUNG" @if ($antrean[0]->provinsi == 'LAMPUNG')
                                                 selected
-                                            @endif>Lampung</option>
-                                            <option value="KEPULAUAN BANGKA BELITUNG" @if ($antrean[0]->provinsi == "KEPULAUAN BANGKA BELITUNG")
+                                                @endif>Lampung</option>
+                                            <option value="KEPULAUAN BANGKA BELITUNG" @if ($antrean[0]->provinsi == 'KEPULAUAN BANGKA BELITUNG')
                                                 selected
-                                            @endif>Kepulauan Bangka Belitung</option>
-                                            <option value="KALIMANTAN TENGAH" @if ($antrean[0]->provinsi == "KALIMANTAN TENGAH")
+                                                @endif>Kepulauan Bangka Belitung</option>
+                                            <option value="KALIMANTAN TENGAH" @if ($antrean[0]->provinsi == 'KALIMANTAN TENGAH')
                                                 selected
-                                            @endif>Kalimantan Tengah</option>
-                                            <option value="SULAWESI TENGAH" @if ($antrean[0]->provinsi == "SULAWESI TENGAH")
+                                                @endif>Kalimantan Tengah</option>
+                                            <option value="SULAWESI TENGAH" @if ($antrean[0]->provinsi == 'SULAWESI TENGAH')
                                                 selected
-                                            @endif>Sulawesi Tengah</option>
-                                            <option value="KALIMANTAN BARAT" @if ($antrean[0]->provinsi == "KALIMANTAN BARAT")
+                                                @endif>Sulawesi Tengah</option>
+                                            <option value="KALIMANTAN BARAT" @if ($antrean[0]->provinsi == 'KALIMANTAN BARAT')
                                                 selected
-                                            @endif>Kalimantan Barat</option>
-                                            <option value="PAPUA" @if ($antrean[0]->provinsi == "PAPUA")
+                                                @endif>Kalimantan Barat</option>
+                                            <option value="PAPUA" @if ($antrean[0]->provinsi == 'PAPUA')
                                                 selected
-                                            @endif>Papua</option>
-                                            <option value="SULAWESI UTARA" @if ($antrean[0]->provinsi == "SULAWESI UTARA")
+                                                @endif>Papua</option>
+                                            <option value="SULAWESI UTARA" @if ($antrean[0]->provinsi == 'SULAWESI UTARA')
                                                 selected
-                                            @endif>Sulawesi Utara</option>
-                                            <option value="KALIMANTAN UTARA" @if ($antrean[0]->provinsi == "KALIMANTAN UTARA")
+                                                @endif>Sulawesi Utara</option>
+                                            <option value="KALIMANTAN UTARA" @if ($antrean[0]->provinsi == 'KALIMANTAN UTARA')
                                                 selected
-                                            @endif>Kalimantan Utara</option>
-                                            <option value="PAPUA" @if ($antrean[0]->provinsi == "PAPUA")
+                                                @endif>Kalimantan Utara</option>
+                                            <option value="PAPUA" @if ($antrean[0]->provinsi == 'PAPUA')
                                                 selected
-                                            @endif>Papua</option>
-                                            <option value="JAMBI" @if ($antrean[0]->provinsi == "JAMBI")
+                                                @endif>Papua</option>
+                                            <option value="JAMBI" @if ($antrean[0]->provinsi == 'JAMBI')
                                                 selected
-                                            @endif>Jambi</option>
-                                            <option value="NUSA TENGGARA BARAT" @if ($antrean[0]->provinsi == "NUSA TENGGARA BARAT")
+                                                @endif>Jambi</option>
+                                            <option value="NUSA TENGGARA BARAT" @if ($antrean[0]->provinsi == 'NUSA TENGGARA BARAT')
                                                 selected
-                                            @endif>Nusa Tenggara Barat</option>
-                                            <option value="PAPUA BARAT" @if ($antrean[0]->provinsi == "PAPUA BARAT")
+                                                @endif>Nusa Tenggara Barat</option>
+                                            <option value="PAPUA BARAT" @if ($antrean[0]->provinsi == 'PAPUA BARAT')
                                                 selected
-                                            @endif>Papua Barat</option>
-                                            <option value="BENGKULU" @if ($antrean[0]->provinsi == "BENGKULU")
+                                                @endif>Papua Barat</option>
+                                            <option value="BENGKULU" @if ($antrean[0]->provinsi == 'BENGKULU')
                                                 selected
-                                            @endif>Bengkulu</option>
-                                            <option value="SULAWESI TENGGARA" @if ($antrean[0]->provinsi == "SULAWESI TENGGARA")
+                                                @endif>Bengkulu</option>
+                                            <option value="SULAWESI TENGGARA" @if ($antrean[0]->provinsi == 'SULAWESI TENGGARA')
                                                 selected
-                                            @endif>Sulawesi Tenggara</option>
-                                            <option value="MALUKU" @if ($antrean[0]->provinsi == "MALUKU")
+                                                @endif>Sulawesi Tenggara</option>
+                                            <option value="MALUKU" @if ($antrean[0]->provinsi == 'MALUKU')
                                                 selected
-                                            @endif>Maluku</option>
-                                            <option value="MALUKU UTARA" @if ($antrean[0]->provinsi == "MALUKU UTARA")
+                                                @endif>Maluku</option>
+                                            <option value="MALUKU UTARA" @if ($antrean[0]->provinsi == 'MALUKU UTARA')
                                                 selected
-                                            @endif>Maluku Utara</option>
-                                            <option value="SULAWESI BARAT" @if ($antrean[0]->provinsi == "SULAWESI BARAT")
+                                                @endif>Maluku Utara</option>
+                                            <option value="SULAWESI BARAT" @if ($antrean[0]->provinsi == 'SULAWESI BARAT')
                                                 selected
-                                            @endif>Sulawesi Barat</option>
-                                            <option value="GORONTALO" @if ($antrean[0]->provinsi == "GORONTALO")
+                                                @endif>Sulawesi Barat</option>
+                                            <option value="GORONTALO" @if ($antrean[0]->provinsi == 'GORONTALO')
                                                 selected
-                                            @endif>Gorontalo</option>
+                                                @endif>Gorontalo</option>
                                         </select>
                                     </div>
                                 </div>
@@ -178,9 +178,11 @@
                                         <span>*</span></label>
                                     <div class="col-sm-7 col-10">
                                         <label for="">Buka</label>
-                                        <input type="time" id="jamBuka" name="jamBuka" required value="{{ $antrean[0]->waktu_buka }}">
+                                        <input type="time" id="jamBuka" name="jamBuka" required
+                                            value="{{ $antrean[0]->waktu_buka }}">
                                         <label for="">Tutup</label>
-                                        <input type="time" id="jamTutup" name="jamTutup" required value="{{ $antrean[0]->waktu_tutup }}">
+                                        <input type="time" id="jamTutup" name="jamTutup" required
+                                            value="{{ $antrean[0]->waktu_tutup }}">
                                     </div>
                                     <div class="col-sm-1 col-1">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
@@ -485,7 +487,8 @@
                                     class="btn btn-outline-primary align-self-center mt-4 rounded tambah-loket"><i
                                         class="bi bi-plus-lg"></i> tambah loket</button>
                             </div>
-                            <button type="submit" class="align-self-center mt-5 tombol-submit-form-buat-loket">Perbaharui Antrean</button>
+                            <button type="submit" class="align-self-center mt-5 tombol-submit-form-buat-loket">Perbaharui
+                                Antrean</button>
                         </form>
                     </div>
                 </div>
@@ -499,11 +502,11 @@
         let loket = <?= json_encode($antrean[0]->loket) ?>;
         let i = 1;
         loket.forEach(element => {
-            let nama = "loket"+i;
-            let id = "idLoket"+i;
-            let kapasitas = "kapasitasLoket"+i;
-            let waktu_buka = "jamBukaLoket"+i;
-            let waktu_tutup = "jamTutupLoket"+i;
+            let nama = "loket" + i;
+            let id = "idLoket" + i;
+            let kapasitas = "kapasitasLoket" + i;
+            let waktu_buka = "jamBukaLoket" + i;
+            let waktu_tutup = "jamTutupLoket" + i;
             document.getElementById(nama).value = element.nama_loket;
             document.getElementById(id).value = element.id;
             document.getElementById(kapasitas).value = element.jumlah_pengantre_maks;

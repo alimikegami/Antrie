@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row flex-nowrap">
             @include('components/sidebar')
-            <div class="col py-3">
+            <div class="dashboard-container col-auto col-md-12 py-3 col-lg-10 mt-5 mt-md-0">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="loket-lokasi d-flex flex-column">
                         <div class="content-field-lokasi d-flex flex-column">
@@ -15,11 +15,12 @@
                                 <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                     <div class="gambar">
                                         @if ($antrean->file_path_img)
-                                            <img src="{{ asset('storage/pictures/'.$antrean->file_path_img) }}" alt="" width="70px">
+                                            <img src="{{ asset('storage/pictures/' . $antrean->file_path_img) }}" alt=""
+                                                width="70px">
                                         @else
                                             <img src="{{ asset('img/logoAntriedark.png') }}" alt="" width="70px">
                                         @endif
-                                        
+
                                     </div>
                                 </div>
                                 <div class="keterangan-lokasi">
@@ -37,11 +38,11 @@
                             <div class="deskripsi-attactment mt-3">
                                 <p>{{ $antrean->deskripsi }}</p>
                                 @foreach ($antrean->attachmentAntrean as $item)
-                                <a href="{{ Storage::url('attachment/'.$item->file_path_attachment) }}" download>
-                                    attactment.pdf
-                                </a>
+                                    <a href="{{ Storage::url('attachment/' . $item->file_path_attachment) }}" download>
+                                        attactment.pdf
+                                    </a>
                                 @endforeach
-                                
+
                             </div>
                         </div>
                     </div>
@@ -67,9 +68,11 @@
 
                                             @if (!($antrean->id_pembuat == Auth::id()))
                                                 @if (in_array($temp->id, $loket_tempat_mengantre))
-                                                    <p id="sudah-terdaftar-{{ $i }}" }}>Anda telah terdaftar pada loket
+                                                    <p id="sudah-terdaftar-{{ $i }}" }}>Anda telah terdaftar
+                                                        pada loket
                                                         ini</p>
-                                                        <a href="{{ route('riwayat-antrean') }}" class="btn btn-primary" role="button" id="tombol-riwayat-antrian-{{ $i }}"
+                                                    <a href="{{ route('riwayat-antrean') }}" class="btn btn-primary"
+                                                        role="button" id="tombol-riwayat-antrian-{{ $i }}"
                                                         class="btn btn-riwayat-antrean">Lihat Antrean</a>
                                                     <p id="belum-terdaftar-{{ $i }}" hidden>Terdapat
                                                         <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
@@ -77,9 +80,11 @@
                                                     <button type="button" id="tombol-ambil-antrian-{{ $i }}"
                                                         class="btn tombol-ambil-antrian" hidden>Ambil Nomor</button>
                                                 @else
-                                                    <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda telah terdaftar pada
+                                                    <p id="sudah-terdaftar-{{ $i }}" }} hidden>Anda telah
+                                                        terdaftar pada
                                                         loket ini</p>
-                                                    <a href="{{ route('riwayat-antrean') }}" class="btn btn-primary" role="button" id="tombol-riwayat-antrian-{{ $i }}"
+                                                    <a href="{{ route('riwayat-antrean') }}" class="btn btn-primary"
+                                                        role="button" id="tombol-riwayat-antrian-{{ $i }}"
                                                         class="btn btn-riwayat-antrean" hidden>Lihat Antrean</a>
                                                     <p id="belum-terdaftar-{{ $i }}">Terdapat
                                                         <span>{{ $antrean_di_depan[$i] }}</span> antrian di depan anda
@@ -87,13 +92,13 @@
                                                     <p id="estimasi-waktu-{{ $i }}">Estimasi waktu
                                                         <span>{{ $estimasi_waktu[$i] }}</span> menit
                                                     </p>
-                                                    @if ($temp->status == "open")
+                                                    @if ($temp->status == 'open')
                                                         <button type="button" id="tombol-ambil-antrian-{{ $i }}"
                                                             class="btn tombol-ambil-antrian">Ambil Nomor</button>
                                                     @endif
-                                                    
+
                                                 @endif
-                                                @endif
+                                            @endif
                                             <input id="input-id-loket-{{ $i }}" type="text"
                                                 value="{{ $temp->slug }}" hidden>
                                             @php
@@ -136,8 +141,9 @@
                                     <h3 id="nama-loket-modal"></h3>
                                 </div>
                                 <h1 id="nomor-antrean-modal"></h1>
-                                <a href="{{ route('riwayat-antrean') }}"><button type="button" id="tombol-detail-antrian" class="btn">Lihat detail antrian</button></a>
-                                
+                                <a href="{{ route('riwayat-antrean') }}"><button type="button" id="tombol-detail-antrian"
+                                        class="btn">Lihat detail antrian</button></a>
+
                             </div>
                         </div>
                     </div>

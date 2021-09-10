@@ -34,24 +34,34 @@ $(document).ready(function () {
         $('a').each(function () {
             if ($(this).prop('href') == window.location.href) {
                 $(this).parents('.menu').addClass('selected');
-                console.log($(this).parents(".menu"));
+                // console.log($(this).parents(".menu"));
             }
         });
     });
 
     // Open / Close sidebar
-    let sidenav_btn = document.querySelector("#sidenav_btn");
-    let sidebar_btn = document.querySelector("#sidebar_btn");
-    let sidebar = document.querySelector("#navbar-responsive");
+    $("#sidenav_btn").click(function () {
+        $("#navbar-responsive").toggleClass("active")
+            .css('visibility', 'visible');
+    });
 
-    sidenav_btn.onclick = function () {
-        sidebar.classList.toggle("active");
-        sidebar.style.visibility = "visible";
-    }
-    sidebar_btn.onclick = function () {
-        sidebar.classList.toggle("active");
-        sidebar.style.visibility = "hidden";
-    }
+    $("#sidebar_btn").click(function () {
+        $("#navbar-responsive").toggleClass("active")
+            .css('visibility', 'hidden');
+    })
+    // let sidenav_btn = document.querySelector("#sidenav_btn");
+    // let sidebar_btn = document.querySelector("#sidebar_btn");
+    // let sidebar = document.querySelector("#navbar-responsive");
+
+
+    // sidenav_btn.onclick = function () {
+    //     sidebar.classList.toggle("active");
+    //     sidebar.style.visibility = "visible";
+    // }
+    // sidebar_btn.onclick = function () {
+    //     sidebar.classList.toggle("active");
+    //     sidebar.style.visibility = "hidden";
+    // }
 
     // homepage kelebihan pengantre dan pembuat antrean
     $('#kelebihan-pembuat-antrean').on('click', () => {
@@ -172,18 +182,22 @@ $(document).ready(function () {
 
         if ($('#loket2').val()) {
             $('.loket-dua').removeClass('d-none');
+            $('.loket-dua .btn-close').addClass('d-none');
         }
 
         if ($('#loket3').val()) {
             $('.loket-tiga').removeClass('d-none');
+            $('.loket-tiga .btn-close').addClass('d-none');
         }
 
         if ($('#loket4').val()) {
             $('.loket-empat').removeClass('d-none');
+            $('.loket-empat .btn-close').addClass('d-none');
         }
 
         if ($('#loket5').val()) {
             $('.loket-lima').removeClass('d-none');
+            $('.loket-lima .btn-close').addClass('d-none');
         }
     }
 
