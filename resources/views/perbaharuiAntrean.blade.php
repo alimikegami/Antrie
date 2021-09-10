@@ -8,15 +8,17 @@
                 <div class="dashboard-content d-flex flex-column">
                     <div class="field-form-tambah-antrian d-flex justify-content-center">
                         <form class="form-tambah-antrian d-flex flex-column flex-fill px-xl-5"
-                            action="" method="POST" enctype="multipart/form-data">
+                            action="/perbaharui-antrean" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="field-informasi-lokasi-antrian">
                                 <h1>Informasi lokasi antrean</h1>
                                 <p>Tolong isi form berikut dengan memberikan informasi mengenai antrean yang ingin anda
                                     buat.</p>
+                                <input type="text" class="form-control" id="id_antrean" name="id_antrean"
+                                                required value="{{ $antrean[0]->id }}" hidden readonly>
                                 <div class="mb-3 row mt-4">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">Nama institusi/event
+                                    <label for="namaAntrean" class="col-sm-4 col-form-label">Nama institusi/event
                                         <span>*</span></label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control" id="namaAntrean" name="namaAntrean"
@@ -24,7 +26,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">Kategori Antrean
+                                    <label for="kategoriAntrean" class="col-sm-4 col-form-label">Kategori Antrean
                                         <span>*</span></label>
                                     <div class="col-sm-5">
                                         <select class="form-select" aria-label="Default select example"
@@ -39,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">Provinsi
+                                    <label for="provinsiAntrean" class="col-sm-4 col-form-label">Provinsi
                                         <span>*</span></label>
                                     <div class="col-sm-5">
                                         <select name="provinsiAntrean" id="provinsiAntrean" class="form-select" required>
@@ -150,14 +152,14 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">Alamat <span>*</span></label>
+                                    <label for="alamatAntrean" class="col-sm-4 col-form-label">Alamat <span>*</span></label>
                                     <div class="col-sm-7">
                                         <input type="text" class="form-control" id="alamatAntrean" name="alamatAntrean"
                                             required value="{{ $antrean[0]->alamat }}">
                                     </div>
                                 </div>
                                 <div class="mb-3 row align-items-center">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">No telepon
+                                    <label for="teleponAntrean" class="col-sm-4 col-form-label">No telepon
                                         <span>*</span></label>
                                     <div class="col-sm-7 col-10">
                                         <input type="number" class="form-control" id="teleponAntrean"
@@ -172,7 +174,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row align-items-center">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional
+                                    <label for="jamBuka" class="col-sm-4 col-form-label">Jam Operasional
                                         <span>*</span></label>
                                     <div class="col-sm-7 col-10">
                                         <label for="">Buka</label>
@@ -189,7 +191,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row align-items-center">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label">Deskripsi
+                                    <label for="deskripsiAntrean" class="col-sm-4 col-form-label">Deskripsi
                                         <span>*</span></label>
                                     <div class="col-sm-7 col-10">
                                         <textarea class="form-control" id="deskripsiAntrean" name="deskripsiAntrean"
@@ -247,6 +249,7 @@
                                             <span>*</span></label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="loket1" name="loket1" required>
+                                            <input type="text" class="form-control" id="idLoket1" name="idLoket1" hidden>
                                         </div>
                                     </div>
                                     <div class="mb-3 row mt-4 align-items-center">
@@ -296,6 +299,7 @@
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Nama loket</label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="loket2" name="loket2">
+                                            <input type="text" class="form-control" id="idLoket2" name="idLoket2" hidden>
                                         </div>
                                     </div>
                                     <div class="mb-3 row mt-4 align-items-center">
@@ -344,6 +348,7 @@
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Nama loket</label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="loket3" name="loket3">
+                                            <input type="text" class="form-control" id="idLoket3" name="idLoket3" hidden>
                                         </div>
                                     </div>
                                     <div class="mb-3 row mt-4 align-items-center">
@@ -392,6 +397,7 @@
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Nama loket</label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="loket4" name="loket4">
+                                            <input type="text" class="form-control" id="idLoket4" name="idLoket4" hidden>
                                         </div>
                                     </div>
                                     <div class="mb-3 row mt-4 align-items-center">
@@ -440,6 +446,7 @@
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Nama loket</label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="loket5" name="loket5">
+                                            <input type="text" class="form-control" id="idLoket5" name="idLoket5" hidden>
                                         </div>
                                     </div>
                                     <div class="mb-3 row mt-4 align-items-center">
@@ -478,8 +485,7 @@
                                     class="btn btn-outline-primary align-self-center mt-4 rounded tambah-loket"><i
                                         class="bi bi-plus-lg"></i> tambah loket</button>
                             </div>
-                            <button type="submit" class="align-self-center mt-5 tombol-submit-form-buat-loket">Buat
-                                antrian</button>
+                            <button type="submit" class="align-self-center mt-5 tombol-submit-form-buat-loket">Perbaharui Antrean</button>
                         </form>
                     </div>
                 </div>
@@ -487,4 +493,25 @@
             </div>
         </div>
     </div>
+
+
+    <script type="text/javascript">
+        let loket = <?= json_encode($antrean[0]->loket) ?>;
+        let i = 1;
+        loket.forEach(element => {
+            let nama = "loket"+i;
+            let id = "idLoket"+i;
+            let kapasitas = "kapasitasLoket"+i;
+            let waktu_buka = "jamBukaLoket"+i;
+            let waktu_tutup = "jamTutupLoket"+i;
+            document.getElementById(nama).value = element.nama_loket;
+            document.getElementById(id).value = element.id;
+            document.getElementById(kapasitas).value = element.jumlah_pengantre_maks;
+            document.getElementById(waktu_buka).value = element.waktu_buka;
+            document.getElementById(waktu_tutup).value = element.waktu_tutup;
+            i = i + 1;
+        });
+    </script>
+
+
 @endsection

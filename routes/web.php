@@ -57,7 +57,7 @@ Route::get('/forgot-password', [ForgotPasswordController::class, 'showForgotPass
 Route::get('/set-new-password', [ForgotPasswordController::class, 'showChangePasswordForm'])->name('setNewPassword')->middleware('guest');
 Route::get('/antreanku/{antrean:slug}', [AntreankuController::class, 'aturLoket']);
 Route::get('/riwayat-antrean', [RiwayatAntreanController::class, 'show'])->name('riwayat-antrean');
-Route::get('/ubah-data-antrean/{antrean:slug}', [AntreankuController::class, 'editAntrean']);
+Route::get('/ubah-data-antrean/{antrean:slug}', [AntreankuController::class, 'editAntrean'])->name('formEditAntrean');
 
 // POST route
 
@@ -69,7 +69,7 @@ Route::get('/logout', [LogInController::class, 'logout'])->name('logout');
 Route::post('/send-password-reset-link', [ForgotPasswordController::class, 'sendResetToken'])->name('sendPasswordResetLink');
 
 // PUT route
-Route::put('/perbaharui-antrean', [AntreanController::class, 'majukanAntrean'])->name('perbaharui.antrean');
+Route::put('/perbaharui-antrean', [AntreankuController::class, 'perbaharuiAntrean']);
 Route::put('update-password', [ForgotPasswordController::class, 'changePassword'])->name('updatePassword');
 Route::put('/buka-loket', [AntreanController::class, 'bukaLoket'])->name('bukaLoket');
 Route::put('/tutup-loket', [AntreanController::class, 'tutupLoket'])->name('tutupLoket');

@@ -96,7 +96,7 @@ class AntreanController extends Controller
         }
     }
     // Function that is used to generate unique slug for each loket
-    public function generateSlugLoket($nama)
+    public static function generateSlugLoket($nama)
     {
         $slug = Str::slug($nama, '-');
         $i = 2;
@@ -109,7 +109,7 @@ class AntreanController extends Controller
     }
 
     // Function that is used to generate unique slug for each antrean
-    public function generateSlugAntrean($nama)
+    public static function generateSlugAntrean($nama)
     {
         $slug = Str::slug($nama, '-');
         $i = 2;
@@ -160,7 +160,6 @@ class AntreanController extends Controller
         }
 
         // Create loket
-
         for ($i = 1; $i < 6; $i++) {
             $nama_loket = 'loket' . $i;
             if ($request->$nama_loket != null) {
