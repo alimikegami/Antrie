@@ -39,11 +39,17 @@ $(document).ready(function () {
         });
     });
 
+    let sidenav_btn = document.querySelector("#sidenav_btn");
     let sidebar_btn = document.querySelector("#sidebar_btn");
     let sidebar = document.querySelector("#navbar-responsive");
 
+    sidenav_btn.onclick = function() {
+        sidebar.classList.toggle("active");
+        sidebar.style.visibility = "visible";
+    }
     sidebar_btn.onclick = function() {
         sidebar.classList.toggle("active");
+        sidebar.style.visibility = "hidden";
     }
 
     // homepage kelebihan pengantre dan pembuat antrean

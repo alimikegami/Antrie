@@ -836,6 +836,10 @@ body {
 /* dashboard section */
 
 /* navbar */
+#side-nav {
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
 .navbar-dashboard span {
     color: #2F2D65;
 }
@@ -862,6 +866,7 @@ body {
     width: 55px;
     transition: all 0.5s ease;
     padding: .3rem;
+    visibility: hidden;
 }
 
 #navbar-responsive.active {
@@ -869,6 +874,26 @@ body {
 }
 
 /* SideNavBar */
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    background-color: #fff;
+    background-clip: padding-box;
+    outline: 0;
+    transition: transform .3s ease-in-out;
+}
+
+.sidebar-start {
+    top: 0;
+    left: 0;
+    width: 400px;
+    border-right: 1px solid rgba(0,0,0,.2);
+}
+
 .sidebar-header {
     margin: .5rem 0;
 }
@@ -913,18 +938,12 @@ body {
     line-height: 45px;
 }
 
-#navbar-responsive.active ul li {
-    height: 50px;
-    line-height: 50px;
-    margin: .5rem 0;
-}
-
 #navbar-responsive ul.nav-list li a {
     display: flex;
     color: #2F2D65;
     align-items: center;
     text-decoration: none;
-    transition: all 0.4s ease;
+    /* transition: all 0.4s ease; */
     white-space: nowrap;
 }
 
@@ -969,12 +988,6 @@ body {
     border-radius: 12px;
     line-height: 44px;
     text-align: center;
-}
-
-#navbar-responsive.active ul li a i {
-    height: 50px;
-    min-width: 50px;
-    line-height: 50px;
 }
 
 #navbar-responsive ul li a span {
@@ -1036,6 +1049,28 @@ body {
 .sidebar-profile a {
     color: #fff;
     font-size: 14px;
+}
+
+.sidebar-profile a img,
+.sidebar-profile a span {
+    width: 0;
+    visibility: hidden;
+}
+
+#navbar-responsive.active .sidebar-profile a img,
+#navbar-responsive.active .sidebar-profile a span {
+    width: 100%;
+    visibility: visible;
+}
+
+.sidebar-profile a i {
+    visibility: inherit;
+    width: 100%;
+}
+
+#navbar-responsive.active .sidebar-profile a i {
+    visibility: hidden;
+    width: 0;
 }
 
 #navbar-responsive .sidebar-profile ul li a {
@@ -2414,6 +2449,14 @@ hr.rounded {
 @media screen and (min-device-width: 768px) {
 
     /* side nav */
+    #navbar-responsive {
+        visibility: visible !important;
+    }
+
+    .dashboard-container {
+        width: calc(100% - 50px);
+        margin-left: 50px;
+    }
 
     .menu-not-login span {
         margin-left: 1vw;
@@ -2836,6 +2879,15 @@ hr.rounded {
 }
 
 @media screen and (min-device-width: 992px) {
+
+    /* sidebar nav */
+    #navbar-responsive ul li a span {
+        font-size: 1rem;
+    }
+
+    .sidebar-profile a {
+        font-size: 1rem;
+    }
 
     /* halaman beranda */
     .first-row-word h1 {
