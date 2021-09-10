@@ -873,6 +873,10 @@ body {
     width: 223px;
 }
 
+#navbar-responsive.static {
+    width: 223px;
+}
+
 /* SideNavBar */
 .sidebar {
     position: fixed;
@@ -911,6 +915,10 @@ body {
 
 .sidebar-logo a img {
     width: 100px;
+}
+
+.static-sidebar-logo a img {
+    width: 160px;
 }
 
 .sidebar-hamburger {
@@ -2887,6 +2895,11 @@ hr.rounded {
 
     .sidebar-profile a {
         font-size: 1rem;
+    }
+
+    .dashboard-container {
+        width: calc(100% - 223px);
+        margin-left: 223px;
     }
 
     /* halaman beranda */
