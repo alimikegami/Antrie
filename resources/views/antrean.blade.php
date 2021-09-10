@@ -38,9 +38,12 @@
                             <div class="deskripsi-attactment mt-3">
                                 <p>{{ $antrean->deskripsi }}</p>
                                 @foreach ($antrean->attachmentAntrean as $item)
-                                    <a href="{{ Storage::url('attachment/' . $item->file_path_attachment) }}" download>
+                                    <a class="btn btn-outline-info rounded-pill"
+                                        href="{{ Storage::url('attachment/' . $item->file_path_attachment) }}" download><i
+                                            class="bi bi-download"></i> attactment</a>
+                                    {{-- <a href="{{ Storage::url('attachment/' . $item->file_path_attachment) }}" download>
                                         attactment.pdf
-                                    </a>
+                                    </a> --}}
                                 @endforeach
 
                             </div>
