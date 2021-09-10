@@ -18,6 +18,9 @@
                     <div class="field-lokasi-all d-flex flex-column mt-5">
                         <div class="content-field-lokasi d-flex flex-column">
                             {{-- start loop --}}
+                            @if (count($riwayat) == 0)
+                                <h3 class="text-center mt-5 text-muted align-self-center">Belum ada antrean</h3>
+                            @endif
                             @php
                                 $i = 0;
                             @endphp
