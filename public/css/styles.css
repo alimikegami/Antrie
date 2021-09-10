@@ -1051,11 +1051,10 @@ body {
     justify-content: center;
     width: 100%;
     padding: .5rem;
-    background-color: #4dafff;
 }
 
 .sidebar-profile a {
-    color: #fff;
+    color: #2F2D65;
     font-size: 14px;
 }
 
@@ -2891,6 +2890,10 @@ hr.rounded {
     /* sidebar nav */
     #navbar-responsive ul li a span {
         font-size: 1rem;
+    }
+
+    .sidebar-start {
+        border: none;
     }
 
     .sidebar-profile a {
