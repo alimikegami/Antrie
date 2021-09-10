@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row flex-nowrap">
             @include('components/sidebar')
-            <div class="col py-3">
+            <div class="dashboard-container col-auto col-md-12 py-3 col-lg-10 mt-5 mt-md-0">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="container-fluid">
                         <div class="first-row-all d-flex justify-content-between flex-column flex-lg-row">
@@ -80,14 +80,14 @@
                                                 <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                                     <div class="gambar">
                                                         @if ($item->file_path_img)
-                                                        
-                                                            <img src="{{ asset('storage/pictures/'.$item->file_path_img) }}" alt=""
-                                                            width="70px">
+
+                                                            <img src="{{ asset('storage/pictures/' . $item->file_path_img) }}"
+                                                                alt="" width="70px">
                                                         @else
                                                             <img src="{{ asset('img/logoAntriedark.png') }}" alt=""
-                                                        width="70px">
+                                                                width="70px">
                                                         @endif
-                                                        
+
                                                     </div>
                                                 </div>
                                                 <div class="keterangan-lokasi">

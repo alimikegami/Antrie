@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row flex-nowrap">
             @include('components/sidebar')
-            <div class="col py-3">
+            <div class="dashboard-container col-auto col-md-12 py-3 col-lg-10 mt-5 mt-md-0">
                 <div class="dashboard-content d-flex flex-column">
                     <div class="container">
                         <div class="first-row-all d-flex justify-content-between">
@@ -29,21 +29,23 @@
                                                 <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                                     <div class="gambar">
                                                         @if ($item->antrean->file_path_img)
-                                                            <img src={{ asset('storage/pictures/'.$item->antrean->file_path_img) }} alt="logo-antrie"
-                                                        width="70px">
+                                                            <img src={{ asset('storage/pictures/' . $item->antrean->file_path_img) }}
+                                                                alt="logo-antrie" width="70px">
                                                         @else
-                                                            <img src={{ asset('img/logoAntriedark.png') }} alt="logo-antrie"
-                                                        width="70px">
+                                                            <img src={{ asset('img/logoAntriedark.png') }}
+                                                                alt="logo-antrie" width="70px">
                                                         @endif
-                                                        
+
                                                     </div>
                                                 </div>
                                                 <div class="keterangan-loket-riwayat">
                                                     <h1>{{ $item->antrean->nama_antrean }}</h1>
                                                     <p>{{ $item->loket->nama_loket }}</p>
                                                     <p>Estimasi waktu tunggu <span>{{ $waktu_fix[$i] }}</span> menit</p>
-                                                    <button type="button" id="tombol-ambil-batal-antrian-{{ $i }}"
-                                                        class="btn tombol-ambil-batal-antrian" data-riwayat="{{ $item->id }}">Batalkan Antrean</button>
+                                                    <button type="button"
+                                                        id="tombol-ambil-batal-antrian-{{ $i }}"
+                                                        class="btn tombol-ambil-batal-antrian"
+                                                        data-riwayat="{{ $item->id }}">Batalkan Antrean</button>
                                                 </div>
                                                 <div
                                                     class="nomor-antrian d-flex justify-content-evenly align-items-center flex-xl-row flex-column">
@@ -103,7 +105,8 @@
                                         <h2>Apakah anda yakin untuk membatalkan proses antrean ini?</h2>
                                     </div>
                                     <div class="form-group">
-                                        <input type="number" class="form-control" id="id-riwayat" name="id_riwayat" hidden>
+                                        <input type="number" class="form-control" id="id-riwayat" name="id_riwayat"
+                                            hidden>
                                     </div>
                                     <div
                                         class="mt-2 d-flex justify-content-evenly aturLoket-modal-btn-row flex-column align-items-center">
