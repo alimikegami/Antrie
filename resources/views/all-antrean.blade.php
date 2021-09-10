@@ -10,8 +10,8 @@
                 <div class="dashboard-content d-flex flex-column">
                     <div class="container-fluid">
                         <div class="first-row-all d-flex justify-content-between flex-column flex-lg-row">
-                            <div class="first-row-word flex-fill">
-                                <h1>{{ $count }} antrean ditemukan</h1>
+                            <div class="first-row-word flex-fill align-self-center">
+                                <p>{{ $count }} antrean ditemukan</p>
                             </div>
                             <div class="searchBar-wrapper d-flex justify-content-center align-items-center mb-3">
                                 <form action="{{ route('search') }}"
