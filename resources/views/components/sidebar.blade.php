@@ -25,7 +25,7 @@
                 <span class="links-tooltip">Antreanku</span>
             </li>
             <li class="menu">
-                <a href="#">
+                <a href="{{ route('riwayat-antrean') }}">
                     <i class="bi bi-chat-left-text"></i>
                     <span href="" class="links-name">Riwayat</span>
                 </a>
@@ -74,7 +74,7 @@
                 <span class="links-tooltip">Antreanku</span>
             </li>
             <li class="menu">
-                <a href="#">
+                <a href="{{ route('riwayat-antrean') }}">
                     <i class="bi bi-chat-left-text"></i>
                     <span href="" class="links-name">Riwayat</span>
                 </a>

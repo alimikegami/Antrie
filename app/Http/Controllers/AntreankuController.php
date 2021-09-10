@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Redirect;
 
 class AntreankuController extends Controller
 {
-    public function showAntreanku(){
+    public function showAntreanku()
+    {
         if (Auth::check()) {
             return view('antreanku', [
                 'title' => "Antreanku",
@@ -26,9 +27,10 @@ class AntreankuController extends Controller
         }
     }
 
-    public function perbaharuiAntrean(Request $request) {
+    public function perbaharuiAntrean(Request $request)
+    {
         $antrean = Antrean::where('id', '=', $request->id_antrean)
-                            ->first();
+            ->first();
         $slug = $antrean->slug;
         if ($antrean) {
             if ($antrean->nama_antrean != $request->namaAntrean) {
@@ -43,10 +45,10 @@ class AntreankuController extends Controller
             $antrean->waktu_buka = $request->jamBuka;
             $antrean->waktu_tutup = $request->jamTutup;
             $antrean->deskripsi = $request->deskripsiAntrean;
-            
+
             if ($request->hasFile('gambarAntrean')) {
-                $img_file_path = 'public/pictures/'.$antrean->file_path_img;
-                if(Storage::exists($img_file_path)){
+                $img_file_path = 'public/pictures/' . $antrean->file_path_img;
+                if (Storage::exists($img_file_path)) {
                     Storage::delete($img_file_path);
                 }
                 $path = $request->file('gambarAntrean')->store('public/pictures');
@@ -58,15 +60,15 @@ class AntreankuController extends Controller
             $antrean->save();
             if ($request->hasFile('attachmentAntrean')) {
                 $attachment = AttachmentAntrean::where('id_antrean', '=', $request->id_antrean)
-                                            ->get();
-                foreach($attachment as $item) {
-                    if (Storage::exists('public/attachment/'.$item->file_path_attachment)){
-                        Storage::delete('public/attachment/'.$item->file_path_attachment);
+                    ->get();
+                foreach ($attachment as $item) {
+                    if (Storage::exists('public/attachment/' . $item->file_path_attachment)) {
+                        Storage::delete('public/attachment/' . $item->file_path_attachment);
                     }
                 }
                 DB::table('attachment_antrean')
-                            ->where('id_antrean', '=', $request->id_antrean)
-                            ->delete();
+                    ->where('id_antrean', '=', $request->id_antrean)
+                    ->delete();
 
                 $files = $request->file('attachmentAntrean');
                 foreach ($files as $file) {
@@ -76,7 +78,7 @@ class AntreankuController extends Controller
                         'id_antrean' => $antrean->id,
                         'file_path_attachment' => $temp[2]
                     ]);
-                }            
+                }
             }
 
             for ($i = 1; $i < 6; $i++) {
@@ -86,7 +88,7 @@ class AntreankuController extends Controller
                 $jam_buka = 'jamBukaLoket' . $i;
                 $jam_tutup = 'jamTutupLoket' . $i;
                 $loket = Loket::where('id', '=', $request->$id_loket)
-                                ->first();
+                    ->first();
                 if ($loket) {
                     if ($loket->nama_loket != $request->$nama_loket) {
                         $slug_loket = AntreanController::generateSlugLoket($request->$nama_loket);
@@ -117,36 +119,64 @@ class AntreankuController extends Controller
         return redirect()->route('formEditAntrean', $slug);
     }
 
-    public function editAntrean(Antrean $antrean) {
+    public function editAntrean(Antrean $antrean)
+    {
         $antrean = Antrean::with('loket')
-                            ->where('id', '=', $antrean->id)
-                            ->get();
+            ->where('id', '=', $antrean->id)
+            ->get();
         return view('perbaharuiAntrean', [
-                    'antrean' => $antrean, 
-                    'title' => 'Perbaharui Antrean',
-                    'kategori' => Kategori::all()
-                ]);
+            'antrean' => $antrean,
+            'title' => 'Perbaharui Antrean',
+            'kategori' => Kategori::all()
+        ]);
     }
-    
-    public function aturLoket(Antrean $antrean){
+
+    public function aturLoket(Antrean $antrean)
+    {
         $antrean = Antrean::with('loket')
-                            ->where('id', '=', $antrean->id)
-                            ->first();
+            ->where('id', '=', $antrean->id)
+            ->first();
 
         $antrean_di_belakang = [];
 
         foreach ($antrean->loket as $loket) {
             $antrean_di_belakang[] = (RiwayatAntrean::where('loket_id', '=', $loket->id)
-                                                        ->where('status', '=', 'waiting')
-                                                        ->where('batch', '=', $loket->batch)
-                                                        ->count());
+                ->where('status', '=', 'waiting')
+                ->where('batch', '=', $loket->batch)
+                ->count());
         }
 
         return view('aturLoket', [
-                    'antrean' => $antrean,
-                    'title' => $antrean->nama_antrean,
-                    'antrean_di_belakang' => $antrean_di_belakang   
+            'antrean' => $antrean,
+            'title' => $antrean->nama_antrean,
+            'antrean_di_belakang' => $antrean_di_belakang
         ]);
+    }
+
+    public function deleteLoket(Request $request)
+    {
+        $deleted = DB::table('loket')
+            ->where('id', '=', $request->id_loket_hapus)
+            ->delete();
+        if ($deleted > 0) {
+            $message = "Penghapusan loket berhasil!";
+        } else {
+            $message = "Penghapusan loket gagal dilakukan!";
+        }
+        return back()->withInput();
+    }
+
+    public function deleteAntrean(Request $request)
+    {
+        $deleted = DB::table('antrean')
+            ->where('id', '=', $request->id_antrean_hapus)
+            ->delete();
+        if ($deleted > 0) {
+            $message = "Penghapusan antrean berhasil!";
+        } else {
+            $message = "Penghapusan antrean gagal dilakukan!";
+        }
+        return back()->withInput();
     }
 
     public function showKonfigurasiLoket($slug, Loket $loket)
@@ -171,20 +201,20 @@ class AntreankuController extends Controller
         // periksa apakah antrean berikutnya adalah antrean pertama
         if (is_null($antrean) && $antrean_di_belakang == 0) {
             $next_person = RiwayatAntrean::where('loket_id', '=', $loket->id)
-                            ->where('status', '=', 'waiting')
-                            ->where('batch', '=', $loket->batch)
-                            ->first();
-            if(!(is_null($next_person)) && $next_person->nomor_antrean == 1) {
+                ->where('status', '=', 'waiting')
+                ->where('batch', '=', $loket->batch)
+                ->first();
+            if (!(is_null($next_person)) && $next_person->nomor_antrean == 1) {
                 // Jika belum ada nomor yang dipanggil, maka tampilkan nol
                 $antrean = null;
             } else {
                 // Jika sudah ada namun tidak ada nomor berikutnya yang akan dipanggil,
                 // maka tetap tampilkan nomor terakhir yang telah dipanggil
                 $antrean = RiwayatAntrean::where('loket_id', '=', $loket->id)
-                        ->where('status', '=', 'served')
-                        ->where('batch', '=', $loket->batch)
-                        ->orderBy('id', 'DESC')
-                        ->first();
+                    ->where('status', '=', 'served')
+                    ->where('batch', '=', $loket->batch)
+                    ->orderBy('id', 'DESC')
+                    ->first();
             }
         }
 

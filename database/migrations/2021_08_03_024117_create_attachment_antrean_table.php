@@ -19,7 +19,7 @@ class CreateAttachmentAntreanTable extends Migration
                 $table->unsignedBigInteger('id_antrean');
                 $table->string('file_path_attachment', 50);
                 $table->timestamps();
-                $table->foreign('id_antrean')->references('id')->on('antrean');
+                $table->foreign('id_antrean')->references('id')->on('antrean')->onDelete('cascade');
             });
         }
     }
