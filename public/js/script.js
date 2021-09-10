@@ -39,6 +39,7 @@ $(document).ready(function () {
         });
     });
 
+    // Open / Close sidebar
     let sidenav_btn = document.querySelector("#sidenav_btn");
     let sidebar_btn = document.querySelector("#sidebar_btn");
     let sidebar = document.querySelector("#navbar-responsive");
