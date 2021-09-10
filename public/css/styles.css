@@ -787,15 +787,15 @@ body {
 
 .footer-content p {
     font-weight: bold;
-    font-size: .7rem;
+    font-size: .65rem;
 }
 
 .footer-content li {
-    font-size: .6rem;
+    font-size: .55rem;
 }
 
 .footer-content img {
-    width: 100px;
+    width: 80px;
 }
 
 /* scroll to top btn */
@@ -2350,22 +2350,22 @@ hr.rounded {
 
     /* footer */
     .footer {
-        height: 20vh;
+        height: 15vh;
         padding-left: 7%;
         padding-right: 7%;
-        padding-top: 15%;
+        padding-top: 5%;
     }
 
     .footer-content p {
-        font-size: .6rem;
+        font-size: .55rem;
     }
 
     .footer-content li {
-        font-size: .5rem;
+        font-size: .45rem;
     }
 
     .footer-content img {
-        width: 70px;
+        width: 65px;
     }
 
     /* Halaman panggil antrian */
@@ -2624,20 +2624,20 @@ hr.rounded {
 
     /* footer */
     .footer {
-        height: 30vh;
-        padding-top: 10vh;
+        height: 25vh;
+        padding-top: 5%;
     }
 
     .footer-content p {
-        font-size: 1.5rem;
-    }
-
-    .footer-content li {
         font-size: 1rem;
     }
 
+    .footer-content li {
+        font-size: .8rem;
+    }
+
     .footer-content img {
-        width: 200px;
+        width: 150px;
     }
 
     /* halaman antrianku */
@@ -3018,9 +3018,7 @@ hr.rounded {
     .footer {
         width: 100%;
         height: 30vh;
-        background-color: #2F2D65;
-        color: #FFFFFF;
-        padding-top: 10vh;
+        padding-top: 7%;
     }
 
     /* halaman antrianku */
