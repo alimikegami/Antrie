@@ -21,7 +21,7 @@
     @endforeach --}}
 
     <div class="container-fluid">
-        <div class="row flex-nowrap">
+        <div class="row flex-nowrap" style="height: 100%">
             @include('components/sidebar')
             <div class="dashboard-container col-auto col-md-12 py-3 col-lg-10 mt-5 mt-md-0">
                 <div class="dashboard-content d-flex flex-column" {!! count($antrean) == 0 ? "style='height: 75vh'" : '' !!}>

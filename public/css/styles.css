@@ -2109,7 +2109,7 @@ body {
 .field-panggil-antrian {
     background-color: #FFFFFF;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     padding: 10%;
     border-radius: 30px;
     box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
@@ -2190,7 +2190,7 @@ body {
 
 .orang-menunggu p {
     color: #000000;
-    font-size: .9rem;
+    font-size: .75rem;
 }
 
 .orang-menunggu span {
@@ -2397,12 +2397,13 @@ hr.rounded {
 
     .tombol-input-antrian-off {
         height: 100%;
+        font-size: .8rem;
     }
 
     .tombol-input-antrian-ol {
         width: 100%;
         height: 65%;
-        font-size: 1rem;
+        font-size: .8rem;
     }
 
     .orang-menunggu {
