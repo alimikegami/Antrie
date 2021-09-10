@@ -17,7 +17,7 @@
                                     <h1>Halo, selamat datang!</h1>
                                 @endauth
 
-                                <p>Lorem ipsum dolor sit amet, consectetur. </p>
+                                <p>Selamat datang di Antrie.</p>
                             </div>
                             <div class="searchBar-wrapper d-flex justify-content-center align-items-center mb-3 ms-lg-3">
                                 <form action="{{ route('search') }}" method="GET"
@@ -114,7 +114,7 @@
                                         <div class="dua">
                                             <h1>Ayo Buat Antrianmu Sendiri</h1>
                                             <p>Tekan tombol dibawah untuk memulai</p>
-                                            <a href="{{ route('buat-antrean') }}" type="button"
+                                            <a href="{{ route('buat-antrean') }}" type="button" class="text-center"
                                                 id="tombol-buat-dashboard">Buat</a>
                                         </div>
                                     </div>
@@ -134,11 +134,12 @@
                                                             class="logo-lokasi d-flex justify-content-center align-items-center">
                                                             <div class="gambar">
                                                                 @if ($temp->file_path_img)
-                                                                    <img src="{{ asset('storage/pictures/'.$temp->file_path_img) }}" alt="" width="70px">
+                                                                    <img src="{{ asset('storage/pictures/' . $temp->file_path_img) }}"
+                                                                        alt="" width="70px">
                                                                 @else
                                                                     <img src="img/logoAntriedark.png" alt="" width="70px">
                                                                 @endif
-                                                                
+
                                                             </div>
                                                         </div>
                                                         <div class="keterangan-lokasi">
