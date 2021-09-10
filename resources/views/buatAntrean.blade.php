@@ -100,16 +100,16 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="mb-3 row align-items-center">
+                                <div class="mb-3 row align-items-center justify-content-between">
                                     <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional
                                         <span>*</span></label>
-                                    <div class="col-sm-7 col-10">
+                                    <div class="col-sm-7 col-6">
                                         <label for="">Buka</label>
                                         <input type="time" id="jamBuka" name="jamBuka" required>
-                                        <label for="">Tutup</label>
+                                        <label for="" class="mt-3 mt-sm-0 ms-sm-3">Tutup</label>
                                         <input type="time" id="jamTutup" name="jamTutup" required>
                                     </div>
-                                    <div class="col-sm-1 col-1">
+                                    <div class="col-sm-1 col-6">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                             data-bs-trigger="hover focus"
                                             data-bs-content="Jam operasional dari antrian yang akan anda buat.">
@@ -196,13 +196,13 @@
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional
                                             <span>*</span></label>
-                                        <div class="col-sm-7 col-10">
+                                        <div class="col-sm-7 col-6">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket1" name="jamBukaLoket1" required>
-                                            <label for="">Tutup</label>
+                                            <label for="" class="mt-3 mt-sm-0 ms-sm-3">Tutup</label>
                                             <input type="time" id="jamTutupLoket1" name="jamTutupLoket1" required>
                                         </div>
-                                        <div class="col-sm-1 col-1">
+                                        <div class="col-sm-1 col-6">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
@@ -244,13 +244,13 @@
                                     </div>
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional</label>
-                                        <div class="col-sm-7 col-10">
+                                        <div class="col-sm-7 col-6">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket2" name="jamBukaLoket2">
-                                            <label for="">Tutup</label>
+                                            <label for="" class="mt-3 mt-sm-0 ms-sm-3">Tutup</label>
                                             <input type="time" id="jamTutupLoket2" name="jamTutupLoket2">
                                         </div>
-                                        <div class="col-sm-1 col-1">
+                                        <div class="col-sm-1 col-6">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
@@ -292,13 +292,13 @@
                                     </div>
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional</label>
-                                        <div class="col-sm-7 col-10">
+                                        <div class="col-sm-7 col-6">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket3" name="jamBukaLoket3">
-                                            <label for="">Tutup</label>
+                                            <label for="" class="mt-3 mt-sm-0 ms-sm-3">Tutup</label>
                                             <input type="time" id="jamTutupLoket3" name="jamTutupLoket3">
                                         </div>
-                                        <div class="col-sm-1 col-1">
+                                        <div class="col-sm-1 col-6">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
@@ -340,13 +340,13 @@
                                     </div>
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional</label>
-                                        <div class="col-sm-7 col-10">
+                                        <div class="col-sm-7 col-6">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket4" name="jamBukaLoket4">
-                                            <label for="">Tutup</label>
+                                            <label for="" class="mt-3 mt-sm-0 ms-sm-3">Tutup</label>
                                             <input type="time" id="jamTutupLoket4" name="jamTutupLoket4">
                                         </div>
-                                        <div class="col-sm-1 col-1">
+                                        <div class="col-sm-1 col-6">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
@@ -388,13 +388,13 @@
                                     </div>
                                     <div class="mb-3 row align-items-center">
                                         <label for="inputPassword" class="col-sm-4 col-form-label">Jam Operasional</label>
-                                        <div class="col-sm-7 col-10">
+                                        <div class="col-sm-7 col-6">
                                             <label for="">Buka</label>
                                             <input type="time" id="jamBukaLoket5" name="jamBukaLoket5">
-                                            <label for="">Tutup</label>
+                                            <label for="" class="mt-3 mt-sm-0 ms-sm-3">Tutup</label>
                                             <input type="time" id="jamTutupLoket5" name="jamTutupLoket5">
                                         </div>
-                                        <div class="col-sm-1 col-1">
+                                        <div class="col-sm-1 col-6">
                                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                                 data-bs-trigger="hover focus"
                                                 data-bs-content="Jam operasional dari loket yang akan anda buat.">
