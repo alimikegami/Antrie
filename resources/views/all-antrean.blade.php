@@ -75,7 +75,7 @@
                             <div class="content-field-lokasi d-flex flex-column">
                                 @foreach ($antrean as $item)
                                     <div class="p-2 hover-wrapper">
-                                        <a href="#">
+                                        <a href="/antrean/{{ $item->slug }}">
                                             <div class="lokasi-wrapper d-flex align-items-center">
                                                 <div class="logo-lokasi d-flex justify-content-center align-items-center">
                                                     <div class="gambar">
