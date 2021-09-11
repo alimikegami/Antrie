@@ -69,8 +69,17 @@
                                             <div class="keterangan-loket-antrianku">
                                                 <h1>{{ $item->nama_antrean }}</h1>
                                                 <p>{{ $item->kategori->nama_kategori }}</p>
-                                                <p class="mt-md-4"><i
+                                                <p class="mt-md-3"><i
                                                         class="bi bi-geo-alt-fill"></i>{{ $item->alamat }}</p>
+                                                <div
+                                                    class="col-xl-3 col-lg-4 col-6 col-md-5 d-flex justify-content-start align-items-center">
+                                                    <button
+                                                        class="btn btn-outline-danger btn-sm rounded-pill btn-delete-loket"
+                                                        id="tombol-hapus-loket"><i class="bi bi-trash-fill"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#deleteLoketModal"></i> hapus
+                                                        antrean</button>
+                                                </div>
 
                                             </div>
                                             <i class="bi bi-arrow-right-circle-fill" id="right-arrow"></i>
