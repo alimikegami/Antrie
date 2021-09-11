@@ -6,8 +6,8 @@
     <div class="container-fluid">
         <div class="row flex-nowrap">
             @include('components/sidebar')
-            <div class="dashboard-container col-auto col-md-12 py-3 col-lg-10 mt-5 mt-md-0">
-                <div class="dashboard-content d-flex flex-column">
+            <div class="dashboard-container col-auto col-md-12 pt-3 col-lg-10 mt-5 mt-md-0">
+                <div class="dashboard-content riwayat d-flex flex-column">
                     <div class="container">
                         <div class="first-row-all d-flex justify-content-between">
                             <div class="first-row-word flex-fill">
@@ -15,17 +15,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="field-lokasi-all d-flex flex-column mt-5">
-                        <div class="content-field-lokasi d-flex flex-column">
-                            {{-- start loop --}}
-                            @if (count($riwayat) == 0)
-                                <h3 class="text-center mt-5 text-muted align-self-center">Belum ada antrean</h3>
-                            @endif
-                            @php
-                                $i = 0;
-                            @endphp
-                            @if (is_array($riwayat) || is_object($riwayat))
-                                @foreach ($riwayat as $item)
+                    {{-- start loop --}}
+                    @if (count($riwayat) == 0)
+                        <h3 class="text-center mt-5 text-muted align-self-center">Belum ada antrean
+                        </h3>
+                    @endif
+                    @php
+                        $i = 0;
+                    @endphp
+                    @if (is_array($riwayat) || is_object($riwayat))
+                        @foreach ($riwayat as $item)
+                            <div class="field-lokasi-all-antrianku d-flex flex-column mt-5">
+                                <div class="content-field-lokasi d-flex flex-column">
                                     <a href="">
                                         <div class="p-2 hover-wrapper" id="content-tunggu-antrian">
                                             <div class="lokasi-wrapper d-flex align-items-center">
@@ -67,14 +68,14 @@
                                             </div>
                                         </div>
                                     </a>
-                                @endforeach
-                            @endif
+
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
 
 
-                            {{-- end loop --}}
-
-                        </div>
-                    </div>
+                    {{-- end loop --}}
 
                 </div>
 

@@ -846,11 +846,15 @@ body {
 
 .dashboard-content {
     width: 100%;
-    /* height: 100%; */
+    /* height: 100vh; */
     background-color: #9EEDE5;
     border-top-left-radius: 44px;
     border-top-right-radius: 44px;
     padding: 3vw;
+}
+
+.dashboard-content.riwayat {
+    min-height: calc(100vh - 300px);
 }
 
 .navbar-dashboard ul {
@@ -3266,6 +3270,10 @@ hr.rounded {
 
     .keterangan-loket-riwayat p span {
         font-size: 1rem;
+    }
+
+    .dashboard-content.riwayat {
+        min-height: calc(100vh - 00px);
     }
 }
 
