@@ -1972,7 +1972,7 @@ body {
     padding: 5px 20px;
     text-decoration: none;
     border: none;
-    width: 60%;
+    width: 100%;
 }
 
 .tombol-buka-loket:hover {
@@ -1994,7 +1994,7 @@ body {
     padding: 5px 20px;
     text-decoration: none;
     border: none;
-    width: 60%;
+    width: 100%;
 }
 
 .tombol-tutup-loket:hover {
@@ -2106,6 +2106,13 @@ body {
 
 .word-modal-no-loket h2 {
     font-size: 1.5rem;
+}
+
+#deleteLoketModal .modal-header,
+.modal-body,
+modal-footer {
+    background-color: #2B2844;
+    color: #ffffff;
 }
 
 /* Halaman panggil antrian */
@@ -2298,13 +2305,13 @@ hr.rounded {
     .tombol-buka-loket {
         font-size: .8rem;
         padding: 5px 10px;
-        width: 70%;
+        width: 100%;
     }
 
     .tombol-tutup-loket {
         font-size: .8rem;
         padding: 5px 10px;
-        width: 70%;
+        width: 100%;
     }
 
     .keterangan-loket-pemilik h1 {
@@ -2738,13 +2745,13 @@ hr.rounded {
     .tombol-buka-loket {
         font-size: 1rem;
         padding: 5px 20px;
-        width: 30%;
+        width: 100%;
     }
 
     .tombol-tutup-loket {
         font-size: 1rem;
         padding: 5px 15px;
-        width: 30%;
+        width: 100%;
     }
 
     .keterangan-loket-pemilik h1 {
@@ -3086,13 +3093,13 @@ hr.rounded {
     .tombol-buka-loket {
         font-size: 1rem;
         padding: 5px 20px;
-        width: 30%;
+        width: 100%;
     }
 
     .tombol-tutup-loket {
         font-size: 1rem;
         padding: 5px 20px;
-        width: 30%;
+        width: 100%;
     }
 
     .keterangan-loket-pemilik h1 {
@@ -3340,13 +3347,13 @@ hr.rounded {
     .tombol-buka-loket {
         font-size: 1rem;
         padding: 5px 20px;
-        width: 20%;
+        width: 100%;
     }
 
     .tombol-tutup-loket {
         font-size: 1rem;
         padding: 5px 20px;
-        width: 20%;
+        width: 100%;
     }
 
     .keterangan-loket-pemilik h1 {
