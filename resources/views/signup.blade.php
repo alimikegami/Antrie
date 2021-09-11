@@ -38,7 +38,7 @@
                 </div>
                 <div class="login-second-column d-flex flex-column justify-content-center align-items-center">
                     <a href="/" class="signup-logo"><img src="img/logoAntriedark.png" alt="logo-antrie-dark" class="img-fluid"></a>
-                    <h3>Sign up</h3>
+                    <h3>Daftar</h3>
                     <form action="{{ route('store') }}" method="POST" class="d-flex flex-column align-items-center">
                         {{ csrf_field() }}
                         <div class="input-nama">
@@ -77,7 +77,7 @@
                             <input type="password" class="form-control" id="password_confirmation"
                             name="password_confirmation">
                         </div>
-                        <button type="submit" id="tombol-login" class="mt-3">Sign up</button>
+                        <button type="submit" id="tombol-login" class="mt-3">Daftar</button>
                     </form>
                 </div>
             </div>

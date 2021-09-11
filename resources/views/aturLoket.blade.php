@@ -48,9 +48,9 @@
                                                 <h1>{{ $item->nama_loket }}</h1>
                                                 <p>{{ $item->waktu_buka }} - {{ $item->waktu_tutup }}
                                                     @if ($item->status == 'open')
-                                                        <span class="badge open ms-1 ms-md-3">open</span>
+                                                        <span class="badge open ms-1 ms-md-3">buka</span>
                                                     @else
-                                                        <span class="badge closed ms-md-3">closed</span>
+                                                        <span class="badge closed ms-md-3">tutup</span>
                                                     @endif
 
                                                 </p>
@@ -65,13 +65,13 @@
                                                             <button type="button" class="tombol-tutup-loket"
                                                                 id="tombol-tutup-loket-{{ $i }}"
                                                                 class="btn" data-id-loket="{{ $item->id }}"
-                                                                onclick="">Close
+                                                                onclick="">Tutup
                                                                 Loket</button>
                                                         @else
                                                             <button type="button" class="tombol-buka-loket"
                                                                 id="tombol-buka-loket-{{ $i }}"
                                                                 class="btn"
-                                                                data-id-loket="{{ $item->id }}">Open
+                                                                data-id-loket="{{ $item->id }}">Buka
                                                                 Loket</button>
                                                         @endif
                                                     </div>

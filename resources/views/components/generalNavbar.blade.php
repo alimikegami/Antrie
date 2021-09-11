@@ -7,9 +7,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-                <a class="nav-link" href="{{ route('signup') }}">Sign Up</a>
-                <a class="nav-link" href="{{ route('login') }}">Sign In</a>
+                <a class="nav-link active" aria-current="page" href="/">Beranda</a>
+                <a class="nav-link" href="{{ route('signup') }}">Daftar</a>
+                <a class="nav-link" href="{{ route('login') }}">Masuk</a>
             </div>
         </div>
     </div>
