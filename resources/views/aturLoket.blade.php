@@ -48,9 +48,9 @@
                                                 <h1>{{ $item->nama_loket }}</h1>
                                                 <p>{{ $item->waktu_buka }} - {{ $item->waktu_tutup }}
                                                     @if ($item->status == 'open')
-                                                        <span class="badge open">open</span>
+                                                        <span class="badge open ms-1 ms-md-3">open</span>
                                                     @else
-                                                        <span class="badge closed">closed</span>
+                                                        <span class="badge closed ms-md-3">closed</span>
                                                     @endif
 
                                                 </p>
