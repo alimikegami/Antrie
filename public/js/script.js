@@ -7,6 +7,7 @@ $(document).ready(function () {
 
     $(".keterangan-loket-pemilik button").click(function (e) {
         e.preventDefault();
+
         let id_element = $(this).attr('id');
         if (id_element.includes("tombol-tutup-loket-")) {
             let id_loket = $(this).attr('data-id-loket')
@@ -16,6 +17,8 @@ $(document).ready(function () {
             let id_loket = $(this).attr('data-id-loket')
             $('#id_loket_buka').val(id_loket);
             $('#modal-konfirmasi-buka-loket').modal('show');
+        } else if (id_element.includes("tombol-hapus-loket")) {
+            $('#deleteLoketModal').modal('show');
         }
     });
 
