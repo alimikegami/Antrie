@@ -10,22 +10,22 @@
             <i class="bi bi-list text-center sidebar-hamburger" id="sidebar_btn"></i>
         </div>
         <ul class="nav-list">
-            <li class="menu">
-                <a href="{{ route('beranda') }}">
+            <li class="menu" id="beranda-sidebar">
+                <a href="{{ route('beranda') }}" id="beranda-sidebar">
                     <i class="bi bi-house"></i>
                     <span href="" class="links-name">Beranda</span>
                 </a>
                 <span class="links-tooltip">Beranda</span>
             </li>
             <li class="menu">
-                <a href="{{ route('antreanku') }}">
+                <a href="{{ route('antreanku') }}" id="antreanku-sidebar">
                     <i class="bi bi-archive"></i>
                     <span href="" class="links-name">Antreanku</span>
                 </a>
                 <span class="links-tooltip">Antreanku</span>
             </li>
-            <li class="menu">
-                <a href="{{ route('riwayat-antrean') }}">
+            <li class="menu" id="riwayat-sidebar">
+                <a href="{{ route('riwayat-antrean') }}" id="riwayat-sidebar">
                     <i class="bi bi-chat-left-text"></i>
                     <span href="" class="links-name">Riwayat</span>
                 </a>
@@ -61,21 +61,21 @@
         </div>
         <ul class="nav-list">
             <li class="menu">
-                <a href="{{ route('beranda') }}">
+                <a href="{{ route('beranda') }}" id="beranda-sidebar-static">
                     <i class="bi bi-house"></i>
                     <span href="" class="links-name">Beranda</span>
                 </a>
                 <span class="links-tooltip">Beranda</span>
             </li>
             <li class="menu">
-                <a href="{{ route('antreanku') }}">
+                <a href="{{ route('antreanku') }}" id="antreanku-sidebar-static">
                     <i class="bi bi-archive"></i>
                     <span href="" class="links-name">Antreanku</span>
                 </a>
                 <span class="links-tooltip">Antreanku</span>
             </li>
             <li class="menu">
-                <a href="{{ route('riwayat-antrean') }}">
+                <a href="{{ route('riwayat-antrean') }}" id="riwayat-sidebar-static">
                     <i class="bi bi-chat-left-text"></i>
                     <span href="" class="links-name">Riwayat</span>
                 </a>

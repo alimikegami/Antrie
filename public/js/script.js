@@ -8,54 +8,116 @@ $(document).ready(function () {
     $(".keterangan-loket-pemilik button").click(function (e) {
         e.preventDefault();
 
-        let id_element = $(this).attr('id');
+        let id_element = $(this).attr("id");
         if (id_element.includes("tombol-tutup-loket-")) {
-            let id_loket = $(this).attr('data-id-loket')
-            $('#id_loket_tutup').val(id_loket);
-            $('#modal-konfirmasi-tutup-loket').modal('show');
+            let id_loket = $(this).attr("data-id-loket");
+            $("#id_loket_tutup").val(id_loket);
+            $("#modal-konfirmasi-tutup-loket").modal("show");
         } else if (id_element.includes("tombol-buka-loket-")) {
-            let id_loket = $(this).attr('data-id-loket')
-            $('#id_loket_buka').val(id_loket);
-            $('#modal-konfirmasi-buka-loket').modal('show');
+            let id_loket = $(this).attr("data-id-loket");
+            $("#id_loket_buka").val(id_loket);
+            $("#modal-konfirmasi-buka-loket").modal("show");
         } else if (id_element.includes("tombol-hapus-loket")) {
-            $('#deleteLoketModal').modal('show');
+            $("#deleteLoketModal").modal("show");
+        }
+    });
+
+    $(".btn-delete-loket").click(function (e) {
+        e.preventDefault();
+        console.log("sdfas");
+        let id_element = $(this).attr('id');;
+        if (id_element.includes("tombol-hapus-antrean-")) {
+            console.log(
+                document
+                    .getElementById(id_element)
+                    .getAttribute("data-id-antrean")
+            );
+            $("#id_antrean_hapus").val(
+                document
+                    .getElementById(id_element)
+                    .getAttribute("data-id-antrean")
+            );
+            $("#deleteAntreanModal").modal("show");
         }
     });
 
     $(".keterangan-loket-riwayat button").click(function (e) {
         e.preventDefault();
-        let id_element = $(this).attr('id');
+        let id_element = $(this).attr("id");
         if (id_element.includes("tombol-ambil-batal-antrian-")) {
-            let id_riwayat = $(this).attr('data-riwayat');
-            $('#id-riwayat').val(id_riwayat);
-            $('#modal-konfirmasi-batalkan-antrean').modal('show');
+            let id_riwayat = $(this).attr("data-riwayat");
+            $("#id-riwayat").val(id_riwayat);
+            $("#modal-konfirmasi-batalkan-antrean").modal("show");
         }
     });
 
     // Navbar page selector [REFACTOR!!!!]
     $(function () {
-        $('a').each(function () {
-            if ($(this).prop('href') == window.location.href) {
-                $(this).parents('.menu').addClass('selected');
-                // console.log($(this).parents(".menu"));
+        $("a").each(function () {
+            if ($(this).prop("href") == window.location.href) {
+                $(this).parents(".menu").addClass("selected");
             }
         });
+
+        if (
+            window.location.href.indexOf("antreanku") > -1 ||
+            window.location.href.indexOf("ubah-data-antrean") > -1
+        ) {
+            document
+                .getElementById("antreanku-sidebar")
+                .parentElement.classList.add("selected");
+            document
+                .getElementById("antreanku-sidebar-static")
+                .parentElement.classList.add("selected");
+        }
+
+        if (
+            window.location.href.indexOf("/antrean/") > -1 ||
+            window.location.href.indexOf("beranda") > -1
+        ) {
+            document
+                .getElementById("beranda-sidebar")
+                .parentElement.classList.add("selected");
+            document
+                .getElementById("beranda-sidebar-static")
+                .parentElement.classList.add("selected");
+        }
+    });
+
+    $(".btn-delete-loket").click(function (e) {
+        e.preventDefault();
+        console.log("sdfas");
+        let id_element = $(this).attr('id');;
+        if (id_element.includes("tombol-hapus-loket-")) {
+            console.log(
+                document
+                    .getElementById(id_element)
+                    .getAttribute("data-id-loket")
+            );
+            $("#id_loket_hapus").val(
+                document
+                    .getElementById(id_element)
+                    .getAttribute("data-id-loket")
+            );
+            $("#deleteLoketModal").modal("show");
+        }
     });
 
     // Open / Close sidebar
     $("#sidenav_btn").click(function () {
-        $("#navbar-responsive").toggleClass("active")
-            .css('visibility', 'visible');
+        $("#navbar-responsive")
+            .toggleClass("active")
+            .css("visibility", "visible");
     });
 
     $("#sidebar_btn").click(function () {
-        $("#navbar-responsive").toggleClass("active")
-            .css('visibility', 'hidden');
-    })
+        $("#navbar-responsive")
+            .toggleClass("active")
+            .css("visibility", "hidden");
+    });
     // let sidenav_btn = document.querySelector("#sidenav_btn");
     // let sidebar_btn = document.querySelector("#sidebar_btn");
     // let sidebar = document.querySelector("#navbar-responsive");
-
 
     // sidenav_btn.onclick = function () {
     //     sidebar.classList.toggle("active");
@@ -67,65 +129,64 @@ $(document).ready(function () {
     // }
 
     // homepage kelebihan pengantre dan pembuat antrean
-    $('#kelebihan-pembuat-antrean').on('click', () => {
-        $('.word-pembuat-antrean ul').slideToggle();
-        $('#tambah-pembuat-antrean').toggleClass('fa-plus fa-minus');
+    $("#kelebihan-pembuat-antrean").on("click", () => {
+        $(".word-pembuat-antrean ul").slideToggle();
+        $("#tambah-pembuat-antrean").toggleClass("fa-plus fa-minus");
     });
 
-    $('#kelebihan-pengantre').on('click', () => {
-        $('.word-pengantre ul').slideToggle();
-        $('#tambah-pengantre').toggleClass('fa-plus fa-minus');
+    $("#kelebihan-pengantre").on("click", () => {
+        $(".word-pengantre ul").slideToggle();
+        $("#tambah-pengantre").toggleClass("fa-plus fa-minus");
     });
 
     // card flip homepage
-    $('.kemudahan-kenapa-pilih').flip();
-    $('.kecepatan-kenapa-pilih').flip();
-    $('.fleksibilitas-kenapa-pilih').flip();
-
+    $(".kemudahan-kenapa-pilih").flip();
+    $(".kecepatan-kenapa-pilih").flip();
+    $(".fleksibilitas-kenapa-pilih").flip();
 
     // menu pengguna
-    $('.menu-dashboard').on('click', function () {
-        window.location.href = '/beranda';
-        $('.menu').removeClass('selected');
-        $(this).addClass('selected');
+    $(".menu-dashboard").on("click", function () {
+        window.location.href = "/beranda";
+        $(".menu").removeClass("selected");
+        $(this).addClass("selected");
     });
-    $('.menu-antrian').on('click', function () {
-        window.location.href = '/antreanku';
-        $('.menu').removeClass('selected');
-        $(this).addClass('selected');
+    $(".menu-antrian").on("click", function () {
+        window.location.href = "/antreanku";
+        $(".menu").removeClass("selected");
+        $(this).addClass("selected");
     });
-    $('.menu-pesan').on('click', function () {
-        $('.menu').removeClass('selected');
-        $(this).addClass('selected');
+    $(".menu-pesan").on("click", function () {
+        $(".menu").removeClass("selected");
+        $(this).addClass("selected");
     });
-    $('.menu-profil').on('click', function () {
-        $('.menu').removeClass('selected');
-        $(this).addClass('selected');
+    $(".menu-profil").on("click", function () {
+        $(".menu").removeClass("selected");
+        $(this).addClass("selected");
     });
 
     // tombol ambil antrian di klik
-    $('.content-field-lokasi #tombol-ambil-antrian').click(() => {
-        $('#modal-ambil-nomor').modal('show');
-    })
+    $(".content-field-lokasi #tombol-ambil-antrian").click(() => {
+        $("#modal-ambil-nomor").modal("show");
+    });
 
     // tombol menu halaman antreanku
-    $('.menu-pengantri').click(function () {
-        $(this).addClass('menu-antrianku-active');
-        $('.menu-buat-antrian').removeClass('menu-antrianku-active');
-        $('.content-field-pemilik-antrian').hide();
-        $('#content-tunggu-antrian').show();
-    })
-    $('.menu-buat-antrian').click(function () {
-        $(this).addClass('menu-antrianku-active');
-        $('.menu-pengantri').removeClass('menu-antrianku-active');
-        $('#content-tunggu-antrian').hide();
-        $('.content-field-pemilik-antrian').show();
-    })
+    $(".menu-pengantri").click(function () {
+        $(this).addClass("menu-antrianku-active");
+        $(".menu-buat-antrian").removeClass("menu-antrianku-active");
+        $(".content-field-pemilik-antrian").hide();
+        $("#content-tunggu-antrian").show();
+    });
+    $(".menu-buat-antrian").click(function () {
+        $(this).addClass("menu-antrianku-active");
+        $(".menu-pengantri").removeClass("menu-antrianku-active");
+        $("#content-tunggu-antrian").hide();
+        $(".content-field-pemilik-antrian").show();
+    });
 
-    if ($('.menu-pengantri').hasClass('menu-antrianku-active')) {
-        $('.content-field-pemilik-antrian').hide();
-    } else if ($('.menu-buat-antrian').hasClass('menu-antrianku-active')) {
-        $('#content-tunggu-antrian').hide();
+    if ($(".menu-pengantri").hasClass("menu-antrianku-active")) {
+        $(".content-field-pemilik-antrian").hide();
+    } else if ($(".menu-buat-antrian").hasClass("menu-antrianku-active")) {
+        $("#content-tunggu-antrian").hide();
     }
 
     $("#panggilAntrean").on("click", () => {
@@ -141,115 +202,143 @@ $(document).ready(function () {
         $("#modalKonfirmasiAntrean").modal("show");
     });
 
-    $('#tambahAntreanOffline').on("click", () => {
+    $("#tambahAntreanOffline").on("click", () => {
         let id_loket = $("#inputLoketId").val();
-        $('#idLoketOffline').val(id_loket);
+        $("#idLoketOffline").val(id_loket);
         $("#modalAntreanOffline").modal("show");
     });
 
     // animasi icon di halaman antrianku.pemilik antrian
-    $('.content-field-lokasi').on('mouseenter', '#content-pemilik-antrian', function () {
-        $(this).children('.lokasi-wrapper').children('#right-arrow').css('font-size', '3.5rem');
-    }).on('mouseleave', '#content-pemilik-antrian', function () {
-        $(this).children('.lokasi-wrapper').children('#right-arrow').css('font-size', '3rem');
-    }).on('click', '#content-pemilik-antrian', function () {
-        $(this).children('.lokasi-wrapper').children('#right-arrow').css('font-size', '3.5rem');
-    });
+    $(".content-field-lokasi")
+        .on("mouseenter", "#content-pemilik-antrian", function () {
+            $(this)
+                .children(".lokasi-wrapper")
+                .children("#right-arrow")
+                .css("font-size", "3.5rem");
+        })
+        .on("mouseleave", "#content-pemilik-antrian", function () {
+            $(this)
+                .children(".lokasi-wrapper")
+                .children("#right-arrow")
+                .css("font-size", "3rem");
+        })
+        .on("click", "#content-pemilik-antrian", function () {
+            $(this)
+                .children(".lokasi-wrapper")
+                .children("#right-arrow")
+                .css("font-size", "3.5rem");
+        });
 
     // to enable popovers Bootstrap
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="popover"]')
+    );
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
+        return new bootstrap.Popover(popoverTriggerEl);
     });
 
     // tambah loket ditekan
-    $('.tambah-loket').click(() => {
-        if ($('.loket-dua').hasClass('d-none')) {
-            $('.loket-dua').removeClass('d-none');
-            location.href = '#loket-dua';
-        } else if ($('.loket-tiga').hasClass('d-none')) {
-            $('.loket-tiga').removeClass('d-none');
-            location.href = '#loket-tiga';
-        } else if ($('.loket-empat').hasClass('d-none')) {
-            $('.loket-empat').removeClass('d-none');
-            location.href = '#loket-empat';
-        } else if ($('.loket-lima').hasClass('d-none')) {
-            $('.loket-lima').removeClass('d-none');
-            location.href = '#loket-lima';
-            $('.tambah-loket').addClass('d-none');
+    $(".tambah-loket").click(() => {
+        if ($(".loket-dua").hasClass("d-none")) {
+            $(".loket-dua").removeClass("d-none");
+            location.href = "#loket-dua";
+        } else if ($(".loket-tiga").hasClass("d-none")) {
+            $(".loket-tiga").removeClass("d-none");
+            location.href = "#loket-tiga";
+        } else if ($(".loket-empat").hasClass("d-none")) {
+            $(".loket-empat").removeClass("d-none");
+            location.href = "#loket-empat";
+        } else if ($(".loket-lima").hasClass("d-none")) {
+            $(".loket-lima").removeClass("d-none");
+            location.href = "#loket-lima";
+            $(".tambah-loket").addClass("d-none");
         }
     });
 
     // function jika ubah loket
-    if (window.location.pathname.split('/')[1] === "ubah-data-antrean") {
-
-        if ($('#loket2').val()) {
-            $('.loket-dua').removeClass('d-none');
-            $('.loket-dua .btn-close').addClass('d-none');
+    if (window.location.pathname.split("/")[1] === "ubah-data-antrean") {
+        if ($("#loket2").val()) {
+            $(".loket-dua").removeClass("d-none");
+            $(".loket-dua .btn-close").addClass("d-none");
         }
 
-        if ($('#loket3').val()) {
-            $('.loket-tiga').removeClass('d-none');
-            $('.loket-tiga .btn-close').addClass('d-none');
+        if ($("#loket3").val()) {
+            $(".loket-tiga").removeClass("d-none");
+            $(".loket-tiga .btn-close").addClass("d-none");
         }
 
-        if ($('#loket4').val()) {
-            $('.loket-empat').removeClass('d-none');
-            $('.loket-empat .btn-close').addClass('d-none');
+        if ($("#loket4").val()) {
+            $(".loket-empat").removeClass("d-none");
+            $(".loket-empat .btn-close").addClass("d-none");
         }
 
-        if ($('#loket5').val()) {
-            $('.loket-lima').removeClass('d-none');
-            $('.loket-lima .btn-close').addClass('d-none');
+        if ($("#loket5").val()) {
+            $(".loket-lima").removeClass("d-none");
+            $(".loket-lima .btn-close").addClass("d-none");
         }
     }
 
     // tombol silang di informasi loket ditekan
-    $('.btn-close').on('click', function () {
-        var id_btn_close = $(this).attr('id');
+    $(".btn-close").on("click", function () {
+        var id_btn_close = $(this).attr("id");
 
-        if ($('.tambah-loket').hasClass('d-none')) {
-            $('.tambah-loket').removeClass('d-none');
+        if ($(".tambah-loket").hasClass("d-none")) {
+            $(".tambah-loket").removeClass("d-none");
         }
 
         switch (id_btn_close) {
-            case 'btn-close-2':
-                $('.loket-dua').animate({
-                    height: 0,
-                }, 300, function () {
-
-                    // $(this).remove();
-                    $(this).find(':input').val('');
-                    $(this).addClass('d-none');
-                    $(this).css('height', '100%');
-                });
+            case "btn-close-2":
+                $(".loket-dua").animate(
+                    {
+                        height: 0,
+                    },
+                    300,
+                    function () {
+                        // $(this).remove();
+                        $(this).find(":input").val("");
+                        $(this).addClass("d-none");
+                        $(this).css("height", "100%");
+                    }
+                );
                 break;
-            case 'btn-close-3':
-                $('.loket-tiga').animate({
-                    height: 0,
-                }, 300, function () {
-                    $(this).find(':input').val('');
-                    $(this).addClass('d-none');
-                    $(this).css('height', '100%');
-                });
+            case "btn-close-3":
+                $(".loket-tiga").animate(
+                    {
+                        height: 0,
+                    },
+                    300,
+                    function () {
+                        $(this).find(":input").val("");
+                        $(this).addClass("d-none");
+                        $(this).css("height", "100%");
+                    }
+                );
                 break;
-            case 'btn-close-4':
-                $('.loket-empat').animate({
-                    height: 0,
-                }, 300, function () {
-                    $(this).find(':input').val('');
-                    $(this).addClass('d-none');
-                    $(this).css('height', '100%');
-                });
+            case "btn-close-4":
+                $(".loket-empat").animate(
+                    {
+                        height: 0,
+                    },
+                    300,
+                    function () {
+                        $(this).find(":input").val("");
+                        $(this).addClass("d-none");
+                        $(this).css("height", "100%");
+                    }
+                );
                 break;
-            case 'btn-close-5':
-                $('.loket-lima').animate({
-                    height: 0,
-                }, 300, function () {
-                    $(this).find(':input').val('');
-                    $(this).addClass('d-none');
-                    $(this).css('height', '100%');
-                });
+            case "btn-close-5":
+                $(".loket-lima").animate(
+                    {
+                        height: 0,
+                    },
+                    300,
+                    function () {
+                        $(this).find(":input").val("");
+                        $(this).addClass("d-none");
+                        $(this).css("height", "100%");
+                    }
+                );
                 break;
 
             default:
@@ -265,18 +354,18 @@ $(document).ready(function () {
     // };
 
     function ambilAntreanBerikutnya(id_loket) {
-        var nomor = $('#nomorAntrean').text();
+        var nomor = $("#nomorAntrean").text();
         $.ajax({
             url: "/ambil-antrean-baru/" + id_loket,
             type: "GET",
             beforeSend: function () {
-                $('#nomorAntrean').hide();
-                $('#spinner').show();
+                $("#nomorAntrean").hide();
+                $("#spinner").show();
             },
             complete: function () {
-                console.log('complete');
-                $('#spinner').hide();
-                $('#nomorAntrean').show();
+                console.log("complete");
+                $("#spinner").hide();
+                $("#nomorAntrean").show();
             },
             success: function (data) {
                 console.log(data.id);
@@ -305,8 +394,6 @@ $(document).ready(function () {
             },
         });
     }
-
-
 
     // function ambilNomorAntrean(id_loket){
     //     $('modal-ambil-nomor')
@@ -349,16 +436,16 @@ $(document).ready(function () {
     });
 
     // scroll to top button
-    $('.scroll-top').click(function () {
+    $(".scroll-top").click(function () {
         $(window).scrollTop(0);
         return false;
     });
 
     $(window).scroll(function () {
         if ($(window).scrollTop() > 300) {
-            $('.scroll-top').addClass('show');
+            $(".scroll-top").addClass("show");
         } else {
-            $('.scroll-top').removeClass('show');
+            $(".scroll-top").removeClass("show");
         }
     });
 });
@@ -378,17 +465,17 @@ $(window).ready(function () {
                     $(".navbar").css("background-color", "#FFFFFF");
                     $("#navbar-logo").attr("src", "img/logoAntriedark.png");
                     $(".nav-link").css("color", "#5D5D83");
-                    $('.scroll-top').addClass("dark");
+                    $(".scroll-top").addClass("dark");
                 } else if (bgColor === "#4DB0FF") {
                     $(".navbar").css("background-color", "#4DB0FF");
                     $("#navbar-logo").attr("src", "img/logoAntrielight.png");
                     $(".nav-link").css("color", "#FFFFFF");
-                    $('.scroll-top').removeClass("dark");
+                    $(".scroll-top").removeClass("dark");
                 } else {
                     $(".navbar").css("background-color", "#2F2D65");
                     $("#navbar-logo").attr("src", "img/logoAntrielight.png");
                     $(".nav-link").css("color", "#FFFFFF");
-                    $('.scroll-top').removeClass("dark");
+                    $(".scroll-top").removeClass("dark");
                 }
                 $("body").css("background-color", bgColor);
             },

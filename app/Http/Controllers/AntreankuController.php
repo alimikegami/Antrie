@@ -155,6 +155,13 @@ class AntreankuController extends Controller
 
     public function deleteLoket(Request $request)
     {
+        $loket = Loket::where('id', '=', $request->id_loket_hapus)
+                            ->first();
+        $count_loket = Loket::where('antrean_id', '=', $loket->antrean_id)->count();
+        if ($count_loket == 1) {
+            $request->session()->flash('alert-danger', 'Loket tidak berhasil dihapus!');
+            return back()->withInput();
+        } 
         $deleted = DB::table('loket')
             ->where('id', '=', $request->id_loket_hapus)
             ->delete();

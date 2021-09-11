@@ -2120,6 +2120,13 @@ modal-footer {
     color: #ffffff;
 }
 
+#deleteAntreanModal .modal-header,
+.modal-body,
+modal-footer {
+    background-color: #2B2844;
+    color: #ffffff;
+}
+
 /* Halaman panggil antrian */
 .field-panggil-antrian {
     background-color: #FFFFFF;

@@ -67,6 +67,8 @@ Route::post('/buat-record-antrean', [AntreanController::class, 'buatRecordAntrea
 Route::post('/submit-antrean-offline', [AntreanController::class, 'submitAntreanOffline']);
 Route::get('/logout', [LogInController::class, 'logout'])->name('logout');
 Route::post('/send-password-reset-link', [ForgotPasswordController::class, 'sendResetToken'])->name('sendPasswordResetLink');
+Route::post('/hapus-loket', [AntreankuController::class, 'deleteLoket'])->name('hapus-loket');
+Route::post('/hapus-antrean', [AntreankuController::class, 'deleteAntrean'])->name('hapus-antrean');
 
 // PUT route
 Route::put('/perbaharui-antrean', [AntreankuController::class, 'perbaharuiAntrean']);
