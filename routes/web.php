@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\Kategori;
+use App\Models\RiwayatAntrean;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\SignUpController;
@@ -10,7 +12,6 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\AntreankuController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\RiwayatAntreanController;
-use App\Models\RiwayatAntrean;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,11 @@ Route::get('/riwayat', function () {
 
 Route::get('/foo', function () {
     Artisan::call('storage:link');
+});
+
+Route::get('/download/{file}', function ($file){
+    $path = public_path('storage/attachment/'.$file);
+    return response()->download($path);
 });
 
 Route::get('/riwayat-antrean', [RiwayatAntreanController::class, 'show']);
