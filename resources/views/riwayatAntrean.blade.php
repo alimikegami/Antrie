@@ -60,7 +60,7 @@
                                                     @php
                                                         $i = $i + 1;
                                                     @endphp
-                                                    <div class="nomor-antrian-mu">
+                                                    <div class="nomor-antrian-mu ms-3">
                                                         <p>No Antrean Anda</p>
                                                         <h1>{{ $item->nomor_antrean }}</h1>
                                                     </div>
