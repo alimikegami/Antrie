@@ -24,14 +24,9 @@ $(document).ready(function () {
 
     $(".btn-delete-loket").click(function (e) {
         e.preventDefault();
-        console.log("sdfas");
         let id_element = $(this).attr('id');;
         if (id_element.includes("tombol-hapus-antrean-")) {
-            console.log(
-                document
-                    .getElementById(id_element)
-                    .getAttribute("data-id-antrean")
-            );
+            
             $("#id_antrean_hapus").val(
                 document
                     .getElementById(id_element)
@@ -86,14 +81,8 @@ $(document).ready(function () {
 
     $(".btn-delete-loket").click(function (e) {
         e.preventDefault();
-        console.log("sdfas");
         let id_element = $(this).attr('id');;
         if (id_element.includes("tombol-hapus-loket-")) {
-            console.log(
-                document
-                    .getElementById(id_element)
-                    .getAttribute("data-id-loket")
-            );
             $("#id_loket_hapus").val(
                 document
                     .getElementById(id_element)
@@ -195,8 +184,6 @@ $(document).ready(function () {
 
         // abis nyari lewat ajax ke-2, kalo ga ada record baru tampilkan saja akhir dari antrean
 
-        console.log("id riwayat= " + id);
-        console.log("id loket = " + id_loket);
         $("#idRiwayatAntrean111").val(id);
         $("#idLoket").val(id_loket);
         $("#modalKonfirmasiAntrean").modal("show");
@@ -363,12 +350,10 @@ $(document).ready(function () {
                 $("#spinner").show();
             },
             complete: function () {
-                console.log("complete");
                 $("#spinner").hide();
                 $("#nomorAntrean").show();
             },
             success: function (data) {
-                console.log(data.id);
                 if (data.id) {
                     $("#nomorAntrean").html(data.nomor_antrean);
                 } else {
@@ -384,7 +369,7 @@ $(document).ready(function () {
 
     function majukanAntrean(id, id_loket) {
         $.ajax({
-            url: "/perbaharui-antrean",
+            url: "/majukan-antrean",
             type: "PUT",
             data: {
                 id: id,
@@ -417,8 +402,6 @@ $(document).ready(function () {
         event.preventDefault();
         let id = $("#idRiwayatAntrean111").val();
         let id_loket = $("#idLoket").val();
-        console.log(id);
-        console.log("eyoo");
         if (id) {
             majukanAntrean(id, id_loket);
         } else {

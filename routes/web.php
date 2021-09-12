@@ -72,6 +72,7 @@ Route::post('/hapus-antrean', [AntreankuController::class, 'deleteAntrean'])->na
 
 // PUT route
 Route::put('/perbaharui-antrean', [AntreankuController::class, 'perbaharuiAntrean']);
+Route::put('/majukan-antrean', [AntreanController::class, 'majukanAntrean']);
 Route::put('update-password', [ForgotPasswordController::class, 'changePassword'])->name('updatePassword');
 Route::put('/buka-loket', [AntreanController::class, 'bukaLoket'])->name('bukaLoket');
 Route::put('/tutup-loket', [AntreanController::class, 'tutupLoket'])->name('tutupLoket');
