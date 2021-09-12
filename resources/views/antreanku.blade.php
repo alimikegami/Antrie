@@ -10,9 +10,9 @@
         @foreach ($temp->loket as $item)
             <h4>{{ $item->nama_loket }}</h4>
             @if ($item->status == 'closed')
-                <a href="/buka-loket/{{ $item->id }}" class="btn btn-primary" type="button">Buka Loket</a>
+                <a href="/buka-loket/{{ $item->id }}" class="btn btn-primary" type="button">Open Loket</a>
             @else
-                <a href="/tutup-loket/{{ $item->id }}" class="btn btn-primary" type="button">Tutup Loket</a>
+                <a href="/tutup-loket/{{ $item->id }}" class="btn btn-primary" type="button">Close Loket</a>
                 <a href="/antreanku/antrean/{{ $temp->slug }}/loket/{{ $item->slug }}" class="btn btn-primary"
                     type="button">{{ $item->slug }}</a>
             @endif
@@ -105,7 +105,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <button type="button" class="btn-close btn-close" data-bs-dismiss="modal"
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <form action="{{ route('hapus-antrean') }}" method="POST">
