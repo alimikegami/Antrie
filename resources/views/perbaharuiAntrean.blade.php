@@ -162,7 +162,7 @@
                                     <label for="teleponAntrean" class="col-sm-4 col-form-label">No telepon
                                         <span>*</span></label>
                                     <div class="col-sm-7 col-10">
-                                        <input type="number" class="form-control" id="teleponAntrean"
+                                        <input type="text" class="form-control" id="teleponAntrean"
                                             name="teleponAntrean" required value="{{ $antrean[0]->nomor_telepon }}">
                                     </div>
                                     <div class="col-sm-1 col-1">

@@ -56,7 +56,8 @@ $(document).ready(function () {
 
         if (
             window.location.href.indexOf("antreanku") > -1 ||
-            window.location.href.indexOf("ubah-data-antrean") > -1
+            window.location.href.indexOf("ubah-data-antrean") > -1 ||
+            window.location.href.indexOf("buat-antrean") > -1
         ) {
             document
                 .getElementById("antreanku-sidebar")

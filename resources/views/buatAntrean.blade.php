@@ -408,7 +408,7 @@
                                         class="bi bi-plus-lg"></i> tambah loket</button>
                             </div>
                             <button type="submit" class="align-self-center mt-5 tombol-submit-form-buat-loket">Buat
-                                antrian</button>
+                                Antrean</button>
                         </form>
                     </div>
                 </div>

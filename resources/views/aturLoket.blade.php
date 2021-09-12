@@ -26,7 +26,7 @@
                                 <p>{{ $antrean->deskripsi }}</p>
                             </div>
                             <a href="/ubah-data-antrean/{{ $antrean->slug }}" class="btn align-self-start"
-                                id="btn-ubah-antrian">Ubah data antrian</a>
+                                id="btn-ubah-antrian">Ubah Data Antrean</a>
                         </div>
                     </div>
 
