@@ -49,7 +49,7 @@ Route::get('/antrean/{antrean:slug}', [AntreanController::class, 'show']);
 Route::get('/beranda/{kategori:slug}', [BerandaController::class, 'showAntreanBasedOnCategories']);
 Route::get('/search', [BerandaController::class, 'showSearchResult'])->name('search');
 Route::get('/antreanku', [AntreankuController::class, 'showAntreanku'])->name('antreanku');
-Route::get('/antreanku/antrean/{slug}/loket/{loket:slug}', [AntreankuController::class, 'showKonfigurasiLoket'])->name('konfigurasiAntrean');
+Route::get('/antreanku/{slug}/loket/{loket:slug}', [AntreankuController::class, 'showKonfigurasiLoket'])->name('konfigurasiAntrean');
 Route::get('/ambil-antrean-baru/{id}', [AntreanController::class, 'ambilAntreanBerikutnya'])->name('ambil-antrean-baru');
 Route::get('/hitung-antrean-di-belakang', [AntreanController::class, 'autoUpdateJumlahAntrean']);
 Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'resetPassword'])->name('resetPassword');

@@ -36,7 +36,7 @@
                                 $i = 0;
                             @endphp
                             @foreach ($antrean->loket as $item)
-                                <a href="/antreanku/antrean/{{ $antrean->slug }}/loket/{{ $item->slug }}">
+                                <a href="/antreanku/{{ $antrean->slug }}/loket/{{ $item->slug }}">
                                     <div class="p-2 hover-wrapper" id="content-pemilik-antrian">
                                         <div class="lokasi-wrapper d-flex align-items-center">
                                             <div class="logo-lokasi d-flex justify-content-center align-items-center">
