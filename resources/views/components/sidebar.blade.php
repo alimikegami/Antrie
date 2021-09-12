@@ -40,13 +40,13 @@
                 <i class="bi bi-gear"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Proyek Baru...</a></li>
+                <li><a class="dropdown-item" href="#">Pengaturan</a></li>
+                <li><a class="dropdown-item" href="#">Profil</a></li>
                 <li class="divider">
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="{{ route('logout') }}">Sign out</a></li>
+                <li><a class="dropdown-item" href="{{ route('logout') }}">Keluar</a></li>
             </ul>
         </div>
     </div>
@@ -90,13 +90,13 @@
                 <i class="bi bi-gear"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Proyek Baru...</a></li>
+                <li><a class="dropdown-item" href="#">Pengaturan</a></li>
+                <li><a class="dropdown-item" href="#">Profil</a></li>
                 <li class="divider">
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="{{ route('logout') }}">Sign out</a></li>
+                <li><a class="dropdown-item" href="{{ route('logout') }}">Keluar</a></li>
             </ul>
         </div>
     </div>

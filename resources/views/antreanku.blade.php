@@ -10,9 +10,9 @@
         @foreach ($temp->loket as $item)
             <h4>{{ $item->nama_loket }}</h4>
             @if ($item->status == 'closed')
-                <a href="/buka-loket/{{ $item->id }}" class="btn btn-primary" type="button">Open Loket</a>
+                <a href="/buka-loket/{{ $item->id }}" class="btn btn-primary" type="button">Buka Loket</a>
             @else
-                <a href="/tutup-loket/{{ $item->id }}" class="btn btn-primary" type="button">Close Loket</a>
+                <a href="/tutup-loket/{{ $item->id }}" class="btn btn-primary" type="button">Tutup Loket</a>
                 <a href="/antreanku/antrean/{{ $temp->slug }}/loket/{{ $item->slug }}" class="btn btn-primary"
                     type="button">{{ $item->slug }}</a>
             @endif
