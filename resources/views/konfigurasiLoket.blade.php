@@ -9,7 +9,7 @@
                     <div class="field-panggil-antrian d-flex flex-column justify-content-between align-items-center">
                         <div class="row justify-content-center" style="width: 100%">
                             <div class="col-2">
-                                <a href="#" id="back-arrow"
+                                <a href="/antreanku/{{ $slug->slug }}" id="back-arrow"
                                     class="d-flex justify-content-center align-items-center align-self-start"><i
                                         class="bi bi-arrow-left"></i></a>
                             </div>

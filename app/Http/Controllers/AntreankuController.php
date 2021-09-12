@@ -225,11 +225,15 @@ class AntreankuController extends Controller
             }
         }
 
+        $slug = Antrean::where('id', '=', $loket->antrean_id)
+                        ->first();
+
         return view('konfigurasiLoket', [
             'title' => "Konfigurasi Loket " . $loket->nama_loket,
             'loket' => $loket,
             'antrean' => $antrean,
             'jumlah_antrean_di_belakang' => $antrean_di_belakang,
+            'slug' => $slug,
         ]);
     }
 }
