@@ -3,7 +3,7 @@
     <div class="sidebar sidebar-start d-flex d-lg-none" id="navbar-responsive">
         <div class="sidebar-header d-flex flex-row">
             <div class="sidebar-logo">
-                <a href="/" class="d-flex align-items-center text-decoration-none justify-content-center">
+                <a href="{{ route('beranda') }}" class="d-flex align-items-center text-decoration-none justify-content-center">
                     <img src={{ asset('img/logoAntriedark.png') }} alt="logo-antrie">
                 </a>
             </div>
@@ -54,8 +54,8 @@
     <div class="sidebar sidebar-start active static d-none d-lg-flex" id="navbar-responsive">
         <div class="sidebar-header d-flex flex-row justify-content-center">
             <div class="static-sidebar-logo">
-                <a href="/" class="d-flex align-items-center text-decoration-none justify-content-center">
-                    <img src={{ asset('img/logoAntriedark.png') }} alt="logo-antrie">
+                <a href="{{ route('beranda') }}" class="d-flex align-items-center text-decoration-none justify-content-center">
+                    <img src="{{ asset('img/logoAntriedark.png') }}" alt="logo-antrie">
                 </a>
             </div>
         </div>
@@ -85,7 +85,7 @@
         <div class="sidebar-profile">
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-3">
+                <img src="{{ asset('img/person-fill.svg') }}" alt="hugenerd" width="30" height="30">
                 <span class="d-sm-inline mx-1">{{ Auth::user()->nama }}</span>
                 <i class="bi bi-gear"></i>
             </a>
