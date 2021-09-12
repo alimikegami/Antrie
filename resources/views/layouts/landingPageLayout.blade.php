@@ -13,6 +13,7 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="{{ asset('img/logoAntrieSmall.png') }}" type="image/x-icon">
     <title>Antrie | Landing Page</title>
 </head>
 
