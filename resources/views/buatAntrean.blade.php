@@ -89,7 +89,7 @@
                                     <label for="inputPassword" class="col-sm-4 col-form-label">No telepon
                                         <span>*</span></label>
                                     <div class="col-sm-7 col-10">
-                                        <input type="number" class="form-control" id="teleponAntrean"
+                                        <input type="text" class="form-control" id="teleponAntrean"
                                             name="teleponAntrean" required>
                                     </div>
                                     <div class="col-sm-1 col-1">
@@ -408,7 +408,7 @@
                                         class="bi bi-plus-lg"></i> tambah loket</button>
                             </div>
                             <button type="submit" class="align-self-center mt-5 tombol-submit-form-buat-loket">Buat
-                                antrian</button>
+                                Antrean</button>
                         </form>
                     </div>
                 </div>
