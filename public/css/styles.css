@@ -1993,7 +1993,7 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: .8rem;
+    font-size: .6rem;
     padding: 5px 20px;
     text-decoration: none;
     border: none;
@@ -2015,7 +2015,7 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: .8rem;
+    font-size: .6rem;
     padding: 5px 20px;
     text-decoration: none;
     border: none;
@@ -2335,13 +2335,13 @@ hr.rounded {
     /* Halaman atur loket */
 
     .tombol-buka-loket {
-        font-size: .8rem;
+        font-size: .6rem;
         padding: 5px 10px;
         width: 100%;
     }
 
     .tombol-tutup-loket {
-        font-size: .8rem;
+        font-size: .6rem;
         padding: 5px 10px;
         width: 100%;
     }
@@ -2779,13 +2779,13 @@ hr.rounded {
     /* Halaman atur loket */
 
     .tombol-buka-loket {
-        font-size: 1rem;
+        font-size: .8rem;
         padding: 5px 20px;
         width: 100%;
     }
 
     .tombol-tutup-loket {
-        font-size: 1rem;
+        font-size: .8rem;
         padding: 5px 15px;
         width: 100%;
     }
@@ -3131,13 +3131,13 @@ hr.rounded {
     /* Halaman atur loket */
 
     .tombol-buka-loket {
-        font-size: 1rem;
+        font-size: .9rem;
         padding: 5px 20px;
         width: 100%;
     }
 
     .tombol-tutup-loket {
-        font-size: 1rem;
+        font-size: .9rem;
         padding: 5px 20px;
         width: 100%;
     }
