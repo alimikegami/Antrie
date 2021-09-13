@@ -201,6 +201,16 @@ class AntreanController extends Controller
     {
         $loket = Loket::where('id', "=", $request->id_loket_tutup)->first();
         if ($loket) {
+            $riwayat = RiwayatAntrean::where('loket_id', '=', $request->id_loket_tutup)
+                                        ->get();
+            if ($riwayat) {
+                foreach($riwayat as $item) {
+                    $item->status = 'served';
+                    $item->save();
+                }   
+            }
+            $curr_time = Carbon::now();
+            $loket->batch = $curr_time->toDateTimeString();
             $loket->status = 'closed';
             $loket->save();
         }

@@ -13,7 +13,8 @@ class RiwayatAntreanController extends Controller
     {
         $history = RiwayatAntrean::with(['loket', 'antrean'])
             ->where('pengguna_id', '=', Auth::id())
-            ->where('status', '=', 'waiting')
+            ->where('status', '!=', 'canceled')
+            ->orderBy('id', 'desc')
             ->get();
         $latest_queue_number = [];
         $antrean_di_depan = [];
