@@ -45,18 +45,23 @@
                                                 <div class="keterangan-loket-riwayat">
                                                     <h1>{{ $item->antrean->nama_antrean }}</h1>
                                                     <p>{{ $item->loket->nama_loket }}</p>
-                                                    <p>Estimasi waktu tunggu <span>{{ $waktu_fix[$i] }}</span> menit</p>
-                                                    <button type="button"
-                                                        id="tombol-ambil-batal-antrian-{{ $i }}"
-                                                        class="btn tombol-ambil-batal-antrian"
-                                                        data-riwayat="{{ $item->id }}">Batalkan Antrean</button>
+                                                    @if ($item->status == "waiting")
+                                                        <p>Estimasi waktu tunggu <span>{{ $waktu_fix[$i] }}</span> menit</p>
+                                                        <button type="button"
+                                                            id="tombol-ambil-batal-antrian-{{ $i }}"
+                                                            class="btn tombol-ambil-batal-antrian"
+                                                            data-riwayat="{{ $item->id }}">Batalkan Antrean</button>
+                                                    @endif
+                                                    
                                                 </div>
                                                 <div
                                                     class="nomor-antrian d-flex justify-content-evenly align-items-center flex-xl-row flex-column">
-                                                    <div class="no-antrian-terakhir">
-                                                        <p>No Antrean Terakhir</p>
-                                                        <h1>{{ $latest_queue_number[$i][0]->nomor_antrean ?? 0 }}</h1>
-                                                    </div>
+                                                    @if ($item->status == "waiting")
+                                                        <div class="no-antrian-terakhir">
+                                                            <p>No Antrean Terakhir</p>
+                                                            <h1>{{ $latest_queue_number[$i][0]->nomor_antrean ?? 0 }}</h1>
+                                                        </div>
+                                                    @endif
                                                     @php
                                                         $i = $i + 1;
                                                     @endphp
