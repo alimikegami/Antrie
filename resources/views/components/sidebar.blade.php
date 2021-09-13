@@ -1,14 +1,15 @@
-@auth
-    {{-- side Nav mobile --}}
-    <div class="sidebar sidebar-start d-flex d-lg-none" id="navbar-responsive">
-        <div class="sidebar-header d-flex flex-row">
-            <div class="sidebar-logo">
-                <a href="{{ route('beranda') }}" class="d-flex align-items-center text-decoration-none justify-content-center">
-                    <img src={{ asset('img/logoAntriedark.png') }} alt="logo-antrie">
-                </a>
-            </div>
-            <i class="bi bi-list text-center sidebar-hamburger" id="sidebar_btn"></i>
+{{-- side Nav mobile --}}
+<div class="sidebar sidebar-start d-flex d-lg-none" id="navbar-responsive">
+    <div class="sidebar-header d-flex flex-row">
+        <div class="sidebar-logo">
+            <a href="{{ route('beranda') }}"
+                class="d-flex align-items-center text-decoration-none justify-content-center">
+                <img src={{ asset('img/logoAntriedark.png') }} alt="logo-antrie">
+            </a>
         </div>
+        <i class="bi bi-list text-center sidebar-hamburger" id="sidebar_btn"></i>
+    </div>
+    @auth
         <ul class="nav-list">
             <li class="menu" id="beranda-sidebar">
                 <a href="{{ route('beranda') }}" id="beranda-sidebar">
@@ -49,16 +50,29 @@
                 <li><a class="dropdown-item" href="{{ route('logout') }}">Keluar</a></li>
             </ul>
         </div>
-    </div>
-
-    <div class="sidebar sidebar-start active static d-none d-lg-flex" id="navbar-responsive">
-        <div class="sidebar-header d-flex flex-row justify-content-center">
-            <div class="static-sidebar-logo">
-                <a href="{{ route('beranda') }}" class="d-flex align-items-center text-decoration-none justify-content-center">
-                    <img src="{{ asset('img/logoAntriedark.png') }}" alt="logo-antrie">
+    @else
+        <ul class="nav-list">
+            <li class="menu" id="beranda-sidebar">
+                <a href="{{ route('login') }}" id="beranda-sidebar">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span href="" class="links-name">Login</span>
                 </a>
-            </div>
+                <span class="links-tooltip">Login</span>
+            </li>
+        </ul>
+    @endauth
+</div>
+
+<div class="sidebar sidebar-start active static d-none d-lg-flex" id="navbar-responsive">
+    <div class="sidebar-header d-flex flex-row justify-content-center">
+        <div class="static-sidebar-logo">
+            <a href="{{ route('beranda') }}"
+                class="d-flex align-items-center text-decoration-none justify-content-center">
+                <img src="{{ asset('img/logoAntriedark.png') }}" alt="logo-antrie">
+            </a>
         </div>
+    </div>
+    @auth
         <ul class="nav-list">
             <li class="menu">
                 <a href="{{ route('beranda') }}" id="beranda-sidebar-static">
@@ -93,26 +107,20 @@
                 <li><a class="dropdown-item" href="{{ route('logout') }}">Keluar</a></li>
             </ul>
         </div>
-    </div>
-
-    {{-- humburger menu --}}
-    <div class="col-1 d-md-none d-flex flex-column align-items-start position-fixed bg-white w-100 p-0" id="side-nav">
-        <i class="bi bi-list text-center" id="sidenav_btn" style="width: 55px; font-size: 2rem; color: #2F2D65;"></i>
-    </div>
-@else
-    <div
-        class="col-auto col-md-2 col-xl-2 px-sm-2 px-0 bg-white d-flex justify-content-center coba d-md-none d-lg-flex d-none">
-        <div class="d-flex flex-column align-items-center px-3 pt-5 min-vh-100 navbar-dashboard justify-content-start">
-            <a href="/" class="d-flex align-items-center pb-3 text-decoration-none">
-                <img class="img-fluid" src="{{ asset('img/logoAntriedark.png') }}" alt="logo-antrie">
-            </a>
-            <hr>
-            <div class="d-flex justify-content-center align-items-center sideNav-login-btn">
-                <a href="#" class="menu-not-login d-flex justify-content-center align-items-center">
+    @else
+        <ul class="nav-list">
+            <li class="menu">
+                <a href="{{ route('login') }}" id="beranda-sidebar-static">
                     <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Login</span>
+                    <span href="" class="links-name">Login</span>
                 </a>
-            </div>
-        </div>
-    </div>
-@endauth
+                <span class="links-tooltip">Login</span>
+            </li>
+        </ul>
+    @endauth
+</div>
+
+{{-- humburger menu --}}
+<div class="col-1 d-md-none d-flex flex-column align-items-start position-fixed bg-white w-100 p-0" id="side-nav">
+    <i class="bi bi-list text-center" id="sidenav_btn" style="width: 55px; font-size: 2rem; color: #2F2D65;"></i>
+</div>
