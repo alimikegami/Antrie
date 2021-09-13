@@ -25,7 +25,7 @@
                     @endphp
                     @if (is_array($riwayat) || is_object($riwayat))
                         @foreach ($riwayat as $item)
-                            <div class="field-lokasi-all-antrianku d-flex flex-column mt-5">
+                            <div class="field-lokasi-all-antrianku d-flex flex-column mt-4">
                                 <div class="content-field-lokasi d-flex flex-column">
                                     <a href="">
                                         <div class="p-2 hover-wrapper" id="content-tunggu-antrian">
@@ -65,7 +65,7 @@
                                                     @php
                                                         $i = $i + 1;
                                                     @endphp
-                                                    <div class="nomor-antrian-mu ms-3">
+                                                    <div class="nomor-antrian-mu mt-xl-0 mt-3 ms-xl-3">
                                                         <p>No Antrean Anda</p>
                                                         <h1>{{ $item->nomor_antrean }}</h1>
                                                     </div>

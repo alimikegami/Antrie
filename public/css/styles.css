@@ -10,7 +10,7 @@ body {
 }
 
 ::selection {
-    background: #f0f1ff;
+    background: #B4D5FF;
     color: #753852;
 }
 
@@ -1910,6 +1910,10 @@ body {
     color: #4DB0FF;
 }
 
+.btn-delete-loket {
+    font-size: .6rem;
+}
+
 /* halaman riwayat */
 .tombol-ambil-batal-antrian {
     background-color: #FF4D4D;
@@ -1956,6 +1960,7 @@ body {
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 15px;
     box-shadow: 0px 10px 16px 0px rgb(0 0 0 / 10%);
+    width: 100%;
 }
 
 .keterangan-loket-riwayat {
@@ -1988,7 +1993,7 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: .8rem;
+    font-size: .6rem;
     padding: 5px 20px;
     text-decoration: none;
     border: none;
@@ -2010,7 +2015,7 @@ body {
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
-    font-size: .8rem;
+    font-size: .6rem;
     padding: 5px 20px;
     text-decoration: none;
     border: none;
@@ -2330,13 +2335,13 @@ hr.rounded {
     /* Halaman atur loket */
 
     .tombol-buka-loket {
-        font-size: .8rem;
+        font-size: .6rem;
         padding: 5px 10px;
         width: 100%;
     }
 
     .tombol-tutup-loket {
-        font-size: .8rem;
+        font-size: .6rem;
         padding: 5px 10px;
         width: 100%;
     }
@@ -2720,6 +2725,10 @@ hr.rounded {
         font-size: 3rem;
     }
 
+    .btn-delete-loket {
+        font-size: .8rem;
+    }
+
     /* halaman pilih loket */
     .covid-case {
         padding: 0 2%;
@@ -2770,13 +2779,13 @@ hr.rounded {
     /* Halaman atur loket */
 
     .tombol-buka-loket {
-        font-size: 1rem;
+        font-size: .8rem;
         padding: 5px 20px;
         width: 100%;
     }
 
     .tombol-tutup-loket {
-        font-size: 1rem;
+        font-size: .8rem;
         padding: 5px 15px;
         width: 100%;
     }
@@ -3085,6 +3094,10 @@ hr.rounded {
         font-size: .7rem;
     }
 
+    .btn-delete-loket {
+        font-size: .9rem;
+    }
+
     /* halaman pilih loket */
     .loket-lokasi {
         padding: 3%;
@@ -3118,13 +3131,13 @@ hr.rounded {
     /* Halaman atur loket */
 
     .tombol-buka-loket {
-        font-size: 1rem;
+        font-size: .9rem;
         padding: 5px 20px;
         width: 100%;
     }
 
     .tombol-tutup-loket {
-        font-size: 1rem;
+        font-size: .9rem;
         padding: 5px 20px;
         width: 100%;
     }
@@ -3341,6 +3354,10 @@ hr.rounded {
 
     .keterangan-loket-antrianku p {
         font-size: .9rem;
+    }
+
+    .btn-delete-loket {
+        font-size: 1rem;
     }
 
     /* halaman pilih loket */
@@ -3561,5 +3578,10 @@ hr.rounded {
 
     .keterangan-loket-riwayat p span {
         font-size: 1rem;
+    }
+
+    .nomor-antrian-mu {
+        padding-left: 4.5%;
+        padding-right: 4.5%;
     }
 }
