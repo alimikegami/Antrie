@@ -1910,6 +1910,10 @@ body {
     color: #4DB0FF;
 }
 
+.btn-delete-loket {
+    font-size: .6rem;
+}
+
 /* halaman riwayat */
 .tombol-ambil-batal-antrian {
     background-color: #FF4D4D;
@@ -2721,6 +2725,10 @@ hr.rounded {
         font-size: 3rem;
     }
 
+    .btn-delete-loket {
+        font-size: .8rem;
+    }
+
     /* halaman pilih loket */
     .covid-case {
         padding: 0 2%;
@@ -3086,6 +3094,10 @@ hr.rounded {
         font-size: .7rem;
     }
 
+    .btn-delete-loket {
+        font-size: .9rem;
+    }
+
     /* halaman pilih loket */
     .loket-lokasi {
         padding: 3%;
@@ -3342,6 +3354,10 @@ hr.rounded {
 
     .keterangan-loket-antrianku p {
         font-size: .9rem;
+    }
+
+    .btn-delete-loket {
+        font-size: 1rem;
     }
 
     /* halaman pilih loket */
