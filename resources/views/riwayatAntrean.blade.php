@@ -8,11 +8,9 @@
             @include('components/sidebar')
             <div class="dashboard-container col-auto col-md-12 pt-3 col-lg-10 mt-5 mt-md-0">
                 <div class="dashboard-content riwayat d-flex flex-column">
-                    <div class="container">
-                        <div class="first-row-all d-flex justify-content-between">
-                            <div class="first-row-word flex-fill">
-                                <h1>Riwayat</h1>
-                            </div>
+                    <div class="first-row-all d-flex justify-content-between">
+                        <div class="first-row-word flex-fill">
+                            <h1>Riwayat</h1>
                         </div>
                     </div>
                     {{-- start loop --}}
