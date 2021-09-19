@@ -36,7 +36,8 @@
         <div class="sidebar-profile">
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-3">
+                <img src="https://avatars.dicebear.com/api/open-peeps/:{{ Auth::user()->nama }}.svg" alt="hugenerd"
+                    width="30" height="30">
                 <span class="d-sm-inline mx-1">{{ Auth::user()->nama }}</span>
                 <i class="bi bi-gear"></i>
             </a>
@@ -99,7 +100,8 @@
         <div class="sidebar-profile">
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser1"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="{{ asset('img/person-fill.svg') }}" alt="hugenerd" width="30" height="30">
+                <img src="https://avatars.dicebear.com/api/open-peeps/:{{ Auth::user()->nama }}.svg" alt="hugenerd"
+                    width="30" height="30">
                 <span class="d-sm-inline mx-1">{{ Auth::user()->nama }}</span>
                 <i class="bi bi-gear"></i>
             </a>
